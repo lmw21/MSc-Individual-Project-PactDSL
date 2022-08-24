@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="pactDSL" nsURI="http://www.lmw21.imperialmsc/pactdsl/PactDSL"
+    nsPrefix="pactDSL">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityTypes" upperBound="-1"
+        eType="#//EntityType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formalityTypes" upperBound="-1"
+        eType="#//FormalityType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionTypes" upperBound="-1"
+        eType="#//ActionType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateTypes" upperBound="-1"
+        eType="#//StateType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryObligationTypes"
+        upperBound="-1" eType="#//PrimaryObligationType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminationTypes" upperBound="-1"
+        eType="#//TerminationType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boilerplateTypes" upperBound="-1"
+        eType="#//BoilerplateType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
+        eType="#//DefinedTerm" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
+        eType="#//Address" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="companyNumber" upperBound="-1"
+        eType="#//CompanyNumber" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="#//EntityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThirdParty" eSuperTypes="#//EntityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubjectMatter" eSuperTypes="#//EntityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subjectMatter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinedTerm">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Address">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompanyNumber">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FormalityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InWriting" eSuperTypes="#//FormalityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customWritingFormality"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ByEmail" eSuperTypes="#//FormalityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emailAddress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GivingNotice" eSuperTypes="#//FormalityType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numDays" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomFormality" eSuperTypes="#//FormalityType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customFormality" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GivenConsent" eSuperTypes="#//ActionType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GivenWrittenConsent" eSuperTypes="#//ActionType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StateType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//EntityType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ownership" eSuperTypes="#//StateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customOwnership" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RightToUse" eSuperTypes="#//StateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customUsage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomObligation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//EntityType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PaymentObligation" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeliveryObligation" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransferObligation" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LicenceObligation" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintParty" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forbiddenAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstraintThirdParty" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forbiddenAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalInfo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ForConvenience" eSuperTypes="#//TerminationType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customTermination" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnReasonableNotice" eSuperTypes="#//TerminationType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForBreach" eSuperTypes="#//TerminationType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ObligationBreached" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RemedialScheme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnInsolvencyEvent" eSuperTypes="#//TerminationType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InsolvencyEvent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomTermination" eSuperTypes="#//TerminationType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomTerminationClause"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BoilerplateType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicableLaw" eSuperTypes="#//BoilerplateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomApplicableLaw" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
+        eType="#//DefinedTerm" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Jurisdiction" eSuperTypes="#//BoilerplateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomJurisdiction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
+        eType="#//DefinedTerm" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Notices" eSuperTypes="#//BoilerplateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomNotice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

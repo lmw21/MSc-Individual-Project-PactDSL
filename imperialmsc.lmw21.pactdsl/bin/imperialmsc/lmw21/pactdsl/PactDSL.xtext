@@ -1,0 +1,163 @@
+grammar imperialmsc.lmw21.pactdsl.PactDSL with org.eclipse.xtext.common.Terminals
+
+generate pactDSL "http://www.lmw21.imperialmsc/pactdsl/PactDSL"
+
+Model:
+	'ContractName:' title=STRING '.'
+	
+	'EffectiveDate:' (day=INT month=INT year=INT)'.'+
+	
+	'Entities:' 
+	(entityTypes+=EntityType '.')+
+	
+	'Formalities:'?
+	(formalityTypes+=FormalityType '.')*
+	
+	'Actions:'?
+	(actionTypes+=ActionType '.')*
+	
+	'StateOnSignature:'?
+	(stateTypes+=StateType '.')*
+	
+	'PrimaryObligations:'
+	(primaryObligationTypes+=PrimaryObligationType '.')+
+	
+	'StateAfterObligationsDischarged:'?
+	(stateTypes+=StateType '.')*
+	
+	'Termination:'
+	(terminationTypes+=TerminationType '.')*
+	
+	'StateAfterTermination:'?
+	(stateTypes+=StateType '.')*
+	
+	'Boilerplate:'
+	(boilerplateTypes+=BoilerplateType '.')*;
+
+//Entity Types	
+
+EntityType:
+	Party | ThirdParty | SubjectMatter;
+
+Party:
+	'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	 
+ThirdParty:
+	'ThirdParty:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	
+SubjectMatter:
+	'SubjectMatter:' name=ID subjectMatter=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+
+DefinedTerm:
+	'definedAs' definition=STRING;
+
+Address:
+	'withAddress' definition=STRING;
+
+CompanyNumber:
+	'withCompanyNumber' definition=STRING;
+
+Feature:
+	'withFeature' feature=STRING;
+	
+	
+//Formality Types
+
+FormalityType:
+	InWriting | ByEmail | GivingNotice | CustomFormality;
+
+InWriting:
+	'inWriting' customWritingFormality=STRING;
+
+ByEmail:
+	'byEmail' 'to' (emailAddress=STRING);
+	 
+GivingNotice:
+	'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days');
+
+CustomFormality:
+	'ContractFormality' customFormality=STRING;
+
+
+//Actions
+
+ActionType:
+	GivenConsent | GivenWrittenConsent;
+
+GivenConsent:
+	superType=[Party] 'gaveConsent';
+	
+GivenWrittenConsent:
+	superType=[Party] 'gaveWrittenConsent';
+	
+
+//State on Signature
+
+StateType:
+	Ownership | RightToUse;
+
+Ownership:
+	superType=[Party] ('owns' | 'willReturn') (customOwnership=STRING)* superType=[SubjectMatter];
+
+RightToUse:
+	superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter];
+	
+//PrimaryObligations
+ 
+PrimaryObligationType:
+	PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation=STRING;
+
+PaymentObligation:	
+	'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	
+DeliveryObligation:
+	'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;  
+
+TransferObligation:
+	'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+
+LicenceObligation:
+	'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?; 
+
+ConstraintParty:
+	'ConstraintParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? ('to' superType=[Party])?; 	
+
+ConstraintThirdParty:
+	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
+
+
+//Termination Types
+
+TerminationType:
+	ForConvenience | OnReasonableNotice | ForBreach | OnInsolvencyEvent | CustomTermination;
+
+ForConvenience:
+	'TerminationForConvenience:' superType=[Party]+ 'may' 'terminate' 'by' customTermination=STRING;
+	
+OnReasonableNotice:
+	'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice] 
+;
+
+ForBreach:
+	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' RemedialScheme=STRING)?;
+
+OnInsolvencyEvent:
+	'TerminationUponInsolvency:' superType=[Party]+ 'may' 'terminate' 'upon' (InsolvencyEvent=STRING) 'of' superType=[Party]; 
+
+CustomTermination:
+	'Termination:' superType=[Party]+ 'may' 'terminate' CustomTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
+	 
+	
+//Boilerplate
+
+BoilerplateType:
+	ApplicableLaw | Jurisdiction | Notices;
+
+ApplicableLaw:
+	'ApplicableLaw:' CustomApplicableLaw=STRING (definition+=DefinedTerm)?;
+	
+Jurisdiction:
+	'Jurisdiction:' CustomJurisdiction=STRING (definition+=DefinedTerm)?;
+	
+Notices:
+	'Notices:' CustomNotice=STRING;
