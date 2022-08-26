@@ -38,9 +38,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getDay <em>Day</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getMonth <em>Month</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getYear <em>Year</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getEntityTypes <em>Entity Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getFormalityTypes <em>Formality Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getActionTypes <em>Action Types</em>}</li>
@@ -73,66 +70,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected String title = TITLE_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getDay() <em>Day</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDay()
-   * @generated
-   * @ordered
-   */
-  protected static final int DAY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getDay() <em>Day</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDay()
-   * @generated
-   * @ordered
-   */
-  protected int day = DAY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getMonth() <em>Month</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMonth()
-   * @generated
-   * @ordered
-   */
-  protected static final int MONTH_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getMonth() <em>Month</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMonth()
-   * @generated
-   * @ordered
-   */
-  protected int month = MONTH_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getYear() <em>Year</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getYear()
-   * @generated
-   * @ordered
-   */
-  protected static final int YEAR_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getYear() <em>Year</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getYear()
-   * @generated
-   * @ordered
-   */
-  protected int year = YEAR_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEntityTypes() <em>Entity Types</em>}' containment reference list.
@@ -248,81 +185,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     title = newTitle;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.MODEL__TITLE, oldTitle, title));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getDay()
-  {
-    return day;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDay(int newDay)
-  {
-    int oldDay = day;
-    day = newDay;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.MODEL__DAY, oldDay, day));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getMonth()
-  {
-    return month;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setMonth(int newMonth)
-  {
-    int oldMonth = month;
-    month = newMonth;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.MODEL__MONTH, oldMonth, month));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public int getYear()
-  {
-    return year;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setYear(int newYear)
-  {
-    int oldYear = year;
-    year = newYear;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.MODEL__YEAR, oldYear, year));
   }
 
   /**
@@ -470,12 +332,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case PactDSLPackage.MODEL__TITLE:
         return getTitle();
-      case PactDSLPackage.MODEL__DAY:
-        return getDay();
-      case PactDSLPackage.MODEL__MONTH:
-        return getMonth();
-      case PactDSLPackage.MODEL__YEAR:
-        return getYear();
       case PactDSLPackage.MODEL__ENTITY_TYPES:
         return getEntityTypes();
       case PactDSLPackage.MODEL__FORMALITY_TYPES:
@@ -507,15 +363,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case PactDSLPackage.MODEL__TITLE:
         setTitle((String)newValue);
-        return;
-      case PactDSLPackage.MODEL__DAY:
-        setDay((Integer)newValue);
-        return;
-      case PactDSLPackage.MODEL__MONTH:
-        setMonth((Integer)newValue);
-        return;
-      case PactDSLPackage.MODEL__YEAR:
-        setYear((Integer)newValue);
         return;
       case PactDSLPackage.MODEL__ENTITY_TYPES:
         getEntityTypes().clear();
@@ -562,15 +409,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case PactDSLPackage.MODEL__TITLE:
         setTitle(TITLE_EDEFAULT);
         return;
-      case PactDSLPackage.MODEL__DAY:
-        setDay(DAY_EDEFAULT);
-        return;
-      case PactDSLPackage.MODEL__MONTH:
-        setMonth(MONTH_EDEFAULT);
-        return;
-      case PactDSLPackage.MODEL__YEAR:
-        setYear(YEAR_EDEFAULT);
-        return;
       case PactDSLPackage.MODEL__ENTITY_TYPES:
         getEntityTypes().clear();
         return;
@@ -608,12 +446,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case PactDSLPackage.MODEL__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-      case PactDSLPackage.MODEL__DAY:
-        return day != DAY_EDEFAULT;
-      case PactDSLPackage.MODEL__MONTH:
-        return month != MONTH_EDEFAULT;
-      case PactDSLPackage.MODEL__YEAR:
-        return year != YEAR_EDEFAULT;
       case PactDSLPackage.MODEL__ENTITY_TYPES:
         return entityTypes != null && !entityTypes.isEmpty();
       case PactDSLPackage.MODEL__FORMALITY_TYPES:
@@ -645,12 +477,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (title: ");
     result.append(title);
-    result.append(", day: ");
-    result.append(day);
-    result.append(", month: ");
-    result.append(month);
-    result.append(", year: ");
-    result.append(year);
     result.append(')');
     return result.toString();
   }

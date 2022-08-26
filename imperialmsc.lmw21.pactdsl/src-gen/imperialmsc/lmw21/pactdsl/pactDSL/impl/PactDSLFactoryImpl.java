@@ -67,6 +67,7 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
     {
       case PactDSLPackage.MODEL: return createModel();
       case PactDSLPackage.ENTITY_TYPE: return createEntityType();
+      case PactDSLPackage.EFFECTIVE_DATE: return createEffectiveDate();
       case PactDSLPackage.PARTY: return createParty();
       case PactDSLPackage.THIRD_PARTY: return createThirdParty();
       case PactDSLPackage.SUBJECT_MATTER: return createSubjectMatter();
@@ -129,6 +130,18 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
   {
     EntityTypeImpl entityType = new EntityTypeImpl();
     return entityType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EffectiveDate createEffectiveDate()
+  {
+    EffectiveDateImpl effectiveDate = new EffectiveDateImpl();
+    return effectiveDate;
   }
 
   /**

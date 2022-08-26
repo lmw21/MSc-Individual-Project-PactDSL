@@ -42,6 +42,15 @@ public interface PactDSLFactory extends EFactory
   EntityType createEntityType();
 
   /**
+   * Returns a new object of class '<em>Effective Date</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Effective Date</em>'.
+   * @generated
+   */
+  EffectiveDate createEffectiveDate();
+
+  /**
    * Returns a new object of class '<em>Party</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

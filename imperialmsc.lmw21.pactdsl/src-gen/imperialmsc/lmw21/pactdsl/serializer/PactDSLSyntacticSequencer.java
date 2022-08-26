@@ -21,24 +21,24 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PactDSLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Model_ActionsKeyword_10_q;
-	protected AbstractElementAlias match_Model_FormalitiesKeyword_8_q;
-	protected AbstractElementAlias match_Model_FullStopKeyword_5_p;
-	protected AbstractElementAlias match_Model_StateAfterObligationsDischargedKeyword_16_q;
-	protected AbstractElementAlias match_Model_StateAfterTerminationKeyword_20_q;
-	protected AbstractElementAlias match_Model_StateOnSignatureKeyword_12_q;
+	protected AbstractElementAlias match_Model_ActionsKeyword_7_q;
+	protected AbstractElementAlias match_Model_FormalitiesKeyword_5_q;
+	protected AbstractElementAlias match_Model_FullStopKeyword_2_p;
+	protected AbstractElementAlias match_Model_StateAfterObligationsDischargedKeyword_13_q;
+	protected AbstractElementAlias match_Model_StateAfterTerminationKeyword_17_q;
+	protected AbstractElementAlias match_Model_StateOnSignatureKeyword_9_q;
 	protected AbstractElementAlias match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1;
 	protected AbstractElementAlias match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PactDSLGrammarAccess) access;
-		match_Model_ActionsKeyword_10_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getActionsKeyword_10());
-		match_Model_FormalitiesKeyword_8_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getFormalitiesKeyword_8());
-		match_Model_FullStopKeyword_5_p = new TokenAlias(true, false, grammarAccess.getModelAccess().getFullStopKeyword_5());
-		match_Model_StateAfterObligationsDischargedKeyword_16_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterObligationsDischargedKeyword_16());
-		match_Model_StateAfterTerminationKeyword_20_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterTerminationKeyword_20());
-		match_Model_StateOnSignatureKeyword_12_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateOnSignatureKeyword_12());
+		match_Model_ActionsKeyword_7_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getActionsKeyword_7());
+		match_Model_FormalitiesKeyword_5_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getFormalitiesKeyword_5());
+		match_Model_FullStopKeyword_2_p = new TokenAlias(true, false, grammarAccess.getModelAccess().getFullStopKeyword_2());
+		match_Model_StateAfterObligationsDischargedKeyword_13_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterObligationsDischargedKeyword_13());
+		match_Model_StateAfterTerminationKeyword_17_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterTerminationKeyword_17());
+		match_Model_StateOnSignatureKeyword_9_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateOnSignatureKeyword_9());
 		match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getOwnsKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getWillReturnKeyword_1_1()));
 		match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayNotUseKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayUseKeyword_1_0()));
 	}
@@ -55,18 +55,18 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Model_ActionsKeyword_10_q.equals(syntax))
-				emit_Model_ActionsKeyword_10_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_FormalitiesKeyword_8_q.equals(syntax))
-				emit_Model_FormalitiesKeyword_8_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_FullStopKeyword_5_p.equals(syntax))
-				emit_Model_FullStopKeyword_5_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_StateAfterObligationsDischargedKeyword_16_q.equals(syntax))
-				emit_Model_StateAfterObligationsDischargedKeyword_16_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_StateAfterTerminationKeyword_20_q.equals(syntax))
-				emit_Model_StateAfterTerminationKeyword_20_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_StateOnSignatureKeyword_12_q.equals(syntax))
-				emit_Model_StateOnSignatureKeyword_12_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Model_ActionsKeyword_7_q.equals(syntax))
+				emit_Model_ActionsKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_FormalitiesKeyword_5_q.equals(syntax))
+				emit_Model_FormalitiesKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_FullStopKeyword_2_p.equals(syntax))
+				emit_Model_FullStopKeyword_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_StateAfterObligationsDischargedKeyword_13_q.equals(syntax))
+				emit_Model_StateAfterObligationsDischargedKeyword_13_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_StateAfterTerminationKeyword_17_q.equals(syntax))
+				emit_Model_StateAfterTerminationKeyword_17_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_StateOnSignatureKeyword_9_q.equals(syntax))
+				emit_Model_StateOnSignatureKeyword_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1.equals(syntax))
 				emit_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0.equals(syntax))
@@ -87,7 +87,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     formalityTypes+=FormalityType '.' (ambiguity) 'StateOnSignature:'? stateTypes+=StateType
 	 *     formalityTypes+=FormalityType '.' (ambiguity) actionTypes+=ActionType
 	 */
-	protected void emit_Model_ActionsKeyword_10_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_ActionsKeyword_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -101,7 +101,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     entityTypes+=EntityType '.' (ambiguity) 'Actions:'? actionTypes+=ActionType
 	 *     entityTypes+=EntityType '.' (ambiguity) formalityTypes+=FormalityType
 	 */
-	protected void emit_Model_FormalitiesKeyword_8_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_FormalitiesKeyword_5_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -110,9 +110,9 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '.'+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     year=INT (ambiguity) 'Entities:' entityTypes+=EntityType
+	 *     title=STRING (ambiguity) 'Entities:' entityTypes+=EntityType
 	 */
-	protected void emit_Model_FullStopKeyword_5_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_FullStopKeyword_2_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -127,7 +127,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Termination:' terminationTypes+=TerminationType
 	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) stateTypes+=StateType
 	 */
-	protected void emit_Model_StateAfterObligationsDischargedKeyword_16_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_StateAfterObligationsDischargedKeyword_13_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -146,7 +146,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     terminationTypes+=TerminationType '.' (ambiguity) 'Boilerplate:' boilerplateTypes+=BoilerplateType
 	 *     terminationTypes+=TerminationType '.' (ambiguity) stateTypes+=StateType
 	 */
-	protected void emit_Model_StateAfterTerminationKeyword_20_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_StateAfterTerminationKeyword_17_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -162,7 +162,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     formalityTypes+=FormalityType '.' 'Actions:'? (ambiguity) 'PrimaryObligations:' primaryObligationTypes+=PrimaryObligationType
 	 *     formalityTypes+=FormalityType '.' 'Actions:'? (ambiguity) stateTypes+=StateType
 	 */
-	protected void emit_Model_StateOnSignatureKeyword_12_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_StateOnSignatureKeyword_9_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

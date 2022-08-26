@@ -14,6 +14,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
+import imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate;
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
 import imperialmsc.lmw21.pactdsl.pactDSL.ForBreach;
 import imperialmsc.lmw21.pactdsl.pactDSL.ForConvenience;
@@ -91,6 +92,9 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case PactDSLPackage.DELIVERY_OBLIGATION:
 				sequence_DeliveryObligation(context, (DeliveryObligation) semanticObject); 
+				return; 
+			case PactDSLPackage.EFFECTIVE_DATE:
+				sequence_EffectiveDate(context, (EffectiveDate) semanticObject); 
 				return; 
 			case PactDSLPackage.FEATURE:
 				sequence_Feature(context, (Feature) semanticObject); 
@@ -326,6 +330,19 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     EntityType returns EffectiveDate
+	 *     EffectiveDate returns EffectiveDate
+	 *
+	 * Constraint:
+	 *     (day=INT month=INT year=INT)+
+	 */
+	protected void sequence_EffectiveDate(ISerializationContext context, EffectiveDate semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Feature returns Feature
 	 *
 	 * Constraint:
@@ -480,9 +497,6 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         title=STRING 
-	 *         day=INT 
-	 *         month=INT 
-	 *         year=INT 
 	 *         entityTypes+=EntityType+ 
 	 *         formalityTypes+=FormalityType* 
 	 *         actionTypes+=ActionType* 

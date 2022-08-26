@@ -17,9 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getTitle <em>Title</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getDay <em>Day</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getMonth <em>Month</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getYear <em>Year</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getEntityTypes <em>Entity Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getFormalityTypes <em>Formality Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getActionTypes <em>Action Types</em>}</li>
@@ -56,72 +53,6 @@ public interface Model extends EObject
    * @generated
    */
   void setTitle(String value);
-
-  /**
-   * Returns the value of the '<em><b>Day</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Day</em>' attribute.
-   * @see #setDay(int)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getModel_Day()
-   * @model
-   * @generated
-   */
-  int getDay();
-
-  /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getDay <em>Day</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Day</em>' attribute.
-   * @see #getDay()
-   * @generated
-   */
-  void setDay(int value);
-
-  /**
-   * Returns the value of the '<em><b>Month</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Month</em>' attribute.
-   * @see #setMonth(int)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getModel_Month()
-   * @model
-   * @generated
-   */
-  int getMonth();
-
-  /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getMonth <em>Month</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Month</em>' attribute.
-   * @see #getMonth()
-   * @generated
-   */
-  void setMonth(int value);
-
-  /**
-   * Returns the value of the '<em><b>Year</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Year</em>' attribute.
-   * @see #setYear(int)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getModel_Year()
-   * @model
-   * @generated
-   */
-  int getYear();
-
-  /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getYear <em>Year</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Year</em>' attribute.
-   * @see #getYear()
-   * @generated
-   */
-  void setYear(int value);
 
   /**
    * Returns the value of the '<em><b>Entity Types</b></em>' containment reference list.

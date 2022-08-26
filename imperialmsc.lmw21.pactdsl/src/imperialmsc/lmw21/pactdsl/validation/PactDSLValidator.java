@@ -3,13 +3,20 @@
  */
 package imperialmsc.lmw21.pactdsl.validation;
 
+
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.CheckType;
 
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
+import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
+import imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate;
+
+import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Party;
+import imperialmsc.lmw21.pactdsl.pactDSL.PaymentObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter;
 import imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.TransferObligation;
 
 /**
  * This class contains custom validation rules. 
@@ -18,27 +25,165 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty;
  */
 public class PactDSLValidator extends AbstractPactDSLValidator {
 
-	
+//Check Entity Names and Full Names are capitalised
+
 @Check(CheckType.FAST)	
 public void checkPartyNameStartsWithCapital(Party party) {
-	if (!Character.isUpperCase(party.getName().charAt(0))) {
-		error("Party ID should start with a capital letter", party, PactDSLPackage.Literals.PARTY__FULLNAME);
+		if(!Character.isUpperCase(party.getName().charAt(0))) {
+			error("Name should start with a capital letter", party, PactDSLPackage.Literals.PARTY__NAME);
+		}
+	}
+
+@Check(CheckType.FAST)	
+public void checkPartyFullNameStartsWithCapital(Party party) {
+	if(!Character.isUpperCase(party.getFullname().charAt(0))) {
+		error("Fullname should start with a capital letter", party, PactDSLPackage.Literals.PARTY__FULLNAME);
 	}
 }
 
 @Check(CheckType.FAST)	
 public void checkThirdPartyNameStartsWithCapital(ThirdParty third_party) {
-	if (!Character.isUpperCase(third_party.getName().charAt(0))) {
-		error("Party ID should start with a capital letter", third_party, PactDSLPackage.Literals.THIRD_PARTY__FULLNAME);
+		if(!Character.isUpperCase(third_party.getName().charAt(0))) {
+			error("Name should start with a capital letter", third_party, PactDSLPackage.Literals.THIRD_PARTY__NAME);
+		}
+	}
+
+@Check(CheckType.FAST)	
+public void checkThirdPartyFullNameStartsWithCapital(ThirdParty third_party) {
+	if (!Character.isUpperCase(third_party.getFullname().charAt(0))) {
+		error("Fullname should start with a capital letter", third_party, PactDSLPackage.Literals.THIRD_PARTY__FULLNAME);
 	}
 }
 
 @Check(CheckType.FAST)	
-public void checkSubjectMatterStartsWithCapital(SubjectMatter party) {
-	if (!Character.isUpperCase(party.getName().charAt(0))) {
-		error("Party ID should start with a capital letter", party, PactDSLPackage.Literals.SUBJECT_MATTER__SUBJECT_MATTER);
+public void checkSubjectMatterNameStartsWithCapital(SubjectMatter subject_matter) {
+		if(!Character.isUpperCase(subject_matter.getName().charAt(0))) {
+			error("Name should start with a capital letter", subject_matter, PactDSLPackage.Literals.SUBJECT_MATTER__NAME);
+		}
+	}
+
+@Check(CheckType.FAST)	
+public void checkSubjectMatterStartsWithCapital(SubjectMatter subject_matter) {
+	if (!Character.isUpperCase(subject_matter.getSubjectMatter().charAt(0))) {
+		error("Subject Matter should start with a capital letter", subject_matter, PactDSLPackage.Literals.SUBJECT_MATTER__SUBJECT_MATTER);
 	}
 }
 
-	
+//Check Dates are Valid
+
+//Effective Date Date Checks
+
+@Check(CheckType.FAST)
+public void checkEffectiveDateDayValid(EffectiveDate day) {
+	if ((day.getDay()<1 | day.getDay()>31)) {
+		error("Day should be between 1 and 31", day, PactDSLPackage.Literals.EFFECTIVE_DATE__DAY);
+	}
+}
+
+@Check(CheckType.FAST)
+public void checkEffectiveDateMonthValid(EffectiveDate month) {
+	if ((month.getMonth()<1 | month.getMonth()>12)) {
+		error("Month should be between 1 and 12", month, PactDSLPackage.Literals.EFFECTIVE_DATE__MONTH);
+	}	
+}
+
+@Check(CheckType.FAST)
+public void checkEffectiveDateYearValid(EffectiveDate year) {
+	if (year.getYear()<1980) {
+		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.EFFECTIVE_DATE__YEAR);
+	}	
+}
+
+//Payment Obligation Date Checks
+
+@Check(CheckType.FAST)
+public void checkPaymentObligationDayValid(PaymentObligation day) {
+	if ((day.getDay()<1 | day.getDay()>31)) {
+		error("Day should be between 1 and 31", day, PactDSLPackage.Literals.PAYMENT_OBLIGATION__DAY);
+	}
+}
+
+@Check(CheckType.FAST)
+public void checkPaymentObligationMonthValid(PaymentObligation month) {
+	if ((month.getMonth()<1 | month.getMonth()>12)) {
+		error("Month should be between 1 and 12", month, PactDSLPackage.Literals.PAYMENT_OBLIGATION__MONTH);
+	}	
+}
+
+@Check(CheckType.FAST)
+public void checkPaymentObligationYearValid(PaymentObligation year) {
+	if (year.getYear()<1980) {
+		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.PAYMENT_OBLIGATION__YEAR);
+	}	
+}
+
+//Delivery Obligation Date Checks
+
+@Check(CheckType.FAST)	
+public void checkDeliveryObligationDayValid(DeliveryObligation day) {
+	if ((day.getDay()<1) | (day.getDay()>31)) {
+		error("Day should be between 1 and 31", day, PactDSLPackage.Literals.DELIVERY_OBLIGATION__DAY);
+	}
+}
+
+@Check(CheckType.FAST)
+public void checkDeliveryObligationMonthValid(DeliveryObligation month) {
+	if ((month.getMonth()<1 | month.getMonth()>12)) {
+		error("Month should be between 1 and 12", month, PactDSLPackage.Literals.DELIVERY_OBLIGATION__MONTH);
+	}	
+}
+
+@Check(CheckType.FAST)
+public void checkDeliveryObligationYearValid(DeliveryObligation year) {
+	if (year.getYear()<1980) {
+		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.DELIVERY_OBLIGATION__YEAR);
+	}	
+}
+
+//Transfer Obligation Date
+
+@Check(CheckType.FAST)	
+public void checkTransferObligationDayValid(TransferObligation day) {
+	if ((day.getDay()<1) | (day.getDay()>31)) {
+		error("Day should be between 1 and 31", day, PactDSLPackage.Literals.TRANSFER_OBLIGATION__DAY);
+	}
+}
+
+@Check(CheckType.FAST)
+public void checkTransferObligationMonthValid(DeliveryObligation month) {
+	if ((month.getMonth()<1 | month.getMonth()>12)) {
+		error("Month should be between 1 and 12", month, PactDSLPackage.Literals.TRANSFER_OBLIGATION__MONTH);
+	}	
+}
+
+@Check(CheckType.FAST)
+public void checkTransferObligationYearValid(DeliveryObligation year) {
+	if (year.getYear()<1980) {
+		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.TRANSFER_OBLIGATION__YEAR);
+	}	
+}
+
+//Licence Obligation Date
+
+@Check(CheckType.FAST)	
+public void checkLicenceObligationDayValid(LicenceObligation day) {
+	if ((day.getDay()<1) | (day.getDay()>31)) {
+		error("Day should be between 1 and 31", day, PactDSLPackage.Literals.LICENCE_OBLIGATION__DAY);
+	}
+}
+
+@Check(CheckType.FAST)
+public void checkLicenceObligationMonthValid(LicenceObligation month) {
+	if ((month.getMonth()<1 | month.getMonth()>12)) {
+		error("Month should be between 1 and 12", month, PactDSLPackage.Literals.LICENCE_OBLIGATION__MONTH);
+	}	
+}
+
+@Check(CheckType.FAST)
+public void checkLicenceObligationYearValid(LicenceObligation year) {
+	if (year.getYear()<1980) {
+		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.LICENCE_OBLIGATION__YEAR);
+	}	
+}
+
 }

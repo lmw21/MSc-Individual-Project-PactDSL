@@ -8,9 +8,6 @@
       fileExtensions="pactdsl" ecorePackage="PactDSL.ecore#/">
     <genClasses ecoreClass="PactDSL.ecore#//Model">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Model/title"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Model/day"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Model/month"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Model/year"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/entityTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/formalityTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/actionTypes"/>
@@ -19,21 +16,35 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/terminationTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/boilerplateTypes"/>
     </genClasses>
-    <genClasses ecoreClass="PactDSL.ecore#//EntityType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//EntityType/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//EntityType/definition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//EntityType/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//EntityType/companyNumber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//EntityType/features"/>
+    <genClasses ecoreClass="PactDSL.ecore#//EntityType"/>
+    <genClasses ecoreClass="PactDSL.ecore#//EffectiveDate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//EffectiveDate/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//EffectiveDate/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//EffectiveDate/year"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//Party">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Party/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Party/fullname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/companyNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/features"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//ThirdParty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ThirdParty/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ThirdParty/fullname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/companyNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/features"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//SubjectMatter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SubjectMatter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SubjectMatter/subjectMatter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/address"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/companyNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/features"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//DefinedTerm">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//DefinedTerm/definition"/>

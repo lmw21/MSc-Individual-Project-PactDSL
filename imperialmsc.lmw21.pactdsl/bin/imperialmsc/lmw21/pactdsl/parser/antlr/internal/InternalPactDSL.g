@@ -98,87 +98,23 @@ ruleModel returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='.'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getFullStopKeyword_2());
-		}
-		otherlv_3='EffectiveDate:'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getEffectiveDateKeyword_3());
-		}
 		(
-			(
-				(
-					lv_day_4_0=RULE_INT
-					{
-						newLeafNode(lv_day_4_0, grammarAccess.getModelAccess().getDayINTTerminalRuleCall_4_0_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getModelRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"day",
-							lv_day_4_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
-			(
-				(
-					lv_month_5_0=RULE_INT
-					{
-						newLeafNode(lv_month_5_0, grammarAccess.getModelAccess().getMonthINTTerminalRuleCall_4_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getModelRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"month",
-							lv_month_5_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
-			(
-				(
-					lv_year_6_0=RULE_INT
-					{
-						newLeafNode(lv_year_6_0, grammarAccess.getModelAccess().getYearINTTerminalRuleCall_4_2_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getModelRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"year",
-							lv_year_6_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
-		)
-		(
-			otherlv_7='.'
+			otherlv_2='.'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getModelAccess().getFullStopKeyword_5());
+				newLeafNode(otherlv_2, grammarAccess.getModelAccess().getFullStopKeyword_2());
 			}
 		)+
-		otherlv_8='Entities:'
+		otherlv_3='Entities:'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getModelAccess().getEntitiesKeyword_6());
+			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getEntitiesKeyword_3());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getEntityTypesEntityTypeParserRuleCall_7_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getEntityTypesEntityTypeParserRuleCall_4_0_0());
 					}
-					lv_entityTypes_9_0=ruleEntityType
+					lv_entityTypes_4_0=ruleEntityType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -186,30 +122,30 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"entityTypes",
-							lv_entityTypes_9_0,
+							lv_entityTypes_4_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.EntityType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_10='.'
+			otherlv_5='.'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getModelAccess().getFullStopKeyword_7_1());
+				newLeafNode(otherlv_5, grammarAccess.getModelAccess().getFullStopKeyword_4_1());
 			}
 		)+
 		(
-			otherlv_11='Formalities:'
+			otherlv_6='Formalities:'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getModelAccess().getFormalitiesKeyword_8());
+				newLeafNode(otherlv_6, grammarAccess.getModelAccess().getFormalitiesKeyword_5());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getFormalityTypesFormalityTypeParserRuleCall_9_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getFormalityTypesFormalityTypeParserRuleCall_6_0_0());
 					}
-					lv_formalityTypes_12_0=ruleFormalityType
+					lv_formalityTypes_7_0=ruleFormalityType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -217,30 +153,30 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"formalityTypes",
-							lv_formalityTypes_12_0,
+							lv_formalityTypes_7_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.FormalityType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_13='.'
+			otherlv_8='.'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getModelAccess().getFullStopKeyword_9_1());
+				newLeafNode(otherlv_8, grammarAccess.getModelAccess().getFullStopKeyword_6_1());
 			}
 		)*
 		(
-			otherlv_14='Actions:'
+			otherlv_9='Actions:'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getModelAccess().getActionsKeyword_10());
+				newLeafNode(otherlv_9, grammarAccess.getModelAccess().getActionsKeyword_7());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getActionTypesActionTypeParserRuleCall_11_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getActionTypesActionTypeParserRuleCall_8_0_0());
 					}
-					lv_actionTypes_15_0=ruleActionType
+					lv_actionTypes_10_0=ruleActionType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -248,30 +184,30 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"actionTypes",
-							lv_actionTypes_15_0,
+							lv_actionTypes_10_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.ActionType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_16='.'
+			otherlv_11='.'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getModelAccess().getFullStopKeyword_11_1());
+				newLeafNode(otherlv_11, grammarAccess.getModelAccess().getFullStopKeyword_8_1());
 			}
 		)*
 		(
-			otherlv_17='StateOnSignature:'
+			otherlv_12='StateOnSignature:'
 			{
-				newLeafNode(otherlv_17, grammarAccess.getModelAccess().getStateOnSignatureKeyword_12());
+				newLeafNode(otherlv_12, grammarAccess.getModelAccess().getStateOnSignatureKeyword_9());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_13_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_10_0_0());
 					}
-					lv_stateTypes_18_0=ruleStateType
+					lv_stateTypes_13_0=ruleStateType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -279,28 +215,28 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"stateTypes",
-							lv_stateTypes_18_0,
+							lv_stateTypes_13_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.StateType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_19='.'
+			otherlv_14='.'
 			{
-				newLeafNode(otherlv_19, grammarAccess.getModelAccess().getFullStopKeyword_13_1());
+				newLeafNode(otherlv_14, grammarAccess.getModelAccess().getFullStopKeyword_10_1());
 			}
 		)*
-		otherlv_20='PrimaryObligations:'
+		otherlv_15='PrimaryObligations:'
 		{
-			newLeafNode(otherlv_20, grammarAccess.getModelAccess().getPrimaryObligationsKeyword_14());
+			newLeafNode(otherlv_15, grammarAccess.getModelAccess().getPrimaryObligationsKeyword_11());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_15_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_12_0_0());
 					}
-					lv_primaryObligationTypes_21_0=rulePrimaryObligationType
+					lv_primaryObligationTypes_16_0=rulePrimaryObligationType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -308,30 +244,30 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"primaryObligationTypes",
-							lv_primaryObligationTypes_21_0,
+							lv_primaryObligationTypes_16_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.PrimaryObligationType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_22='.'
+			otherlv_17='.'
 			{
-				newLeafNode(otherlv_22, grammarAccess.getModelAccess().getFullStopKeyword_15_1());
+				newLeafNode(otherlv_17, grammarAccess.getModelAccess().getFullStopKeyword_12_1());
 			}
 		)+
 		(
-			otherlv_23='StateAfterObligationsDischarged:'
+			otherlv_18='StateAfterObligationsDischarged:'
 			{
-				newLeafNode(otherlv_23, grammarAccess.getModelAccess().getStateAfterObligationsDischargedKeyword_16());
+				newLeafNode(otherlv_18, grammarAccess.getModelAccess().getStateAfterObligationsDischargedKeyword_13());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_17_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_14_0_0());
 					}
-					lv_stateTypes_24_0=ruleStateType
+					lv_stateTypes_19_0=ruleStateType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -339,28 +275,28 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"stateTypes",
-							lv_stateTypes_24_0,
+							lv_stateTypes_19_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.StateType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_25='.'
+			otherlv_20='.'
 			{
-				newLeafNode(otherlv_25, grammarAccess.getModelAccess().getFullStopKeyword_17_1());
+				newLeafNode(otherlv_20, grammarAccess.getModelAccess().getFullStopKeyword_14_1());
 			}
 		)*
-		otherlv_26='Termination:'
+		otherlv_21='Termination:'
 		{
-			newLeafNode(otherlv_26, grammarAccess.getModelAccess().getTerminationKeyword_18());
+			newLeafNode(otherlv_21, grammarAccess.getModelAccess().getTerminationKeyword_15());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getTerminationTypesTerminationTypeParserRuleCall_19_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getTerminationTypesTerminationTypeParserRuleCall_16_0_0());
 					}
-					lv_terminationTypes_27_0=ruleTerminationType
+					lv_terminationTypes_22_0=ruleTerminationType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -368,30 +304,30 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"terminationTypes",
-							lv_terminationTypes_27_0,
+							lv_terminationTypes_22_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.TerminationType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_28='.'
+			otherlv_23='.'
 			{
-				newLeafNode(otherlv_28, grammarAccess.getModelAccess().getFullStopKeyword_19_1());
+				newLeafNode(otherlv_23, grammarAccess.getModelAccess().getFullStopKeyword_16_1());
 			}
 		)*
 		(
-			otherlv_29='StateAfterTermination:'
+			otherlv_24='StateAfterTermination:'
 			{
-				newLeafNode(otherlv_29, grammarAccess.getModelAccess().getStateAfterTerminationKeyword_20());
+				newLeafNode(otherlv_24, grammarAccess.getModelAccess().getStateAfterTerminationKeyword_17());
 			}
 		)?
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_21_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getStateTypesStateTypeParserRuleCall_18_0_0());
 					}
-					lv_stateTypes_30_0=ruleStateType
+					lv_stateTypes_25_0=ruleStateType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -399,28 +335,28 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"stateTypes",
-							lv_stateTypes_30_0,
+							lv_stateTypes_25_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.StateType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_31='.'
+			otherlv_26='.'
 			{
-				newLeafNode(otherlv_31, grammarAccess.getModelAccess().getFullStopKeyword_21_1());
+				newLeafNode(otherlv_26, grammarAccess.getModelAccess().getFullStopKeyword_18_1());
 			}
 		)*
-		otherlv_32='Boilerplate:'
+		otherlv_27='Boilerplate:'
 		{
-			newLeafNode(otherlv_32, grammarAccess.getModelAccess().getBoilerplateKeyword_22());
+			newLeafNode(otherlv_27, grammarAccess.getModelAccess().getBoilerplateKeyword_19());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getModelAccess().getBoilerplateTypesBoilerplateTypeParserRuleCall_23_0_0());
+						newCompositeNode(grammarAccess.getModelAccess().getBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0());
 					}
-					lv_boilerplateTypes_33_0=ruleBoilerplateType
+					lv_boilerplateTypes_28_0=ruleBoilerplateType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getModelRule());
@@ -428,15 +364,15 @@ ruleModel returns [EObject current=null]
 						add(
 							$current,
 							"boilerplateTypes",
-							lv_boilerplateTypes_33_0,
+							lv_boilerplateTypes_28_0,
 							"imperialmsc.lmw21.pactdsl.PactDSL.BoilerplateType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_34='.'
+			otherlv_29='.'
 			{
-				newLeafNode(otherlv_34, grammarAccess.getModelAccess().getFullStopKeyword_23_1());
+				newLeafNode(otherlv_29, grammarAccess.getModelAccess().getFullStopKeyword_20_1());
 			}
 		)*
 	)
@@ -459,31 +395,119 @@ ruleEntityType returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getEntityTypeAccess().getPartyParserRuleCall_0());
+			newCompositeNode(grammarAccess.getEntityTypeAccess().getEffectiveDateParserRuleCall_0());
 		}
-		this_Party_0=ruleParty
+		this_EffectiveDate_0=ruleEffectiveDate
 		{
-			$current = $this_Party_0.current;
+			$current = $this_EffectiveDate_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityTypeAccess().getThirdPartyParserRuleCall_1());
+			newCompositeNode(grammarAccess.getEntityTypeAccess().getPartyParserRuleCall_1());
 		}
-		this_ThirdParty_1=ruleThirdParty
+		this_Party_1=ruleParty
 		{
-			$current = $this_ThirdParty_1.current;
+			$current = $this_Party_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getEntityTypeAccess().getSubjectMatterParserRuleCall_2());
+			newCompositeNode(grammarAccess.getEntityTypeAccess().getThirdPartyParserRuleCall_2());
 		}
-		this_SubjectMatter_2=ruleSubjectMatter
+		this_ThirdParty_2=ruleThirdParty
 		{
-			$current = $this_SubjectMatter_2.current;
+			$current = $this_ThirdParty_2.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getEntityTypeAccess().getSubjectMatterParserRuleCall_3());
+		}
+		this_SubjectMatter_3=ruleSubjectMatter
+		{
+			$current = $this_SubjectMatter_3.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleEffectiveDate
+entryRuleEffectiveDate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEffectiveDateRule()); }
+	iv_ruleEffectiveDate=ruleEffectiveDate
+	{ $current=$iv_ruleEffectiveDate.current; }
+	EOF;
+
+// Rule EffectiveDate
+ruleEffectiveDate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='EffectiveDate:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getEffectiveDateAccess().getEffectiveDateKeyword_0());
+		}
+		(
+			(
+				(
+					lv_day_1_0=RULE_INT
+					{
+						newLeafNode(lv_day_1_0, grammarAccess.getEffectiveDateAccess().getDayINTTerminalRuleCall_1_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEffectiveDateRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"day",
+							lv_day_1_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				(
+					lv_month_2_0=RULE_INT
+					{
+						newLeafNode(lv_month_2_0, grammarAccess.getEffectiveDateAccess().getMonthINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEffectiveDateRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"month",
+							lv_month_2_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				(
+					lv_year_3_0=RULE_INT
+					{
+						newLeafNode(lv_year_3_0, grammarAccess.getEffectiveDateAccess().getYearINTTerminalRuleCall_1_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getEffectiveDateRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"year",
+							lv_year_3_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)+
 	)
 ;
 

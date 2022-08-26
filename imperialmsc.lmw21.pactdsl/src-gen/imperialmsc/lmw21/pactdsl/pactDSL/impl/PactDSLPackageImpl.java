@@ -15,6 +15,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
+import imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate;
 import imperialmsc.lmw21.pactdsl.pactDSL.EntityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
 import imperialmsc.lmw21.pactdsl.pactDSL.ForBreach;
@@ -71,6 +72,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   private EClass entityTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass effectiveDateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -408,42 +416,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getModel_Day()
-  {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getModel_Month()
-  {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getModel_Year()
-  {
-    return (EAttribute)modelEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getModel_EntityTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(4);
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -454,7 +429,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_FormalityTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(5);
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -465,7 +440,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_ActionTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(6);
+    return (EReference)modelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -476,7 +451,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_StateTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(7);
+    return (EReference)modelEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -487,7 +462,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_PrimaryObligationTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(8);
+    return (EReference)modelEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -498,7 +473,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_TerminationTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(9);
+    return (EReference)modelEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -509,7 +484,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   @Override
   public EReference getModel_BoilerplateTypes()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(10);
+    return (EReference)modelEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -529,9 +504,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getEntityType_Name()
+  public EClass getEffectiveDate()
   {
-    return (EAttribute)entityTypeEClass.getEStructuralFeatures().get(0);
+    return effectiveDateEClass;
   }
 
   /**
@@ -540,9 +515,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getEntityType_Definition()
+  public EAttribute getEffectiveDate_Day()
   {
-    return (EReference)entityTypeEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)effectiveDateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -551,9 +526,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getEntityType_Address()
+  public EAttribute getEffectiveDate_Month()
   {
-    return (EReference)entityTypeEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)effectiveDateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -562,20 +537,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getEntityType_CompanyNumber()
+  public EAttribute getEffectiveDate_Year()
   {
-    return (EReference)entityTypeEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEntityType_Features()
-  {
-    return (EReference)entityTypeEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)effectiveDateEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -595,9 +559,64 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getParty_Fullname()
+  public EAttribute getParty_Name()
   {
     return (EAttribute)partyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParty_Fullname()
+  {
+    return (EAttribute)partyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParty_Definition()
+  {
+    return (EReference)partyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParty_Address()
+  {
+    return (EReference)partyEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParty_CompanyNumber()
+  {
+    return (EReference)partyEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getParty_Features()
+  {
+    return (EReference)partyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -617,9 +636,64 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getThirdParty_Fullname()
+  public EAttribute getThirdParty_Name()
   {
     return (EAttribute)thirdPartyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getThirdParty_Fullname()
+  {
+    return (EAttribute)thirdPartyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getThirdParty_Definition()
+  {
+    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getThirdParty_Address()
+  {
+    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getThirdParty_CompanyNumber()
+  {
+    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getThirdParty_Features()
+  {
+    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -639,9 +713,64 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getSubjectMatter_SubjectMatter()
+  public EAttribute getSubjectMatter_Name()
   {
     return (EAttribute)subjectMatterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSubjectMatter_SubjectMatter()
+  {
+    return (EAttribute)subjectMatterEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubjectMatter_Definition()
+  {
+    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubjectMatter_Address()
+  {
+    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubjectMatter_CompanyNumber()
+  {
+    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubjectMatter_Features()
+  {
+    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1535,9 +1664,6 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEAttribute(modelEClass, MODEL__TITLE);
-    createEAttribute(modelEClass, MODEL__DAY);
-    createEAttribute(modelEClass, MODEL__MONTH);
-    createEAttribute(modelEClass, MODEL__YEAR);
     createEReference(modelEClass, MODEL__ENTITY_TYPES);
     createEReference(modelEClass, MODEL__FORMALITY_TYPES);
     createEReference(modelEClass, MODEL__ACTION_TYPES);
@@ -1547,20 +1673,35 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     createEReference(modelEClass, MODEL__BOILERPLATE_TYPES);
 
     entityTypeEClass = createEClass(ENTITY_TYPE);
-    createEAttribute(entityTypeEClass, ENTITY_TYPE__NAME);
-    createEReference(entityTypeEClass, ENTITY_TYPE__DEFINITION);
-    createEReference(entityTypeEClass, ENTITY_TYPE__ADDRESS);
-    createEReference(entityTypeEClass, ENTITY_TYPE__COMPANY_NUMBER);
-    createEReference(entityTypeEClass, ENTITY_TYPE__FEATURES);
+
+    effectiveDateEClass = createEClass(EFFECTIVE_DATE);
+    createEAttribute(effectiveDateEClass, EFFECTIVE_DATE__DAY);
+    createEAttribute(effectiveDateEClass, EFFECTIVE_DATE__MONTH);
+    createEAttribute(effectiveDateEClass, EFFECTIVE_DATE__YEAR);
 
     partyEClass = createEClass(PARTY);
+    createEAttribute(partyEClass, PARTY__NAME);
     createEAttribute(partyEClass, PARTY__FULLNAME);
+    createEReference(partyEClass, PARTY__DEFINITION);
+    createEReference(partyEClass, PARTY__ADDRESS);
+    createEReference(partyEClass, PARTY__COMPANY_NUMBER);
+    createEReference(partyEClass, PARTY__FEATURES);
 
     thirdPartyEClass = createEClass(THIRD_PARTY);
+    createEAttribute(thirdPartyEClass, THIRD_PARTY__NAME);
     createEAttribute(thirdPartyEClass, THIRD_PARTY__FULLNAME);
+    createEReference(thirdPartyEClass, THIRD_PARTY__DEFINITION);
+    createEReference(thirdPartyEClass, THIRD_PARTY__ADDRESS);
+    createEReference(thirdPartyEClass, THIRD_PARTY__COMPANY_NUMBER);
+    createEReference(thirdPartyEClass, THIRD_PARTY__FEATURES);
 
     subjectMatterEClass = createEClass(SUBJECT_MATTER);
+    createEAttribute(subjectMatterEClass, SUBJECT_MATTER__NAME);
     createEAttribute(subjectMatterEClass, SUBJECT_MATTER__SUBJECT_MATTER);
+    createEReference(subjectMatterEClass, SUBJECT_MATTER__DEFINITION);
+    createEReference(subjectMatterEClass, SUBJECT_MATTER__ADDRESS);
+    createEReference(subjectMatterEClass, SUBJECT_MATTER__COMPANY_NUMBER);
+    createEReference(subjectMatterEClass, SUBJECT_MATTER__FEATURES);
 
     definedTermEClass = createEClass(DEFINED_TERM);
     createEAttribute(definedTermEClass, DEFINED_TERM__DEFINITION);
@@ -1702,6 +1843,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    effectiveDateEClass.getESuperTypes().add(this.getEntityType());
     partyEClass.getESuperTypes().add(this.getEntityType());
     thirdPartyEClass.getESuperTypes().add(this.getEntityType());
     subjectMatterEClass.getESuperTypes().add(this.getEntityType());
@@ -1731,9 +1873,6 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getModel_Title(), ecorePackage.getEString(), "title", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Day(), ecorePackage.getEInt(), "day", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Month(), ecorePackage.getEInt(), "month", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Year(), ecorePackage.getEInt(), "year", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_EntityTypes(), this.getEntityType(), null, "entityTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_FormalityTypes(), this.getFormalityType(), null, "formalityTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_ActionTypes(), this.getActionType(), null, "actionTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1743,20 +1882,35 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEReference(getModel_BoilerplateTypes(), this.getBoilerplateType(), null, "boilerplateTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityTypeEClass, EntityType.class, "EntityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntityType_Name(), ecorePackage.getEString(), "name", null, 0, 1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityType_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityType_Address(), this.getAddress(), null, "address", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityType_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityType_Features(), this.getFeature(), null, "features", null, 0, -1, EntityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(effectiveDateEClass, EffectiveDate.class, "EffectiveDate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEffectiveDate_Day(), ecorePackage.getEInt(), "day", null, 0, 1, EffectiveDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEffectiveDate_Month(), ecorePackage.getEInt(), "month", null, 0, 1, EffectiveDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEffectiveDate_Year(), ecorePackage.getEInt(), "year", null, 0, 1, EffectiveDate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParty_Fullname(), ecorePackage.getEString(), "fullname", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParty_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParty_Address(), this.getAddress(), null, "address", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParty_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParty_Features(), this.getFeature(), null, "features", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(thirdPartyEClass, ThirdParty.class, "ThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getThirdParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getThirdParty_Fullname(), ecorePackage.getEString(), "fullname", null, 0, 1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThirdParty_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThirdParty_Address(), this.getAddress(), null, "address", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThirdParty_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThirdParty_Features(), this.getFeature(), null, "features", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subjectMatterEClass, SubjectMatter.class, "SubjectMatter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSubjectMatter_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubjectMatter_SubjectMatter(), ecorePackage.getEString(), "subjectMatter", null, 0, 1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubjectMatter_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubjectMatter_Address(), this.getAddress(), null, "address", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubjectMatter_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubjectMatter_Features(), this.getFeature(), null, "features", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(definedTermEClass, DefinedTerm.class, "DefinedTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinedTerm_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, DefinedTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

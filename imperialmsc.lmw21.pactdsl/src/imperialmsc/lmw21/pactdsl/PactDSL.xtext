@@ -3,9 +3,8 @@ grammar imperialmsc.lmw21.pactdsl.PactDSL with org.eclipse.xtext.common.Terminal
 generate pactDSL "http://www.lmw21.imperialmsc/pactdsl/PactDSL"
 
 Model:
-	'ContractName:' title=STRING '.'
 	
-	'EffectiveDate:' (day=INT month=INT year=INT)'.'+
+	'ContractName:' title=STRING '.'+
 	
 	'Entities:' 
 	(entityTypes+=EntityType '.')+
@@ -37,7 +36,10 @@ Model:
 //Entity Types	
 
 EntityType:
-	Party | ThirdParty | SubjectMatter;
+	EffectiveDate | Party | ThirdParty | SubjectMatter;
+
+EffectiveDate:
+	'EffectiveDate:' (day=INT month=INT year=INT)+;
 
 Party:
 	'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
@@ -101,6 +103,7 @@ Ownership:
 
 RightToUse:
 	superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter];
+	
 	
 //PrimaryObligations
  

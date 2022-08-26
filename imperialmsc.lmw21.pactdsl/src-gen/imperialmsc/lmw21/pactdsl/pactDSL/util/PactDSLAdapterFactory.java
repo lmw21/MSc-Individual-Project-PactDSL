@@ -86,6 +86,11 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createEntityTypeAdapter();
       }
       @Override
+      public Adapter caseEffectiveDate(EffectiveDate object)
+      {
+        return createEffectiveDateAdapter();
+      }
+      @Override
       public Adapter caseParty(Party object)
       {
         return createPartyAdapter();
@@ -308,6 +313,21 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEntityTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate <em>Effective Date</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate
+   * @generated
+   */
+  public Adapter createEffectiveDateAdapter()
   {
     return null;
   }

@@ -30,64 +30,54 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cEffectiveDateKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cEntitiesKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cDayAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cDayINTTerminalRuleCall_4_0_0 = (RuleCall)cDayAssignment_4_0.eContents().get(0);
-		private final Assignment cMonthAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cMonthINTTerminalRuleCall_4_1_0 = (RuleCall)cMonthAssignment_4_1.eContents().get(0);
-		private final Assignment cYearAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cYearINTTerminalRuleCall_4_2_0 = (RuleCall)cYearAssignment_4_2.eContents().get(0);
-		private final Keyword cFullStopKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cEntitiesKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cEntityTypesAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cEntityTypesEntityTypeParserRuleCall_7_0_0 = (RuleCall)cEntityTypesAssignment_7_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Keyword cFormalitiesKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
-		private final Assignment cFormalityTypesAssignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
-		private final RuleCall cFormalityTypesFormalityTypeParserRuleCall_9_0_0 = (RuleCall)cFormalityTypesAssignment_9_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
-		private final Keyword cActionsKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
-		private final Assignment cActionTypesAssignment_11_0 = (Assignment)cGroup_11.eContents().get(0);
-		private final RuleCall cActionTypesActionTypeParserRuleCall_11_0_0 = (RuleCall)cActionTypesAssignment_11_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_11_1 = (Keyword)cGroup_11.eContents().get(1);
-		private final Keyword cStateOnSignatureKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Group cGroup_13 = (Group)cGroup.eContents().get(13);
-		private final Assignment cStateTypesAssignment_13_0 = (Assignment)cGroup_13.eContents().get(0);
-		private final RuleCall cStateTypesStateTypeParserRuleCall_13_0_0 = (RuleCall)cStateTypesAssignment_13_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_13_1 = (Keyword)cGroup_13.eContents().get(1);
-		private final Keyword cPrimaryObligationsKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Group cGroup_15 = (Group)cGroup.eContents().get(15);
-		private final Assignment cPrimaryObligationTypesAssignment_15_0 = (Assignment)cGroup_15.eContents().get(0);
-		private final RuleCall cPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_15_0_0 = (RuleCall)cPrimaryObligationTypesAssignment_15_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_15_1 = (Keyword)cGroup_15.eContents().get(1);
-		private final Keyword cStateAfterObligationsDischargedKeyword_16 = (Keyword)cGroup.eContents().get(16);
-		private final Group cGroup_17 = (Group)cGroup.eContents().get(17);
-		private final Assignment cStateTypesAssignment_17_0 = (Assignment)cGroup_17.eContents().get(0);
-		private final RuleCall cStateTypesStateTypeParserRuleCall_17_0_0 = (RuleCall)cStateTypesAssignment_17_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_17_1 = (Keyword)cGroup_17.eContents().get(1);
-		private final Keyword cTerminationKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Group cGroup_19 = (Group)cGroup.eContents().get(19);
-		private final Assignment cTerminationTypesAssignment_19_0 = (Assignment)cGroup_19.eContents().get(0);
-		private final RuleCall cTerminationTypesTerminationTypeParserRuleCall_19_0_0 = (RuleCall)cTerminationTypesAssignment_19_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_19_1 = (Keyword)cGroup_19.eContents().get(1);
-		private final Keyword cStateAfterTerminationKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Group cGroup_21 = (Group)cGroup.eContents().get(21);
-		private final Assignment cStateTypesAssignment_21_0 = (Assignment)cGroup_21.eContents().get(0);
-		private final RuleCall cStateTypesStateTypeParserRuleCall_21_0_0 = (RuleCall)cStateTypesAssignment_21_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_21_1 = (Keyword)cGroup_21.eContents().get(1);
-		private final Keyword cBoilerplateKeyword_22 = (Keyword)cGroup.eContents().get(22);
-		private final Group cGroup_23 = (Group)cGroup.eContents().get(23);
-		private final Assignment cBoilerplateTypesAssignment_23_0 = (Assignment)cGroup_23.eContents().get(0);
-		private final RuleCall cBoilerplateTypesBoilerplateTypeParserRuleCall_23_0_0 = (RuleCall)cBoilerplateTypesAssignment_23_0.eContents().get(0);
-		private final Keyword cFullStopKeyword_23_1 = (Keyword)cGroup_23.eContents().get(1);
+		private final Assignment cEntityTypesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cEntityTypesEntityTypeParserRuleCall_4_0_0 = (RuleCall)cEntityTypesAssignment_4_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cFormalitiesKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cFormalityTypesAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cFormalityTypesFormalityTypeParserRuleCall_6_0_0 = (RuleCall)cFormalityTypesAssignment_6_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cActionsKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cActionTypesAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cActionTypesActionTypeParserRuleCall_8_0_0 = (RuleCall)cActionTypesAssignment_8_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Keyword cStateOnSignatureKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
+		private final Assignment cStateTypesAssignment_10_0 = (Assignment)cGroup_10.eContents().get(0);
+		private final RuleCall cStateTypesStateTypeParserRuleCall_10_0_0 = (RuleCall)cStateTypesAssignment_10_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
+		private final Keyword cPrimaryObligationsKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Group cGroup_12 = (Group)cGroup.eContents().get(12);
+		private final Assignment cPrimaryObligationTypesAssignment_12_0 = (Assignment)cGroup_12.eContents().get(0);
+		private final RuleCall cPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_12_0_0 = (RuleCall)cPrimaryObligationTypesAssignment_12_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
+		private final Keyword cStateAfterObligationsDischargedKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
+		private final Assignment cStateTypesAssignment_14_0 = (Assignment)cGroup_14.eContents().get(0);
+		private final RuleCall cStateTypesStateTypeParserRuleCall_14_0_0 = (RuleCall)cStateTypesAssignment_14_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
+		private final Keyword cTerminationKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
+		private final Assignment cTerminationTypesAssignment_16_0 = (Assignment)cGroup_16.eContents().get(0);
+		private final RuleCall cTerminationTypesTerminationTypeParserRuleCall_16_0_0 = (RuleCall)cTerminationTypesAssignment_16_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
+		private final Keyword cStateAfterTerminationKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Assignment cStateTypesAssignment_18_0 = (Assignment)cGroup_18.eContents().get(0);
+		private final RuleCall cStateTypesStateTypeParserRuleCall_18_0_0 = (RuleCall)cStateTypesAssignment_18_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
+		private final Keyword cBoilerplateKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Group cGroup_20 = (Group)cGroup.eContents().get(20);
+		private final Assignment cBoilerplateTypesAssignment_20_0 = (Assignment)cGroup_20.eContents().get(0);
+		private final RuleCall cBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0 = (RuleCall)cBoilerplateTypesAssignment_20_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
 		
 		//Model:
-		//    'ContractName:' title=STRING '.'
-		//    'EffectiveDate:' (day=INT month=INT year=INT)'.'+
+		//    'ContractName:' title=STRING '.'+
 		//    'Entities:'
 		//    (entityTypes+=EntityType '.')+
 		//    'Formalities:'?
@@ -108,8 +98,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    (boilerplateTypes+=BoilerplateType '.')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ContractName:' title=STRING '.'
-		//'EffectiveDate:' (day=INT month=INT year=INT)'.'+
+		//'ContractName:' title=STRING '.'+
 		//'Entities:'
 		//(entityTypes+=EntityType '.')+
 		//'Formalities:'?
@@ -139,194 +128,214 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getTitleSTRINGTerminalRuleCall_1_0() { return cTitleSTRINGTerminalRuleCall_1_0; }
 		
-		//'.'
+		//'.'+
 		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
 		
-		//'EffectiveDate:'
-		public Keyword getEffectiveDateKeyword_3() { return cEffectiveDateKeyword_3; }
-		
-		//(day=INT month=INT year=INT)
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//day=INT
-		public Assignment getDayAssignment_4_0() { return cDayAssignment_4_0; }
-		
-		//INT
-		public RuleCall getDayINTTerminalRuleCall_4_0_0() { return cDayINTTerminalRuleCall_4_0_0; }
-		
-		//month=INT
-		public Assignment getMonthAssignment_4_1() { return cMonthAssignment_4_1; }
-		
-		//INT
-		public RuleCall getMonthINTTerminalRuleCall_4_1_0() { return cMonthINTTerminalRuleCall_4_1_0; }
-		
-		//year=INT
-		public Assignment getYearAssignment_4_2() { return cYearAssignment_4_2; }
-		
-		//INT
-		public RuleCall getYearINTTerminalRuleCall_4_2_0() { return cYearINTTerminalRuleCall_4_2_0; }
-		
-		//'.'+
-		public Keyword getFullStopKeyword_5() { return cFullStopKeyword_5; }
-		
 		//'Entities:'
-		public Keyword getEntitiesKeyword_6() { return cEntitiesKeyword_6; }
+		public Keyword getEntitiesKeyword_3() { return cEntitiesKeyword_3; }
 		
 		//(entityTypes+=EntityType '.')+
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//entityTypes+=EntityType
-		public Assignment getEntityTypesAssignment_7_0() { return cEntityTypesAssignment_7_0; }
+		public Assignment getEntityTypesAssignment_4_0() { return cEntityTypesAssignment_4_0; }
 		
 		//EntityType
-		public RuleCall getEntityTypesEntityTypeParserRuleCall_7_0_0() { return cEntityTypesEntityTypeParserRuleCall_7_0_0; }
+		public RuleCall getEntityTypesEntityTypeParserRuleCall_4_0_0() { return cEntityTypesEntityTypeParserRuleCall_4_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_7_1() { return cFullStopKeyword_7_1; }
+		public Keyword getFullStopKeyword_4_1() { return cFullStopKeyword_4_1; }
 		
 		//'Formalities:'?
-		public Keyword getFormalitiesKeyword_8() { return cFormalitiesKeyword_8; }
+		public Keyword getFormalitiesKeyword_5() { return cFormalitiesKeyword_5; }
 		
 		//(formalityTypes+=FormalityType '.')*
-		public Group getGroup_9() { return cGroup_9; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//formalityTypes+=FormalityType
-		public Assignment getFormalityTypesAssignment_9_0() { return cFormalityTypesAssignment_9_0; }
+		public Assignment getFormalityTypesAssignment_6_0() { return cFormalityTypesAssignment_6_0; }
 		
 		//FormalityType
-		public RuleCall getFormalityTypesFormalityTypeParserRuleCall_9_0_0() { return cFormalityTypesFormalityTypeParserRuleCall_9_0_0; }
+		public RuleCall getFormalityTypesFormalityTypeParserRuleCall_6_0_0() { return cFormalityTypesFormalityTypeParserRuleCall_6_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_9_1() { return cFullStopKeyword_9_1; }
+		public Keyword getFullStopKeyword_6_1() { return cFullStopKeyword_6_1; }
 		
 		//'Actions:'?
-		public Keyword getActionsKeyword_10() { return cActionsKeyword_10; }
+		public Keyword getActionsKeyword_7() { return cActionsKeyword_7; }
 		
 		//(actionTypes+=ActionType '.')*
-		public Group getGroup_11() { return cGroup_11; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//actionTypes+=ActionType
-		public Assignment getActionTypesAssignment_11_0() { return cActionTypesAssignment_11_0; }
+		public Assignment getActionTypesAssignment_8_0() { return cActionTypesAssignment_8_0; }
 		
 		//ActionType
-		public RuleCall getActionTypesActionTypeParserRuleCall_11_0_0() { return cActionTypesActionTypeParserRuleCall_11_0_0; }
+		public RuleCall getActionTypesActionTypeParserRuleCall_8_0_0() { return cActionTypesActionTypeParserRuleCall_8_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_11_1() { return cFullStopKeyword_11_1; }
+		public Keyword getFullStopKeyword_8_1() { return cFullStopKeyword_8_1; }
 		
 		//'StateOnSignature:'?
-		public Keyword getStateOnSignatureKeyword_12() { return cStateOnSignatureKeyword_12; }
+		public Keyword getStateOnSignatureKeyword_9() { return cStateOnSignatureKeyword_9; }
 		
 		//(stateTypes+=StateType '.')*
-		public Group getGroup_13() { return cGroup_13; }
+		public Group getGroup_10() { return cGroup_10; }
 		
 		//stateTypes+=StateType
-		public Assignment getStateTypesAssignment_13_0() { return cStateTypesAssignment_13_0; }
+		public Assignment getStateTypesAssignment_10_0() { return cStateTypesAssignment_10_0; }
 		
 		//StateType
-		public RuleCall getStateTypesStateTypeParserRuleCall_13_0_0() { return cStateTypesStateTypeParserRuleCall_13_0_0; }
+		public RuleCall getStateTypesStateTypeParserRuleCall_10_0_0() { return cStateTypesStateTypeParserRuleCall_10_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_13_1() { return cFullStopKeyword_13_1; }
+		public Keyword getFullStopKeyword_10_1() { return cFullStopKeyword_10_1; }
 		
 		//'PrimaryObligations:'
-		public Keyword getPrimaryObligationsKeyword_14() { return cPrimaryObligationsKeyword_14; }
+		public Keyword getPrimaryObligationsKeyword_11() { return cPrimaryObligationsKeyword_11; }
 		
 		//(primaryObligationTypes+=PrimaryObligationType '.')+
-		public Group getGroup_15() { return cGroup_15; }
+		public Group getGroup_12() { return cGroup_12; }
 		
 		//primaryObligationTypes+=PrimaryObligationType
-		public Assignment getPrimaryObligationTypesAssignment_15_0() { return cPrimaryObligationTypesAssignment_15_0; }
+		public Assignment getPrimaryObligationTypesAssignment_12_0() { return cPrimaryObligationTypesAssignment_12_0; }
 		
 		//PrimaryObligationType
-		public RuleCall getPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_15_0_0() { return cPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_15_0_0; }
+		public RuleCall getPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_12_0_0() { return cPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_12_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_15_1() { return cFullStopKeyword_15_1; }
+		public Keyword getFullStopKeyword_12_1() { return cFullStopKeyword_12_1; }
 		
 		//'StateAfterObligationsDischarged:'?
-		public Keyword getStateAfterObligationsDischargedKeyword_16() { return cStateAfterObligationsDischargedKeyword_16; }
+		public Keyword getStateAfterObligationsDischargedKeyword_13() { return cStateAfterObligationsDischargedKeyword_13; }
 		
 		//(stateTypes+=StateType '.')*
-		public Group getGroup_17() { return cGroup_17; }
+		public Group getGroup_14() { return cGroup_14; }
 		
 		//stateTypes+=StateType
-		public Assignment getStateTypesAssignment_17_0() { return cStateTypesAssignment_17_0; }
+		public Assignment getStateTypesAssignment_14_0() { return cStateTypesAssignment_14_0; }
 		
 		//StateType
-		public RuleCall getStateTypesStateTypeParserRuleCall_17_0_0() { return cStateTypesStateTypeParserRuleCall_17_0_0; }
+		public RuleCall getStateTypesStateTypeParserRuleCall_14_0_0() { return cStateTypesStateTypeParserRuleCall_14_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_17_1() { return cFullStopKeyword_17_1; }
+		public Keyword getFullStopKeyword_14_1() { return cFullStopKeyword_14_1; }
 		
 		//'Termination:'
-		public Keyword getTerminationKeyword_18() { return cTerminationKeyword_18; }
+		public Keyword getTerminationKeyword_15() { return cTerminationKeyword_15; }
 		
 		//(terminationTypes+=TerminationType '.')*
-		public Group getGroup_19() { return cGroup_19; }
+		public Group getGroup_16() { return cGroup_16; }
 		
 		//terminationTypes+=TerminationType
-		public Assignment getTerminationTypesAssignment_19_0() { return cTerminationTypesAssignment_19_0; }
+		public Assignment getTerminationTypesAssignment_16_0() { return cTerminationTypesAssignment_16_0; }
 		
 		//TerminationType
-		public RuleCall getTerminationTypesTerminationTypeParserRuleCall_19_0_0() { return cTerminationTypesTerminationTypeParserRuleCall_19_0_0; }
+		public RuleCall getTerminationTypesTerminationTypeParserRuleCall_16_0_0() { return cTerminationTypesTerminationTypeParserRuleCall_16_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_19_1() { return cFullStopKeyword_19_1; }
+		public Keyword getFullStopKeyword_16_1() { return cFullStopKeyword_16_1; }
 		
 		//'StateAfterTermination:'?
-		public Keyword getStateAfterTerminationKeyword_20() { return cStateAfterTerminationKeyword_20; }
+		public Keyword getStateAfterTerminationKeyword_17() { return cStateAfterTerminationKeyword_17; }
 		
 		//(stateTypes+=StateType '.')*
-		public Group getGroup_21() { return cGroup_21; }
+		public Group getGroup_18() { return cGroup_18; }
 		
 		//stateTypes+=StateType
-		public Assignment getStateTypesAssignment_21_0() { return cStateTypesAssignment_21_0; }
+		public Assignment getStateTypesAssignment_18_0() { return cStateTypesAssignment_18_0; }
 		
 		//StateType
-		public RuleCall getStateTypesStateTypeParserRuleCall_21_0_0() { return cStateTypesStateTypeParserRuleCall_21_0_0; }
+		public RuleCall getStateTypesStateTypeParserRuleCall_18_0_0() { return cStateTypesStateTypeParserRuleCall_18_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_21_1() { return cFullStopKeyword_21_1; }
+		public Keyword getFullStopKeyword_18_1() { return cFullStopKeyword_18_1; }
 		
 		//'Boilerplate:'
-		public Keyword getBoilerplateKeyword_22() { return cBoilerplateKeyword_22; }
+		public Keyword getBoilerplateKeyword_19() { return cBoilerplateKeyword_19; }
 		
 		//(boilerplateTypes+=BoilerplateType '.')*
-		public Group getGroup_23() { return cGroup_23; }
+		public Group getGroup_20() { return cGroup_20; }
 		
 		//boilerplateTypes+=BoilerplateType
-		public Assignment getBoilerplateTypesAssignment_23_0() { return cBoilerplateTypesAssignment_23_0; }
+		public Assignment getBoilerplateTypesAssignment_20_0() { return cBoilerplateTypesAssignment_20_0; }
 		
 		//BoilerplateType
-		public RuleCall getBoilerplateTypesBoilerplateTypeParserRuleCall_23_0_0() { return cBoilerplateTypesBoilerplateTypeParserRuleCall_23_0_0; }
+		public RuleCall getBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0() { return cBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_23_1() { return cFullStopKeyword_23_1; }
+		public Keyword getFullStopKeyword_20_1() { return cFullStopKeyword_20_1; }
 	}
 	public class EntityTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.EntityType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cPartyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cThirdPartyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSubjectMatterParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cEffectiveDateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPartyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cThirdPartyParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSubjectMatterParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		////Entity Types
 		//EntityType:
-		//    Party | ThirdParty | SubjectMatter;
+		//    EffectiveDate | Party | ThirdParty | SubjectMatter;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Party | ThirdParty | SubjectMatter
+		//EffectiveDate | Party | ThirdParty | SubjectMatter
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
+		//EffectiveDate
+		public RuleCall getEffectiveDateParserRuleCall_0() { return cEffectiveDateParserRuleCall_0; }
+		
 		//Party
-		public RuleCall getPartyParserRuleCall_0() { return cPartyParserRuleCall_0; }
+		public RuleCall getPartyParserRuleCall_1() { return cPartyParserRuleCall_1; }
 		
 		//ThirdParty
-		public RuleCall getThirdPartyParserRuleCall_1() { return cThirdPartyParserRuleCall_1; }
+		public RuleCall getThirdPartyParserRuleCall_2() { return cThirdPartyParserRuleCall_2; }
 		
 		//SubjectMatter
-		public RuleCall getSubjectMatterParserRuleCall_2() { return cSubjectMatterParserRuleCall_2; }
+		public RuleCall getSubjectMatterParserRuleCall_3() { return cSubjectMatterParserRuleCall_3; }
+	}
+	public class EffectiveDateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.EffectiveDate");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEffectiveDateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cDayAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cDayINTTerminalRuleCall_1_0_0 = (RuleCall)cDayAssignment_1_0.eContents().get(0);
+		private final Assignment cMonthAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cMonthINTTerminalRuleCall_1_1_0 = (RuleCall)cMonthAssignment_1_1.eContents().get(0);
+		private final Assignment cYearAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cYearINTTerminalRuleCall_1_2_0 = (RuleCall)cYearAssignment_1_2.eContents().get(0);
+		
+		//EffectiveDate:
+		//    'EffectiveDate:' (day=INT month=INT year=INT)+;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'EffectiveDate:' (day=INT month=INT year=INT)+
+		public Group getGroup() { return cGroup; }
+		
+		//'EffectiveDate:'
+		public Keyword getEffectiveDateKeyword_0() { return cEffectiveDateKeyword_0; }
+		
+		//(day=INT month=INT year=INT)+
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//day=INT
+		public Assignment getDayAssignment_1_0() { return cDayAssignment_1_0; }
+		
+		//INT
+		public RuleCall getDayINTTerminalRuleCall_1_0_0() { return cDayINTTerminalRuleCall_1_0_0; }
+		
+		//month=INT
+		public Assignment getMonthAssignment_1_1() { return cMonthAssignment_1_1; }
+		
+		//INT
+		public RuleCall getMonthINTTerminalRuleCall_1_1_0() { return cMonthINTTerminalRuleCall_1_1_0; }
+		
+		//year=INT
+		public Assignment getYearAssignment_1_2() { return cYearAssignment_1_2; }
+		
+		//INT
+		public RuleCall getYearINTTerminalRuleCall_1_2_0() { return cYearINTTerminalRuleCall_1_2_0; }
 	}
 	public class PartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Party");
@@ -2032,6 +2041,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	private final ModelElements pModel;
 	private final EntityTypeElements pEntityType;
+	private final EffectiveDateElements pEffectiveDate;
 	private final PartyElements pParty;
 	private final ThirdPartyElements pThirdParty;
 	private final SubjectMatterElements pSubjectMatter;
@@ -2079,6 +2089,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pEntityType = new EntityTypeElements();
+		this.pEffectiveDate = new EffectiveDateElements();
 		this.pParty = new PartyElements();
 		this.pThirdParty = new ThirdPartyElements();
 		this.pSubjectMatter = new SubjectMatterElements();
@@ -2144,8 +2155,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 
 	
 	//Model:
-	//    'ContractName:' title=STRING '.'
-	//    'EffectiveDate:' (day=INT month=INT year=INT)'.'+
+	//    'ContractName:' title=STRING '.'+
 	//    'Entities:'
 	//    (entityTypes+=EntityType '.')+
 	//    'Formalities:'?
@@ -2174,13 +2184,23 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	////Entity Types
 	//EntityType:
-	//    Party | ThirdParty | SubjectMatter;
+	//    EffectiveDate | Party | ThirdParty | SubjectMatter;
 	public EntityTypeElements getEntityTypeAccess() {
 		return pEntityType;
 	}
 	
 	public ParserRule getEntityTypeRule() {
 		return getEntityTypeAccess().getRule();
+	}
+	
+	//EffectiveDate:
+	//    'EffectiveDate:' (day=INT month=INT year=INT)+;
+	public EffectiveDateElements getEffectiveDateAccess() {
+		return pEffectiveDate;
+	}
+	
+	public ParserRule getEffectiveDateRule() {
+		return getEffectiveDateAccess().getRule();
 	}
 	
 	//Party:
