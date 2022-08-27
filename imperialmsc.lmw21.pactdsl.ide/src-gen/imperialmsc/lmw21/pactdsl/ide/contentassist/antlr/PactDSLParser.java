@@ -32,6 +32,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, PactDSLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEntityTypeAccess().getAlternatives(), "rule__EntityType__Alternatives");
+			builder.put(grammarAccess.getFeatureTypeAccess().getAlternatives(), "rule__FeatureType__Alternatives");
 			builder.put(grammarAccess.getFormalityTypeAccess().getAlternatives(), "rule__FormalityType__Alternatives");
 			builder.put(grammarAccess.getActionTypeAccess().getAlternatives(), "rule__ActionType__Alternatives");
 			builder.put(grammarAccess.getStateTypeAccess().getAlternatives(), "rule__StateType__Alternatives");
@@ -58,7 +59,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDefinedTermAccess().getGroup(), "rule__DefinedTerm__Group__0");
 			builder.put(grammarAccess.getAddressAccess().getGroup(), "rule__Address__Group__0");
 			builder.put(grammarAccess.getCompanyNumberAccess().getGroup(), "rule__CompanyNumber__Group__0");
-			builder.put(grammarAccess.getFeatureAccess().getGroup(), "rule__Feature__Group__0");
+			builder.put(grammarAccess.getCustomFeatureAccess().getGroup(), "rule__CustomFeature__Group__0");
 			builder.put(grammarAccess.getInWritingAccess().getGroup(), "rule__InWriting__Group__0");
 			builder.put(grammarAccess.getByEmailAccess().getGroup(), "rule__ByEmail__Group__0");
 			builder.put(grammarAccess.getGivingNoticeAccess().getGroup(), "rule__GivingNotice__Group__0");
@@ -106,26 +107,18 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEffectiveDateAccess().getYearAssignment_1_2(), "rule__EffectiveDate__YearAssignment_1_2");
 			builder.put(grammarAccess.getPartyAccess().getNameAssignment_1(), "rule__Party__NameAssignment_1");
 			builder.put(grammarAccess.getPartyAccess().getFullnameAssignment_2(), "rule__Party__FullnameAssignment_2");
-			builder.put(grammarAccess.getPartyAccess().getDefinitionAssignment_3(), "rule__Party__DefinitionAssignment_3");
-			builder.put(grammarAccess.getPartyAccess().getAddressAssignment_4(), "rule__Party__AddressAssignment_4");
-			builder.put(grammarAccess.getPartyAccess().getCompanyNumberAssignment_5(), "rule__Party__CompanyNumberAssignment_5");
-			builder.put(grammarAccess.getPartyAccess().getFeaturesAssignment_6(), "rule__Party__FeaturesAssignment_6");
+			builder.put(grammarAccess.getPartyAccess().getFeatureAssignment_3(), "rule__Party__FeatureAssignment_3");
 			builder.put(grammarAccess.getThirdPartyAccess().getNameAssignment_1(), "rule__ThirdParty__NameAssignment_1");
 			builder.put(grammarAccess.getThirdPartyAccess().getFullnameAssignment_2(), "rule__ThirdParty__FullnameAssignment_2");
-			builder.put(grammarAccess.getThirdPartyAccess().getDefinitionAssignment_3(), "rule__ThirdParty__DefinitionAssignment_3");
-			builder.put(grammarAccess.getThirdPartyAccess().getAddressAssignment_4(), "rule__ThirdParty__AddressAssignment_4");
-			builder.put(grammarAccess.getThirdPartyAccess().getCompanyNumberAssignment_5(), "rule__ThirdParty__CompanyNumberAssignment_5");
-			builder.put(grammarAccess.getThirdPartyAccess().getFeaturesAssignment_6(), "rule__ThirdParty__FeaturesAssignment_6");
+			builder.put(grammarAccess.getThirdPartyAccess().getFeatureAssignment_3(), "rule__ThirdParty__FeatureAssignment_3");
 			builder.put(grammarAccess.getSubjectMatterAccess().getNameAssignment_1(), "rule__SubjectMatter__NameAssignment_1");
 			builder.put(grammarAccess.getSubjectMatterAccess().getSubjectMatterAssignment_2(), "rule__SubjectMatter__SubjectMatterAssignment_2");
-			builder.put(grammarAccess.getSubjectMatterAccess().getDefinitionAssignment_3(), "rule__SubjectMatter__DefinitionAssignment_3");
-			builder.put(grammarAccess.getSubjectMatterAccess().getAddressAssignment_4(), "rule__SubjectMatter__AddressAssignment_4");
-			builder.put(grammarAccess.getSubjectMatterAccess().getCompanyNumberAssignment_5(), "rule__SubjectMatter__CompanyNumberAssignment_5");
-			builder.put(grammarAccess.getSubjectMatterAccess().getFeaturesAssignment_6(), "rule__SubjectMatter__FeaturesAssignment_6");
+			builder.put(grammarAccess.getSubjectMatterAccess().getFeatureAssignment_3(), "rule__SubjectMatter__FeatureAssignment_3");
+			builder.put(grammarAccess.getFeatureAccess().getFeaturetypeAssignment(), "rule__Feature__FeaturetypeAssignment");
 			builder.put(grammarAccess.getDefinedTermAccess().getDefinitionAssignment_1(), "rule__DefinedTerm__DefinitionAssignment_1");
 			builder.put(grammarAccess.getAddressAccess().getDefinitionAssignment_1(), "rule__Address__DefinitionAssignment_1");
 			builder.put(grammarAccess.getCompanyNumberAccess().getDefinitionAssignment_1(), "rule__CompanyNumber__DefinitionAssignment_1");
-			builder.put(grammarAccess.getFeatureAccess().getFeatureAssignment_1(), "rule__Feature__FeatureAssignment_1");
+			builder.put(grammarAccess.getCustomFeatureAccess().getFeatureAssignment_1(), "rule__CustomFeature__FeatureAssignment_1");
 			builder.put(grammarAccess.getInWritingAccess().getCustomWritingFormalityAssignment_1(), "rule__InWriting__CustomWritingFormalityAssignment_1");
 			builder.put(grammarAccess.getByEmailAccess().getEmailAddressAssignment_2(), "rule__ByEmail__EmailAddressAssignment_2");
 			builder.put(grammarAccess.getGivingNoticeAccess().getSuperTypeAssignment_1(), "rule__GivingNotice__SuperTypeAssignment_1");

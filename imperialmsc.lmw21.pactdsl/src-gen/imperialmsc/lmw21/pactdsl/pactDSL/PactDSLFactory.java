@@ -78,6 +78,24 @@ public interface PactDSLFactory extends EFactory
   SubjectMatter createSubjectMatter();
 
   /**
+   * Returns a new object of class '<em>Feature</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature</em>'.
+   * @generated
+   */
+  Feature createFeature();
+
+  /**
+   * Returns a new object of class '<em>Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Feature Type</em>'.
+   * @generated
+   */
+  FeatureType createFeatureType();
+
+  /**
    * Returns a new object of class '<em>Defined Term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -105,13 +123,13 @@ public interface PactDSLFactory extends EFactory
   CompanyNumber createCompanyNumber();
 
   /**
-   * Returns a new object of class '<em>Feature</em>'.
+   * Returns a new object of class '<em>Custom Feature</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Feature</em>'.
+   * @return a new object of class '<em>Custom Feature</em>'.
    * @generated
    */
-  Feature createFeature();
+  CustomFeature createCustomFeature();
 
   /**
    * Returns a new object of class '<em>Formality Type</em>'.

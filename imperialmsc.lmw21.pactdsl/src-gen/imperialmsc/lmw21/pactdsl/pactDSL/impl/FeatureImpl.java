@@ -4,11 +4,14 @@
 package imperialmsc.lmw21.pactdsl.pactDSL.impl;
 
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
+import imperialmsc.lmw21.pactdsl.pactDSL.FeatureType;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -21,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl#getFeaturetype <em>Featuretype</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
 {
   /**
-   * The default value of the '{@link #getFeature() <em>Feature</em>}' attribute.
+   * The cached value of the '{@link #getFeaturetype() <em>Featuretype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
+   * @see #getFeaturetype()
    * @generated
    * @ordered
    */
-  protected static final String FEATURE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFeature()
-   * @generated
-   * @ordered
-   */
-  protected String feature = FEATURE_EDEFAULT;
+  protected FeatureType featuretype;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +68,26 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * @generated
    */
   @Override
-  public String getFeature()
+  public FeatureType getFeaturetype()
   {
-    return feature;
+    return featuretype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFeaturetype(FeatureType newFeaturetype, NotificationChain msgs)
+  {
+    FeatureType oldFeaturetype = featuretype;
+    featuretype = newFeaturetype;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PactDSLPackage.FEATURE__FEATURETYPE, oldFeaturetype, newFeaturetype);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -86,12 +96,36 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
    * @generated
    */
   @Override
-  public void setFeature(String newFeature)
+  public void setFeaturetype(FeatureType newFeaturetype)
   {
-    String oldFeature = feature;
-    feature = newFeature;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.FEATURE__FEATURE, oldFeature, feature));
+    if (newFeaturetype != featuretype)
+    {
+      NotificationChain msgs = null;
+      if (featuretype != null)
+        msgs = ((InternalEObject)featuretype).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PactDSLPackage.FEATURE__FEATURETYPE, null, msgs);
+      if (newFeaturetype != null)
+        msgs = ((InternalEObject)newFeaturetype).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PactDSLPackage.FEATURE__FEATURETYPE, null, msgs);
+      msgs = basicSetFeaturetype(newFeaturetype, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.FEATURE__FEATURETYPE, newFeaturetype, newFeaturetype));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case PactDSLPackage.FEATURE__FEATURETYPE:
+        return basicSetFeaturetype(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -104,8 +138,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case PactDSLPackage.FEATURE__FEATURE:
-        return getFeature();
+      case PactDSLPackage.FEATURE__FEATURETYPE:
+        return getFeaturetype();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +154,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case PactDSLPackage.FEATURE__FEATURE:
-        setFeature((String)newValue);
+      case PactDSLPackage.FEATURE__FEATURETYPE:
+        setFeaturetype((FeatureType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +171,8 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case PactDSLPackage.FEATURE__FEATURE:
-        setFeature(FEATURE_EDEFAULT);
+      case PactDSLPackage.FEATURE__FEATURETYPE:
+        setFeaturetype((FeatureType)null);
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +188,10 @@ public class FeatureImpl extends MinimalEObjectImpl.Container implements Feature
   {
     switch (featureID)
     {
-      case PactDSLPackage.FEATURE__FEATURE:
-        return FEATURE_EDEFAULT == null ? feature != null : !FEATURE_EDEFAULT.equals(feature);
+      case PactDSLPackage.FEATURE__FEATURETYPE:
+        return featuretype != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (feature: ");
-    result.append(feature);
-    result.append(')');
-    return result.toString();
   }
 
 } //FeatureImpl

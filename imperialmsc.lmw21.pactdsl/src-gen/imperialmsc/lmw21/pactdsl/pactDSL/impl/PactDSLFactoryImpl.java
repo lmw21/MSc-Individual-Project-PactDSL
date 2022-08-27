@@ -71,10 +71,12 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.PARTY: return createParty();
       case PactDSLPackage.THIRD_PARTY: return createThirdParty();
       case PactDSLPackage.SUBJECT_MATTER: return createSubjectMatter();
+      case PactDSLPackage.FEATURE: return createFeature();
+      case PactDSLPackage.FEATURE_TYPE: return createFeatureType();
       case PactDSLPackage.DEFINED_TERM: return createDefinedTerm();
       case PactDSLPackage.ADDRESS: return createAddress();
       case PactDSLPackage.COMPANY_NUMBER: return createCompanyNumber();
-      case PactDSLPackage.FEATURE: return createFeature();
+      case PactDSLPackage.CUSTOM_FEATURE: return createCustomFeature();
       case PactDSLPackage.FORMALITY_TYPE: return createFormalityType();
       case PactDSLPackage.IN_WRITING: return createInWriting();
       case PactDSLPackage.BY_EMAIL: return createByEmail();
@@ -186,6 +188,30 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
    * @generated
    */
   @Override
+  public Feature createFeature()
+  {
+    FeatureImpl feature = new FeatureImpl();
+    return feature;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FeatureType createFeatureType()
+  {
+    FeatureTypeImpl featureType = new FeatureTypeImpl();
+    return featureType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DefinedTerm createDefinedTerm()
   {
     DefinedTermImpl definedTerm = new DefinedTermImpl();
@@ -222,10 +248,10 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
    * @generated
    */
   @Override
-  public Feature createFeature()
+  public CustomFeature createCustomFeature()
   {
-    FeatureImpl feature = new FeatureImpl();
-    return feature;
+    CustomFeatureImpl customFeature = new CustomFeatureImpl();
+    return customFeature;
   }
 
   /**

@@ -76,9 +76,9 @@ ruleModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='ContractName:'
+		otherlv_0='ContractTitle:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getContractNameKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getContractTitleKeyword_0());
 		}
 		(
 			(
@@ -570,74 +570,17 @@ ruleParty returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPartyAccess().getDefinitionDefinedTermParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPartyAccess().getFeatureFeatureParserRuleCall_3_0());
 				}
-				lv_definition_3_0=ruleDefinedTerm
+				lv_feature_3_0=ruleFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPartyRule());
 					}
 					add(
 						$current,
-						"definition",
-						lv_definition_3_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.DefinedTerm");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPartyAccess().getAddressAddressParserRuleCall_4_0());
-				}
-				lv_address_4_0=ruleAddress
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPartyRule());
-					}
-					add(
-						$current,
-						"address",
-						lv_address_4_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.Address");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPartyAccess().getCompanyNumberCompanyNumberParserRuleCall_5_0());
-				}
-				lv_companyNumber_5_0=ruleCompanyNumber
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPartyRule());
-					}
-					add(
-						$current,
-						"companyNumber",
-						lv_companyNumber_5_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.CompanyNumber");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getPartyAccess().getFeaturesFeatureParserRuleCall_6_0());
-				}
-				lv_features_6_0=ruleFeature
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getPartyRule());
-					}
-					add(
-						$current,
-						"features",
-						lv_features_6_0,
+						"feature",
+						lv_feature_3_0,
 						"imperialmsc.lmw21.pactdsl.PactDSL.Feature");
 					afterParserOrEnumRuleCall();
 				}
@@ -705,74 +648,17 @@ ruleThirdParty returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getThirdPartyAccess().getDefinitionDefinedTermParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getThirdPartyAccess().getFeatureFeatureParserRuleCall_3_0());
 				}
-				lv_definition_3_0=ruleDefinedTerm
+				lv_feature_3_0=ruleFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getThirdPartyRule());
 					}
 					add(
 						$current,
-						"definition",
-						lv_definition_3_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.DefinedTerm");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getThirdPartyAccess().getAddressAddressParserRuleCall_4_0());
-				}
-				lv_address_4_0=ruleAddress
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getThirdPartyRule());
-					}
-					add(
-						$current,
-						"address",
-						lv_address_4_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.Address");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getThirdPartyAccess().getCompanyNumberCompanyNumberParserRuleCall_5_0());
-				}
-				lv_companyNumber_5_0=ruleCompanyNumber
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getThirdPartyRule());
-					}
-					add(
-						$current,
-						"companyNumber",
-						lv_companyNumber_5_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.CompanyNumber");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getThirdPartyAccess().getFeaturesFeatureParserRuleCall_6_0());
-				}
-				lv_features_6_0=ruleFeature
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getThirdPartyRule());
-					}
-					add(
-						$current,
-						"features",
-						lv_features_6_0,
+						"feature",
+						lv_feature_3_0,
 						"imperialmsc.lmw21.pactdsl.PactDSL.Feature");
 					afterParserOrEnumRuleCall();
 				}
@@ -840,79 +726,112 @@ ruleSubjectMatter returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSubjectMatterAccess().getDefinitionDefinedTermParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSubjectMatterAccess().getFeatureFeatureParserRuleCall_3_0());
 				}
-				lv_definition_3_0=ruleDefinedTerm
+				lv_feature_3_0=ruleFeature
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSubjectMatterRule());
 					}
 					add(
 						$current,
-						"definition",
-						lv_definition_3_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.DefinedTerm");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSubjectMatterAccess().getAddressAddressParserRuleCall_4_0());
-				}
-				lv_address_4_0=ruleAddress
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSubjectMatterRule());
-					}
-					add(
-						$current,
-						"address",
-						lv_address_4_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.Address");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSubjectMatterAccess().getCompanyNumberCompanyNumberParserRuleCall_5_0());
-				}
-				lv_companyNumber_5_0=ruleCompanyNumber
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSubjectMatterRule());
-					}
-					add(
-						$current,
-						"companyNumber",
-						lv_companyNumber_5_0,
-						"imperialmsc.lmw21.pactdsl.PactDSL.CompanyNumber");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSubjectMatterAccess().getFeaturesFeatureParserRuleCall_6_0());
-				}
-				lv_features_6_0=ruleFeature
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSubjectMatterRule());
-					}
-					add(
-						$current,
-						"features",
-						lv_features_6_0,
+						"feature",
+						lv_feature_3_0,
 						"imperialmsc.lmw21.pactdsl.PactDSL.Feature");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
+	)
+;
+
+// Entry rule entryRuleFeature
+entryRuleFeature returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFeatureRule()); }
+	iv_ruleFeature=ruleFeature
+	{ $current=$iv_ruleFeature.current; }
+	EOF;
+
+// Rule Feature
+ruleFeature returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getFeatureAccess().getFeaturetypeFeatureTypeParserRuleCall_0());
+			}
+			lv_featuretype_0_0=ruleFeatureType
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getFeatureRule());
+				}
+				set(
+					$current,
+					"featuretype",
+					lv_featuretype_0_0,
+					"imperialmsc.lmw21.pactdsl.PactDSL.FeatureType");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleFeatureType
+entryRuleFeatureType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFeatureTypeRule()); }
+	iv_ruleFeatureType=ruleFeatureType
+	{ $current=$iv_ruleFeatureType.current; }
+	EOF;
+
+// Rule FeatureType
+ruleFeatureType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getFeatureTypeAccess().getDefinedTermParserRuleCall_0());
+		}
+		this_DefinedTerm_0=ruleDefinedTerm
+		{
+			$current = $this_DefinedTerm_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFeatureTypeAccess().getAddressParserRuleCall_1());
+		}
+		this_Address_1=ruleAddress
+		{
+			$current = $this_Address_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFeatureTypeAccess().getCompanyNumberParserRuleCall_2());
+		}
+		this_CompanyNumber_2=ruleCompanyNumber
+		{
+			$current = $this_CompanyNumber_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getFeatureTypeAccess().getCustomFeatureParserRuleCall_3());
+		}
+		this_CustomFeature_3=ruleCustomFeature
+		{
+			$current = $this_CustomFeature_3.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1039,15 +958,15 @@ ruleCompanyNumber returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleFeature
-entryRuleFeature returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFeatureRule()); }
-	iv_ruleFeature=ruleFeature
-	{ $current=$iv_ruleFeature.current; }
+// Entry rule entryRuleCustomFeature
+entryRuleCustomFeature returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomFeatureRule()); }
+	iv_ruleCustomFeature=ruleCustomFeature
+	{ $current=$iv_ruleCustomFeature.current; }
 	EOF;
 
-// Rule Feature
-ruleFeature returns [EObject current=null]
+// Rule CustomFeature
+ruleCustomFeature returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1057,17 +976,17 @@ ruleFeature returns [EObject current=null]
 	(
 		otherlv_0='withFeature'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFeatureAccess().getWithFeatureKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getCustomFeatureAccess().getWithFeatureKeyword_0());
 		}
 		(
 			(
 				lv_feature_1_0=RULE_STRING
 				{
-					newLeafNode(lv_feature_1_0, grammarAccess.getFeatureAccess().getFeatureSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_feature_1_0, grammarAccess.getCustomFeatureAccess().getFeatureSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getFeatureRule());
+						$current = createModelElement(grammarAccess.getCustomFeatureRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -2269,7 +2188,7 @@ ruleLicenceObligation returns [EObject current=null]
 					}
 				)
 			)
-		)?
+		)*
 	)
 ;
 

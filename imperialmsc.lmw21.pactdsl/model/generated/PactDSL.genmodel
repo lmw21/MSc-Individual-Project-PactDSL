@@ -25,27 +25,22 @@
     <genClasses ecoreClass="PactDSL.ecore#//Party">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Party/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Party/fullname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/definition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/companyNumber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Party/feature"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//ThirdParty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ThirdParty/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ThirdParty/fullname"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/definition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/companyNumber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ThirdParty/feature"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//SubjectMatter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SubjectMatter/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SubjectMatter/subjectMatter"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/definition"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/address"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/companyNumber"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SubjectMatter/feature"/>
     </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//Feature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Feature/featuretype"/>
+    </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//FeatureType"/>
     <genClasses ecoreClass="PactDSL.ecore#//DefinedTerm">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//DefinedTerm/definition"/>
     </genClasses>
@@ -55,8 +50,8 @@
     <genClasses ecoreClass="PactDSL.ecore#//CompanyNumber">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CompanyNumber/definition"/>
     </genClasses>
-    <genClasses ecoreClass="PactDSL.ecore#//Feature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Feature/feature"/>
+    <genClasses ecoreClass="PactDSL.ecore#//CustomFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomFeature/feature"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//FormalityType"/>
     <genClasses ecoreClass="PactDSL.ecore#//InWriting">

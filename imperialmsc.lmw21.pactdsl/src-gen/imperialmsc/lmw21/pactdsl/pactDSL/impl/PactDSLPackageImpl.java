@@ -11,6 +11,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ByEmail;
 import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
@@ -18,6 +19,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate;
 import imperialmsc.lmw21.pactdsl.pactDSL.EntityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
+import imperialmsc.lmw21.pactdsl.pactDSL.FeatureType;
 import imperialmsc.lmw21.pactdsl.pactDSL.ForBreach;
 import imperialmsc.lmw21.pactdsl.pactDSL.ForConvenience;
 import imperialmsc.lmw21.pactdsl.pactDSL.FormalityType;
@@ -106,6 +108,20 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass featureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass featureTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass definedTermEClass = null;
 
   /**
@@ -127,7 +143,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass featureEClass = null;
+  private EClass customFeatureEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -581,42 +597,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getParty_Definition()
+  public EReference getParty_Feature()
   {
     return (EReference)partyEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getParty_Address()
-  {
-    return (EReference)partyEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getParty_CompanyNumber()
-  {
-    return (EReference)partyEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getParty_Features()
-  {
-    return (EReference)partyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -658,42 +641,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getThirdParty_Definition()
+  public EReference getThirdParty_Feature()
   {
     return (EReference)thirdPartyEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getThirdParty_Address()
-  {
-    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getThirdParty_CompanyNumber()
-  {
-    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getThirdParty_Features()
-  {
-    return (EReference)thirdPartyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -735,7 +685,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getSubjectMatter_Definition()
+  public EReference getSubjectMatter_Feature()
   {
     return (EReference)subjectMatterEClass.getEStructuralFeatures().get(2);
   }
@@ -746,9 +696,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getSubjectMatter_Address()
+  public EClass getFeature()
   {
-    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(3);
+    return featureEClass;
   }
 
   /**
@@ -757,9 +707,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getSubjectMatter_CompanyNumber()
+  public EReference getFeature_Featuretype()
   {
-    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(4);
+    return (EReference)featureEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -768,9 +718,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getSubjectMatter_Features()
+  public EClass getFeatureType()
   {
-    return (EReference)subjectMatterEClass.getEStructuralFeatures().get(5);
+    return featureTypeEClass;
   }
 
   /**
@@ -845,9 +795,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EClass getFeature()
+  public EClass getCustomFeature()
   {
-    return featureEClass;
+    return customFeatureEClass;
   }
 
   /**
@@ -856,9 +806,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getFeature_Feature()
+  public EAttribute getCustomFeature_Feature()
   {
-    return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)customFeatureEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1682,26 +1632,22 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     partyEClass = createEClass(PARTY);
     createEAttribute(partyEClass, PARTY__NAME);
     createEAttribute(partyEClass, PARTY__FULLNAME);
-    createEReference(partyEClass, PARTY__DEFINITION);
-    createEReference(partyEClass, PARTY__ADDRESS);
-    createEReference(partyEClass, PARTY__COMPANY_NUMBER);
-    createEReference(partyEClass, PARTY__FEATURES);
+    createEReference(partyEClass, PARTY__FEATURE);
 
     thirdPartyEClass = createEClass(THIRD_PARTY);
     createEAttribute(thirdPartyEClass, THIRD_PARTY__NAME);
     createEAttribute(thirdPartyEClass, THIRD_PARTY__FULLNAME);
-    createEReference(thirdPartyEClass, THIRD_PARTY__DEFINITION);
-    createEReference(thirdPartyEClass, THIRD_PARTY__ADDRESS);
-    createEReference(thirdPartyEClass, THIRD_PARTY__COMPANY_NUMBER);
-    createEReference(thirdPartyEClass, THIRD_PARTY__FEATURES);
+    createEReference(thirdPartyEClass, THIRD_PARTY__FEATURE);
 
     subjectMatterEClass = createEClass(SUBJECT_MATTER);
     createEAttribute(subjectMatterEClass, SUBJECT_MATTER__NAME);
     createEAttribute(subjectMatterEClass, SUBJECT_MATTER__SUBJECT_MATTER);
-    createEReference(subjectMatterEClass, SUBJECT_MATTER__DEFINITION);
-    createEReference(subjectMatterEClass, SUBJECT_MATTER__ADDRESS);
-    createEReference(subjectMatterEClass, SUBJECT_MATTER__COMPANY_NUMBER);
-    createEReference(subjectMatterEClass, SUBJECT_MATTER__FEATURES);
+    createEReference(subjectMatterEClass, SUBJECT_MATTER__FEATURE);
+
+    featureEClass = createEClass(FEATURE);
+    createEReference(featureEClass, FEATURE__FEATURETYPE);
+
+    featureTypeEClass = createEClass(FEATURE_TYPE);
 
     definedTermEClass = createEClass(DEFINED_TERM);
     createEAttribute(definedTermEClass, DEFINED_TERM__DEFINITION);
@@ -1712,8 +1658,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     companyNumberEClass = createEClass(COMPANY_NUMBER);
     createEAttribute(companyNumberEClass, COMPANY_NUMBER__DEFINITION);
 
-    featureEClass = createEClass(FEATURE);
-    createEAttribute(featureEClass, FEATURE__FEATURE);
+    customFeatureEClass = createEClass(CUSTOM_FEATURE);
+    createEAttribute(customFeatureEClass, CUSTOM_FEATURE__FEATURE);
 
     formalityTypeEClass = createEClass(FORMALITY_TYPE);
 
@@ -1847,6 +1793,10 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     partyEClass.getESuperTypes().add(this.getEntityType());
     thirdPartyEClass.getESuperTypes().add(this.getEntityType());
     subjectMatterEClass.getESuperTypes().add(this.getEntityType());
+    definedTermEClass.getESuperTypes().add(this.getFeatureType());
+    addressEClass.getESuperTypes().add(this.getFeatureType());
+    companyNumberEClass.getESuperTypes().add(this.getFeatureType());
+    customFeatureEClass.getESuperTypes().add(this.getFeatureType());
     inWritingEClass.getESuperTypes().add(this.getFormalityType());
     byEmailEClass.getESuperTypes().add(this.getFormalityType());
     givingNoticeEClass.getESuperTypes().add(this.getFormalityType());
@@ -1891,26 +1841,22 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParty_Fullname(), ecorePackage.getEString(), "fullname", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParty_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParty_Address(), this.getAddress(), null, "address", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParty_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getParty_Features(), this.getFeature(), null, "features", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getParty_Feature(), this.getFeature(), null, "feature", null, 0, -1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(thirdPartyEClass, ThirdParty.class, "ThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getThirdParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getThirdParty_Fullname(), ecorePackage.getEString(), "fullname", null, 0, 1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getThirdParty_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getThirdParty_Address(), this.getAddress(), null, "address", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getThirdParty_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getThirdParty_Features(), this.getFeature(), null, "features", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getThirdParty_Feature(), this.getFeature(), null, "feature", null, 0, -1, ThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(subjectMatterEClass, SubjectMatter.class, "SubjectMatter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSubjectMatter_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubjectMatter_SubjectMatter(), ecorePackage.getEString(), "subjectMatter", null, 0, 1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubjectMatter_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubjectMatter_Address(), this.getAddress(), null, "address", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubjectMatter_CompanyNumber(), this.getCompanyNumber(), null, "companyNumber", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubjectMatter_Features(), this.getFeature(), null, "features", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubjectMatter_Feature(), this.getFeature(), null, "feature", null, 0, -1, SubjectMatter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFeature_Featuretype(), this.getFeatureType(), null, "featuretype", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(featureTypeEClass, FeatureType.class, "FeatureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(definedTermEClass, DefinedTerm.class, "DefinedTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefinedTerm_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, DefinedTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1921,8 +1867,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(companyNumberEClass, CompanyNumber.class, "CompanyNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCompanyNumber_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, CompanyNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFeature_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(customFeatureEClass, CustomFeature.class, "CustomFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomFeature_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, CustomFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formalityTypeEClass, FormalityType.class, "FormalityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

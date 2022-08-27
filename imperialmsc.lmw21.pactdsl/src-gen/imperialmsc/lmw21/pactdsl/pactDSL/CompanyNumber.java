@@ -3,7 +3,6 @@
  */
 package imperialmsc.lmw21.pactdsl.pactDSL;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface CompanyNumber extends EObject
+public interface CompanyNumber extends FeatureType
 {
   /**
    * Returns the value of the '<em><b>Definition</b></em>' attribute.

@@ -3,9 +3,6 @@
  */
 package imperialmsc.lmw21.pactdsl.pactDSL.impl;
 
-import imperialmsc.lmw21.pactdsl.pactDSL.Address;
-import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
-import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 import imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter;
@@ -35,10 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getName <em>Name</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getSubjectMatter <em>Subject Matter</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getDefinition <em>Definition</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getCompanyNumber <em>Company Number</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,44 +80,14 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
   protected String subjectMatter = SUBJECT_MATTER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference list.
+   * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getFeature()
    * @generated
    * @ordered
    */
-  protected EList<DefinedTerm> definition;
-
-  /**
-   * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAddress()
-   * @generated
-   * @ordered
-   */
-  protected EList<Address> address;
-
-  /**
-   * The cached value of the '{@link #getCompanyNumber() <em>Company Number</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompanyNumber()
-   * @generated
-   * @ordered
-   */
-  protected EList<CompanyNumber> companyNumber;
-
-  /**
-   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFeatures()
-   * @generated
-   * @ordered
-   */
-  protected EList<Feature> features;
+  protected EList<Feature> feature;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,58 +166,13 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
    * @generated
    */
   @Override
-  public EList<DefinedTerm> getDefinition()
+  public EList<Feature> getFeature()
   {
-    if (definition == null)
+    if (feature == null)
     {
-      definition = new EObjectContainmentEList<DefinedTerm>(DefinedTerm.class, this, PactDSLPackage.SUBJECT_MATTER__DEFINITION);
+      feature = new EObjectContainmentEList<Feature>(Feature.class, this, PactDSLPackage.SUBJECT_MATTER__FEATURE);
     }
-    return definition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Address> getAddress()
-  {
-    if (address == null)
-    {
-      address = new EObjectContainmentEList<Address>(Address.class, this, PactDSLPackage.SUBJECT_MATTER__ADDRESS);
-    }
-    return address;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<CompanyNumber> getCompanyNumber()
-  {
-    if (companyNumber == null)
-    {
-      companyNumber = new EObjectContainmentEList<CompanyNumber>(CompanyNumber.class, this, PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER);
-    }
-    return companyNumber;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Feature> getFeatures()
-  {
-    if (features == null)
-    {
-      features = new EObjectContainmentEList<Feature>(Feature.class, this, PactDSLPackage.SUBJECT_MATTER__FEATURES);
-    }
-    return features;
+    return feature;
   }
 
   /**
@@ -266,14 +185,8 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
   {
     switch (featureID)
     {
-      case PactDSLPackage.SUBJECT_MATTER__DEFINITION:
-        return ((InternalEList<?>)getDefinition()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.SUBJECT_MATTER__ADDRESS:
-        return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER:
-        return ((InternalEList<?>)getCompanyNumber()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.SUBJECT_MATTER__FEATURES:
-        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+      case PactDSLPackage.SUBJECT_MATTER__FEATURE:
+        return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -292,14 +205,8 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
         return getName();
       case PactDSLPackage.SUBJECT_MATTER__SUBJECT_MATTER:
         return getSubjectMatter();
-      case PactDSLPackage.SUBJECT_MATTER__DEFINITION:
-        return getDefinition();
-      case PactDSLPackage.SUBJECT_MATTER__ADDRESS:
-        return getAddress();
-      case PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER:
-        return getCompanyNumber();
-      case PactDSLPackage.SUBJECT_MATTER__FEATURES:
-        return getFeatures();
+      case PactDSLPackage.SUBJECT_MATTER__FEATURE:
+        return getFeature();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -321,21 +228,9 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
       case PactDSLPackage.SUBJECT_MATTER__SUBJECT_MATTER:
         setSubjectMatter((String)newValue);
         return;
-      case PactDSLPackage.SUBJECT_MATTER__DEFINITION:
-        getDefinition().clear();
-        getDefinition().addAll((Collection<? extends DefinedTerm>)newValue);
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__ADDRESS:
-        getAddress().clear();
-        getAddress().addAll((Collection<? extends Address>)newValue);
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER:
-        getCompanyNumber().clear();
-        getCompanyNumber().addAll((Collection<? extends CompanyNumber>)newValue);
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__FEATURES:
-        getFeatures().clear();
-        getFeatures().addAll((Collection<? extends Feature>)newValue);
+      case PactDSLPackage.SUBJECT_MATTER__FEATURE:
+        getFeature().clear();
+        getFeature().addAll((Collection<? extends Feature>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -357,17 +252,8 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
       case PactDSLPackage.SUBJECT_MATTER__SUBJECT_MATTER:
         setSubjectMatter(SUBJECT_MATTER_EDEFAULT);
         return;
-      case PactDSLPackage.SUBJECT_MATTER__DEFINITION:
-        getDefinition().clear();
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__ADDRESS:
-        getAddress().clear();
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER:
-        getCompanyNumber().clear();
-        return;
-      case PactDSLPackage.SUBJECT_MATTER__FEATURES:
-        getFeatures().clear();
+      case PactDSLPackage.SUBJECT_MATTER__FEATURE:
+        getFeature().clear();
         return;
     }
     super.eUnset(featureID);
@@ -387,14 +273,8 @@ public class SubjectMatterImpl extends EntityTypeImpl implements SubjectMatter
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PactDSLPackage.SUBJECT_MATTER__SUBJECT_MATTER:
         return SUBJECT_MATTER_EDEFAULT == null ? subjectMatter != null : !SUBJECT_MATTER_EDEFAULT.equals(subjectMatter);
-      case PactDSLPackage.SUBJECT_MATTER__DEFINITION:
-        return definition != null && !definition.isEmpty();
-      case PactDSLPackage.SUBJECT_MATTER__ADDRESS:
-        return address != null && !address.isEmpty();
-      case PactDSLPackage.SUBJECT_MATTER__COMPANY_NUMBER:
-        return companyNumber != null && !companyNumber.isEmpty();
-      case PactDSLPackage.SUBJECT_MATTER__FEATURES:
-        return features != null && !features.isEmpty();
+      case PactDSLPackage.SUBJECT_MATTER__FEATURE:
+        return feature != null && !feature.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -106,6 +106,16 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createSubjectMatterAdapter();
       }
       @Override
+      public Adapter caseFeature(Feature object)
+      {
+        return createFeatureAdapter();
+      }
+      @Override
+      public Adapter caseFeatureType(FeatureType object)
+      {
+        return createFeatureTypeAdapter();
+      }
+      @Override
       public Adapter caseDefinedTerm(DefinedTerm object)
       {
         return createDefinedTermAdapter();
@@ -121,9 +131,9 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createCompanyNumberAdapter();
       }
       @Override
-      public Adapter caseFeature(Feature object)
+      public Adapter caseCustomFeature(CustomFeature object)
       {
-        return createFeatureAdapter();
+        return createCustomFeatureAdapter();
       }
       @Override
       public Adapter caseFormalityType(FormalityType object)
@@ -378,6 +388,36 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature <em>Feature</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature
+   * @generated
+   */
+  public Adapter createFeatureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.FeatureType <em>Feature Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.FeatureType
+   * @generated
+   */
+  public Adapter createFeatureTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm <em>Defined Term</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -423,16 +463,16 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature <em>Feature</em>}'.
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature <em>Custom Feature</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature
    * @generated
    */
-  public Adapter createFeatureAdapter()
+  public Adapter createCustomFeatureAdapter()
   {
     return null;
   }

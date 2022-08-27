@@ -28,49 +28,36 @@
   <eClassifiers xsi:type="ecore:EClass" name="Party" eSuperTypes="#//EntityType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
-        eType="#//DefinedTerm" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
-        eType="#//Address" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="companyNumber" upperBound="-1"
-        eType="#//CompanyNumber" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" upperBound="-1"
         eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ThirdParty" eSuperTypes="#//EntityType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
-        eType="#//DefinedTerm" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
-        eType="#//Address" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="companyNumber" upperBound="-1"
-        eType="#//CompanyNumber" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" upperBound="-1"
         eType="#//Feature" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubjectMatter" eSuperTypes="#//EntityType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="subjectMatter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
-        eType="#//DefinedTerm" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
-        eType="#//Address" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="companyNumber" upperBound="-1"
-        eType="#//CompanyNumber" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" upperBound="-1"
         eType="#//Feature" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DefinedTerm">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Address">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompanyNumber">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featuretype" eType="#//FeatureType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DefinedTerm" eSuperTypes="#//FeatureType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Address" eSuperTypes="#//FeatureType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompanyNumber" eSuperTypes="#//FeatureType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="definition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomFeature" eSuperTypes="#//FeatureType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="feature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FormalityType"/>

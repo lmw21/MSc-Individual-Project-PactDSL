@@ -3,9 +3,6 @@
  */
 package imperialmsc.lmw21.pactdsl.pactDSL.impl;
 
-import imperialmsc.lmw21.pactdsl.pactDSL.Address;
-import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
-import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.Feature;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 import imperialmsc.lmw21.pactdsl.pactDSL.Party;
@@ -35,10 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getName <em>Name</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getFullname <em>Fullname</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getDefinition <em>Definition</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getCompanyNumber <em>Company Number</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getFeatures <em>Features</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PartyImpl#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,44 +80,14 @@ public class PartyImpl extends EntityTypeImpl implements Party
   protected String fullname = FULLNAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference list.
+   * The cached value of the '{@link #getFeature() <em>Feature</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getFeature()
    * @generated
    * @ordered
    */
-  protected EList<DefinedTerm> definition;
-
-  /**
-   * The cached value of the '{@link #getAddress() <em>Address</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAddress()
-   * @generated
-   * @ordered
-   */
-  protected EList<Address> address;
-
-  /**
-   * The cached value of the '{@link #getCompanyNumber() <em>Company Number</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCompanyNumber()
-   * @generated
-   * @ordered
-   */
-  protected EList<CompanyNumber> companyNumber;
-
-  /**
-   * The cached value of the '{@link #getFeatures() <em>Features</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFeatures()
-   * @generated
-   * @ordered
-   */
-  protected EList<Feature> features;
+  protected EList<Feature> feature;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,58 +166,13 @@ public class PartyImpl extends EntityTypeImpl implements Party
    * @generated
    */
   @Override
-  public EList<DefinedTerm> getDefinition()
+  public EList<Feature> getFeature()
   {
-    if (definition == null)
+    if (feature == null)
     {
-      definition = new EObjectContainmentEList<DefinedTerm>(DefinedTerm.class, this, PactDSLPackage.PARTY__DEFINITION);
+      feature = new EObjectContainmentEList<Feature>(Feature.class, this, PactDSLPackage.PARTY__FEATURE);
     }
-    return definition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Address> getAddress()
-  {
-    if (address == null)
-    {
-      address = new EObjectContainmentEList<Address>(Address.class, this, PactDSLPackage.PARTY__ADDRESS);
-    }
-    return address;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<CompanyNumber> getCompanyNumber()
-  {
-    if (companyNumber == null)
-    {
-      companyNumber = new EObjectContainmentEList<CompanyNumber>(CompanyNumber.class, this, PactDSLPackage.PARTY__COMPANY_NUMBER);
-    }
-    return companyNumber;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Feature> getFeatures()
-  {
-    if (features == null)
-    {
-      features = new EObjectContainmentEList<Feature>(Feature.class, this, PactDSLPackage.PARTY__FEATURES);
-    }
-    return features;
+    return feature;
   }
 
   /**
@@ -266,14 +185,8 @@ public class PartyImpl extends EntityTypeImpl implements Party
   {
     switch (featureID)
     {
-      case PactDSLPackage.PARTY__DEFINITION:
-        return ((InternalEList<?>)getDefinition()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.PARTY__ADDRESS:
-        return ((InternalEList<?>)getAddress()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.PARTY__COMPANY_NUMBER:
-        return ((InternalEList<?>)getCompanyNumber()).basicRemove(otherEnd, msgs);
-      case PactDSLPackage.PARTY__FEATURES:
-        return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
+      case PactDSLPackage.PARTY__FEATURE:
+        return ((InternalEList<?>)getFeature()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -292,14 +205,8 @@ public class PartyImpl extends EntityTypeImpl implements Party
         return getName();
       case PactDSLPackage.PARTY__FULLNAME:
         return getFullname();
-      case PactDSLPackage.PARTY__DEFINITION:
-        return getDefinition();
-      case PactDSLPackage.PARTY__ADDRESS:
-        return getAddress();
-      case PactDSLPackage.PARTY__COMPANY_NUMBER:
-        return getCompanyNumber();
-      case PactDSLPackage.PARTY__FEATURES:
-        return getFeatures();
+      case PactDSLPackage.PARTY__FEATURE:
+        return getFeature();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -321,21 +228,9 @@ public class PartyImpl extends EntityTypeImpl implements Party
       case PactDSLPackage.PARTY__FULLNAME:
         setFullname((String)newValue);
         return;
-      case PactDSLPackage.PARTY__DEFINITION:
-        getDefinition().clear();
-        getDefinition().addAll((Collection<? extends DefinedTerm>)newValue);
-        return;
-      case PactDSLPackage.PARTY__ADDRESS:
-        getAddress().clear();
-        getAddress().addAll((Collection<? extends Address>)newValue);
-        return;
-      case PactDSLPackage.PARTY__COMPANY_NUMBER:
-        getCompanyNumber().clear();
-        getCompanyNumber().addAll((Collection<? extends CompanyNumber>)newValue);
-        return;
-      case PactDSLPackage.PARTY__FEATURES:
-        getFeatures().clear();
-        getFeatures().addAll((Collection<? extends Feature>)newValue);
+      case PactDSLPackage.PARTY__FEATURE:
+        getFeature().clear();
+        getFeature().addAll((Collection<? extends Feature>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -357,17 +252,8 @@ public class PartyImpl extends EntityTypeImpl implements Party
       case PactDSLPackage.PARTY__FULLNAME:
         setFullname(FULLNAME_EDEFAULT);
         return;
-      case PactDSLPackage.PARTY__DEFINITION:
-        getDefinition().clear();
-        return;
-      case PactDSLPackage.PARTY__ADDRESS:
-        getAddress().clear();
-        return;
-      case PactDSLPackage.PARTY__COMPANY_NUMBER:
-        getCompanyNumber().clear();
-        return;
-      case PactDSLPackage.PARTY__FEATURES:
-        getFeatures().clear();
+      case PactDSLPackage.PARTY__FEATURE:
+        getFeature().clear();
         return;
     }
     super.eUnset(featureID);
@@ -387,14 +273,8 @@ public class PartyImpl extends EntityTypeImpl implements Party
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case PactDSLPackage.PARTY__FULLNAME:
         return FULLNAME_EDEFAULT == null ? fullname != null : !FULLNAME_EDEFAULT.equals(fullname);
-      case PactDSLPackage.PARTY__DEFINITION:
-        return definition != null && !definition.isEmpty();
-      case PactDSLPackage.PARTY__ADDRESS:
-        return address != null && !address.isEmpty();
-      case PactDSLPackage.PARTY__COMPANY_NUMBER:
-        return companyNumber != null && !companyNumber.isEmpty();
-      case PactDSLPackage.PARTY__FEATURES:
-        return features != null && !features.isEmpty();
+      case PactDSLPackage.PARTY__FEATURE:
+        return feature != null && !feature.isEmpty();
     }
     return super.eIsSet(featureID);
   }

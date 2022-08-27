@@ -16,10 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getName <em>Name</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFullname <em>Fullname</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getDefinition <em>Definition</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getAddress <em>Address</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getCompanyNumber <em>Company Number</em>}</li>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeatures <em>Features</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeature <em>Feature</em>}</li>
  * </ul>
  *
  * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty()
@@ -73,51 +70,15 @@ public interface ThirdParty extends EntityType
   void setFullname(String value);
 
   /**
-   * Returns the value of the '<em><b>Definition</b></em>' containment reference list.
-   * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Definition</em>' containment reference list.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty_Definition()
-   * @model containment="true"
-   * @generated
-   */
-  EList<DefinedTerm> getDefinition();
-
-  /**
-   * Returns the value of the '<em><b>Address</b></em>' containment reference list.
-   * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.Address}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Address</em>' containment reference list.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty_Address()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Address> getAddress();
-
-  /**
-   * Returns the value of the '<em><b>Company Number</b></em>' containment reference list.
-   * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Company Number</em>' containment reference list.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty_CompanyNumber()
-   * @model containment="true"
-   * @generated
-   */
-  EList<CompanyNumber> getCompanyNumber();
-
-  /**
-   * Returns the value of the '<em><b>Features</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Feature</b></em>' containment reference list.
    * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.Feature}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Features</em>' containment reference list.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty_Features()
+   * @return the value of the '<em>Feature</em>' containment reference list.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getThirdParty_Feature()
    * @model containment="true"
    * @generated
    */
-  EList<Feature> getFeatures();
+  EList<Feature> getFeature();
 
 } // ThirdParty

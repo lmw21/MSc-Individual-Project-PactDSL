@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeature <em>Feature</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeaturetype <em>Featuretype</em>}</li>
  * </ul>
  *
  * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getFeature()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Feature extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Feature</b></em>' attribute.
+   * Returns the value of the '<em><b>Featuretype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Feature</em>' attribute.
-   * @see #setFeature(String)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getFeature_Feature()
-   * @model
+   * @return the value of the '<em>Featuretype</em>' containment reference.
+   * @see #setFeaturetype(FeatureType)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getFeature_Featuretype()
+   * @model containment="true"
    * @generated
    */
-  String getFeature();
+  FeatureType getFeaturetype();
 
   /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeature <em>Feature</em>}' attribute.
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeaturetype <em>Featuretype</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Feature</em>' attribute.
-   * @see #getFeature()
+   * @param value the new value of the '<em>Featuretype</em>' containment reference.
+   * @see #getFeaturetype()
    * @generated
    */
-  void setFeature(String value);
+  void setFeaturetype(FeatureType value);
 
 } // Feature

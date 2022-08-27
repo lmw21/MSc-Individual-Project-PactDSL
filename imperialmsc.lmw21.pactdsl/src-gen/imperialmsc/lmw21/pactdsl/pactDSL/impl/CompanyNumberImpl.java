@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class CompanyNumberImpl extends MinimalEObjectImpl.Container implements CompanyNumber
+public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
 {
   /**
    * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.

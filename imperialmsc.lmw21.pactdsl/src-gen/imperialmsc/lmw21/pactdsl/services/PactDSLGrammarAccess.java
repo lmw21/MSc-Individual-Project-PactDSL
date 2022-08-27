@@ -26,7 +26,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cContractNameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cContractTitleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -77,7 +77,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cFullStopKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
 		
 		//Model:
-		//    'ContractName:' title=STRING '.'+
+		//    'ContractTitle:' title=STRING '.'+
 		//    'Entities:'
 		//    (entityTypes+=EntityType '.')+
 		//    'Formalities:'?
@@ -98,7 +98,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    (boilerplateTypes+=BoilerplateType '.')*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ContractName:' title=STRING '.'+
+		//'ContractTitle:' title=STRING '.'+
 		//'Entities:'
 		//(entityTypes+=EntityType '.')+
 		//'Formalities:'?
@@ -119,8 +119,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//(boilerplateTypes+=BoilerplateType '.')*
 		public Group getGroup() { return cGroup; }
 		
-		//'ContractName:'
-		public Keyword getContractNameKeyword_0() { return cContractNameKeyword_0; }
+		//'ContractTitle:'
+		public Keyword getContractTitleKeyword_0() { return cContractTitleKeyword_0; }
 		
 		//title=STRING
 		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
@@ -345,20 +345,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cFullnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cFullnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cFullnameAssignment_2.eContents().get(0);
-		private final Assignment cDefinitionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDefinitionDefinedTermParserRuleCall_3_0 = (RuleCall)cDefinitionAssignment_3.eContents().get(0);
-		private final Assignment cAddressAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAddressAddressParserRuleCall_4_0 = (RuleCall)cAddressAssignment_4.eContents().get(0);
-		private final Assignment cCompanyNumberAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cCompanyNumberCompanyNumberParserRuleCall_5_0 = (RuleCall)cCompanyNumberAssignment_5.eContents().get(0);
-		private final Assignment cFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFeaturesFeatureParserRuleCall_6_0 = (RuleCall)cFeaturesAssignment_6.eContents().get(0);
+		private final Assignment cFeatureAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFeatureFeatureParserRuleCall_3_0 = (RuleCall)cFeatureAssignment_3.eContents().get(0);
 		
 		//Party:
-		//    'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+		//    'Party:' name=ID fullname=STRING (feature+=Feature)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*
+		//'Party:' name=ID fullname=STRING (feature+=Feature)*
 		public Group getGroup() { return cGroup; }
 		
 		//'Party:'
@@ -376,29 +370,11 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getFullnameSTRINGTerminalRuleCall_2_0() { return cFullnameSTRINGTerminalRuleCall_2_0; }
 		
-		//(definition+=DefinedTerm)?
-		public Assignment getDefinitionAssignment_3() { return cDefinitionAssignment_3; }
-		
-		//DefinedTerm
-		public RuleCall getDefinitionDefinedTermParserRuleCall_3_0() { return cDefinitionDefinedTermParserRuleCall_3_0; }
-		
-		//(address+=Address)?
-		public Assignment getAddressAssignment_4() { return cAddressAssignment_4; }
-		
-		//Address
-		public RuleCall getAddressAddressParserRuleCall_4_0() { return cAddressAddressParserRuleCall_4_0; }
-		
-		//(companyNumber+=CompanyNumber)?
-		public Assignment getCompanyNumberAssignment_5() { return cCompanyNumberAssignment_5; }
-		
-		//CompanyNumber
-		public RuleCall getCompanyNumberCompanyNumberParserRuleCall_5_0() { return cCompanyNumberCompanyNumberParserRuleCall_5_0; }
-		
-		//(features+=Feature)*
-		public Assignment getFeaturesAssignment_6() { return cFeaturesAssignment_6; }
+		//(feature+=Feature)*
+		public Assignment getFeatureAssignment_3() { return cFeatureAssignment_3; }
 		
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_6_0() { return cFeaturesFeatureParserRuleCall_6_0; }
+		public RuleCall getFeatureFeatureParserRuleCall_3_0() { return cFeatureFeatureParserRuleCall_3_0; }
 	}
 	public class ThirdPartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.ThirdParty");
@@ -408,20 +384,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cFullnameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cFullnameSTRINGTerminalRuleCall_2_0 = (RuleCall)cFullnameAssignment_2.eContents().get(0);
-		private final Assignment cDefinitionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDefinitionDefinedTermParserRuleCall_3_0 = (RuleCall)cDefinitionAssignment_3.eContents().get(0);
-		private final Assignment cAddressAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAddressAddressParserRuleCall_4_0 = (RuleCall)cAddressAssignment_4.eContents().get(0);
-		private final Assignment cCompanyNumberAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cCompanyNumberCompanyNumberParserRuleCall_5_0 = (RuleCall)cCompanyNumberAssignment_5.eContents().get(0);
-		private final Assignment cFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFeaturesFeatureParserRuleCall_6_0 = (RuleCall)cFeaturesAssignment_6.eContents().get(0);
+		private final Assignment cFeatureAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFeatureFeatureParserRuleCall_3_0 = (RuleCall)cFeatureAssignment_3.eContents().get(0);
 		
 		//ThirdParty:
-		//    'ThirdParty:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+		//    'ThirdParty:' name=ID fullname=STRING (feature+=Feature)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ThirdParty:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*
+		//'ThirdParty:' name=ID fullname=STRING (feature+=Feature)*
 		public Group getGroup() { return cGroup; }
 		
 		//'ThirdParty:'
@@ -439,29 +409,11 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getFullnameSTRINGTerminalRuleCall_2_0() { return cFullnameSTRINGTerminalRuleCall_2_0; }
 		
-		//(definition+=DefinedTerm)?
-		public Assignment getDefinitionAssignment_3() { return cDefinitionAssignment_3; }
-		
-		//DefinedTerm
-		public RuleCall getDefinitionDefinedTermParserRuleCall_3_0() { return cDefinitionDefinedTermParserRuleCall_3_0; }
-		
-		//(address+=Address)?
-		public Assignment getAddressAssignment_4() { return cAddressAssignment_4; }
-		
-		//Address
-		public RuleCall getAddressAddressParserRuleCall_4_0() { return cAddressAddressParserRuleCall_4_0; }
-		
-		//(companyNumber+=CompanyNumber)?
-		public Assignment getCompanyNumberAssignment_5() { return cCompanyNumberAssignment_5; }
-		
-		//CompanyNumber
-		public RuleCall getCompanyNumberCompanyNumberParserRuleCall_5_0() { return cCompanyNumberCompanyNumberParserRuleCall_5_0; }
-		
-		//(features+=Feature)*
-		public Assignment getFeaturesAssignment_6() { return cFeaturesAssignment_6; }
+		//(feature+=Feature)*
+		public Assignment getFeatureAssignment_3() { return cFeatureAssignment_3; }
 		
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_6_0() { return cFeaturesFeatureParserRuleCall_6_0; }
+		public RuleCall getFeatureFeatureParserRuleCall_3_0() { return cFeatureFeatureParserRuleCall_3_0; }
 	}
 	public class SubjectMatterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.SubjectMatter");
@@ -471,20 +423,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cSubjectMatterAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cSubjectMatterSTRINGTerminalRuleCall_2_0 = (RuleCall)cSubjectMatterAssignment_2.eContents().get(0);
-		private final Assignment cDefinitionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDefinitionDefinedTermParserRuleCall_3_0 = (RuleCall)cDefinitionAssignment_3.eContents().get(0);
-		private final Assignment cAddressAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cAddressAddressParserRuleCall_4_0 = (RuleCall)cAddressAssignment_4.eContents().get(0);
-		private final Assignment cCompanyNumberAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cCompanyNumberCompanyNumberParserRuleCall_5_0 = (RuleCall)cCompanyNumberAssignment_5.eContents().get(0);
-		private final Assignment cFeaturesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFeaturesFeatureParserRuleCall_6_0 = (RuleCall)cFeaturesAssignment_6.eContents().get(0);
+		private final Assignment cFeatureAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFeatureFeatureParserRuleCall_3_0 = (RuleCall)cFeatureAssignment_3.eContents().get(0);
 		
 		//SubjectMatter:
-		//    'SubjectMatter:' name=ID subjectMatter=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+		//    'SubjectMatter:' name=ID subjectMatter=STRING (feature+=Feature)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'SubjectMatter:' name=ID subjectMatter=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*
+		//'SubjectMatter:' name=ID subjectMatter=STRING (feature+=Feature)*
 		public Group getGroup() { return cGroup; }
 		
 		//'SubjectMatter:'
@@ -502,29 +448,53 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getSubjectMatterSTRINGTerminalRuleCall_2_0() { return cSubjectMatterSTRINGTerminalRuleCall_2_0; }
 		
-		//(definition+=DefinedTerm)?
-		public Assignment getDefinitionAssignment_3() { return cDefinitionAssignment_3; }
-		
-		//DefinedTerm
-		public RuleCall getDefinitionDefinedTermParserRuleCall_3_0() { return cDefinitionDefinedTermParserRuleCall_3_0; }
-		
-		//(address+=Address)?
-		public Assignment getAddressAssignment_4() { return cAddressAssignment_4; }
-		
-		//Address
-		public RuleCall getAddressAddressParserRuleCall_4_0() { return cAddressAddressParserRuleCall_4_0; }
-		
-		//(companyNumber+=CompanyNumber)?
-		public Assignment getCompanyNumberAssignment_5() { return cCompanyNumberAssignment_5; }
-		
-		//CompanyNumber
-		public RuleCall getCompanyNumberCompanyNumberParserRuleCall_5_0() { return cCompanyNumberCompanyNumberParserRuleCall_5_0; }
-		
-		//(features+=Feature)*
-		public Assignment getFeaturesAssignment_6() { return cFeaturesAssignment_6; }
+		//(feature+=Feature)*
+		public Assignment getFeatureAssignment_3() { return cFeatureAssignment_3; }
 		
 		//Feature
-		public RuleCall getFeaturesFeatureParserRuleCall_6_0() { return cFeaturesFeatureParserRuleCall_6_0; }
+		public RuleCall getFeatureFeatureParserRuleCall_3_0() { return cFeatureFeatureParserRuleCall_3_0; }
+	}
+	public class FeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Feature");
+		private final Assignment cFeaturetypeAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cFeaturetypeFeatureTypeParserRuleCall_0 = (RuleCall)cFeaturetypeAssignment.eContents().get(0);
+		
+		//Feature:
+		//    featuretype=FeatureType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//featuretype=FeatureType
+		public Assignment getFeaturetypeAssignment() { return cFeaturetypeAssignment; }
+		
+		//FeatureType
+		public RuleCall getFeaturetypeFeatureTypeParserRuleCall_0() { return cFeaturetypeFeatureTypeParserRuleCall_0; }
+	}
+	public class FeatureTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.FeatureType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cDefinedTermParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAddressParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCompanyNumberParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cCustomFeatureParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		
+		//FeatureType:
+		//    DefinedTerm | Address | CompanyNumber | CustomFeature;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//DefinedTerm | Address | CompanyNumber | CustomFeature
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DefinedTerm
+		public RuleCall getDefinedTermParserRuleCall_0() { return cDefinedTermParserRuleCall_0; }
+		
+		//Address
+		public RuleCall getAddressParserRuleCall_1() { return cAddressParserRuleCall_1; }
+		
+		//CompanyNumber
+		public RuleCall getCompanyNumberParserRuleCall_2() { return cCompanyNumberParserRuleCall_2; }
+		
+		//CustomFeature
+		public RuleCall getCustomFeatureParserRuleCall_3() { return cCustomFeatureParserRuleCall_3; }
 	}
 	public class DefinedTermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.DefinedTerm");
@@ -595,14 +565,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getDefinitionSTRINGTerminalRuleCall_1_0() { return cDefinitionSTRINGTerminalRuleCall_1_0; }
 	}
-	public class FeatureElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Feature");
+	public class CustomFeatureElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomFeature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWithFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFeatureSTRINGTerminalRuleCall_1_0 = (RuleCall)cFeatureAssignment_1.eContents().get(0);
 		
-		//Feature:
+		//CustomFeature:
 		//    'withFeature' feature=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1336,10 +1306,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cYearINTTerminalRuleCall_9_4_0 = (RuleCall)cYearAssignment_9_4.eContents().get(0);
 		
 		//LicenceObligation:
-		//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+		//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?
+		//'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*
 		public Group getGroup() { return cGroup; }
 		
 		//'LicenceObligation:'
@@ -1387,7 +1357,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_8_0_1() { return cSuperTypePartyIDTerminalRuleCall_8_0_1; }
 		
-		//( 'by' 'date' day=INT month=INT year=INT)?
+		//( 'by' 'date' day=INT month=INT year=INT)*
 		public Group getGroup_9() { return cGroup_9; }
 		
 		//'by'
@@ -2045,10 +2015,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final PartyElements pParty;
 	private final ThirdPartyElements pThirdParty;
 	private final SubjectMatterElements pSubjectMatter;
+	private final FeatureElements pFeature;
+	private final FeatureTypeElements pFeatureType;
 	private final DefinedTermElements pDefinedTerm;
 	private final AddressElements pAddress;
 	private final CompanyNumberElements pCompanyNumber;
-	private final FeatureElements pFeature;
+	private final CustomFeatureElements pCustomFeature;
 	private final FormalityTypeElements pFormalityType;
 	private final InWritingElements pInWriting;
 	private final ByEmailElements pByEmail;
@@ -2093,10 +2065,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pParty = new PartyElements();
 		this.pThirdParty = new ThirdPartyElements();
 		this.pSubjectMatter = new SubjectMatterElements();
+		this.pFeature = new FeatureElements();
+		this.pFeatureType = new FeatureTypeElements();
 		this.pDefinedTerm = new DefinedTermElements();
 		this.pAddress = new AddressElements();
 		this.pCompanyNumber = new CompanyNumberElements();
-		this.pFeature = new FeatureElements();
+		this.pCustomFeature = new CustomFeatureElements();
 		this.pFormalityType = new FormalityTypeElements();
 		this.pInWriting = new InWritingElements();
 		this.pByEmail = new ByEmailElements();
@@ -2155,7 +2129,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 
 	
 	//Model:
-	//    'ContractName:' title=STRING '.'+
+	//    'ContractTitle:' title=STRING '.'+
 	//    'Entities:'
 	//    (entityTypes+=EntityType '.')+
 	//    'Formalities:'?
@@ -2204,7 +2178,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Party:
-	//    'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	//    'Party:' name=ID fullname=STRING (feature+=Feature)*;
 	public PartyElements getPartyAccess() {
 		return pParty;
 	}
@@ -2214,7 +2188,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ThirdParty:
-	//    'ThirdParty:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	//    'ThirdParty:' name=ID fullname=STRING (feature+=Feature)*;
 	public ThirdPartyElements getThirdPartyAccess() {
 		return pThirdParty;
 	}
@@ -2224,13 +2198,33 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//SubjectMatter:
-	//    'SubjectMatter:' name=ID subjectMatter=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	//    'SubjectMatter:' name=ID subjectMatter=STRING (feature+=Feature)*;
 	public SubjectMatterElements getSubjectMatterAccess() {
 		return pSubjectMatter;
 	}
 	
 	public ParserRule getSubjectMatterRule() {
 		return getSubjectMatterAccess().getRule();
+	}
+	
+	//Feature:
+	//    featuretype=FeatureType;
+	public FeatureElements getFeatureAccess() {
+		return pFeature;
+	}
+	
+	public ParserRule getFeatureRule() {
+		return getFeatureAccess().getRule();
+	}
+	
+	//FeatureType:
+	//    DefinedTerm | Address | CompanyNumber | CustomFeature;
+	public FeatureTypeElements getFeatureTypeAccess() {
+		return pFeatureType;
+	}
+	
+	public ParserRule getFeatureTypeRule() {
+		return getFeatureTypeAccess().getRule();
 	}
 	
 	//DefinedTerm:
@@ -2263,14 +2257,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getCompanyNumberAccess().getRule();
 	}
 	
-	//Feature:
+	//CustomFeature:
 	//    'withFeature' feature=STRING;
-	public FeatureElements getFeatureAccess() {
-		return pFeature;
+	public CustomFeatureElements getCustomFeatureAccess() {
+		return pCustomFeature;
 	}
 	
-	public ParserRule getFeatureRule() {
-		return getFeatureAccess().getRule();
+	public ParserRule getCustomFeatureRule() {
+		return getCustomFeatureAccess().getRule();
 	}
 	
 	////Formality Types
@@ -2428,7 +2422,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//LicenceObligation:
-	//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*;
 	public LicenceObligationElements getLicenceObligationAccess() {
 		return pLicenceObligation;
 	}

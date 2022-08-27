@@ -4,7 +4,7 @@ generate pactDSL "http://www.lmw21.imperialmsc/pactdsl/PactDSL"
 
 Model:
 	
-	'ContractName:' title=STRING '.'+
+	'ContractTitle:' title=STRING '.'+
 	
 	'Entities:' 
 	(entityTypes+=EntityType '.')+
@@ -42,13 +42,19 @@ EffectiveDate:
 	'EffectiveDate:' (day=INT month=INT year=INT)+;
 
 Party:
-	'Party:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	'Party:' name=ID fullname=STRING (feature+=Feature)*; 
 	 
 ThirdParty:
-	'ThirdParty:' name=ID fullname=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	'ThirdParty:' name=ID fullname=STRING (feature+=Feature)*; 
 	
 SubjectMatter:
-	'SubjectMatter:' name=ID subjectMatter=STRING (definition+=DefinedTerm)? (address+=Address)? (companyNumber+=CompanyNumber)? (features+=Feature)*;
+	'SubjectMatter:' name=ID subjectMatter=STRING (feature+=Feature)*; 
+
+Feature:
+	featuretype=FeatureType;
+
+FeatureType:
+	DefinedTerm | Address | CompanyNumber | CustomFeature;
 
 DefinedTerm:
 	'definedAs' definition=STRING;
@@ -59,7 +65,7 @@ Address:
 CompanyNumber:
 	'withCompanyNumber' definition=STRING;
 
-Feature:
+CustomFeature:
 	'withFeature' feature=STRING;
 	
 	
@@ -120,7 +126,7 @@ TransferObligation:
 	'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
 
 LicenceObligation:
-	'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?; 
+	'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*; 
 
 ConstraintParty:
 	'ConstraintParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? ('to' superType=[Party])?; 	

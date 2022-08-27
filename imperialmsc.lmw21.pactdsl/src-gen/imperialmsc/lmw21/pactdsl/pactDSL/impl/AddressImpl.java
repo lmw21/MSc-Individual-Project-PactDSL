@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class AddressImpl extends MinimalEObjectImpl.Container implements Address
+public class AddressImpl extends FeatureTypeImpl implements Address
 {
   /**
    * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.

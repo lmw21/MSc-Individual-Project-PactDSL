@@ -119,10 +119,25 @@ public class PactDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PactDSLPackage.FEATURE:
+      {
+        Feature feature = (Feature)theEObject;
+        T result = caseFeature(feature);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.FEATURE_TYPE:
+      {
+        FeatureType featureType = (FeatureType)theEObject;
+        T result = caseFeatureType(featureType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PactDSLPackage.DEFINED_TERM:
       {
         DefinedTerm definedTerm = (DefinedTerm)theEObject;
         T result = caseDefinedTerm(definedTerm);
+        if (result == null) result = caseFeatureType(definedTerm);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -130,6 +145,7 @@ public class PactDSLSwitch<T> extends Switch<T>
       {
         Address address = (Address)theEObject;
         T result = caseAddress(address);
+        if (result == null) result = caseFeatureType(address);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -137,13 +153,15 @@ public class PactDSLSwitch<T> extends Switch<T>
       {
         CompanyNumber companyNumber = (CompanyNumber)theEObject;
         T result = caseCompanyNumber(companyNumber);
+        if (result == null) result = caseFeatureType(companyNumber);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PactDSLPackage.FEATURE:
+      case PactDSLPackage.CUSTOM_FEATURE:
       {
-        Feature feature = (Feature)theEObject;
-        T result = caseFeature(feature);
+        CustomFeature customFeature = (CustomFeature)theEObject;
+        T result = caseCustomFeature(customFeature);
+        if (result == null) result = caseFeatureType(customFeature);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -466,6 +484,38 @@ public class PactDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeature(Feature object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Feature Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Feature Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFeatureType(FeatureType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Defined Term</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -514,17 +564,17 @@ public class PactDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Custom Feature</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Custom Feature</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseFeature(Feature object)
+  public T caseCustomFeature(CustomFeature object)
   {
     return null;
   }

@@ -10,6 +10,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ByEmail;
 import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
@@ -80,6 +81,9 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case PactDSLPackage.CONSTRAINT_THIRD_PARTY:
 				sequence_ConstraintThirdParty(context, (ConstraintThirdParty) semanticObject); 
+				return; 
+			case PactDSLPackage.CUSTOM_FEATURE:
+				sequence_CustomFeature(context, (CustomFeature) semanticObject); 
 				return; 
 			case PactDSLPackage.CUSTOM_FORMALITY:
 				sequence_CustomFormality(context, (CustomFormality) semanticObject); 
@@ -166,6 +170,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     FeatureType returns Address
 	 *     Address returns Address
 	 *
 	 * Constraint:
@@ -216,6 +221,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     FeatureType returns CompanyNumber
 	 *     CompanyNumber returns CompanyNumber
 	 *
 	 * Constraint:
@@ -267,6 +273,25 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     FeatureType returns CustomFeature
+	 *     CustomFeature returns CustomFeature
+	 *
+	 * Constraint:
+	 *     feature=STRING
+	 */
+	protected void sequence_CustomFeature(ISerializationContext context, CustomFeature semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__FEATURE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__FEATURE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomFeatureAccess().getFeatureSTRINGTerminalRuleCall_1_0(), semanticObject.getFeature());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FormalityType returns CustomFormality
 	 *     CustomFormality returns CustomFormality
 	 *
@@ -299,6 +324,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     FeatureType returns DefinedTerm
 	 *     DefinedTerm returns DefinedTerm
 	 *
 	 * Constraint:
@@ -346,15 +372,15 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Feature returns Feature
 	 *
 	 * Constraint:
-	 *     feature=STRING
+	 *     featuretype=FeatureType
 	 */
 	protected void sequence_Feature(ISerializationContext context, Feature semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.FEATURE__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.FEATURE__FEATURE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.FEATURE__FEATURETYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.FEATURE__FEATURETYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFeatureAccess().getFeatureSTRINGTerminalRuleCall_1_0(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getFeatureAccess().getFeaturetypeFeatureTypeParserRuleCall_0(), semanticObject.getFeaturetype());
 		feeder.finish();
 	}
 	
@@ -483,7 +509,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     LicenceObligation returns LicenceObligation
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID] superType=[SubjectMatter|ID]+ superType=[Party|ID]+ (day=INT month=INT year=INT)?)
+	 *     (superType=[Party|ID] superType=[SubjectMatter|ID]+ superType=[Party|ID]+ (day=INT month=INT year=INT)*)
 	 */
 	protected void sequence_LicenceObligation(ISerializationContext context, LicenceObligation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -577,14 +603,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Party returns Party
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         fullname=STRING 
-	 *         definition+=DefinedTerm? 
-	 *         address+=Address? 
-	 *         companyNumber+=CompanyNumber? 
-	 *         features+=Feature*
-	 *     )
+	 *     (name=ID fullname=STRING feature+=Feature*)
 	 */
 	protected void sequence_Party(ISerializationContext context, Party semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -641,14 +660,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SubjectMatter returns SubjectMatter
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         subjectMatter=STRING 
-	 *         definition+=DefinedTerm? 
-	 *         address+=Address? 
-	 *         companyNumber+=CompanyNumber? 
-	 *         features+=Feature*
-	 *     )
+	 *     (name=ID subjectMatter=STRING feature+=Feature*)
 	 */
 	protected void sequence_SubjectMatter(ISerializationContext context, SubjectMatter semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -661,14 +673,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ThirdParty returns ThirdParty
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         fullname=STRING 
-	 *         definition+=DefinedTerm? 
-	 *         address+=Address? 
-	 *         companyNumber+=CompanyNumber? 
-	 *         features+=Feature*
-	 *     )
+	 *     (name=ID fullname=STRING feature+=Feature*)
 	 */
 	protected void sequence_ThirdParty(ISerializationContext context, ThirdParty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -242,40 +242,13 @@ public interface PactDSLPackage extends EPackage
   int PARTY__FULLNAME = ENTITY_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' containment reference list.
+   * The feature id for the '<em><b>Feature</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARTY__DEFINITION = ENTITY_TYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Address</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTY__ADDRESS = ENTITY_TYPE_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Company Number</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTY__COMPANY_NUMBER = ENTITY_TYPE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARTY__FEATURES = ENTITY_TYPE_FEATURE_COUNT + 5;
+  int PARTY__FEATURE = ENTITY_TYPE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Party</em>' class.
@@ -284,7 +257,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARTY_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 6;
+  int PARTY_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ThirdPartyImpl <em>Third Party</em>}' class.
@@ -315,40 +288,13 @@ public interface PactDSLPackage extends EPackage
   int THIRD_PARTY__FULLNAME = ENTITY_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' containment reference list.
+   * The feature id for the '<em><b>Feature</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int THIRD_PARTY__DEFINITION = ENTITY_TYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Address</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int THIRD_PARTY__ADDRESS = ENTITY_TYPE_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Company Number</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int THIRD_PARTY__COMPANY_NUMBER = ENTITY_TYPE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int THIRD_PARTY__FEATURES = ENTITY_TYPE_FEATURE_COUNT + 5;
+  int THIRD_PARTY__FEATURE = ENTITY_TYPE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Third Party</em>' class.
@@ -357,7 +303,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int THIRD_PARTY_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 6;
+  int THIRD_PARTY_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl <em>Subject Matter</em>}' class.
@@ -388,40 +334,13 @@ public interface PactDSLPackage extends EPackage
   int SUBJECT_MATTER__SUBJECT_MATTER = ENTITY_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' containment reference list.
+   * The feature id for the '<em><b>Feature</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUBJECT_MATTER__DEFINITION = ENTITY_TYPE_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Address</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUBJECT_MATTER__ADDRESS = ENTITY_TYPE_FEATURE_COUNT + 3;
-
-  /**
-   * The feature id for the '<em><b>Company Number</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUBJECT_MATTER__COMPANY_NUMBER = ENTITY_TYPE_FEATURE_COUNT + 4;
-
-  /**
-   * The feature id for the '<em><b>Features</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUBJECT_MATTER__FEATURES = ENTITY_TYPE_FEATURE_COUNT + 5;
+  int SUBJECT_MATTER__FEATURE = ENTITY_TYPE_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Subject Matter</em>' class.
@@ -430,91 +349,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUBJECT_MATTER_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 6;
-
-  /**
-   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.DefinedTermImpl <em>Defined Term</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.DefinedTermImpl
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getDefinedTerm()
-   * @generated
-   */
-  int DEFINED_TERM = 6;
-
-  /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINED_TERM__DEFINITION = 0;
-
-  /**
-   * The number of structural features of the '<em>Defined Term</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINED_TERM_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl <em>Address</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getAddress()
-   * @generated
-   */
-  int ADDRESS = 7;
-
-  /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS__DEFINITION = 0;
-
-  /**
-   * The number of structural features of the '<em>Address</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ADDRESS_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl <em>Company Number</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCompanyNumber()
-   * @generated
-   */
-  int COMPANY_NUMBER = 8;
-
-  /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPANY_NUMBER__DEFINITION = 0;
-
-  /**
-   * The number of structural features of the '<em>Company Number</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPANY_NUMBER_FEATURE_COUNT = 1;
+  int SUBJECT_MATTER_FEATURE_COUNT = ENTITY_TYPE_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl <em>Feature</em>}' class.
@@ -524,16 +359,16 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFeature()
    * @generated
    */
-  int FEATURE = 9;
+  int FEATURE = 6;
 
   /**
-   * The feature id for the '<em><b>Feature</b></em>' attribute.
+   * The feature id for the '<em><b>Featuretype</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEATURE__FEATURE = 0;
+  int FEATURE__FEATURETYPE = 0;
 
   /**
    * The number of structural features of the '<em>Feature</em>' class.
@@ -545,6 +380,137 @@ public interface PactDSLPackage extends EPackage
   int FEATURE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureTypeImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFeatureType()
+   * @generated
+   */
+  int FEATURE_TYPE = 7;
+
+  /**
+   * The number of structural features of the '<em>Feature Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEATURE_TYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.DefinedTermImpl <em>Defined Term</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.DefinedTermImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getDefinedTerm()
+   * @generated
+   */
+  int DEFINED_TERM = 8;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINED_TERM__DEFINITION = FEATURE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Defined Term</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINED_TERM_FEATURE_COUNT = FEATURE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl <em>Address</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getAddress()
+   * @generated
+   */
+  int ADDRESS = 9;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDRESS__DEFINITION = FEATURE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Address</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADDRESS_FEATURE_COUNT = FEATURE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl <em>Company Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCompanyNumber()
+   * @generated
+   */
+  int COMPANY_NUMBER = 10;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPANY_NUMBER__DEFINITION = FEATURE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Company Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPANY_NUMBER_FEATURE_COUNT = FEATURE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl <em>Custom Feature</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomFeature()
+   * @generated
+   */
+  int CUSTOM_FEATURE = 11;
+
+  /**
+   * The feature id for the '<em><b>Feature</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_FEATURE__FEATURE = FEATURE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Custom Feature</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_FEATURE_FEATURE_COUNT = FEATURE_TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FormalityTypeImpl <em>Formality Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -552,7 +518,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFormalityType()
    * @generated
    */
-  int FORMALITY_TYPE = 10;
+  int FORMALITY_TYPE = 12;
 
   /**
    * The number of structural features of the '<em>Formality Type</em>' class.
@@ -571,7 +537,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getInWriting()
    * @generated
    */
-  int IN_WRITING = 11;
+  int IN_WRITING = 13;
 
   /**
    * The feature id for the '<em><b>Custom Writing Formality</b></em>' attribute.
@@ -599,7 +565,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getByEmail()
    * @generated
    */
-  int BY_EMAIL = 12;
+  int BY_EMAIL = 14;
 
   /**
    * The feature id for the '<em><b>Email Address</b></em>' attribute.
@@ -627,7 +593,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getGivingNotice()
    * @generated
    */
-  int GIVING_NOTICE = 13;
+  int GIVING_NOTICE = 15;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -664,7 +630,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomFormality()
    * @generated
    */
-  int CUSTOM_FORMALITY = 14;
+  int CUSTOM_FORMALITY = 16;
 
   /**
    * The feature id for the '<em><b>Custom Formality</b></em>' attribute.
@@ -692,7 +658,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getActionType()
    * @generated
    */
-  int ACTION_TYPE = 15;
+  int ACTION_TYPE = 17;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -720,7 +686,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getGivenConsent()
    * @generated
    */
-  int GIVEN_CONSENT = 16;
+  int GIVEN_CONSENT = 18;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -748,7 +714,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getGivenWrittenConsent()
    * @generated
    */
-  int GIVEN_WRITTEN_CONSENT = 17;
+  int GIVEN_WRITTEN_CONSENT = 19;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -776,7 +742,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getStateType()
    * @generated
    */
-  int STATE_TYPE = 18;
+  int STATE_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -804,7 +770,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOwnership()
    * @generated
    */
-  int OWNERSHIP = 19;
+  int OWNERSHIP = 21;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -841,7 +807,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getRightToUse()
    * @generated
    */
-  int RIGHT_TO_USE = 20;
+  int RIGHT_TO_USE = 22;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -878,7 +844,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getPrimaryObligationType()
    * @generated
    */
-  int PRIMARY_OBLIGATION_TYPE = 21;
+  int PRIMARY_OBLIGATION_TYPE = 23;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -915,7 +881,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getPaymentObligation()
    * @generated
    */
-  int PAYMENT_OBLIGATION = 22;
+  int PAYMENT_OBLIGATION = 24;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -988,7 +954,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getDeliveryObligation()
    * @generated
    */
-  int DELIVERY_OBLIGATION = 23;
+  int DELIVERY_OBLIGATION = 25;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -1052,7 +1018,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getTransferObligation()
    * @generated
    */
-  int TRANSFER_OBLIGATION = 24;
+  int TRANSFER_OBLIGATION = 26;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -1116,7 +1082,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLicenceObligation()
    * @generated
    */
-  int LICENCE_OBLIGATION = 25;
+  int LICENCE_OBLIGATION = 27;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -1180,7 +1146,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getConstraintParty()
    * @generated
    */
-  int CONSTRAINT_PARTY = 26;
+  int CONSTRAINT_PARTY = 28;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -1226,7 +1192,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getConstraintThirdParty()
    * @generated
    */
-  int CONSTRAINT_THIRD_PARTY = 27;
+  int CONSTRAINT_THIRD_PARTY = 29;
 
   /**
    * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
@@ -1281,7 +1247,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getTerminationType()
    * @generated
    */
-  int TERMINATION_TYPE = 28;
+  int TERMINATION_TYPE = 30;
 
   /**
    * The number of structural features of the '<em>Termination Type</em>' class.
@@ -1300,7 +1266,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForConvenience()
    * @generated
    */
-  int FOR_CONVENIENCE = 29;
+  int FOR_CONVENIENCE = 31;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1337,7 +1303,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnReasonableNotice()
    * @generated
    */
-  int ON_REASONABLE_NOTICE = 30;
+  int ON_REASONABLE_NOTICE = 32;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1365,7 +1331,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForBreach()
    * @generated
    */
-  int FOR_BREACH = 31;
+  int FOR_BREACH = 33;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1411,7 +1377,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnInsolvencyEvent()
    * @generated
    */
-  int ON_INSOLVENCY_EVENT = 32;
+  int ON_INSOLVENCY_EVENT = 34;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1448,7 +1414,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomTermination()
    * @generated
    */
-  int CUSTOM_TERMINATION = 33;
+  int CUSTOM_TERMINATION = 35;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1485,7 +1451,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getBoilerplateType()
    * @generated
    */
-  int BOILERPLATE_TYPE = 34;
+  int BOILERPLATE_TYPE = 36;
 
   /**
    * The number of structural features of the '<em>Boilerplate Type</em>' class.
@@ -1504,7 +1470,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getApplicableLaw()
    * @generated
    */
-  int APPLICABLE_LAW = 35;
+  int APPLICABLE_LAW = 37;
 
   /**
    * The feature id for the '<em><b>Custom Applicable Law</b></em>' attribute.
@@ -1541,7 +1507,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getJurisdiction()
    * @generated
    */
-  int JURISDICTION = 36;
+  int JURISDICTION = 38;
 
   /**
    * The feature id for the '<em><b>Custom Jurisdiction</b></em>' attribute.
@@ -1578,7 +1544,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getNotices()
    * @generated
    */
-  int NOTICES = 37;
+  int NOTICES = 39;
 
   /**
    * The feature id for the '<em><b>Custom Notice</b></em>' attribute.
@@ -1783,48 +1749,15 @@ public interface PactDSLPackage extends EPackage
   EAttribute getParty_Fullname();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Party#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Party#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Definition</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Party#getDefinition()
+   * @return the meta object for the containment reference list '<em>Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Party#getFeature()
    * @see #getParty()
    * @generated
    */
-  EReference getParty_Definition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Party#getAddress <em>Address</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Address</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Party#getAddress()
-   * @see #getParty()
-   * @generated
-   */
-  EReference getParty_Address();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Party#getCompanyNumber <em>Company Number</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Company Number</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Party#getCompanyNumber()
-   * @see #getParty()
-   * @generated
-   */
-  EReference getParty_CompanyNumber();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Party#getFeatures <em>Features</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Party#getFeatures()
-   * @see #getParty()
-   * @generated
-   */
-  EReference getParty_Features();
+  EReference getParty_Feature();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty <em>Third Party</em>}'.
@@ -1859,48 +1792,15 @@ public interface PactDSLPackage extends EPackage
   EAttribute getThirdParty_Fullname();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Definition</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getDefinition()
+   * @return the meta object for the containment reference list '<em>Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeature()
    * @see #getThirdParty()
    * @generated
    */
-  EReference getThirdParty_Definition();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getAddress <em>Address</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Address</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getAddress()
-   * @see #getThirdParty()
-   * @generated
-   */
-  EReference getThirdParty_Address();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getCompanyNumber <em>Company Number</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Company Number</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getCompanyNumber()
-   * @see #getThirdParty()
-   * @generated
-   */
-  EReference getThirdParty_CompanyNumber();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeatures <em>Features</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty#getFeatures()
-   * @see #getThirdParty()
-   * @generated
-   */
-  EReference getThirdParty_Features();
+  EReference getThirdParty_Feature();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter <em>Subject Matter</em>}'.
@@ -1935,48 +1835,46 @@ public interface PactDSLPackage extends EPackage
   EAttribute getSubjectMatter_SubjectMatter();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Definition</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getDefinition()
+   * @return the meta object for the containment reference list '<em>Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getFeature()
    * @see #getSubjectMatter()
    * @generated
    */
-  EReference getSubjectMatter_Definition();
+  EReference getSubjectMatter_Feature();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getAddress <em>Address</em>}'.
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Address</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getAddress()
-   * @see #getSubjectMatter()
+   * @return the meta object for class '<em>Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature
    * @generated
    */
-  EReference getSubjectMatter_Address();
+  EClass getFeature();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getCompanyNumber <em>Company Number</em>}'.
+   * Returns the meta object for the containment reference '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeaturetype <em>Featuretype</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Company Number</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getCompanyNumber()
-   * @see #getSubjectMatter()
+   * @return the meta object for the containment reference '<em>Featuretype</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeaturetype()
+   * @see #getFeature()
    * @generated
    */
-  EReference getSubjectMatter_CompanyNumber();
+  EReference getFeature_Featuretype();
 
   /**
-   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getFeatures <em>Features</em>}'.
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.FeatureType <em>Feature Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Features</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter#getFeatures()
-   * @see #getSubjectMatter()
+   * @return the meta object for class '<em>Feature Type</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.FeatureType
    * @generated
    */
-  EReference getSubjectMatter_Features();
+  EClass getFeatureType();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm <em>Defined Term</em>}'.
@@ -2042,25 +1940,25 @@ public interface PactDSLPackage extends EPackage
   EAttribute getCompanyNumber_Definition();
 
   /**
-   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature <em>Feature</em>}'.
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature <em>Custom Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Feature</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature
+   * @return the meta object for class '<em>Custom Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature
    * @generated
    */
-  EClass getFeature();
+  EClass getCustomFeature();
 
   /**
-   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeature <em>Feature</em>}'.
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature <em>Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Feature</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Feature#getFeature()
-   * @see #getFeature()
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature()
+   * @see #getCustomFeature()
    * @generated
    */
-  EAttribute getFeature_Feature();
+  EAttribute getCustomFeature_Feature();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.FormalityType <em>Formality Type</em>}'.
@@ -2972,36 +2870,12 @@ public interface PactDSLPackage extends EPackage
     EAttribute PARTY__FULLNAME = eINSTANCE.getParty_Fullname();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PARTY__DEFINITION = eINSTANCE.getParty_Definition();
-
-    /**
-     * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PARTY__ADDRESS = eINSTANCE.getParty_Address();
-
-    /**
-     * The meta object literal for the '<em><b>Company Number</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PARTY__COMPANY_NUMBER = eINSTANCE.getParty_CompanyNumber();
-
-    /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PARTY__FEATURES = eINSTANCE.getParty_Features();
+    EReference PARTY__FEATURE = eINSTANCE.getParty_Feature();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ThirdPartyImpl <em>Third Party</em>}' class.
@@ -3030,36 +2904,12 @@ public interface PactDSLPackage extends EPackage
     EAttribute THIRD_PARTY__FULLNAME = eINSTANCE.getThirdParty_Fullname();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference THIRD_PARTY__DEFINITION = eINSTANCE.getThirdParty_Definition();
-
-    /**
-     * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference THIRD_PARTY__ADDRESS = eINSTANCE.getThirdParty_Address();
-
-    /**
-     * The meta object literal for the '<em><b>Company Number</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference THIRD_PARTY__COMPANY_NUMBER = eINSTANCE.getThirdParty_CompanyNumber();
-
-    /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference THIRD_PARTY__FEATURES = eINSTANCE.getThirdParty_Features();
+    EReference THIRD_PARTY__FEATURE = eINSTANCE.getThirdParty_Feature();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SubjectMatterImpl <em>Subject Matter</em>}' class.
@@ -3088,36 +2938,40 @@ public interface PactDSLPackage extends EPackage
     EAttribute SUBJECT_MATTER__SUBJECT_MATTER = eINSTANCE.getSubjectMatter_SubjectMatter();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Feature</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SUBJECT_MATTER__DEFINITION = eINSTANCE.getSubjectMatter_Definition();
+    EReference SUBJECT_MATTER__FEATURE = eINSTANCE.getSubjectMatter_Feature();
 
     /**
-     * The meta object literal for the '<em><b>Address</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl <em>Feature</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFeature()
      * @generated
      */
-    EReference SUBJECT_MATTER__ADDRESS = eINSTANCE.getSubjectMatter_Address();
+    EClass FEATURE = eINSTANCE.getFeature();
 
     /**
-     * The meta object literal for the '<em><b>Company Number</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Featuretype</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SUBJECT_MATTER__COMPANY_NUMBER = eINSTANCE.getSubjectMatter_CompanyNumber();
+    EReference FEATURE__FEATURETYPE = eINSTANCE.getFeature_Featuretype();
 
     /**
-     * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureTypeImpl <em>Feature Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureTypeImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFeatureType()
      * @generated
      */
-    EReference SUBJECT_MATTER__FEATURES = eINSTANCE.getSubjectMatter_Features();
+    EClass FEATURE_TYPE = eINSTANCE.getFeatureType();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.DefinedTermImpl <em>Defined Term</em>}' class.
@@ -3174,14 +3028,14 @@ public interface PactDSLPackage extends EPackage
     EAttribute COMPANY_NUMBER__DEFINITION = eINSTANCE.getCompanyNumber_Definition();
 
     /**
-     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl <em>Feature</em>}' class.
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl <em>Custom Feature</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.FeatureImpl
-     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getFeature()
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomFeature()
      * @generated
      */
-    EClass FEATURE = eINSTANCE.getFeature();
+    EClass CUSTOM_FEATURE = eINSTANCE.getCustomFeature();
 
     /**
      * The meta object literal for the '<em><b>Feature</b></em>' attribute feature.
@@ -3189,7 +3043,7 @@ public interface PactDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FEATURE__FEATURE = eINSTANCE.getFeature_Feature();
+    EAttribute CUSTOM_FEATURE__FEATURE = eINSTANCE.getCustomFeature_Feature();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FormalityTypeImpl <em>Formality Type</em>}' class.
