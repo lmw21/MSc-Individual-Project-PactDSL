@@ -3,8 +3,8 @@
  */
 package imperialmsc.lmw21.pactdsl.pactDSL.impl;
 
-import imperialmsc.lmw21.pactdsl.pactDSL.EntityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
+import imperialmsc.lmw21.pactdsl.pactDSL.Party;
 import imperialmsc.lmw21.pactdsl.pactDSL.StateType;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -38,7 +38,7 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    * @ordered
    */
-  protected EntityType superType;
+  protected Party superType;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,12 +67,12 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
-  public EntityType getSuperType()
+  public Party getSuperType()
   {
     if (superType != null && superType.eIsProxy())
     {
       InternalEObject oldSuperType = (InternalEObject)superType;
-      superType = (EntityType)eResolveProxy(oldSuperType);
+      superType = (Party)eResolveProxy(oldSuperType);
       if (superType != oldSuperType)
       {
         if (eNotificationRequired())
@@ -87,7 +87,7 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EntityType basicGetSuperType()
+  public Party basicGetSuperType()
   {
     return superType;
   }
@@ -98,9 +98,9 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
-  public void setSuperType(EntityType newSuperType)
+  public void setSuperType(Party newSuperType)
   {
-    EntityType oldSuperType = superType;
+    Party oldSuperType = superType;
     superType = newSuperType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.STATE_TYPE__SUPER_TYPE, oldSuperType, superType));
@@ -134,7 +134,7 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
     switch (featureID)
     {
       case PactDSLPackage.STATE_TYPE__SUPER_TYPE:
-        setSuperType((EntityType)newValue);
+        setSuperType((Party)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,7 +151,7 @@ public class StateTypeImpl extends MinimalEObjectImpl.Container implements State
     switch (featureID)
     {
       case PactDSLPackage.STATE_TYPE__SUPER_TYPE:
-        setSuperType((EntityType)null);
+        setSuperType((Party)null);
         return;
     }
     super.eUnset(featureID);

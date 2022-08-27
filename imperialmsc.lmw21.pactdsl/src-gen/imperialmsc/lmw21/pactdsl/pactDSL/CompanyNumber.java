@@ -13,7 +13,7 @@ package imperialmsc.lmw21.pactdsl.pactDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getCompanyNumber <em>Company Number</em>}</li>
  * </ul>
  *
  * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCompanyNumber()
@@ -23,25 +23,25 @@ package imperialmsc.lmw21.pactdsl.pactDSL;
 public interface CompanyNumber extends FeatureType
 {
   /**
-   * Returns the value of the '<em><b>Definition</b></em>' attribute.
+   * Returns the value of the '<em><b>Company Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Definition</em>' attribute.
-   * @see #setDefinition(String)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCompanyNumber_Definition()
+   * @return the value of the '<em>Company Number</em>' attribute.
+   * @see #setCompanyNumber(String)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCompanyNumber_CompanyNumber()
    * @model
    * @generated
    */
-  String getDefinition();
+  String getCompanyNumber();
 
   /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getDefinition <em>Definition</em>}' attribute.
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getCompanyNumber <em>Company Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Definition</em>' attribute.
-   * @see #getDefinition()
+   * @param value the new value of the '<em>Company Number</em>' attribute.
+   * @see #getCompanyNumber()
    * @generated
    */
-  void setDefinition(String value);
+  void setCompanyNumber(String value);
 
 } // CompanyNumber

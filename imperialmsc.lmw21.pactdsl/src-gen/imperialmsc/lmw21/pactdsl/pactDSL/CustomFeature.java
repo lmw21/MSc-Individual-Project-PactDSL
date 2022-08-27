@@ -13,7 +13,7 @@ package imperialmsc.lmw21.pactdsl.pactDSL;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature <em>Feature</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getCustomFeature <em>Custom Feature</em>}</li>
  * </ul>
  *
  * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomFeature()
@@ -23,25 +23,25 @@ package imperialmsc.lmw21.pactdsl.pactDSL;
 public interface CustomFeature extends FeatureType
 {
   /**
-   * Returns the value of the '<em><b>Feature</b></em>' attribute.
+   * Returns the value of the '<em><b>Custom Feature</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Feature</em>' attribute.
-   * @see #setFeature(String)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomFeature_Feature()
+   * @return the value of the '<em>Custom Feature</em>' attribute.
+   * @see #setCustomFeature(String)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomFeature_CustomFeature()
    * @model
    * @generated
    */
-  String getFeature();
+  String getCustomFeature();
 
   /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature <em>Feature</em>}' attribute.
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getCustomFeature <em>Custom Feature</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Feature</em>' attribute.
-   * @see #getFeature()
+   * @param value the new value of the '<em>Custom Feature</em>' attribute.
+   * @see #getCustomFeature()
    * @generated
    */
-  void setFeature(String value);
+  void setCustomFeature(String value);
 
 } // CustomFeature

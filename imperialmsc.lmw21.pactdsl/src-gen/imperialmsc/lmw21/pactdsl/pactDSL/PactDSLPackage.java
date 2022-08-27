@@ -122,13 +122,31 @@ public interface PactDSLPackage extends EPackage
   int MODEL__PRIMARY_OBLIGATION_TYPES = 5;
 
   /**
+   * The feature id for the '<em><b>Secondary Obligation Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__SECONDARY_OBLIGATION_TYPES = 6;
+
+  /**
+   * The feature id for the '<em><b>Liability Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__LIABILITY_TYPES = 7;
+
+  /**
    * The feature id for the '<em><b>Termination Types</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__TERMINATION_TYPES = 6;
+  int MODEL__TERMINATION_TYPES = 8;
 
   /**
    * The feature id for the '<em><b>Boilerplate Types</b></em>' containment reference list.
@@ -137,7 +155,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL__BOILERPLATE_TYPES = 7;
+  int MODEL__BOILERPLATE_TYPES = 9;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -146,7 +164,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 8;
+  int MODEL_FEATURE_COUNT = 10;
 
   /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.EntityTypeImpl <em>Entity Type</em>}' class.
@@ -437,13 +455,13 @@ public interface PactDSLPackage extends EPackage
   int ADDRESS = 9;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * The feature id for the '<em><b>Address</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADDRESS__DEFINITION = FEATURE_TYPE_FEATURE_COUNT + 0;
+  int ADDRESS__ADDRESS = FEATURE_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Address</em>' class.
@@ -465,13 +483,13 @@ public interface PactDSLPackage extends EPackage
   int COMPANY_NUMBER = 10;
 
   /**
-   * The feature id for the '<em><b>Definition</b></em>' attribute.
+   * The feature id for the '<em><b>Company Number</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPANY_NUMBER__DEFINITION = FEATURE_TYPE_FEATURE_COUNT + 0;
+  int COMPANY_NUMBER__COMPANY_NUMBER = FEATURE_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Company Number</em>' class.
@@ -493,13 +511,13 @@ public interface PactDSLPackage extends EPackage
   int CUSTOM_FEATURE = 11;
 
   /**
-   * The feature id for the '<em><b>Feature</b></em>' attribute.
+   * The feature id for the '<em><b>Custom Feature</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CUSTOM_FEATURE__FEATURE = FEATURE_TYPE_FEATURE_COUNT + 0;
+  int CUSTOM_FEATURE__CUSTOM_FEATURE = FEATURE_TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Custom Feature</em>' class.
@@ -1240,6 +1258,163 @@ public interface PactDSLPackage extends EPackage
   int CONSTRAINT_THIRD_PARTY_FEATURE_COUNT = PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl <em>Secondary Obligation Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getSecondaryObligationType()
+   * @generated
+   */
+  int SECONDARY_OBLIGATION_TYPE = 30;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_OBLIGATION_TYPE__SUPER_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Sum</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_OBLIGATION_TYPE__SUM = 1;
+
+  /**
+   * The feature id for the '<em><b>Custom Primary Obligation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_OBLIGATION_TYPE__CUSTOM_PRIMARY_OBLIGATION = 2;
+
+  /**
+   * The number of structural features of the '<em>Secondary Obligation Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SECONDARY_OBLIGATION_TYPE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityTypeImpl <em>Liability Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityTypeImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityType()
+   * @generated
+   */
+  int LIABILITY_TYPE = 31;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_TYPE__SUPER_TYPE = 0;
+
+  /**
+   * The feature id for the '<em><b>Custom Loss</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_TYPE__CUSTOM_LOSS = 1;
+
+  /**
+   * The number of structural features of the '<em>Liability Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityPartyImpl <em>Liability Party</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityPartyImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityParty()
+   * @generated
+   */
+  int LIABILITY_PARTY = 32;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_PARTY__SUPER_TYPE = LIABILITY_TYPE__SUPER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Custom Loss</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_PARTY__CUSTOM_LOSS = LIABILITY_TYPE__CUSTOM_LOSS;
+
+  /**
+   * The number of structural features of the '<em>Liability Party</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_PARTY_FEATURE_COUNT = LIABILITY_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityThirdPartyImpl <em>Liability Third Party</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityThirdPartyImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityThirdParty()
+   * @generated
+   */
+  int LIABILITY_THIRD_PARTY = 33;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_THIRD_PARTY__SUPER_TYPE = LIABILITY_TYPE__SUPER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Custom Loss</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_THIRD_PARTY__CUSTOM_LOSS = LIABILITY_TYPE__CUSTOM_LOSS;
+
+  /**
+   * The number of structural features of the '<em>Liability Third Party</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIABILITY_THIRD_PARTY_FEATURE_COUNT = LIABILITY_TYPE_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.TerminationTypeImpl <em>Termination Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1247,7 +1422,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getTerminationType()
    * @generated
    */
-  int TERMINATION_TYPE = 30;
+  int TERMINATION_TYPE = 34;
 
   /**
    * The number of structural features of the '<em>Termination Type</em>' class.
@@ -1266,7 +1441,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForConvenience()
    * @generated
    */
-  int FOR_CONVENIENCE = 31;
+  int FOR_CONVENIENCE = 35;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1303,7 +1478,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnReasonableNotice()
    * @generated
    */
-  int ON_REASONABLE_NOTICE = 32;
+  int ON_REASONABLE_NOTICE = 36;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1331,7 +1506,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForBreach()
    * @generated
    */
-  int FOR_BREACH = 33;
+  int FOR_BREACH = 37;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1377,7 +1552,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnInsolvencyEvent()
    * @generated
    */
-  int ON_INSOLVENCY_EVENT = 34;
+  int ON_INSOLVENCY_EVENT = 38;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1414,7 +1589,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomTermination()
    * @generated
    */
-  int CUSTOM_TERMINATION = 35;
+  int CUSTOM_TERMINATION = 39;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1451,7 +1626,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getBoilerplateType()
    * @generated
    */
-  int BOILERPLATE_TYPE = 36;
+  int BOILERPLATE_TYPE = 40;
 
   /**
    * The number of structural features of the '<em>Boilerplate Type</em>' class.
@@ -1470,7 +1645,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getApplicableLaw()
    * @generated
    */
-  int APPLICABLE_LAW = 37;
+  int APPLICABLE_LAW = 41;
 
   /**
    * The feature id for the '<em><b>Custom Applicable Law</b></em>' attribute.
@@ -1507,7 +1682,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getJurisdiction()
    * @generated
    */
-  int JURISDICTION = 38;
+  int JURISDICTION = 42;
 
   /**
    * The feature id for the '<em><b>Custom Jurisdiction</b></em>' attribute.
@@ -1544,7 +1719,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getNotices()
    * @generated
    */
-  int NOTICES = 39;
+  int NOTICES = 43;
 
   /**
    * The feature id for the '<em><b>Custom Notice</b></em>' attribute.
@@ -1640,6 +1815,28 @@ public interface PactDSLPackage extends EPackage
    * @generated
    */
   EReference getModel_PrimaryObligationTypes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getSecondaryObligationTypes <em>Secondary Obligation Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Secondary Obligation Types</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Model#getSecondaryObligationTypes()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_SecondaryObligationTypes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getLiabilityTypes <em>Liability Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Liability Types</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Model#getLiabilityTypes()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_LiabilityTypes();
 
   /**
    * Returns the meta object for the containment reference list '{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getTerminationTypes <em>Termination Types</em>}'.
@@ -1908,15 +2105,15 @@ public interface PactDSLPackage extends EPackage
   EClass getAddress();
 
   /**
-   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.Address#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.Address#getAddress <em>Address</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Definition</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.Address#getDefinition()
+   * @return the meta object for the attribute '<em>Address</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.Address#getAddress()
    * @see #getAddress()
    * @generated
    */
-  EAttribute getAddress_Definition();
+  EAttribute getAddress_Address();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber <em>Company Number</em>}'.
@@ -1929,15 +2126,15 @@ public interface PactDSLPackage extends EPackage
   EClass getCompanyNumber();
 
   /**
-   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getDefinition <em>Definition</em>}'.
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getCompanyNumber <em>Company Number</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Definition</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getDefinition()
+   * @return the meta object for the attribute '<em>Company Number</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getCompanyNumber()
    * @see #getCompanyNumber()
    * @generated
    */
-  EAttribute getCompanyNumber_Definition();
+  EAttribute getCompanyNumber_CompanyNumber();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature <em>Custom Feature</em>}'.
@@ -1950,15 +2147,15 @@ public interface PactDSLPackage extends EPackage
   EClass getCustomFeature();
 
   /**
-   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature <em>Feature</em>}'.
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getCustomFeature <em>Custom Feature</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Feature</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getFeature()
+   * @return the meta object for the attribute '<em>Custom Feature</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature#getCustomFeature()
    * @see #getCustomFeature()
    * @generated
    */
-  EAttribute getCustomFeature_Feature();
+  EAttribute getCustomFeature_CustomFeature();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.FormalityType <em>Formality Type</em>}'.
@@ -2438,6 +2635,101 @@ public interface PactDSLPackage extends EPackage
   EAttribute getConstraintThirdParty_AdditionalInfo();
 
   /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType <em>Secondary Obligation Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Secondary Obligation Type</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType
+   * @generated
+   */
+  EClass getSecondaryObligationType();
+
+  /**
+   * Returns the meta object for the reference '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getSuperType <em>Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Super Type</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getSuperType()
+   * @see #getSecondaryObligationType()
+   * @generated
+   */
+  EReference getSecondaryObligationType_SuperType();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getSum <em>Sum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sum</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getSum()
+   * @see #getSecondaryObligationType()
+   * @generated
+   */
+  EAttribute getSecondaryObligationType_Sum();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getCustomPrimaryObligation <em>Custom Primary Obligation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Custom Primary Obligation</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType#getCustomPrimaryObligation()
+   * @see #getSecondaryObligationType()
+   * @generated
+   */
+  EAttribute getSecondaryObligationType_CustomPrimaryObligation();
+
+  /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType <em>Liability Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Liability Type</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType
+   * @generated
+   */
+  EClass getLiabilityType();
+
+  /**
+   * Returns the meta object for the reference '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType#getSuperType <em>Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Super Type</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType#getSuperType()
+   * @see #getLiabilityType()
+   * @generated
+   */
+  EReference getLiabilityType_SuperType();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType#getCustomLoss <em>Custom Loss</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Custom Loss</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType#getCustomLoss()
+   * @see #getLiabilityType()
+   * @generated
+   */
+  EAttribute getLiabilityType_CustomLoss();
+
+  /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty <em>Liability Party</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Liability Party</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty
+   * @generated
+   */
+  EClass getLiabilityParty();
+
+  /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty <em>Liability Third Party</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Liability Third Party</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty
+   * @generated
+   */
+  EClass getLiabilityThirdParty();
+
+  /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.TerminationType <em>Termination Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2784,6 +3076,22 @@ public interface PactDSLPackage extends EPackage
     EReference MODEL__PRIMARY_OBLIGATION_TYPES = eINSTANCE.getModel_PrimaryObligationTypes();
 
     /**
+     * The meta object literal for the '<em><b>Secondary Obligation Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__SECONDARY_OBLIGATION_TYPES = eINSTANCE.getModel_SecondaryObligationTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Liability Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__LIABILITY_TYPES = eINSTANCE.getModel_LiabilityTypes();
+
+    /**
      * The meta object literal for the '<em><b>Termination Types</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3002,12 +3310,12 @@ public interface PactDSLPackage extends EPackage
     EClass ADDRESS = eINSTANCE.getAddress();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ADDRESS__DEFINITION = eINSTANCE.getAddress_Definition();
+    EAttribute ADDRESS__ADDRESS = eINSTANCE.getAddress_Address();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl <em>Company Number</em>}' class.
@@ -3020,12 +3328,12 @@ public interface PactDSLPackage extends EPackage
     EClass COMPANY_NUMBER = eINSTANCE.getCompanyNumber();
 
     /**
-     * The meta object literal for the '<em><b>Definition</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Company Number</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMPANY_NUMBER__DEFINITION = eINSTANCE.getCompanyNumber_Definition();
+    EAttribute COMPANY_NUMBER__COMPANY_NUMBER = eINSTANCE.getCompanyNumber_CompanyNumber();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl <em>Custom Feature</em>}' class.
@@ -3038,12 +3346,12 @@ public interface PactDSLPackage extends EPackage
     EClass CUSTOM_FEATURE = eINSTANCE.getCustomFeature();
 
     /**
-     * The meta object literal for the '<em><b>Feature</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Custom Feature</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CUSTOM_FEATURE__FEATURE = eINSTANCE.getCustomFeature_Feature();
+    EAttribute CUSTOM_FEATURE__CUSTOM_FEATURE = eINSTANCE.getCustomFeature_CustomFeature();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.FormalityTypeImpl <em>Formality Type</em>}' class.
@@ -3440,6 +3748,86 @@ public interface PactDSLPackage extends EPackage
      * @generated
      */
     EAttribute CONSTRAINT_THIRD_PARTY__ADDITIONAL_INFO = eINSTANCE.getConstraintThirdParty_AdditionalInfo();
+
+    /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl <em>Secondary Obligation Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getSecondaryObligationType()
+     * @generated
+     */
+    EClass SECONDARY_OBLIGATION_TYPE = eINSTANCE.getSecondaryObligationType();
+
+    /**
+     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SECONDARY_OBLIGATION_TYPE__SUPER_TYPE = eINSTANCE.getSecondaryObligationType_SuperType();
+
+    /**
+     * The meta object literal for the '<em><b>Sum</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECONDARY_OBLIGATION_TYPE__SUM = eINSTANCE.getSecondaryObligationType_Sum();
+
+    /**
+     * The meta object literal for the '<em><b>Custom Primary Obligation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SECONDARY_OBLIGATION_TYPE__CUSTOM_PRIMARY_OBLIGATION = eINSTANCE.getSecondaryObligationType_CustomPrimaryObligation();
+
+    /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityTypeImpl <em>Liability Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityTypeImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityType()
+     * @generated
+     */
+    EClass LIABILITY_TYPE = eINSTANCE.getLiabilityType();
+
+    /**
+     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LIABILITY_TYPE__SUPER_TYPE = eINSTANCE.getLiabilityType_SuperType();
+
+    /**
+     * The meta object literal for the '<em><b>Custom Loss</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LIABILITY_TYPE__CUSTOM_LOSS = eINSTANCE.getLiabilityType_CustomLoss();
+
+    /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityPartyImpl <em>Liability Party</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityPartyImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityParty()
+     * @generated
+     */
+    EClass LIABILITY_PARTY = eINSTANCE.getLiabilityParty();
+
+    /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityThirdPartyImpl <em>Liability Third Party</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.LiabilityThirdPartyImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityThirdParty()
+     * @generated
+     */
+    EClass LIABILITY_THIRD_PARTY = eINSTANCE.getLiabilityThirdParty();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.TerminationTypeImpl <em>Termination Type</em>}' class.

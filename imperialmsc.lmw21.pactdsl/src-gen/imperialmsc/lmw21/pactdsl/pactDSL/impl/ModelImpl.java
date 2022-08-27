@@ -7,9 +7,11 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ActionType;
 import imperialmsc.lmw21.pactdsl.pactDSL.BoilerplateType;
 import imperialmsc.lmw21.pactdsl.pactDSL.EntityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.FormalityType;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.Model;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 import imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType;
+import imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.StateType;
 import imperialmsc.lmw21.pactdsl.pactDSL.TerminationType;
 
@@ -43,6 +45,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getActionTypes <em>Action Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getStateTypes <em>State Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getPrimaryObligationTypes <em>Primary Obligation Types</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getSecondaryObligationTypes <em>Secondary Obligation Types</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getLiabilityTypes <em>Liability Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getTerminationTypes <em>Termination Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.ModelImpl#getBoilerplateTypes <em>Boilerplate Types</em>}</li>
  * </ul>
@@ -120,6 +124,26 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<PrimaryObligationType> primaryObligationTypes;
+
+  /**
+   * The cached value of the '{@link #getSecondaryObligationTypes() <em>Secondary Obligation Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSecondaryObligationTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<SecondaryObligationType> secondaryObligationTypes;
+
+  /**
+   * The cached value of the '{@link #getLiabilityTypes() <em>Liability Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLiabilityTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<LiabilityType> liabilityTypes;
 
   /**
    * The cached value of the '{@link #getTerminationTypes() <em>Termination Types</em>}' containment reference list.
@@ -268,6 +292,36 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public EList<SecondaryObligationType> getSecondaryObligationTypes()
+  {
+    if (secondaryObligationTypes == null)
+    {
+      secondaryObligationTypes = new EObjectContainmentEList<SecondaryObligationType>(SecondaryObligationType.class, this, PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES);
+    }
+    return secondaryObligationTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<LiabilityType> getLiabilityTypes()
+  {
+    if (liabilityTypes == null)
+    {
+      liabilityTypes = new EObjectContainmentEList<LiabilityType>(LiabilityType.class, this, PactDSLPackage.MODEL__LIABILITY_TYPES);
+    }
+    return liabilityTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EList<TerminationType> getTerminationTypes()
   {
     if (terminationTypes == null)
@@ -312,6 +366,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return ((InternalEList<?>)getStateTypes()).basicRemove(otherEnd, msgs);
       case PactDSLPackage.MODEL__PRIMARY_OBLIGATION_TYPES:
         return ((InternalEList<?>)getPrimaryObligationTypes()).basicRemove(otherEnd, msgs);
+      case PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES:
+        return ((InternalEList<?>)getSecondaryObligationTypes()).basicRemove(otherEnd, msgs);
+      case PactDSLPackage.MODEL__LIABILITY_TYPES:
+        return ((InternalEList<?>)getLiabilityTypes()).basicRemove(otherEnd, msgs);
       case PactDSLPackage.MODEL__TERMINATION_TYPES:
         return ((InternalEList<?>)getTerminationTypes()).basicRemove(otherEnd, msgs);
       case PactDSLPackage.MODEL__BOILERPLATE_TYPES:
@@ -342,6 +400,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getStateTypes();
       case PactDSLPackage.MODEL__PRIMARY_OBLIGATION_TYPES:
         return getPrimaryObligationTypes();
+      case PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES:
+        return getSecondaryObligationTypes();
+      case PactDSLPackage.MODEL__LIABILITY_TYPES:
+        return getLiabilityTypes();
       case PactDSLPackage.MODEL__TERMINATION_TYPES:
         return getTerminationTypes();
       case PactDSLPackage.MODEL__BOILERPLATE_TYPES:
@@ -384,6 +446,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getPrimaryObligationTypes().clear();
         getPrimaryObligationTypes().addAll((Collection<? extends PrimaryObligationType>)newValue);
         return;
+      case PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES:
+        getSecondaryObligationTypes().clear();
+        getSecondaryObligationTypes().addAll((Collection<? extends SecondaryObligationType>)newValue);
+        return;
+      case PactDSLPackage.MODEL__LIABILITY_TYPES:
+        getLiabilityTypes().clear();
+        getLiabilityTypes().addAll((Collection<? extends LiabilityType>)newValue);
+        return;
       case PactDSLPackage.MODEL__TERMINATION_TYPES:
         getTerminationTypes().clear();
         getTerminationTypes().addAll((Collection<? extends TerminationType>)newValue);
@@ -424,6 +494,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case PactDSLPackage.MODEL__PRIMARY_OBLIGATION_TYPES:
         getPrimaryObligationTypes().clear();
         return;
+      case PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES:
+        getSecondaryObligationTypes().clear();
+        return;
+      case PactDSLPackage.MODEL__LIABILITY_TYPES:
+        getLiabilityTypes().clear();
+        return;
       case PactDSLPackage.MODEL__TERMINATION_TYPES:
         getTerminationTypes().clear();
         return;
@@ -456,6 +532,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return stateTypes != null && !stateTypes.isEmpty();
       case PactDSLPackage.MODEL__PRIMARY_OBLIGATION_TYPES:
         return primaryObligationTypes != null && !primaryObligationTypes.isEmpty();
+      case PactDSLPackage.MODEL__SECONDARY_OBLIGATION_TYPES:
+        return secondaryObligationTypes != null && !secondaryObligationTypes.isEmpty();
+      case PactDSLPackage.MODEL__LIABILITY_TYPES:
+        return liabilityTypes != null && !liabilityTypes.isEmpty();
       case PactDSLPackage.MODEL__TERMINATION_TYPES:
         return terminationTypes != null && !terminationTypes.isEmpty();
       case PactDSLPackage.MODEL__BOILERPLATE_TYPES:

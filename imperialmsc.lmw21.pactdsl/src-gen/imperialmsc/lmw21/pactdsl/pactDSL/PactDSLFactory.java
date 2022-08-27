@@ -294,6 +294,42 @@ public interface PactDSLFactory extends EFactory
   ConstraintThirdParty createConstraintThirdParty();
 
   /**
+   * Returns a new object of class '<em>Secondary Obligation Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Secondary Obligation Type</em>'.
+   * @generated
+   */
+  SecondaryObligationType createSecondaryObligationType();
+
+  /**
+   * Returns a new object of class '<em>Liability Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Liability Type</em>'.
+   * @generated
+   */
+  LiabilityType createLiabilityType();
+
+  /**
+   * Returns a new object of class '<em>Liability Party</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Liability Party</em>'.
+   * @generated
+   */
+  LiabilityParty createLiabilityParty();
+
+  /**
+   * Returns a new object of class '<em>Liability Third Party</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Liability Third Party</em>'.
+   * @generated
+   */
+  LiabilityThirdParty createLiabilityThirdParty();
+
+  /**
    * Returns a new object of class '<em>Termination Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -226,6 +226,26 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createConstraintThirdPartyAdapter();
       }
       @Override
+      public Adapter caseSecondaryObligationType(SecondaryObligationType object)
+      {
+        return createSecondaryObligationTypeAdapter();
+      }
+      @Override
+      public Adapter caseLiabilityType(LiabilityType object)
+      {
+        return createLiabilityTypeAdapter();
+      }
+      @Override
+      public Adapter caseLiabilityParty(LiabilityParty object)
+      {
+        return createLiabilityPartyAdapter();
+      }
+      @Override
+      public Adapter caseLiabilityThirdParty(LiabilityThirdParty object)
+      {
+        return createLiabilityThirdPartyAdapter();
+      }
+      @Override
       public Adapter caseTerminationType(TerminationType object)
       {
         return createTerminationTypeAdapter();
@@ -743,6 +763,66 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstraintThirdPartyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType <em>Secondary Obligation Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType
+   * @generated
+   */
+  public Adapter createSecondaryObligationTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType <em>Liability Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType
+   * @generated
+   */
+  public Adapter createLiabilityTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty <em>Liability Party</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty
+   * @generated
+   */
+  public Adapter createLiabilityPartyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty <em>Liability Third Party</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty
+   * @generated
+   */
+  public Adapter createLiabilityThirdPartyAdapter()
   {
     return null;
   }

@@ -21,17 +21,22 @@ Model:
 	'PrimaryObligations:'
 	(primaryObligationTypes+=PrimaryObligationType '.')+
 	
-	'StateAfterObligationsDischarged:'?
-	(stateTypes+=StateType '.')*
+	'SecondaryObligations:'?
+	(secondaryObligationTypes+=SecondaryObligationType '.')*
 	
-	'Termination:'
+	'Liability'?
+	(liabilityTypes+=LiabilityType '.')*
+
+	'Termination:'?
 	(terminationTypes+=TerminationType '.')*
 	
-	'StateAfterTermination:'?
+	'StateAfterContractDischarged:'?
 	(stateTypes+=StateType '.')*
 	
-	'Boilerplate:'
+	'Boilerplate:'?
 	(boilerplateTypes+=BoilerplateType '.')*;
+
+
 
 //Entity Types	
 
@@ -60,13 +65,14 @@ DefinedTerm:
 	'definedAs' definition=STRING;
 
 Address:
-	'withAddress' definition=STRING;
+	'withAddress' address=STRING;
 
 CompanyNumber:
-	'withCompanyNumber' definition=STRING;
+	'withCompanyNumber' companyNumber=STRING;
 
 CustomFeature:
-	'withFeature' feature=STRING;
+	'withFeature' customFeature=STRING;
+	
 	
 	
 //Formality Types
@@ -87,6 +93,7 @@ CustomFormality:
 	'ContractFormality' customFormality=STRING;
 
 
+
 //Actions
 
 ActionType:
@@ -99,16 +106,18 @@ GivenWrittenConsent:
 	superType=[Party] 'gaveWrittenConsent';
 	
 
+
 //State on Signature
 
 StateType:
 	Ownership | RightToUse;
 
 Ownership:
-	superType=[Party] ('owns' | 'willReturn') (customOwnership=STRING)* superType=[SubjectMatter];
+	'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
 
 RightToUse:
-	superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter];
+	'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
+
 	
 	
 //PrimaryObligations
@@ -135,6 +144,27 @@ ConstraintThirdParty:
 	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
 
 
+
+//Secondary Obligations
+
+SecondaryObligationType:
+	'SecondaryObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party]+) 'uponBreachOf' customPrimaryObligation=STRING;  
+
+
+
+//Liability Types
+
+LiabilityType:
+	LiabilityParty | LiabilityThirdParty;
+
+LiabilityParty:
+	'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ; 
+
+LiabilityThirdParty:
+	'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+
+
+
 //Termination Types
 
 TerminationType:
@@ -148,14 +178,15 @@ OnReasonableNotice:
 ;
 
 ForBreach:
-	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' RemedialScheme=STRING)?;
+	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
 
 OnInsolvencyEvent:
 	'TerminationUponInsolvency:' superType=[Party]+ 'may' 'terminate' 'upon' (InsolvencyEvent=STRING) 'of' superType=[Party]; 
 
 CustomTermination:
-	'Termination:' superType=[Party]+ 'may' 'terminate' CustomTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
+	'Termination:' superType=[Party]+ 'may' 'terminate' customTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
 	 
+	
 	
 //Boilerplate
 
@@ -163,10 +194,10 @@ BoilerplateType:
 	ApplicableLaw | Jurisdiction | Notices;
 
 ApplicableLaw:
-	'ApplicableLaw:' CustomApplicableLaw=STRING (definition+=DefinedTerm)?;
+	'ApplicableLaw:' customApplicableLaw=STRING (definition+=DefinedTerm)?;
 	
 Jurisdiction:
-	'Jurisdiction:' CustomJurisdiction=STRING (definition+=DefinedTerm)?;
+	'Jurisdiction:' customJurisdiction=STRING (definition+=DefinedTerm)?;
 	
 Notices:
-	'Notices:' CustomNotice=STRING;
+	'Notices:' customNotice=STRING;

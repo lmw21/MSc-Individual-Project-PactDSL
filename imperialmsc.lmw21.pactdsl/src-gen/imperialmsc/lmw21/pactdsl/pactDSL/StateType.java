@@ -28,12 +28,12 @@ public interface StateType extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Super Type</em>' reference.
-   * @see #setSuperType(EntityType)
+   * @see #setSuperType(Party)
    * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getStateType_SuperType()
    * @model
    * @generated
    */
-  EntityType getSuperType();
+  Party getSuperType();
 
   /**
    * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.StateType#getSuperType <em>Super Type</em>}' reference.
@@ -43,6 +43,6 @@ public interface StateType extends EObject
    * @see #getSuperType()
    * @generated
    */
-  void setSuperType(EntityType value);
+  void setSuperType(Party value);
 
 } // StateType

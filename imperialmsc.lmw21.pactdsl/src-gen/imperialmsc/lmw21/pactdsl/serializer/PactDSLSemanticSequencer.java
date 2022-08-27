@@ -24,6 +24,8 @@ import imperialmsc.lmw21.pactdsl.pactDSL.GivenWrittenConsent;
 import imperialmsc.lmw21.pactdsl.pactDSL.GivingNotice;
 import imperialmsc.lmw21.pactdsl.pactDSL.InWriting;
 import imperialmsc.lmw21.pactdsl.pactDSL.Jurisdiction;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Model;
 import imperialmsc.lmw21.pactdsl.pactDSL.Notices;
@@ -35,6 +37,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.Party;
 import imperialmsc.lmw21.pactdsl.pactDSL.PaymentObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.RightToUse;
+import imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter;
 import imperialmsc.lmw21.pactdsl.pactDSL.ThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.TransferObligation;
@@ -124,6 +127,12 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case PactDSLPackage.JURISDICTION:
 				sequence_Jurisdiction(context, (Jurisdiction) semanticObject); 
 				return; 
+			case PactDSLPackage.LIABILITY_PARTY:
+				sequence_LiabilityParty(context, (LiabilityParty) semanticObject); 
+				return; 
+			case PactDSLPackage.LIABILITY_THIRD_PARTY:
+				sequence_LiabilityThirdParty(context, (LiabilityThirdParty) semanticObject); 
+				return; 
 			case PactDSLPackage.LICENCE_OBLIGATION:
 				sequence_LicenceObligation(context, (LicenceObligation) semanticObject); 
 				return; 
@@ -154,6 +163,9 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case PactDSLPackage.RIGHT_TO_USE:
 				sequence_RightToUse(context, (RightToUse) semanticObject); 
 				return; 
+			case PactDSLPackage.SECONDARY_OBLIGATION_TYPE:
+				sequence_SecondaryObligationType(context, (SecondaryObligationType) semanticObject); 
+				return; 
 			case PactDSLPackage.SUBJECT_MATTER:
 				sequence_SubjectMatter(context, (SubjectMatter) semanticObject); 
 				return; 
@@ -174,15 +186,15 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Address returns Address
 	 *
 	 * Constraint:
-	 *     definition=STRING
+	 *     address=STRING
 	 */
 	protected void sequence_Address(ISerializationContext context, Address semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.ADDRESS__DEFINITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.ADDRESS__DEFINITION));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.ADDRESS__ADDRESS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.ADDRESS__ADDRESS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAddressAccess().getDefinitionSTRINGTerminalRuleCall_1_0(), semanticObject.getDefinition());
+		feeder.accept(grammarAccess.getAddressAccess().getAddressSTRINGTerminalRuleCall_1_0(), semanticObject.getAddress());
 		feeder.finish();
 	}
 	
@@ -193,7 +205,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ApplicableLaw returns ApplicableLaw
 	 *
 	 * Constraint:
-	 *     (CustomApplicableLaw=STRING definition+=DefinedTerm?)
+	 *     (customApplicableLaw=STRING definition+=DefinedTerm?)
 	 */
 	protected void sequence_ApplicableLaw(ISerializationContext context, ApplicableLaw semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -225,15 +237,15 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CompanyNumber returns CompanyNumber
 	 *
 	 * Constraint:
-	 *     definition=STRING
+	 *     companyNumber=STRING
 	 */
 	protected void sequence_CompanyNumber(ISerializationContext context, CompanyNumber semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.COMPANY_NUMBER__DEFINITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.COMPANY_NUMBER__DEFINITION));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.COMPANY_NUMBER__COMPANY_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.COMPANY_NUMBER__COMPANY_NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCompanyNumberAccess().getDefinitionSTRINGTerminalRuleCall_1_0(), semanticObject.getDefinition());
+		feeder.accept(grammarAccess.getCompanyNumberAccess().getCompanyNumberSTRINGTerminalRuleCall_1_0(), semanticObject.getCompanyNumber());
 		feeder.finish();
 	}
 	
@@ -277,15 +289,15 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CustomFeature returns CustomFeature
 	 *
 	 * Constraint:
-	 *     feature=STRING
+	 *     customFeature=STRING
 	 */
 	protected void sequence_CustomFeature(ISerializationContext context, CustomFeature semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__FEATURE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__FEATURE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__CUSTOM_FEATURE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_FEATURE__CUSTOM_FEATURE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCustomFeatureAccess().getFeatureSTRINGTerminalRuleCall_1_0(), semanticObject.getFeature());
+		feeder.accept(grammarAccess.getCustomFeatureAccess().getCustomFeatureSTRINGTerminalRuleCall_1_0(), semanticObject.getCustomFeature());
 		feeder.finish();
 	}
 	
@@ -315,7 +327,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CustomTermination returns CustomTermination
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID]+ CustomTerminationClause=STRING superType=[GivingNotice|ID]?)
+	 *     (superType=[Party|ID]+ customTerminationClause=STRING superType=[GivingNotice|ID]?)
 	 */
 	protected void sequence_CustomTermination(ISerializationContext context, CustomTermination semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -391,7 +403,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ForBreach returns ForBreach
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID]+ ObligationBreached=STRING+ superType=[Party|ID] RemedialScheme=STRING?)
+	 *     (superType=[Party|ID]+ ObligationBreached=STRING+ superType=[Party|ID] remedialScheme=STRING?)
 	 */
 	protected void sequence_ForBreach(ISerializationContext context, ForBreach semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -496,9 +508,35 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Jurisdiction returns Jurisdiction
 	 *
 	 * Constraint:
-	 *     (CustomJurisdiction=STRING definition+=DefinedTerm?)
+	 *     (customJurisdiction=STRING definition+=DefinedTerm?)
 	 */
 	protected void sequence_Jurisdiction(ISerializationContext context, Jurisdiction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LiabilityType returns LiabilityParty
+	 *     LiabilityParty returns LiabilityParty
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] superType=[Party|ID] customLoss=STRING)
+	 */
+	protected void sequence_LiabilityParty(ISerializationContext context, LiabilityParty semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     LiabilityType returns LiabilityThirdParty
+	 *     LiabilityThirdParty returns LiabilityThirdParty
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] superType=[ThirdParty|ID] customLoss=STRING)
+	 */
+	protected void sequence_LiabilityThirdParty(ISerializationContext context, LiabilityThirdParty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -528,7 +566,8 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         actionTypes+=ActionType* 
 	 *         stateTypes+=StateType* 
 	 *         primaryObligationTypes+=PrimaryObligationType+ 
-	 *         stateTypes+=StateType* 
+	 *         secondaryObligationTypes+=SecondaryObligationType* 
+	 *         liabilityTypes+=LiabilityType* 
 	 *         terminationTypes+=TerminationType* 
 	 *         stateTypes+=StateType* 
 	 *         boilerplateTypes+=BoilerplateType*
@@ -545,7 +584,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Notices returns Notices
 	 *
 	 * Constraint:
-	 *     CustomNotice=STRING
+	 *     customNotice=STRING
 	 */
 	protected void sequence_Notices(ISerializationContext context, Notices semanticObject) {
 		if (errorAcceptor != null) {
@@ -590,10 +629,19 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Ownership returns Ownership
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID] customOwnership=STRING* superType=[SubjectMatter|ID])
+	 *     (superType=[Party|ID] customOwnership=STRING)
 	 */
 	protected void sequence_Ownership(ISerializationContext context, Ownership semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.OWNERSHIP__CUSTOM_OWNERSHIP) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.OWNERSHIP__CUSTOM_OWNERSHIP));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOwnershipAccess().getSuperTypePartyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE, false));
+		feeder.accept(grammarAccess.getOwnershipAccess().getCustomOwnershipSTRINGTerminalRuleCall_3_0(), semanticObject.getCustomOwnership());
+		feeder.finish();
 	}
 	
 	
@@ -647,9 +695,30 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     RightToUse returns RightToUse
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID] customUsage=STRING* superType=[SubjectMatter|ID])
+	 *     (superType=[Party|ID] customUsage=STRING)
 	 */
 	protected void sequence_RightToUse(ISerializationContext context, RightToUse semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.RIGHT_TO_USE__CUSTOM_USAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.RIGHT_TO_USE__CUSTOM_USAGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRightToUseAccess().getSuperTypePartyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE, false));
+		feeder.accept(grammarAccess.getRightToUseAccess().getCustomUsageSTRINGTerminalRuleCall_3_0(), semanticObject.getCustomUsage());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SecondaryObligationType returns SecondaryObligationType
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] sum=INT+ superType=[Party|ID]+ customPrimaryObligation=STRING)
+	 */
+	protected void sequence_SecondaryObligationType(ISerializationContext context, SecondaryObligationType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

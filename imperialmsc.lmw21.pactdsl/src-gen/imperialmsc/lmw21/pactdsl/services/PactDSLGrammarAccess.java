@@ -55,26 +55,31 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cPrimaryObligationTypesAssignment_12_0 = (Assignment)cGroup_12.eContents().get(0);
 		private final RuleCall cPrimaryObligationTypesPrimaryObligationTypeParserRuleCall_12_0_0 = (RuleCall)cPrimaryObligationTypesAssignment_12_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_12_1 = (Keyword)cGroup_12.eContents().get(1);
-		private final Keyword cStateAfterObligationsDischargedKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cSecondaryObligationsKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Group cGroup_14 = (Group)cGroup.eContents().get(14);
-		private final Assignment cStateTypesAssignment_14_0 = (Assignment)cGroup_14.eContents().get(0);
-		private final RuleCall cStateTypesStateTypeParserRuleCall_14_0_0 = (RuleCall)cStateTypesAssignment_14_0.eContents().get(0);
+		private final Assignment cSecondaryObligationTypesAssignment_14_0 = (Assignment)cGroup_14.eContents().get(0);
+		private final RuleCall cSecondaryObligationTypesSecondaryObligationTypeParserRuleCall_14_0_0 = (RuleCall)cSecondaryObligationTypesAssignment_14_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_14_1 = (Keyword)cGroup_14.eContents().get(1);
-		private final Keyword cTerminationKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cLiabilityKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Group cGroup_16 = (Group)cGroup.eContents().get(16);
-		private final Assignment cTerminationTypesAssignment_16_0 = (Assignment)cGroup_16.eContents().get(0);
-		private final RuleCall cTerminationTypesTerminationTypeParserRuleCall_16_0_0 = (RuleCall)cTerminationTypesAssignment_16_0.eContents().get(0);
+		private final Assignment cLiabilityTypesAssignment_16_0 = (Assignment)cGroup_16.eContents().get(0);
+		private final RuleCall cLiabilityTypesLiabilityTypeParserRuleCall_16_0_0 = (RuleCall)cLiabilityTypesAssignment_16_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_16_1 = (Keyword)cGroup_16.eContents().get(1);
-		private final Keyword cStateAfterTerminationKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cTerminationKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
-		private final Assignment cStateTypesAssignment_18_0 = (Assignment)cGroup_18.eContents().get(0);
-		private final RuleCall cStateTypesStateTypeParserRuleCall_18_0_0 = (RuleCall)cStateTypesAssignment_18_0.eContents().get(0);
+		private final Assignment cTerminationTypesAssignment_18_0 = (Assignment)cGroup_18.eContents().get(0);
+		private final RuleCall cTerminationTypesTerminationTypeParserRuleCall_18_0_0 = (RuleCall)cTerminationTypesAssignment_18_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
-		private final Keyword cBoilerplateKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cStateAfterContractDischargedKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		private final Group cGroup_20 = (Group)cGroup.eContents().get(20);
-		private final Assignment cBoilerplateTypesAssignment_20_0 = (Assignment)cGroup_20.eContents().get(0);
-		private final RuleCall cBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0 = (RuleCall)cBoilerplateTypesAssignment_20_0.eContents().get(0);
+		private final Assignment cStateTypesAssignment_20_0 = (Assignment)cGroup_20.eContents().get(0);
+		private final RuleCall cStateTypesStateTypeParserRuleCall_20_0_0 = (RuleCall)cStateTypesAssignment_20_0.eContents().get(0);
 		private final Keyword cFullStopKeyword_20_1 = (Keyword)cGroup_20.eContents().get(1);
+		private final Keyword cBoilerplateKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Group cGroup_22 = (Group)cGroup.eContents().get(22);
+		private final Assignment cBoilerplateTypesAssignment_22_0 = (Assignment)cGroup_22.eContents().get(0);
+		private final RuleCall cBoilerplateTypesBoilerplateTypeParserRuleCall_22_0_0 = (RuleCall)cBoilerplateTypesAssignment_22_0.eContents().get(0);
+		private final Keyword cFullStopKeyword_22_1 = (Keyword)cGroup_22.eContents().get(1);
 		
 		//Model:
 		//    'ContractTitle:' title=STRING '.'+
@@ -88,13 +93,15 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    (stateTypes+=StateType '.')*
 		//    'PrimaryObligations:'
 		//    (primaryObligationTypes+=PrimaryObligationType '.')+
-		//    'StateAfterObligationsDischarged:'?
-		//    (stateTypes+=StateType '.')*
-		//    'Termination:'
+		//    'SecondaryObligations:'?
+		//    (secondaryObligationTypes+=SecondaryObligationType '.')*
+		//    'Liability'?
+		//    (liabilityTypes+=LiabilityType '.')*
+		//    'Termination:'?
 		//    (terminationTypes+=TerminationType '.')*
-		//    'StateAfterTermination:'?
+		//    'StateAfterContractDischarged:'?
 		//    (stateTypes+=StateType '.')*
-		//    'Boilerplate:'
+		//    'Boilerplate:'?
 		//    (boilerplateTypes+=BoilerplateType '.')*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -109,13 +116,15 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//(stateTypes+=StateType '.')*
 		//'PrimaryObligations:'
 		//(primaryObligationTypes+=PrimaryObligationType '.')+
-		//'StateAfterObligationsDischarged:'?
-		//(stateTypes+=StateType '.')*
-		//'Termination:'
+		//'SecondaryObligations:'?
+		//(secondaryObligationTypes+=SecondaryObligationType '.')*
+		//'Liability'?
+		//(liabilityTypes+=LiabilityType '.')*
+		//'Termination:'?
 		//(terminationTypes+=TerminationType '.')*
-		//'StateAfterTermination:'?
+		//'StateAfterContractDischarged:'?
 		//(stateTypes+=StateType '.')*
-		//'Boilerplate:'
+		//'Boilerplate:'?
 		//(boilerplateTypes+=BoilerplateType '.')*
 		public Group getGroup() { return cGroup; }
 		
@@ -206,65 +215,80 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'.'
 		public Keyword getFullStopKeyword_12_1() { return cFullStopKeyword_12_1; }
 		
-		//'StateAfterObligationsDischarged:'?
-		public Keyword getStateAfterObligationsDischargedKeyword_13() { return cStateAfterObligationsDischargedKeyword_13; }
+		//'SecondaryObligations:'?
+		public Keyword getSecondaryObligationsKeyword_13() { return cSecondaryObligationsKeyword_13; }
 		
-		//(stateTypes+=StateType '.')*
+		//(secondaryObligationTypes+=SecondaryObligationType '.')*
 		public Group getGroup_14() { return cGroup_14; }
 		
-		//stateTypes+=StateType
-		public Assignment getStateTypesAssignment_14_0() { return cStateTypesAssignment_14_0; }
+		//secondaryObligationTypes+=SecondaryObligationType
+		public Assignment getSecondaryObligationTypesAssignment_14_0() { return cSecondaryObligationTypesAssignment_14_0; }
 		
-		//StateType
-		public RuleCall getStateTypesStateTypeParserRuleCall_14_0_0() { return cStateTypesStateTypeParserRuleCall_14_0_0; }
+		//SecondaryObligationType
+		public RuleCall getSecondaryObligationTypesSecondaryObligationTypeParserRuleCall_14_0_0() { return cSecondaryObligationTypesSecondaryObligationTypeParserRuleCall_14_0_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_14_1() { return cFullStopKeyword_14_1; }
 		
-		//'Termination:'
-		public Keyword getTerminationKeyword_15() { return cTerminationKeyword_15; }
+		//'Liability'?
+		public Keyword getLiabilityKeyword_15() { return cLiabilityKeyword_15; }
 		
-		//(terminationTypes+=TerminationType '.')*
+		//(liabilityTypes+=LiabilityType '.')*
 		public Group getGroup_16() { return cGroup_16; }
 		
-		//terminationTypes+=TerminationType
-		public Assignment getTerminationTypesAssignment_16_0() { return cTerminationTypesAssignment_16_0; }
+		//liabilityTypes+=LiabilityType
+		public Assignment getLiabilityTypesAssignment_16_0() { return cLiabilityTypesAssignment_16_0; }
 		
-		//TerminationType
-		public RuleCall getTerminationTypesTerminationTypeParserRuleCall_16_0_0() { return cTerminationTypesTerminationTypeParserRuleCall_16_0_0; }
+		//LiabilityType
+		public RuleCall getLiabilityTypesLiabilityTypeParserRuleCall_16_0_0() { return cLiabilityTypesLiabilityTypeParserRuleCall_16_0_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_16_1() { return cFullStopKeyword_16_1; }
 		
-		//'StateAfterTermination:'?
-		public Keyword getStateAfterTerminationKeyword_17() { return cStateAfterTerminationKeyword_17; }
+		//'Termination:'?
+		public Keyword getTerminationKeyword_17() { return cTerminationKeyword_17; }
 		
-		//(stateTypes+=StateType '.')*
+		//(terminationTypes+=TerminationType '.')*
 		public Group getGroup_18() { return cGroup_18; }
 		
-		//stateTypes+=StateType
-		public Assignment getStateTypesAssignment_18_0() { return cStateTypesAssignment_18_0; }
+		//terminationTypes+=TerminationType
+		public Assignment getTerminationTypesAssignment_18_0() { return cTerminationTypesAssignment_18_0; }
 		
-		//StateType
-		public RuleCall getStateTypesStateTypeParserRuleCall_18_0_0() { return cStateTypesStateTypeParserRuleCall_18_0_0; }
+		//TerminationType
+		public RuleCall getTerminationTypesTerminationTypeParserRuleCall_18_0_0() { return cTerminationTypesTerminationTypeParserRuleCall_18_0_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_18_1() { return cFullStopKeyword_18_1; }
 		
-		//'Boilerplate:'
-		public Keyword getBoilerplateKeyword_19() { return cBoilerplateKeyword_19; }
+		//'StateAfterContractDischarged:'?
+		public Keyword getStateAfterContractDischargedKeyword_19() { return cStateAfterContractDischargedKeyword_19; }
 		
-		//(boilerplateTypes+=BoilerplateType '.')*
+		//(stateTypes+=StateType '.')*
 		public Group getGroup_20() { return cGroup_20; }
 		
-		//boilerplateTypes+=BoilerplateType
-		public Assignment getBoilerplateTypesAssignment_20_0() { return cBoilerplateTypesAssignment_20_0; }
+		//stateTypes+=StateType
+		public Assignment getStateTypesAssignment_20_0() { return cStateTypesAssignment_20_0; }
 		
-		//BoilerplateType
-		public RuleCall getBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0() { return cBoilerplateTypesBoilerplateTypeParserRuleCall_20_0_0; }
+		//StateType
+		public RuleCall getStateTypesStateTypeParserRuleCall_20_0_0() { return cStateTypesStateTypeParserRuleCall_20_0_0; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_20_1() { return cFullStopKeyword_20_1; }
+		
+		//'Boilerplate:'?
+		public Keyword getBoilerplateKeyword_21() { return cBoilerplateKeyword_21; }
+		
+		//(boilerplateTypes+=BoilerplateType '.')*
+		public Group getGroup_22() { return cGroup_22; }
+		
+		//boilerplateTypes+=BoilerplateType
+		public Assignment getBoilerplateTypesAssignment_22_0() { return cBoilerplateTypesAssignment_22_0; }
+		
+		//BoilerplateType
+		public RuleCall getBoilerplateTypesBoilerplateTypeParserRuleCall_22_0_0() { return cBoilerplateTypesBoilerplateTypeParserRuleCall_22_0_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_22_1() { return cFullStopKeyword_22_1; }
 	}
 	public class EntityTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.EntityType");
@@ -523,70 +547,70 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Address");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWithAddressKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDefinitionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDefinitionSTRINGTerminalRuleCall_1_0 = (RuleCall)cDefinitionAssignment_1.eContents().get(0);
+		private final Assignment cAddressAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAddressSTRINGTerminalRuleCall_1_0 = (RuleCall)cAddressAssignment_1.eContents().get(0);
 		
 		//Address:
-		//    'withAddress' definition=STRING;
+		//    'withAddress' address=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'withAddress' definition=STRING
+		//'withAddress' address=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'withAddress'
 		public Keyword getWithAddressKeyword_0() { return cWithAddressKeyword_0; }
 		
-		//definition=STRING
-		public Assignment getDefinitionAssignment_1() { return cDefinitionAssignment_1; }
+		//address=STRING
+		public Assignment getAddressAssignment_1() { return cAddressAssignment_1; }
 		
 		//STRING
-		public RuleCall getDefinitionSTRINGTerminalRuleCall_1_0() { return cDefinitionSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getAddressSTRINGTerminalRuleCall_1_0() { return cAddressSTRINGTerminalRuleCall_1_0; }
 	}
 	public class CompanyNumberElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CompanyNumber");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWithCompanyNumberKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDefinitionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDefinitionSTRINGTerminalRuleCall_1_0 = (RuleCall)cDefinitionAssignment_1.eContents().get(0);
+		private final Assignment cCompanyNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCompanyNumberSTRINGTerminalRuleCall_1_0 = (RuleCall)cCompanyNumberAssignment_1.eContents().get(0);
 		
 		//CompanyNumber:
-		//    'withCompanyNumber' definition=STRING;
+		//    'withCompanyNumber' companyNumber=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'withCompanyNumber' definition=STRING
+		//'withCompanyNumber' companyNumber=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'withCompanyNumber'
 		public Keyword getWithCompanyNumberKeyword_0() { return cWithCompanyNumberKeyword_0; }
 		
-		//definition=STRING
-		public Assignment getDefinitionAssignment_1() { return cDefinitionAssignment_1; }
+		//companyNumber=STRING
+		public Assignment getCompanyNumberAssignment_1() { return cCompanyNumberAssignment_1; }
 		
 		//STRING
-		public RuleCall getDefinitionSTRINGTerminalRuleCall_1_0() { return cDefinitionSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getCompanyNumberSTRINGTerminalRuleCall_1_0() { return cCompanyNumberSTRINGTerminalRuleCall_1_0; }
 	}
 	public class CustomFeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomFeature");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWithFeatureKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cFeatureSTRINGTerminalRuleCall_1_0 = (RuleCall)cFeatureAssignment_1.eContents().get(0);
+		private final Assignment cCustomFeatureAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCustomFeatureSTRINGTerminalRuleCall_1_0 = (RuleCall)cCustomFeatureAssignment_1.eContents().get(0);
 		
 		//CustomFeature:
-		//    'withFeature' feature=STRING;
+		//    'withFeature' customFeature=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'withFeature' feature=STRING
+		//'withFeature' customFeature=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'withFeature'
 		public Keyword getWithFeatureKeyword_0() { return cWithFeatureKeyword_0; }
 		
-		//feature=STRING
-		public Assignment getFeatureAssignment_1() { return cFeatureAssignment_1; }
+		//customFeature=STRING
+		public Assignment getCustomFeatureAssignment_1() { return cCustomFeatureAssignment_1; }
 		
 		//STRING
-		public RuleCall getFeatureSTRINGTerminalRuleCall_1_0() { return cFeatureSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getCustomFeatureSTRINGTerminalRuleCall_1_0() { return cCustomFeatureSTRINGTerminalRuleCall_1_0; }
 	}
 	public class FormalityTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.FormalityType");
@@ -833,112 +857,96 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class OwnershipElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Ownership");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cSuperTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cSuperTypePartyCrossReference_0_0 = (CrossReference)cSuperTypeAssignment_0.eContents().get(0);
-		private final RuleCall cSuperTypePartyIDTerminalRuleCall_0_0_1 = (RuleCall)cSuperTypePartyCrossReference_0_0.eContents().get(1);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Keyword cOwnsKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
-		private final Keyword cWillReturnKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
-		private final Assignment cCustomOwnershipAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCustomOwnershipSTRINGTerminalRuleCall_2_0 = (RuleCall)cCustomOwnershipAssignment_2.eContents().get(0);
-		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cSuperTypeSubjectMatterCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
-		private final RuleCall cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeSubjectMatterCrossReference_3_0.eContents().get(1);
+		private final Keyword cOwnershipKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cOwnsKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cMustReturnKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Assignment cCustomOwnershipAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCustomOwnershipSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomOwnershipAssignment_3.eContents().get(0);
 		
 		//Ownership:
-		//    superType=[Party] ('owns' | 'willReturn') (customOwnership=STRING)* superType=[SubjectMatter];
+		//    'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//superType=[Party] ('owns' | 'willReturn') (customOwnership=STRING)* superType=[SubjectMatter]
+		//'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING)
 		public Group getGroup() { return cGroup; }
 		
+		//'Ownership:'
+		public Keyword getOwnershipKeyword_0() { return cOwnershipKeyword_0; }
+		
 		//superType=[Party]
-		public Assignment getSuperTypeAssignment_0() { return cSuperTypeAssignment_0; }
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
 		
 		//[Party]
-		public CrossReference getSuperTypePartyCrossReference_0_0() { return cSuperTypePartyCrossReference_0_0; }
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getSuperTypePartyIDTerminalRuleCall_0_0_1() { return cSuperTypePartyIDTerminalRuleCall_0_0_1; }
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
 		
-		//('owns' | 'willReturn')
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		//('owns' | 'mustReturn')
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//'owns'
-		public Keyword getOwnsKeyword_1_0() { return cOwnsKeyword_1_0; }
+		public Keyword getOwnsKeyword_2_0() { return cOwnsKeyword_2_0; }
 		
-		//'willReturn'
-		public Keyword getWillReturnKeyword_1_1() { return cWillReturnKeyword_1_1; }
+		//'mustReturn'
+		public Keyword getMustReturnKeyword_2_1() { return cMustReturnKeyword_2_1; }
 		
-		//(customOwnership=STRING)*
-		public Assignment getCustomOwnershipAssignment_2() { return cCustomOwnershipAssignment_2; }
+		//(customOwnership=STRING)
+		public Assignment getCustomOwnershipAssignment_3() { return cCustomOwnershipAssignment_3; }
 		
 		//STRING
-		public RuleCall getCustomOwnershipSTRINGTerminalRuleCall_2_0() { return cCustomOwnershipSTRINGTerminalRuleCall_2_0; }
-		
-		//superType=[SubjectMatter]
-		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
-		
-		//[SubjectMatter]
-		public CrossReference getSuperTypeSubjectMatterCrossReference_3_0() { return cSuperTypeSubjectMatterCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1() { return cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1; }
+		public RuleCall getCustomOwnershipSTRINGTerminalRuleCall_3_0() { return cCustomOwnershipSTRINGTerminalRuleCall_3_0; }
 	}
 	public class RightToUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.RightToUse");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cSuperTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cSuperTypePartyCrossReference_0_0 = (CrossReference)cSuperTypeAssignment_0.eContents().get(0);
-		private final RuleCall cSuperTypePartyIDTerminalRuleCall_0_0_1 = (RuleCall)cSuperTypePartyCrossReference_0_0.eContents().get(1);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Keyword cMayUseKeyword_1_0 = (Keyword)cAlternatives_1.eContents().get(0);
-		private final Keyword cMayNotUseKeyword_1_1 = (Keyword)cAlternatives_1.eContents().get(1);
-		private final Assignment cCustomUsageAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCustomUsageSTRINGTerminalRuleCall_2_0 = (RuleCall)cCustomUsageAssignment_2.eContents().get(0);
-		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cSuperTypeSubjectMatterCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
-		private final RuleCall cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeSubjectMatterCrossReference_3_0.eContents().get(1);
+		private final Keyword cRightToUseKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cMayUseKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cMayNotUseKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Assignment cCustomUsageAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCustomUsageSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomUsageAssignment_3.eContents().get(0);
 		
 		//RightToUse:
-		//    superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter];
+		//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter]
+		//'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)
 		public Group getGroup() { return cGroup; }
 		
+		//'RightToUse:'
+		public Keyword getRightToUseKeyword_0() { return cRightToUseKeyword_0; }
+		
 		//superType=[Party]
-		public Assignment getSuperTypeAssignment_0() { return cSuperTypeAssignment_0; }
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
 		
 		//[Party]
-		public CrossReference getSuperTypePartyCrossReference_0_0() { return cSuperTypePartyCrossReference_0_0; }
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getSuperTypePartyIDTerminalRuleCall_0_0_1() { return cSuperTypePartyIDTerminalRuleCall_0_0_1; }
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
 		
 		//('mayUse' | 'mayNotUse')
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//'mayUse'
-		public Keyword getMayUseKeyword_1_0() { return cMayUseKeyword_1_0; }
+		public Keyword getMayUseKeyword_2_0() { return cMayUseKeyword_2_0; }
 		
 		//'mayNotUse'
-		public Keyword getMayNotUseKeyword_1_1() { return cMayNotUseKeyword_1_1; }
+		public Keyword getMayNotUseKeyword_2_1() { return cMayNotUseKeyword_2_1; }
 		
-		//(customUsage=STRING)*
-		public Assignment getCustomUsageAssignment_2() { return cCustomUsageAssignment_2; }
+		//(customUsage=STRING)
+		public Assignment getCustomUsageAssignment_3() { return cCustomUsageAssignment_3; }
 		
 		//STRING
-		public RuleCall getCustomUsageSTRINGTerminalRuleCall_2_0() { return cCustomUsageSTRINGTerminalRuleCall_2_0; }
-		
-		//superType=[SubjectMatter]
-		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
-		
-		//[SubjectMatter]
-		public CrossReference getSuperTypeSubjectMatterCrossReference_3_0() { return cSuperTypeSubjectMatterCrossReference_3_0; }
-		
-		//ID
-		public RuleCall getSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1() { return cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1; }
+		public RuleCall getCustomUsageSTRINGTerminalRuleCall_3_0() { return cCustomUsageSTRINGTerminalRuleCall_3_0; }
 	}
 	public class PrimaryObligationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.PrimaryObligationType");
@@ -1562,6 +1570,216 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_7_3_0_1() { return cSuperTypePartyIDTerminalRuleCall_7_3_0_1; }
 	}
+	public class SecondaryObligationTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.SecondaryObligationType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSecondaryObligationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Keyword cMustKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPayKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSumAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSumINTTerminalRuleCall_4_0 = (RuleCall)cSumAssignment_4.eContents().get(0);
+		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cSuperTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cSuperTypePartyCrossReference_6_0 = (CrossReference)cSuperTypeAssignment_6.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_6_0_1 = (RuleCall)cSuperTypePartyCrossReference_6_0.eContents().get(1);
+		private final Keyword cUponBreachOfKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cCustomPrimaryObligationAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cCustomPrimaryObligationSTRINGTerminalRuleCall_8_0 = (RuleCall)cCustomPrimaryObligationAssignment_8.eContents().get(0);
+		
+		////Secondary Obligations
+		//SecondaryObligationType:
+		//    'SecondaryObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party]+) 'uponBreachOf' customPrimaryObligation=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'SecondaryObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party]+) 'uponBreachOf' customPrimaryObligation=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'SecondaryObligation:'
+		public Keyword getSecondaryObligationKeyword_0() { return cSecondaryObligationKeyword_0; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
+		
+		//'must'
+		public Keyword getMustKeyword_2() { return cMustKeyword_2; }
+		
+		//'pay'
+		public Keyword getPayKeyword_3() { return cPayKeyword_3; }
+		
+		//(sum=INT)+
+		public Assignment getSumAssignment_4() { return cSumAssignment_4; }
+		
+		//INT
+		public RuleCall getSumINTTerminalRuleCall_4_0() { return cSumINTTerminalRuleCall_4_0; }
+		
+		//'to'
+		public Keyword getToKeyword_5() { return cToKeyword_5; }
+		
+		//(superType=[Party]+)
+		public Assignment getSuperTypeAssignment_6() { return cSuperTypeAssignment_6; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_6_0() { return cSuperTypePartyCrossReference_6_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_6_0_1() { return cSuperTypePartyIDTerminalRuleCall_6_0_1; }
+		
+		//'uponBreachOf'
+		public Keyword getUponBreachOfKeyword_7() { return cUponBreachOfKeyword_7; }
+		
+		//customPrimaryObligation=STRING
+		public Assignment getCustomPrimaryObligationAssignment_8() { return cCustomPrimaryObligationAssignment_8; }
+		
+		//STRING
+		public RuleCall getCustomPrimaryObligationSTRINGTerminalRuleCall_8_0() { return cCustomPrimaryObligationSTRINGTerminalRuleCall_8_0; }
+	}
+	public class LiabilityTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cLiabilityPartyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLiabilityThirdPartyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		////Liability Types
+		//LiabilityType:
+		//    LiabilityParty | LiabilityThirdParty;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//LiabilityParty | LiabilityThirdParty
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//LiabilityParty
+		public RuleCall getLiabilityPartyParserRuleCall_0() { return cLiabilityPartyParserRuleCall_0; }
+		
+		//LiabilityThirdParty
+		public RuleCall getLiabilityThirdPartyParserRuleCall_1() { return cLiabilityThirdPartyParserRuleCall_1; }
+	}
+	public class LiabilityPartyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityParty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLiabilityPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Keyword cShallNotBeLiableKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSuperTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cSuperTypePartyCrossReference_4_0 = (CrossReference)cSuperTypeAssignment_4.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_4_0_1 = (RuleCall)cSuperTypePartyCrossReference_4_0.eContents().get(1);
+		private final Keyword cForKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cCustomLossAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCustomLossSTRINGTerminalRuleCall_6_0 = (RuleCall)cCustomLossAssignment_6.eContents().get(0);
+		
+		//LiabilityParty:
+		//    'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'LiabilityParty:'
+		public Keyword getLiabilityPartyKeyword_0() { return cLiabilityPartyKeyword_0; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
+		
+		//'shallNotBeLiable'
+		public Keyword getShallNotBeLiableKeyword_2() { return cShallNotBeLiableKeyword_2; }
+		
+		//'to'
+		public Keyword getToKeyword_3() { return cToKeyword_3; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_4() { return cSuperTypeAssignment_4; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_4_0() { return cSuperTypePartyCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_4_0_1() { return cSuperTypePartyIDTerminalRuleCall_4_0_1; }
+		
+		//'for'
+		public Keyword getForKeyword_5() { return cForKeyword_5; }
+		
+		//customLoss=STRING
+		public Assignment getCustomLossAssignment_6() { return cCustomLossAssignment_6; }
+		
+		//STRING
+		public RuleCall getCustomLossSTRINGTerminalRuleCall_6_0() { return cCustomLossSTRINGTerminalRuleCall_6_0; }
+	}
+	public class LiabilityThirdPartyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityThirdParty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLiabilityThirdPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Keyword cShallNotBeLiableKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSuperTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cSuperTypeThirdPartyCrossReference_4_0 = (CrossReference)cSuperTypeAssignment_4.eContents().get(0);
+		private final RuleCall cSuperTypeThirdPartyIDTerminalRuleCall_4_0_1 = (RuleCall)cSuperTypeThirdPartyCrossReference_4_0.eContents().get(1);
+		private final Keyword cForKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cCustomLossAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCustomLossSTRINGTerminalRuleCall_6_0 = (RuleCall)cCustomLossAssignment_6.eContents().get(0);
+		
+		//LiabilityThirdParty:
+		//    'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'LiabilityThirdParty:'
+		public Keyword getLiabilityThirdPartyKeyword_0() { return cLiabilityThirdPartyKeyword_0; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
+		
+		//'shallNotBeLiable'
+		public Keyword getShallNotBeLiableKeyword_2() { return cShallNotBeLiableKeyword_2; }
+		
+		//'to'
+		public Keyword getToKeyword_3() { return cToKeyword_3; }
+		
+		//superType=[ThirdParty]
+		public Assignment getSuperTypeAssignment_4() { return cSuperTypeAssignment_4; }
+		
+		//[ThirdParty]
+		public CrossReference getSuperTypeThirdPartyCrossReference_4_0() { return cSuperTypeThirdPartyCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getSuperTypeThirdPartyIDTerminalRuleCall_4_0_1() { return cSuperTypeThirdPartyIDTerminalRuleCall_4_0_1; }
+		
+		//'for'
+		public Keyword getForKeyword_5() { return cForKeyword_5; }
+		
+		//customLoss=STRING
+		public Assignment getCustomLossAssignment_6() { return cCustomLossAssignment_6; }
+		
+		//STRING
+		public RuleCall getCustomLossSTRINGTerminalRuleCall_6_0() { return cCustomLossSTRINGTerminalRuleCall_6_0; }
+	}
 	public class TerminationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.TerminationType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1715,10 +1933,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cRemedialSchemeSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cRemedialSchemeAssignment_8_1.eContents().get(0);
 		
 		//ForBreach:
-		//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' RemedialScheme=STRING)?;
+		//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' RemedialScheme=STRING)?
+		//'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'TerminationForBreach:'
@@ -1760,13 +1978,13 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_7_0_1() { return cSuperTypePartyIDTerminalRuleCall_7_0_1; }
 		
-		//('unless' RemedialScheme=STRING)?
+		//('unless' remedialScheme=STRING)?
 		public Group getGroup_8() { return cGroup_8; }
 		
 		//'unless'
 		public Keyword getUnlessKeyword_8_0() { return cUnlessKeyword_8_0; }
 		
-		//RemedialScheme=STRING
+		//remedialScheme=STRING
 		public Assignment getRemedialSchemeAssignment_8_1() { return cRemedialSchemeAssignment_8_1; }
 		
 		//STRING
@@ -1853,10 +2071,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuperTypeGivingNoticeIDTerminalRuleCall_5_1_0_1 = (RuleCall)cSuperTypeGivingNoticeCrossReference_5_1_0.eContents().get(1);
 		
 		//CustomTermination:
-		//    'Termination:' superType=[Party]+ 'may' 'terminate' CustomTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
+		//    'Termination:' superType=[Party]+ 'may' 'terminate' customTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Termination:' superType=[Party]+ 'may' 'terminate' CustomTerminationClause=STRING ( ('by') superType=[GivingNotice] )?
+		//'Termination:' superType=[Party]+ 'may' 'terminate' customTerminationClause=STRING ( ('by') superType=[GivingNotice] )?
 		public Group getGroup() { return cGroup; }
 		
 		//'Termination:'
@@ -1877,7 +2095,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'terminate'
 		public Keyword getTerminateKeyword_3() { return cTerminateKeyword_3; }
 		
-		//CustomTerminationClause=STRING
+		//customTerminationClause=STRING
 		public Assignment getCustomTerminationClauseAssignment_4() { return cCustomTerminationClauseAssignment_4; }
 		
 		//STRING
@@ -1932,16 +2150,16 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cDefinitionDefinedTermParserRuleCall_2_0 = (RuleCall)cDefinitionAssignment_2.eContents().get(0);
 		
 		//ApplicableLaw:
-		//    'ApplicableLaw:' CustomApplicableLaw=STRING (definition+=DefinedTerm)?;
+		//    'ApplicableLaw:' customApplicableLaw=STRING (definition+=DefinedTerm)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ApplicableLaw:' CustomApplicableLaw=STRING (definition+=DefinedTerm)?
+		//'ApplicableLaw:' customApplicableLaw=STRING (definition+=DefinedTerm)?
 		public Group getGroup() { return cGroup; }
 		
 		//'ApplicableLaw:'
 		public Keyword getApplicableLawKeyword_0() { return cApplicableLawKeyword_0; }
 		
-		//CustomApplicableLaw=STRING
+		//customApplicableLaw=STRING
 		public Assignment getCustomApplicableLawAssignment_1() { return cCustomApplicableLawAssignment_1; }
 		
 		//STRING
@@ -1963,16 +2181,16 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cDefinitionDefinedTermParserRuleCall_2_0 = (RuleCall)cDefinitionAssignment_2.eContents().get(0);
 		
 		//Jurisdiction:
-		//    'Jurisdiction:' CustomJurisdiction=STRING (definition+=DefinedTerm)?;
+		//    'Jurisdiction:' customJurisdiction=STRING (definition+=DefinedTerm)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Jurisdiction:' CustomJurisdiction=STRING (definition+=DefinedTerm)?
+		//'Jurisdiction:' customJurisdiction=STRING (definition+=DefinedTerm)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Jurisdiction:'
 		public Keyword getJurisdictionKeyword_0() { return cJurisdictionKeyword_0; }
 		
-		//CustomJurisdiction=STRING
+		//customJurisdiction=STRING
 		public Assignment getCustomJurisdictionAssignment_1() { return cCustomJurisdictionAssignment_1; }
 		
 		//STRING
@@ -1992,16 +2210,16 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cCustomNoticeSTRINGTerminalRuleCall_1_0 = (RuleCall)cCustomNoticeAssignment_1.eContents().get(0);
 		
 		//Notices:
-		//    'Notices:' CustomNotice=STRING;
+		//    'Notices:' customNotice=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Notices:' CustomNotice=STRING
+		//'Notices:' customNotice=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'Notices:'
 		public Keyword getNoticesKeyword_0() { return cNoticesKeyword_0; }
 		
-		//CustomNotice=STRING
+		//customNotice=STRING
 		public Assignment getCustomNoticeAssignment_1() { return cCustomNoticeAssignment_1; }
 		
 		//STRING
@@ -2039,6 +2257,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final LicenceObligationElements pLicenceObligation;
 	private final ConstraintPartyElements pConstraintParty;
 	private final ConstraintThirdPartyElements pConstraintThirdParty;
+	private final SecondaryObligationTypeElements pSecondaryObligationType;
+	private final LiabilityTypeElements pLiabilityType;
+	private final LiabilityPartyElements pLiabilityParty;
+	private final LiabilityThirdPartyElements pLiabilityThirdParty;
 	private final TerminationTypeElements pTerminationType;
 	private final ForConvenienceElements pForConvenience;
 	private final OnReasonableNoticeElements pOnReasonableNotice;
@@ -2089,6 +2311,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pLicenceObligation = new LicenceObligationElements();
 		this.pConstraintParty = new ConstraintPartyElements();
 		this.pConstraintThirdParty = new ConstraintThirdPartyElements();
+		this.pSecondaryObligationType = new SecondaryObligationTypeElements();
+		this.pLiabilityType = new LiabilityTypeElements();
+		this.pLiabilityParty = new LiabilityPartyElements();
+		this.pLiabilityThirdParty = new LiabilityThirdPartyElements();
 		this.pTerminationType = new TerminationTypeElements();
 		this.pForConvenience = new ForConvenienceElements();
 		this.pOnReasonableNotice = new OnReasonableNoticeElements();
@@ -2140,13 +2366,15 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//    (stateTypes+=StateType '.')*
 	//    'PrimaryObligations:'
 	//    (primaryObligationTypes+=PrimaryObligationType '.')+
-	//    'StateAfterObligationsDischarged:'?
-	//    (stateTypes+=StateType '.')*
-	//    'Termination:'
+	//    'SecondaryObligations:'?
+	//    (secondaryObligationTypes+=SecondaryObligationType '.')*
+	//    'Liability'?
+	//    (liabilityTypes+=LiabilityType '.')*
+	//    'Termination:'?
 	//    (terminationTypes+=TerminationType '.')*
-	//    'StateAfterTermination:'?
+	//    'StateAfterContractDischarged:'?
 	//    (stateTypes+=StateType '.')*
-	//    'Boilerplate:'
+	//    'Boilerplate:'?
 	//    (boilerplateTypes+=BoilerplateType '.')*;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -2238,7 +2466,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Address:
-	//    'withAddress' definition=STRING;
+	//    'withAddress' address=STRING;
 	public AddressElements getAddressAccess() {
 		return pAddress;
 	}
@@ -2248,7 +2476,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CompanyNumber:
-	//    'withCompanyNumber' definition=STRING;
+	//    'withCompanyNumber' companyNumber=STRING;
 	public CompanyNumberElements getCompanyNumberAccess() {
 		return pCompanyNumber;
 	}
@@ -2258,7 +2486,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CustomFeature:
-	//    'withFeature' feature=STRING;
+	//    'withFeature' customFeature=STRING;
 	public CustomFeatureElements getCustomFeatureAccess() {
 		return pCustomFeature;
 	}
@@ -2361,7 +2589,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Ownership:
-	//    superType=[Party] ('owns' | 'willReturn') (customOwnership=STRING)* superType=[SubjectMatter];
+	//    'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
 	public OwnershipElements getOwnershipAccess() {
 		return pOwnership;
 	}
@@ -2371,7 +2599,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//RightToUse:
-	//    superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)* superType=[SubjectMatter];
+	//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
 	public RightToUseElements getRightToUseAccess() {
 		return pRightToUse;
 	}
@@ -2451,6 +2679,48 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getConstraintThirdPartyAccess().getRule();
 	}
 	
+	////Secondary Obligations
+	//SecondaryObligationType:
+	//    'SecondaryObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party]+) 'uponBreachOf' customPrimaryObligation=STRING;
+	public SecondaryObligationTypeElements getSecondaryObligationTypeAccess() {
+		return pSecondaryObligationType;
+	}
+	
+	public ParserRule getSecondaryObligationTypeRule() {
+		return getSecondaryObligationTypeAccess().getRule();
+	}
+	
+	////Liability Types
+	//LiabilityType:
+	//    LiabilityParty | LiabilityThirdParty;
+	public LiabilityTypeElements getLiabilityTypeAccess() {
+		return pLiabilityType;
+	}
+	
+	public ParserRule getLiabilityTypeRule() {
+		return getLiabilityTypeAccess().getRule();
+	}
+	
+	//LiabilityParty:
+	//    'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
+	public LiabilityPartyElements getLiabilityPartyAccess() {
+		return pLiabilityParty;
+	}
+	
+	public ParserRule getLiabilityPartyRule() {
+		return getLiabilityPartyAccess().getRule();
+	}
+	
+	//LiabilityThirdParty:
+	//    'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+	public LiabilityThirdPartyElements getLiabilityThirdPartyAccess() {
+		return pLiabilityThirdParty;
+	}
+	
+	public ParserRule getLiabilityThirdPartyRule() {
+		return getLiabilityThirdPartyAccess().getRule();
+	}
+	
 	////Termination Types
 	//TerminationType:
 	//    ForConvenience | OnReasonableNotice | ForBreach | OnInsolvencyEvent | CustomTermination;
@@ -2484,7 +2754,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ForBreach:
-	//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' RemedialScheme=STRING)?;
+	//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
 	public ForBreachElements getForBreachAccess() {
 		return pForBreach;
 	}
@@ -2504,7 +2774,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CustomTermination:
-	//    'Termination:' superType=[Party]+ 'may' 'terminate' CustomTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
+	//    'Termination:' superType=[Party]+ 'may' 'terminate' customTerminationClause=STRING ( ('by') superType=[GivingNotice] )?;
 	public CustomTerminationElements getCustomTerminationAccess() {
 		return pCustomTermination;
 	}
@@ -2525,7 +2795,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ApplicableLaw:
-	//    'ApplicableLaw:' CustomApplicableLaw=STRING (definition+=DefinedTerm)?;
+	//    'ApplicableLaw:' customApplicableLaw=STRING (definition+=DefinedTerm)?;
 	public ApplicableLawElements getApplicableLawAccess() {
 		return pApplicableLaw;
 	}
@@ -2535,7 +2805,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Jurisdiction:
-	//    'Jurisdiction:' CustomJurisdiction=STRING (definition+=DefinedTerm)?;
+	//    'Jurisdiction:' customJurisdiction=STRING (definition+=DefinedTerm)?;
 	public JurisdictionElements getJurisdictionAccess() {
 		return pJurisdiction;
 	}
@@ -2545,7 +2815,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Notices:
-	//    'Notices:' CustomNotice=STRING;
+	//    'Notices:' customNotice=STRING;
 	public NoticesElements getNoticesAccess() {
 		return pNotices;
 	}

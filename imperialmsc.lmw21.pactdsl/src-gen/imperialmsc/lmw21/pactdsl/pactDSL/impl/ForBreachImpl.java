@@ -297,7 +297,7 @@ public class ForBreachImpl extends TerminationTypeImpl implements ForBreach
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (ObligationBreached: ");
     result.append(obligationBreached);
-    result.append(", RemedialScheme: ");
+    result.append(", remedialScheme: ");
     result.append(remedialScheme);
     result.append(')');
     return result.toString();

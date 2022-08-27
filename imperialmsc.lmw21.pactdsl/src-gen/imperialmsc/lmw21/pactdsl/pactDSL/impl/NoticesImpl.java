@@ -170,7 +170,7 @@ public class NoticesImpl extends BoilerplateTypeImpl implements Notices
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (CustomNotice: ");
+    result.append(" (customNotice: ");
     result.append(customNotice);
     result.append(')');
     return result.toString();

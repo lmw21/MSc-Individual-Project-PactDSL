@@ -234,7 +234,7 @@ public class ApplicableLawImpl extends BoilerplateTypeImpl implements Applicable
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (CustomApplicableLaw: ");
+    result.append(" (customApplicableLaw: ");
     result.append(customApplicableLaw);
     result.append(')');
     return result.toString();

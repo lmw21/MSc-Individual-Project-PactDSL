@@ -22,25 +22,31 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PactDSLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Model_ActionsKeyword_7_q;
+	protected AbstractElementAlias match_Model_BoilerplateKeyword_21_q;
 	protected AbstractElementAlias match_Model_FormalitiesKeyword_5_q;
 	protected AbstractElementAlias match_Model_FullStopKeyword_2_p;
-	protected AbstractElementAlias match_Model_StateAfterObligationsDischargedKeyword_13_q;
-	protected AbstractElementAlias match_Model_StateAfterTerminationKeyword_17_q;
+	protected AbstractElementAlias match_Model_LiabilityKeyword_15_q;
+	protected AbstractElementAlias match_Model_SecondaryObligationsKeyword_13_q;
+	protected AbstractElementAlias match_Model_StateAfterContractDischargedKeyword_19_q;
 	protected AbstractElementAlias match_Model_StateOnSignatureKeyword_9_q;
-	protected AbstractElementAlias match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1;
-	protected AbstractElementAlias match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0;
+	protected AbstractElementAlias match_Model_TerminationKeyword_17_q;
+	protected AbstractElementAlias match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0;
+	protected AbstractElementAlias match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PactDSLGrammarAccess) access;
 		match_Model_ActionsKeyword_7_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getActionsKeyword_7());
+		match_Model_BoilerplateKeyword_21_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getBoilerplateKeyword_21());
 		match_Model_FormalitiesKeyword_5_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getFormalitiesKeyword_5());
 		match_Model_FullStopKeyword_2_p = new TokenAlias(true, false, grammarAccess.getModelAccess().getFullStopKeyword_2());
-		match_Model_StateAfterObligationsDischargedKeyword_13_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterObligationsDischargedKeyword_13());
-		match_Model_StateAfterTerminationKeyword_17_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterTerminationKeyword_17());
+		match_Model_LiabilityKeyword_15_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getLiabilityKeyword_15());
+		match_Model_SecondaryObligationsKeyword_13_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getSecondaryObligationsKeyword_13());
+		match_Model_StateAfterContractDischargedKeyword_19_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterContractDischargedKeyword_19());
 		match_Model_StateOnSignatureKeyword_9_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateOnSignatureKeyword_9());
-		match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getOwnsKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getWillReturnKeyword_1_1()));
-		match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayNotUseKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayUseKeyword_1_0()));
+		match_Model_TerminationKeyword_17_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getTerminationKeyword_17());
+		match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getMustReturnKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getOwnsKeyword_2_0()));
+		match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayNotUseKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayUseKeyword_2_0()));
 	}
 	
 	@Override
@@ -57,20 +63,26 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Model_ActionsKeyword_7_q.equals(syntax))
 				emit_Model_ActionsKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_BoilerplateKeyword_21_q.equals(syntax))
+				emit_Model_BoilerplateKeyword_21_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Model_FormalitiesKeyword_5_q.equals(syntax))
 				emit_Model_FormalitiesKeyword_5_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Model_FullStopKeyword_2_p.equals(syntax))
 				emit_Model_FullStopKeyword_2_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_StateAfterObligationsDischargedKeyword_13_q.equals(syntax))
-				emit_Model_StateAfterObligationsDischargedKeyword_13_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Model_StateAfterTerminationKeyword_17_q.equals(syntax))
-				emit_Model_StateAfterTerminationKeyword_17_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_LiabilityKeyword_15_q.equals(syntax))
+				emit_Model_LiabilityKeyword_15_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_SecondaryObligationsKeyword_13_q.equals(syntax))
+				emit_Model_SecondaryObligationsKeyword_13_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_StateAfterContractDischargedKeyword_19_q.equals(syntax))
+				emit_Model_StateAfterContractDischargedKeyword_19_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Model_StateOnSignatureKeyword_9_q.equals(syntax))
 				emit_Model_StateOnSignatureKeyword_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1.equals(syntax))
-				emit_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0.equals(syntax))
-				emit_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_TerminationKeyword_17_q.equals(syntax))
+				emit_Model_TerminationKeyword_17_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0.equals(syntax))
+				emit_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0.equals(syntax))
+				emit_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -88,6 +100,26 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     formalityTypes+=FormalityType '.' (ambiguity) actionTypes+=ActionType
 	 */
 	protected void emit_Model_ActionsKeyword_7_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'Boilerplate:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     liabilityTypes+=LiabilityType '.' 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) (rule end)
+	 *     liabilityTypes+=LiabilityType '.' 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) (rule end)
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) boilerplateTypes+=BoilerplateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) (rule end)
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? (ambiguity) boilerplateTypes+=BoilerplateType
+	 *     stateTypes+=StateType '.' (ambiguity) (rule end)
+	 *     stateTypes+=StateType '.' (ambiguity) boilerplateTypes+=BoilerplateType
+	 *     terminationTypes+=TerminationType '.' 'StateAfterContractDischarged:'? (ambiguity) (rule end)
+	 *     terminationTypes+=TerminationType '.' 'StateAfterContractDischarged:'? (ambiguity) boilerplateTypes+=BoilerplateType
+	 */
+	protected void emit_Model_BoilerplateKeyword_21_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -118,35 +150,59 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'StateAfterObligationsDischarged:'?
+	 *     'Liability'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Termination:' 'StateAfterTermination:'? 'Boilerplate:' (rule end)
-	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Termination:' 'StateAfterTermination:'? 'Boilerplate:' boilerplateTypes+=BoilerplateType
-	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Termination:' 'StateAfterTermination:'? stateTypes+=StateType
-	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Termination:' terminationTypes+=TerminationType
-	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) stateTypes+=StateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? (ambiguity) 'Termination:'? terminationTypes+=TerminationType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? (ambiguity) liabilityTypes+=LiabilityType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' (ambiguity) 'Termination:'? 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' (ambiguity) 'Termination:'? terminationTypes+=TerminationType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' (ambiguity) liabilityTypes+=LiabilityType
 	 */
-	protected void emit_Model_StateAfterObligationsDischargedKeyword_13_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_LiabilityKeyword_15_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'StateAfterTermination:'?
+	 *     'SecondaryObligations:'?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     primaryObligationTypes+=PrimaryObligationType '.' 'StateAfterObligationsDischarged:'? 'Termination:' (ambiguity) 'Boilerplate:' (rule end)
-	 *     primaryObligationTypes+=PrimaryObligationType '.' 'StateAfterObligationsDischarged:'? 'Termination:' (ambiguity) 'Boilerplate:' boilerplateTypes+=BoilerplateType
-	 *     primaryObligationTypes+=PrimaryObligationType '.' 'StateAfterObligationsDischarged:'? 'Termination:' (ambiguity) stateTypes+=StateType
-	 *     stateTypes+=StateType '.' 'Termination:' (ambiguity) 'Boilerplate:' (rule end)
-	 *     stateTypes+=StateType '.' 'Termination:' (ambiguity) 'Boilerplate:' boilerplateTypes+=BoilerplateType
-	 *     stateTypes+=StateType '.' 'Termination:' (ambiguity) stateTypes+=StateType
-	 *     terminationTypes+=TerminationType '.' (ambiguity) 'Boilerplate:' (rule end)
-	 *     terminationTypes+=TerminationType '.' (ambiguity) 'Boilerplate:' boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Liability'? 'Termination:'? 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Liability'? 'Termination:'? terminationTypes+=TerminationType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) 'Liability'? liabilityTypes+=LiabilityType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' (ambiguity) secondaryObligationTypes+=SecondaryObligationType
+	 */
+	protected void emit_Model_SecondaryObligationsKeyword_13_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'StateAfterContractDischarged:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     liabilityTypes+=LiabilityType '.' 'Termination:'? (ambiguity) 'Boilerplate:'? (rule end)
+	 *     liabilityTypes+=LiabilityType '.' 'Termination:'? (ambiguity) 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     liabilityTypes+=LiabilityType '.' 'Termination:'? (ambiguity) stateTypes+=StateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? 'Termination:'? (ambiguity) 'Boilerplate:'? (rule end)
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? 'Termination:'? (ambiguity) 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? 'Termination:'? (ambiguity) stateTypes+=StateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? 'Termination:'? (ambiguity) 'Boilerplate:'? (rule end)
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? 'Termination:'? (ambiguity) 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? 'Termination:'? (ambiguity) stateTypes+=StateType
+	 *     terminationTypes+=TerminationType '.' (ambiguity) 'Boilerplate:'? (rule end)
+	 *     terminationTypes+=TerminationType '.' (ambiguity) 'Boilerplate:'? boilerplateTypes+=BoilerplateType
 	 *     terminationTypes+=TerminationType '.' (ambiguity) stateTypes+=StateType
 	 */
-	protected void emit_Model_StateAfterTerminationKeyword_17_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Model_StateAfterContractDischargedKeyword_19_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -168,13 +224,34 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'owns' | 'willReturn'
+	 *     'Termination:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     liabilityTypes+=LiabilityType '.' (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     liabilityTypes+=LiabilityType '.' (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     liabilityTypes+=LiabilityType '.' (ambiguity) 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     liabilityTypes+=LiabilityType '.' (ambiguity) terminationTypes+=TerminationType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     primaryObligationTypes+=PrimaryObligationType '.' 'SecondaryObligations:'? 'Liability'? (ambiguity) terminationTypes+=TerminationType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? (rule end)
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? 'Boilerplate:'? boilerplateTypes+=BoilerplateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? (ambiguity) 'StateAfterContractDischarged:'? stateTypes+=StateType
+	 *     secondaryObligationTypes+=SecondaryObligationType '.' 'Liability'? (ambiguity) terminationTypes+=TerminationType
+	 */
+	protected void emit_Model_TerminationKeyword_17_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     'owns' | 'mustReturn'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     superType=[Party|ID] (ambiguity) customOwnership=STRING
-	 *     superType=[Party|ID] (ambiguity) superType=[SubjectMatter|ID]
 	 */
-	protected void emit_Ownership_OwnsKeyword_1_0_or_WillReturnKeyword_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -184,9 +261,8 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     superType=[Party|ID] (ambiguity) customUsage=STRING
-	 *     superType=[Party|ID] (ambiguity) superType=[SubjectMatter|ID]
 	 */
-	protected void emit_RightToUse_MayNotUseKeyword_1_1_or_MayUseKeyword_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

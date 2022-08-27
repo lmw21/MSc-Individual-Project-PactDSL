@@ -95,6 +95,10 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.LICENCE_OBLIGATION: return createLicenceObligation();
       case PactDSLPackage.CONSTRAINT_PARTY: return createConstraintParty();
       case PactDSLPackage.CONSTRAINT_THIRD_PARTY: return createConstraintThirdParty();
+      case PactDSLPackage.SECONDARY_OBLIGATION_TYPE: return createSecondaryObligationType();
+      case PactDSLPackage.LIABILITY_TYPE: return createLiabilityType();
+      case PactDSLPackage.LIABILITY_PARTY: return createLiabilityParty();
+      case PactDSLPackage.LIABILITY_THIRD_PARTY: return createLiabilityThirdParty();
       case PactDSLPackage.TERMINATION_TYPE: return createTerminationType();
       case PactDSLPackage.FOR_CONVENIENCE: return createForConvenience();
       case PactDSLPackage.ON_REASONABLE_NOTICE: return createOnReasonableNotice();
@@ -468,6 +472,54 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
   {
     ConstraintThirdPartyImpl constraintThirdParty = new ConstraintThirdPartyImpl();
     return constraintThirdParty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SecondaryObligationType createSecondaryObligationType()
+  {
+    SecondaryObligationTypeImpl secondaryObligationType = new SecondaryObligationTypeImpl();
+    return secondaryObligationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LiabilityType createLiabilityType()
+  {
+    LiabilityTypeImpl liabilityType = new LiabilityTypeImpl();
+    return liabilityType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LiabilityParty createLiabilityParty()
+  {
+    LiabilityPartyImpl liabilityParty = new LiabilityPartyImpl();
+    return liabilityParty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LiabilityThirdParty createLiabilityThirdParty()
+  {
+    LiabilityThirdPartyImpl liabilityThirdParty = new LiabilityThirdPartyImpl();
+    return liabilityThirdParty;
   }
 
   /**

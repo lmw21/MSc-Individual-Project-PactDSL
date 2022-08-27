@@ -234,7 +234,7 @@ public class JurisdictionImpl extends BoilerplateTypeImpl implements Jurisdictio
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (CustomJurisdiction: ");
+    result.append(" (customJurisdiction: ");
     result.append(customJurisdiction);
     result.append(')');
     return result.toString();

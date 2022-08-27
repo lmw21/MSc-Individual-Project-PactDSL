@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getActionTypes <em>Action Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getStateTypes <em>State Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getPrimaryObligationTypes <em>Primary Obligation Types</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getSecondaryObligationTypes <em>Secondary Obligation Types</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getLiabilityTypes <em>Liability Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getTerminationTypes <em>Termination Types</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.Model#getBoilerplateTypes <em>Boilerplate Types</em>}</li>
  * </ul>
@@ -113,6 +115,30 @@ public interface Model extends EObject
    * @generated
    */
   EList<PrimaryObligationType> getPrimaryObligationTypes();
+
+  /**
+   * Returns the value of the '<em><b>Secondary Obligation Types</b></em>' containment reference list.
+   * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Secondary Obligation Types</em>' containment reference list.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getModel_SecondaryObligationTypes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<SecondaryObligationType> getSecondaryObligationTypes();
+
+  /**
+   * Returns the value of the '<em><b>Liability Types</b></em>' containment reference list.
+   * The list contents are of type {@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Liability Types</em>' containment reference list.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getModel_LiabilityTypes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<LiabilityType> getLiabilityTypes();
 
   /**
    * Returns the value of the '<em><b>Termination Types</b></em>' containment reference list.

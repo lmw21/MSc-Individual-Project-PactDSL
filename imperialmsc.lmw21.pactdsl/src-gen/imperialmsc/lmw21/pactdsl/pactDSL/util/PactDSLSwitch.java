@@ -305,6 +305,36 @@ public class PactDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PactDSLPackage.SECONDARY_OBLIGATION_TYPE:
+      {
+        SecondaryObligationType secondaryObligationType = (SecondaryObligationType)theEObject;
+        T result = caseSecondaryObligationType(secondaryObligationType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.LIABILITY_TYPE:
+      {
+        LiabilityType liabilityType = (LiabilityType)theEObject;
+        T result = caseLiabilityType(liabilityType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.LIABILITY_PARTY:
+      {
+        LiabilityParty liabilityParty = (LiabilityParty)theEObject;
+        T result = caseLiabilityParty(liabilityParty);
+        if (result == null) result = caseLiabilityType(liabilityParty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.LIABILITY_THIRD_PARTY:
+      {
+        LiabilityThirdParty liabilityThirdParty = (LiabilityThirdParty)theEObject;
+        T result = caseLiabilityThirdParty(liabilityThirdParty);
+        if (result == null) result = caseLiabilityType(liabilityThirdParty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PactDSLPackage.TERMINATION_TYPE:
       {
         TerminationType terminationType = (TerminationType)theEObject;
@@ -863,6 +893,70 @@ public class PactDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstraintThirdParty(ConstraintThirdParty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Secondary Obligation Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Secondary Obligation Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSecondaryObligationType(SecondaryObligationType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Liability Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Liability Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiabilityType(LiabilityType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Liability Party</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Liability Party</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiabilityParty(LiabilityParty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Liability Third Party</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Liability Third Party</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiabilityThirdParty(LiabilityThirdParty object)
   {
     return null;
   }

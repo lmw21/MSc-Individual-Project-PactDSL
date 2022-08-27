@@ -239,7 +239,7 @@ public class CustomTerminationImpl extends TerminationTypeImpl implements Custom
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (CustomTerminationClause: ");
+    result.append(" (customTerminationClause: ");
     result.append(customTerminationClause);
     result.append(')');
     return result.toString();

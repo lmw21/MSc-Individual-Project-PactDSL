@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl#getFeature <em>Feature</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomFeatureImpl#getCustomFeature <em>Custom Feature</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
 {
   /**
-   * The default value of the '{@link #getFeature() <em>Feature</em>}' attribute.
+   * The default value of the '{@link #getCustomFeature() <em>Custom Feature</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
+   * @see #getCustomFeature()
    * @generated
    * @ordered
    */
-  protected static final String FEATURE_EDEFAULT = null;
+  protected static final String CUSTOM_FEATURE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getFeature() <em>Feature</em>}' attribute.
+   * The cached value of the '{@link #getCustomFeature() <em>Custom Feature</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFeature()
+   * @see #getCustomFeature()
    * @generated
    * @ordered
    */
-  protected String feature = FEATURE_EDEFAULT;
+  protected String customFeature = CUSTOM_FEATURE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
    * @generated
    */
   @Override
-  public String getFeature()
+  public String getCustomFeature()
   {
-    return feature;
+    return customFeature;
   }
 
   /**
@@ -85,12 +85,12 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
    * @generated
    */
   @Override
-  public void setFeature(String newFeature)
+  public void setCustomFeature(String newCustomFeature)
   {
-    String oldFeature = feature;
-    feature = newFeature;
+    String oldCustomFeature = customFeature;
+    customFeature = newCustomFeature;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.CUSTOM_FEATURE__FEATURE, oldFeature, feature));
+      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.CUSTOM_FEATURE__CUSTOM_FEATURE, oldCustomFeature, customFeature));
   }
 
   /**
@@ -103,8 +103,8 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
   {
     switch (featureID)
     {
-      case PactDSLPackage.CUSTOM_FEATURE__FEATURE:
-        return getFeature();
+      case PactDSLPackage.CUSTOM_FEATURE__CUSTOM_FEATURE:
+        return getCustomFeature();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
   {
     switch (featureID)
     {
-      case PactDSLPackage.CUSTOM_FEATURE__FEATURE:
-        setFeature((String)newValue);
+      case PactDSLPackage.CUSTOM_FEATURE__CUSTOM_FEATURE:
+        setCustomFeature((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
   {
     switch (featureID)
     {
-      case PactDSLPackage.CUSTOM_FEATURE__FEATURE:
-        setFeature(FEATURE_EDEFAULT);
+      case PactDSLPackage.CUSTOM_FEATURE__CUSTOM_FEATURE:
+        setCustomFeature(CUSTOM_FEATURE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
   {
     switch (featureID)
     {
-      case PactDSLPackage.CUSTOM_FEATURE__FEATURE:
-        return FEATURE_EDEFAULT == null ? feature != null : !FEATURE_EDEFAULT.equals(feature);
+      case PactDSLPackage.CUSTOM_FEATURE__CUSTOM_FEATURE:
+        return CUSTOM_FEATURE_EDEFAULT == null ? customFeature != null : !CUSTOM_FEATURE_EDEFAULT.equals(customFeature);
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class CustomFeatureImpl extends FeatureTypeImpl implements CustomFeature
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (feature: ");
-    result.append(feature);
+    result.append(" (customFeature: ");
+    result.append(customFeature);
     result.append(')');
     return result.toString();
   }

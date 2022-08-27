@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.AddressImpl#getAddress <em>Address</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class AddressImpl extends FeatureTypeImpl implements Address
 {
   /**
-   * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
+   * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getAddress()
    * @generated
    * @ordered
    */
-  protected static final String DEFINITION_EDEFAULT = null;
+  protected static final String ADDRESS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
+   * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getAddress()
    * @generated
    * @ordered
    */
-  protected String definition = DEFINITION_EDEFAULT;
+  protected String address = ADDRESS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class AddressImpl extends FeatureTypeImpl implements Address
    * @generated
    */
   @Override
-  public String getDefinition()
+  public String getAddress()
   {
-    return definition;
+    return address;
   }
 
   /**
@@ -85,12 +85,12 @@ public class AddressImpl extends FeatureTypeImpl implements Address
    * @generated
    */
   @Override
-  public void setDefinition(String newDefinition)
+  public void setAddress(String newAddress)
   {
-    String oldDefinition = definition;
-    definition = newDefinition;
+    String oldAddress = address;
+    address = newAddress;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.ADDRESS__DEFINITION, oldDefinition, definition));
+      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.ADDRESS__ADDRESS, oldAddress, address));
   }
 
   /**
@@ -103,8 +103,8 @@ public class AddressImpl extends FeatureTypeImpl implements Address
   {
     switch (featureID)
     {
-      case PactDSLPackage.ADDRESS__DEFINITION:
-        return getDefinition();
+      case PactDSLPackage.ADDRESS__ADDRESS:
+        return getAddress();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class AddressImpl extends FeatureTypeImpl implements Address
   {
     switch (featureID)
     {
-      case PactDSLPackage.ADDRESS__DEFINITION:
-        setDefinition((String)newValue);
+      case PactDSLPackage.ADDRESS__ADDRESS:
+        setAddress((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class AddressImpl extends FeatureTypeImpl implements Address
   {
     switch (featureID)
     {
-      case PactDSLPackage.ADDRESS__DEFINITION:
-        setDefinition(DEFINITION_EDEFAULT);
+      case PactDSLPackage.ADDRESS__ADDRESS:
+        setAddress(ADDRESS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class AddressImpl extends FeatureTypeImpl implements Address
   {
     switch (featureID)
     {
-      case PactDSLPackage.ADDRESS__DEFINITION:
-        return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
+      case PactDSLPackage.ADDRESS__ADDRESS:
+        return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class AddressImpl extends FeatureTypeImpl implements Address
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (definition: ");
-    result.append(definition);
+    result.append(" (address: ");
+    result.append(address);
     result.append(')');
     return result.toString();
   }

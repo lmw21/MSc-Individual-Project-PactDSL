@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl#getDefinition <em>Definition</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CompanyNumberImpl#getCompanyNumber <em>Company Number</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
 {
   /**
-   * The default value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
+   * The default value of the '{@link #getCompanyNumber() <em>Company Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getCompanyNumber()
    * @generated
    * @ordered
    */
-  protected static final String DEFINITION_EDEFAULT = null;
+  protected static final String COMPANY_NUMBER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDefinition() <em>Definition</em>}' attribute.
+   * The cached value of the '{@link #getCompanyNumber() <em>Company Number</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDefinition()
+   * @see #getCompanyNumber()
    * @generated
    * @ordered
    */
-  protected String definition = DEFINITION_EDEFAULT;
+  protected String companyNumber = COMPANY_NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,9 +74,9 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    */
   @Override
-  public String getDefinition()
+  public String getCompanyNumber()
   {
-    return definition;
+    return companyNumber;
   }
 
   /**
@@ -85,12 +85,12 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    */
   @Override
-  public void setDefinition(String newDefinition)
+  public void setCompanyNumber(String newCompanyNumber)
   {
-    String oldDefinition = definition;
-    definition = newDefinition;
+    String oldCompanyNumber = companyNumber;
+    companyNumber = newCompanyNumber;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.COMPANY_NUMBER__DEFINITION, oldDefinition, definition));
+      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER, oldCompanyNumber, companyNumber));
   }
 
   /**
@@ -103,8 +103,8 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
   {
     switch (featureID)
     {
-      case PactDSLPackage.COMPANY_NUMBER__DEFINITION:
-        return getDefinition();
+      case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
+        return getCompanyNumber();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,8 +119,8 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
   {
     switch (featureID)
     {
-      case PactDSLPackage.COMPANY_NUMBER__DEFINITION:
-        setDefinition((String)newValue);
+      case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
+        setCompanyNumber((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -136,8 +136,8 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
   {
     switch (featureID)
     {
-      case PactDSLPackage.COMPANY_NUMBER__DEFINITION:
-        setDefinition(DEFINITION_EDEFAULT);
+      case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
+        setCompanyNumber(COMPANY_NUMBER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -153,8 +153,8 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
   {
     switch (featureID)
     {
-      case PactDSLPackage.COMPANY_NUMBER__DEFINITION:
-        return DEFINITION_EDEFAULT == null ? definition != null : !DEFINITION_EDEFAULT.equals(definition);
+      case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
+        return COMPANY_NUMBER_EDEFAULT == null ? companyNumber != null : !COMPANY_NUMBER_EDEFAULT.equals(companyNumber);
     }
     return super.eIsSet(featureID);
   }
@@ -170,8 +170,8 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (definition: ");
-    result.append(definition);
+    result.append(" (companyNumber: ");
+    result.append(companyNumber);
     result.append(')');
     return result.toString();
   }

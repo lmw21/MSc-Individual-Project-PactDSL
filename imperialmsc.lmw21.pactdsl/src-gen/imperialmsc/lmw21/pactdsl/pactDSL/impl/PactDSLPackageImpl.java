@@ -28,6 +28,9 @@ import imperialmsc.lmw21.pactdsl.pactDSL.GivenWrittenConsent;
 import imperialmsc.lmw21.pactdsl.pactDSL.GivingNotice;
 import imperialmsc.lmw21.pactdsl.pactDSL.InWriting;
 import imperialmsc.lmw21.pactdsl.pactDSL.Jurisdiction;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Model;
 import imperialmsc.lmw21.pactdsl.pactDSL.Notices;
@@ -40,6 +43,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.Party;
 import imperialmsc.lmw21.pactdsl.pactDSL.PaymentObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.RightToUse;
+import imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.StateType;
 import imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter;
 import imperialmsc.lmw21.pactdsl.pactDSL.TerminationType;
@@ -276,6 +280,34 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass secondaryObligationTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass liabilityTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass liabilityPartyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass liabilityThirdPartyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass terminationTypeEClass = null;
 
   /**
@@ -487,7 +519,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getModel_TerminationTypes()
+  public EReference getModel_SecondaryObligationTypes()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(6);
   }
@@ -498,9 +530,31 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EReference getModel_BoilerplateTypes()
+  public EReference getModel_LiabilityTypes()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_TerminationTypes()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_BoilerplateTypes()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -762,7 +816,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getAddress_Definition()
+  public EAttribute getAddress_Address()
   {
     return (EAttribute)addressEClass.getEStructuralFeatures().get(0);
   }
@@ -784,7 +838,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getCompanyNumber_Definition()
+  public EAttribute getCompanyNumber_CompanyNumber()
   {
     return (EAttribute)companyNumberEClass.getEStructuralFeatures().get(0);
   }
@@ -806,7 +860,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getCustomFeature_Feature()
+  public EAttribute getCustomFeature_CustomFeature()
   {
     return (EAttribute)customFeatureEClass.getEStructuralFeatures().get(0);
   }
@@ -1312,6 +1366,105 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
+  public EClass getSecondaryObligationType()
+  {
+    return secondaryObligationTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSecondaryObligationType_SuperType()
+  {
+    return (EReference)secondaryObligationTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSecondaryObligationType_Sum()
+  {
+    return (EAttribute)secondaryObligationTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSecondaryObligationType_CustomPrimaryObligation()
+  {
+    return (EAttribute)secondaryObligationTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLiabilityType()
+  {
+    return liabilityTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getLiabilityType_SuperType()
+  {
+    return (EReference)liabilityTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLiabilityType_CustomLoss()
+  {
+    return (EAttribute)liabilityTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLiabilityParty()
+  {
+    return liabilityPartyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLiabilityThirdParty()
+  {
+    return liabilityThirdPartyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getTerminationType()
   {
     return terminationTypeEClass;
@@ -1619,6 +1772,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     createEReference(modelEClass, MODEL__ACTION_TYPES);
     createEReference(modelEClass, MODEL__STATE_TYPES);
     createEReference(modelEClass, MODEL__PRIMARY_OBLIGATION_TYPES);
+    createEReference(modelEClass, MODEL__SECONDARY_OBLIGATION_TYPES);
+    createEReference(modelEClass, MODEL__LIABILITY_TYPES);
     createEReference(modelEClass, MODEL__TERMINATION_TYPES);
     createEReference(modelEClass, MODEL__BOILERPLATE_TYPES);
 
@@ -1653,13 +1808,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     createEAttribute(definedTermEClass, DEFINED_TERM__DEFINITION);
 
     addressEClass = createEClass(ADDRESS);
-    createEAttribute(addressEClass, ADDRESS__DEFINITION);
+    createEAttribute(addressEClass, ADDRESS__ADDRESS);
 
     companyNumberEClass = createEClass(COMPANY_NUMBER);
-    createEAttribute(companyNumberEClass, COMPANY_NUMBER__DEFINITION);
+    createEAttribute(companyNumberEClass, COMPANY_NUMBER__COMPANY_NUMBER);
 
     customFeatureEClass = createEClass(CUSTOM_FEATURE);
-    createEAttribute(customFeatureEClass, CUSTOM_FEATURE__FEATURE);
+    createEAttribute(customFeatureEClass, CUSTOM_FEATURE__CUSTOM_FEATURE);
 
     formalityTypeEClass = createEClass(FORMALITY_TYPE);
 
@@ -1723,6 +1878,19 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     constraintThirdPartyEClass = createEClass(CONSTRAINT_THIRD_PARTY);
     createEAttribute(constraintThirdPartyEClass, CONSTRAINT_THIRD_PARTY__FORBIDDEN_ACTION);
     createEAttribute(constraintThirdPartyEClass, CONSTRAINT_THIRD_PARTY__ADDITIONAL_INFO);
+
+    secondaryObligationTypeEClass = createEClass(SECONDARY_OBLIGATION_TYPE);
+    createEReference(secondaryObligationTypeEClass, SECONDARY_OBLIGATION_TYPE__SUPER_TYPE);
+    createEAttribute(secondaryObligationTypeEClass, SECONDARY_OBLIGATION_TYPE__SUM);
+    createEAttribute(secondaryObligationTypeEClass, SECONDARY_OBLIGATION_TYPE__CUSTOM_PRIMARY_OBLIGATION);
+
+    liabilityTypeEClass = createEClass(LIABILITY_TYPE);
+    createEReference(liabilityTypeEClass, LIABILITY_TYPE__SUPER_TYPE);
+    createEAttribute(liabilityTypeEClass, LIABILITY_TYPE__CUSTOM_LOSS);
+
+    liabilityPartyEClass = createEClass(LIABILITY_PARTY);
+
+    liabilityThirdPartyEClass = createEClass(LIABILITY_THIRD_PARTY);
 
     terminationTypeEClass = createEClass(TERMINATION_TYPE);
 
@@ -1811,6 +1979,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     licenceObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     constraintPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
     constraintThirdPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
+    liabilityPartyEClass.getESuperTypes().add(this.getLiabilityType());
+    liabilityThirdPartyEClass.getESuperTypes().add(this.getLiabilityType());
     forConvenienceEClass.getESuperTypes().add(this.getTerminationType());
     onReasonableNoticeEClass.getESuperTypes().add(this.getTerminationType());
     forBreachEClass.getESuperTypes().add(this.getTerminationType());
@@ -1828,6 +1998,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEReference(getModel_ActionTypes(), this.getActionType(), null, "actionTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_StateTypes(), this.getStateType(), null, "stateTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_PrimaryObligationTypes(), this.getPrimaryObligationType(), null, "primaryObligationTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_SecondaryObligationTypes(), this.getSecondaryObligationType(), null, "secondaryObligationTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_LiabilityTypes(), this.getLiabilityType(), null, "liabilityTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_TerminationTypes(), this.getTerminationType(), null, "terminationTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_BoilerplateTypes(), this.getBoilerplateType(), null, "boilerplateTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1862,13 +2034,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEAttribute(getDefinedTerm_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, DefinedTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(addressEClass, Address.class, "Address", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAddress_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAddress_Address(), ecorePackage.getEString(), "address", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(companyNumberEClass, CompanyNumber.class, "CompanyNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCompanyNumber_Definition(), ecorePackage.getEString(), "definition", null, 0, 1, CompanyNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCompanyNumber_CompanyNumber(), ecorePackage.getEString(), "companyNumber", null, 0, 1, CompanyNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(customFeatureEClass, CustomFeature.class, "CustomFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCustomFeature_Feature(), ecorePackage.getEString(), "feature", null, 0, 1, CustomFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomFeature_CustomFeature(), ecorePackage.getEString(), "customFeature", null, 0, 1, CustomFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formalityTypeEClass, FormalityType.class, "FormalityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1893,7 +2065,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(givenWrittenConsentEClass, GivenWrittenConsent.class, "GivenWrittenConsent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(stateTypeEClass, StateType.class, "StateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getStateType_SuperType(), this.getEntityType(), null, "superType", null, 0, 1, StateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getStateType_SuperType(), this.getParty(), null, "superType", null, 0, 1, StateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(ownershipEClass, Ownership.class, "Ownership", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOwnership_CustomOwnership(), ecorePackage.getEString(), "customOwnership", null, 0, 1, Ownership.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1933,6 +2105,19 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEAttribute(getConstraintThirdParty_ForbiddenAction(), ecorePackage.getEString(), "forbiddenAction", null, 0, 1, ConstraintThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraintThirdParty_AdditionalInfo(), ecorePackage.getEString(), "additionalInfo", null, 0, 1, ConstraintThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(secondaryObligationTypeEClass, SecondaryObligationType.class, "SecondaryObligationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSecondaryObligationType_SuperType(), this.getParty(), null, "superType", null, 0, 1, SecondaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSecondaryObligationType_Sum(), ecorePackage.getEInt(), "sum", null, 0, 1, SecondaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSecondaryObligationType_CustomPrimaryObligation(), ecorePackage.getEString(), "customPrimaryObligation", null, 0, 1, SecondaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(liabilityTypeEClass, LiabilityType.class, "LiabilityType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLiabilityType_SuperType(), this.getEntityType(), null, "superType", null, 0, 1, LiabilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLiabilityType_CustomLoss(), ecorePackage.getEString(), "customLoss", null, 0, 1, LiabilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(liabilityPartyEClass, LiabilityParty.class, "LiabilityParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(liabilityThirdPartyEClass, LiabilityThirdParty.class, "LiabilityThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(terminationTypeEClass, TerminationType.class, "TerminationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(forConvenienceEClass, ForConvenience.class, "ForConvenience", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1945,7 +2130,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(forBreachEClass, ForBreach.class, "ForBreach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getForBreach_SuperType(), this.getParty(), null, "superType", null, 0, 1, ForBreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForBreach_ObligationBreached(), ecorePackage.getEString(), "ObligationBreached", null, 0, 1, ForBreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getForBreach_RemedialScheme(), ecorePackage.getEString(), "RemedialScheme", null, 0, 1, ForBreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForBreach_RemedialScheme(), ecorePackage.getEString(), "remedialScheme", null, 0, 1, ForBreach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(onInsolvencyEventEClass, OnInsolvencyEvent.class, "OnInsolvencyEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOnInsolvencyEvent_SuperType(), this.getParty(), null, "superType", null, 0, 1, OnInsolvencyEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1953,20 +2138,20 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     initEClass(customTerminationEClass, CustomTermination.class, "CustomTermination", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCustomTermination_SuperType(), ecorePackage.getEObject(), null, "superType", null, 0, 1, CustomTermination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCustomTermination_CustomTerminationClause(), ecorePackage.getEString(), "CustomTerminationClause", null, 0, 1, CustomTermination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomTermination_CustomTerminationClause(), ecorePackage.getEString(), "customTerminationClause", null, 0, 1, CustomTermination.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boilerplateTypeEClass, BoilerplateType.class, "BoilerplateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(applicableLawEClass, ApplicableLaw.class, "ApplicableLaw", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicableLaw_CustomApplicableLaw(), ecorePackage.getEString(), "CustomApplicableLaw", null, 0, 1, ApplicableLaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getApplicableLaw_CustomApplicableLaw(), ecorePackage.getEString(), "customApplicableLaw", null, 0, 1, ApplicableLaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getApplicableLaw_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, ApplicableLaw.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(jurisdictionEClass, Jurisdiction.class, "Jurisdiction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getJurisdiction_CustomJurisdiction(), ecorePackage.getEString(), "CustomJurisdiction", null, 0, 1, Jurisdiction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getJurisdiction_CustomJurisdiction(), ecorePackage.getEString(), "customJurisdiction", null, 0, 1, Jurisdiction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getJurisdiction_Definition(), this.getDefinedTerm(), null, "definition", null, 0, -1, Jurisdiction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(noticesEClass, Notices.class, "Notices", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNotices_CustomNotice(), ecorePackage.getEString(), "CustomNotice", null, 0, 1, Notices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getNotices_CustomNotice(), ecorePackage.getEString(), "customNotice", null, 0, 1, Notices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

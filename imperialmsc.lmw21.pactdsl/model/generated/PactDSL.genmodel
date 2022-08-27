@@ -13,6 +13,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/actionTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/stateTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/primaryObligationTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/secondaryObligationTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/liabilityTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/terminationTypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Model/boilerplateTypes"/>
     </genClasses>
@@ -45,13 +47,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//DefinedTerm/definition"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//Address">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Address/definition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Address/address"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//CompanyNumber">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CompanyNumber/definition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CompanyNumber/companyNumber"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//CustomFeature">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomFeature/feature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomFeature/customFeature"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//FormalityType"/>
     <genClasses ecoreClass="PactDSL.ecore#//InWriting">
@@ -113,6 +115,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ConstraintThirdParty/forbiddenAction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ConstraintThirdParty/additionalInfo"/>
     </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//SecondaryObligationType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SecondaryObligationType/superType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SecondaryObligationType/sum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//SecondaryObligationType/customPrimaryObligation"/>
+    </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//LiabilityType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//LiabilityType/superType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//LiabilityType/customLoss"/>
+    </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//LiabilityParty"/>
+    <genClasses ecoreClass="PactDSL.ecore#//LiabilityThirdParty"/>
     <genClasses ecoreClass="PactDSL.ecore#//TerminationType"/>
     <genClasses ecoreClass="PactDSL.ecore#//ForConvenience">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ForConvenience/superType"/>
@@ -124,7 +137,7 @@
     <genClasses ecoreClass="PactDSL.ecore#//ForBreach">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ForBreach/superType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ForBreach/ObligationBreached"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ForBreach/RemedialScheme"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ForBreach/remedialScheme"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//OnInsolvencyEvent">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//OnInsolvencyEvent/superType"/>
@@ -132,19 +145,19 @@
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//CustomTermination">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//CustomTermination/superType"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomTermination/CustomTerminationClause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomTermination/customTerminationClause"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//BoilerplateType"/>
     <genClasses ecoreClass="PactDSL.ecore#//ApplicableLaw">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ApplicableLaw/CustomApplicableLaw"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ApplicableLaw/customApplicableLaw"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ApplicableLaw/definition"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//Jurisdiction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Jurisdiction/CustomJurisdiction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Jurisdiction/customJurisdiction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PactDSL.ecore#//Jurisdiction/definition"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//Notices">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Notices/CustomNotice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Notices/customNotice"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
