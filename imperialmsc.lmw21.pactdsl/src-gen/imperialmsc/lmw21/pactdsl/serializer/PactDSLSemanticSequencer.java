@@ -10,8 +10,11 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ByEmail;
 import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomAction;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomState;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
@@ -35,7 +38,6 @@ import imperialmsc.lmw21.pactdsl.pactDSL.Ownership;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 import imperialmsc.lmw21.pactdsl.pactDSL.Party;
 import imperialmsc.lmw21.pactdsl.pactDSL.PaymentObligation;
-import imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.RightToUse;
 import imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType;
 import imperialmsc.lmw21.pactdsl.pactDSL.SubjectMatter;
@@ -85,11 +87,20 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case PactDSLPackage.CONSTRAINT_THIRD_PARTY:
 				sequence_ConstraintThirdParty(context, (ConstraintThirdParty) semanticObject); 
 				return; 
+			case PactDSLPackage.CUSTOM_ACTION:
+				sequence_CustomAction(context, (CustomAction) semanticObject); 
+				return; 
 			case PactDSLPackage.CUSTOM_FEATURE:
 				sequence_CustomFeature(context, (CustomFeature) semanticObject); 
 				return; 
 			case PactDSLPackage.CUSTOM_FORMALITY:
 				sequence_CustomFormality(context, (CustomFormality) semanticObject); 
+				return; 
+			case PactDSLPackage.CUSTOM_OBLIGATION:
+				sequence_CustomObligation(context, (CustomObligation) semanticObject); 
+				return; 
+			case PactDSLPackage.CUSTOM_STATE:
+				sequence_CustomState(context, (CustomState) semanticObject); 
 				return; 
 			case PactDSLPackage.CUSTOM_TERMINATION:
 				sequence_CustomTermination(context, (CustomTermination) semanticObject); 
@@ -156,9 +167,6 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case PactDSLPackage.PAYMENT_OBLIGATION:
 				sequence_PaymentObligation(context, (PaymentObligation) semanticObject); 
-				return; 
-			case PactDSLPackage.PRIMARY_OBLIGATION_TYPE:
-				sequence_PrimaryObligationType(context, (PrimaryObligationType) semanticObject); 
 				return; 
 			case PactDSLPackage.RIGHT_TO_USE:
 				sequence_RightToUse(context, (RightToUse) semanticObject); 
@@ -237,7 +245,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CompanyNumber returns CompanyNumber
 	 *
 	 * Constraint:
-	 *     companyNumber=STRING
+	 *     companyNumber=INT
 	 */
 	protected void sequence_CompanyNumber(ISerializationContext context, CompanyNumber semanticObject) {
 		if (errorAcceptor != null) {
@@ -245,7 +253,7 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.COMPANY_NUMBER__COMPANY_NUMBER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCompanyNumberAccess().getCompanyNumberSTRINGTerminalRuleCall_1_0(), semanticObject.getCompanyNumber());
+		feeder.accept(grammarAccess.getCompanyNumberAccess().getCompanyNumberINTTerminalRuleCall_1_0(), semanticObject.getCompanyNumber());
 		feeder.finish();
 	}
 	
@@ -285,6 +293,28 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     ActionType returns CustomAction
+	 *     CustomAction returns CustomAction
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] customAction=STRING)
+	 */
+	protected void sequence_CustomAction(ISerializationContext context, CustomAction semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.ACTION_TYPE__SUPER_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.ACTION_TYPE__SUPER_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_ACTION__CUSTOM_ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_ACTION__CUSTOM_ACTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomActionAccess().getSuperTypePartyIDTerminalRuleCall_0_0_1(), semanticObject.eGet(PactDSLPackage.Literals.ACTION_TYPE__SUPER_TYPE, false));
+		feeder.accept(grammarAccess.getCustomActionAccess().getCustomActionSTRINGTerminalRuleCall_1_0(), semanticObject.getCustomAction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FeatureType returns CustomFeature
 	 *     CustomFeature returns CustomFeature
 	 *
@@ -317,6 +347,50 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getCustomFormalityAccess().getCustomFormalitySTRINGTerminalRuleCall_1_0(), semanticObject.getCustomFormality());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     PrimaryObligationType returns CustomObligation
+	 *     CustomObligation returns CustomObligation
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] customObligation=STRING)
+	 */
+	protected void sequence_CustomObligation(ISerializationContext context, CustomObligation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_OBLIGATION__CUSTOM_OBLIGATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_OBLIGATION__CUSTOM_OBLIGATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomObligationAccess().getSuperTypePartyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE, false));
+		feeder.accept(grammarAccess.getCustomObligationAccess().getCustomObligationSTRINGTerminalRuleCall_3_0(), semanticObject.getCustomObligation());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     StateType returns CustomState
+	 *     CustomState returns CustomState
+	 *
+	 * Constraint:
+	 *     (superType=[Party|ID] customState=STRING)
+	 */
+	protected void sequence_CustomState(ISerializationContext context, CustomState semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE));
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_STATE__CUSTOM_STATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_STATE__CUSTOM_STATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomStateAccess().getSuperTypePartyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(PactDSLPackage.Literals.STATE_TYPE__SUPER_TYPE, false));
+		feeder.accept(grammarAccess.getCustomStateAccess().getCustomStateSTRINGTerminalRuleCall_2_0(), semanticObject.getCustomState());
 		feeder.finish();
 	}
 	
@@ -668,24 +742,6 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 */
 	protected void sequence_PaymentObligation(ISerializationContext context, PaymentObligation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     PrimaryObligationType returns PrimaryObligationType
-	 *
-	 * Constraint:
-	 *     CustomObligation=STRING
-	 */
-	protected void sequence_PrimaryObligationType(ISerializationContext context, PrimaryObligationType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPrimaryObligationTypeAccess().getCustomObligationSTRINGTerminalRuleCall_6_0(), semanticObject.getCustomObligation());
-		feeder.finish();
 	}
 	
 	

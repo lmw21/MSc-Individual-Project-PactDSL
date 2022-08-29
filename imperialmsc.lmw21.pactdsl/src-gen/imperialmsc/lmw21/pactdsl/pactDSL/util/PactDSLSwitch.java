@@ -227,6 +227,14 @@ public class PactDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PactDSLPackage.CUSTOM_ACTION:
+      {
+        CustomAction customAction = (CustomAction)theEObject;
+        T result = caseCustomAction(customAction);
+        if (result == null) result = caseActionType(customAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PactDSLPackage.STATE_TYPE:
       {
         StateType stateType = (StateType)theEObject;
@@ -247,6 +255,14 @@ public class PactDSLSwitch<T> extends Switch<T>
         RightToUse rightToUse = (RightToUse)theEObject;
         T result = caseRightToUse(rightToUse);
         if (result == null) result = caseStateType(rightToUse);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.CUSTOM_STATE:
+      {
+        CustomState customState = (CustomState)theEObject;
+        T result = caseCustomState(customState);
+        if (result == null) result = caseStateType(customState);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -302,6 +318,14 @@ public class PactDSLSwitch<T> extends Switch<T>
         ConstraintThirdParty constraintThirdParty = (ConstraintThirdParty)theEObject;
         T result = caseConstraintThirdParty(constraintThirdParty);
         if (result == null) result = casePrimaryObligationType(constraintThirdParty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.CUSTOM_OBLIGATION:
+      {
+        CustomObligation customObligation = (CustomObligation)theEObject;
+        T result = caseCustomObligation(customObligation);
+        if (result == null) result = casePrimaryObligationType(customObligation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -738,6 +762,22 @@ public class PactDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Custom Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Custom Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCustomAction(CustomAction object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>State Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -781,6 +821,22 @@ public class PactDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRightToUse(RightToUse object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Custom State</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Custom State</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCustomState(CustomState object)
   {
     return null;
   }
@@ -893,6 +949,22 @@ public class PactDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstraintThirdParty(ConstraintThirdParty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Custom Obligation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Custom Obligation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCustomObligation(CustomObligation object)
   {
     return null;
   }

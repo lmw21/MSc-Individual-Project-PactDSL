@@ -74,6 +74,9 @@
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//GivenConsent"/>
     <genClasses ecoreClass="PactDSL.ecore#//GivenWrittenConsent"/>
+    <genClasses ecoreClass="PactDSL.ecore#//CustomAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomAction/customAction"/>
+    </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//StateType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//StateType/superType"/>
     </genClasses>
@@ -83,8 +86,10 @@
     <genClasses ecoreClass="PactDSL.ecore#//RightToUse">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//RightToUse/customUsage"/>
     </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//CustomState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomState/customState"/>
+    </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//PrimaryObligationType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//PrimaryObligationType/CustomObligation"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//PrimaryObligationType/superType"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//PaymentObligation">
@@ -114,6 +119,9 @@
     <genClasses ecoreClass="PactDSL.ecore#//ConstraintThirdParty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ConstraintThirdParty/forbiddenAction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//ConstraintThirdParty/additionalInfo"/>
+    </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//CustomObligation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomObligation/customObligation"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//SecondaryObligationType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SecondaryObligationType/superType"/>

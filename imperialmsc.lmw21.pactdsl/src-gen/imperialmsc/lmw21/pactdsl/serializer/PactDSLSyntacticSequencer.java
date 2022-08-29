@@ -21,6 +21,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected PactDSLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_CustomObligation_MustKeyword_2_0_or_MustNotKeyword_2_1;
 	protected AbstractElementAlias match_Model_ActionsKeyword_7_q;
 	protected AbstractElementAlias match_Model_BoilerplateKeyword_21_q;
 	protected AbstractElementAlias match_Model_FormalitiesKeyword_5_q;
@@ -36,6 +37,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (PactDSLGrammarAccess) access;
+		match_CustomObligation_MustKeyword_2_0_or_MustNotKeyword_2_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getCustomObligationAccess().getMustKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getCustomObligationAccess().getMustNotKeyword_2_1()));
 		match_Model_ActionsKeyword_7_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getActionsKeyword_7());
 		match_Model_BoilerplateKeyword_21_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getBoilerplateKeyword_21());
 		match_Model_FormalitiesKeyword_5_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getFormalitiesKeyword_5());
@@ -61,7 +63,9 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Model_ActionsKeyword_7_q.equals(syntax))
+			if (match_CustomObligation_MustKeyword_2_0_or_MustNotKeyword_2_1.equals(syntax))
+				emit_CustomObligation_MustKeyword_2_0_or_MustNotKeyword_2_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model_ActionsKeyword_7_q.equals(syntax))
 				emit_Model_ActionsKeyword_7_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Model_BoilerplateKeyword_21_q.equals(syntax))
 				emit_Model_BoilerplateKeyword_21_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -87,6 +91,17 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'must' | 'mustNot'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     superType=[Party|ID] (ambiguity) customObligation=STRING
+	 */
+	protected void emit_CustomObligation_MustKeyword_2_0_or_MustNotKeyword_2_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     'Actions:'?

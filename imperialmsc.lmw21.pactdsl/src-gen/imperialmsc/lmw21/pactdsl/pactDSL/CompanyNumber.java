@@ -27,12 +27,12 @@ public interface CompanyNumber extends FeatureType
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Company Number</em>' attribute.
-   * @see #setCompanyNumber(String)
+   * @see #setCompanyNumber(int)
    * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCompanyNumber_CompanyNumber()
    * @model
    * @generated
    */
-  String getCompanyNumber();
+  int getCompanyNumber();
 
   /**
    * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber#getCompanyNumber <em>Company Number</em>}' attribute.
@@ -42,6 +42,6 @@ public interface CompanyNumber extends FeatureType
    * @see #getCompanyNumber()
    * @generated
    */
-  void setCompanyNumber(String value);
+  void setCompanyNumber(int value);
 
 } // CompanyNumber

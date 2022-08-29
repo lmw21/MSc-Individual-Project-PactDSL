@@ -7,10 +7,10 @@ package imperialmsc.lmw21.pactdsl.validation;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.validation.CheckType;
 
+
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.EffectiveDate;
-
 import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Party;
 import imperialmsc.lmw21.pactdsl.pactDSL.PaymentObligation;
@@ -185,5 +185,7 @@ public void checkLicenceObligationYearValid(LicenceObligation year) {
 		error("Year should be no earlier than 1980", year, PactDSLPackage.Literals.LICENCE_OBLIGATION__YEAR);
 	}	
 }
+	
 
 }
+

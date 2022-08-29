@@ -176,6 +176,11 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createGivenWrittenConsentAdapter();
       }
       @Override
+      public Adapter caseCustomAction(CustomAction object)
+      {
+        return createCustomActionAdapter();
+      }
+      @Override
       public Adapter caseStateType(StateType object)
       {
         return createStateTypeAdapter();
@@ -189,6 +194,11 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRightToUse(RightToUse object)
       {
         return createRightToUseAdapter();
+      }
+      @Override
+      public Adapter caseCustomState(CustomState object)
+      {
+        return createCustomStateAdapter();
       }
       @Override
       public Adapter casePrimaryObligationType(PrimaryObligationType object)
@@ -224,6 +234,11 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseConstraintThirdParty(ConstraintThirdParty object)
       {
         return createConstraintThirdPartyAdapter();
+      }
+      @Override
+      public Adapter caseCustomObligation(CustomObligation object)
+      {
+        return createCustomObligationAdapter();
       }
       @Override
       public Adapter caseSecondaryObligationType(SecondaryObligationType object)
@@ -618,6 +633,21 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomAction <em>Custom Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomAction
+   * @generated
+   */
+  public Adapter createCustomActionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.StateType <em>State Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -658,6 +688,21 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRightToUseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomState <em>Custom State</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomState
+   * @generated
+   */
+  public Adapter createCustomStateAdapter()
   {
     return null;
   }
@@ -763,6 +808,21 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstraintThirdPartyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation <em>Custom Obligation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation
+   * @generated
+   */
+  public Adapter createCustomObligationAdapter()
   {
     return null;
   }

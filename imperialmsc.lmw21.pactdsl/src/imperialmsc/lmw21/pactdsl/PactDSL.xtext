@@ -68,7 +68,7 @@ Address:
 	'withAddress' address=STRING;
 
 CompanyNumber:
-	'withCompanyNumber' companyNumber=STRING;
+	'withCompanyNumber' companyNumber=INT;
 
 CustomFeature:
 	'withFeature' customFeature=STRING;
@@ -97,7 +97,7 @@ CustomFormality:
 //Actions
 
 ActionType:
-	GivenConsent | GivenWrittenConsent;
+	GivenConsent | GivenWrittenConsent | CustomAction;
 
 GivenConsent:
 	superType=[Party] 'gaveConsent';
@@ -105,12 +105,14 @@ GivenConsent:
 GivenWrittenConsent:
 	superType=[Party] 'gaveWrittenConsent';
 	
-
+CustomAction:
+	superType=[Party] customAction=STRING;
+	
 
 //State on Signature
 
 StateType:
-	Ownership | RightToUse;
+	Ownership | RightToUse | CustomState;
 
 Ownership:
 	'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
@@ -118,12 +120,15 @@ Ownership:
 RightToUse:
 	'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
 
-	
-	
+CustomState:
+	'State:' superType=[Party] customState=STRING;
+
+
+		
 //PrimaryObligations
  
 PrimaryObligationType:
-	PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation=STRING;
+	PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation;
 
 PaymentObligation:	
 	'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?;
@@ -142,6 +147,9 @@ ConstraintParty:
 
 ConstraintThirdParty:
 	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
+
+CustomObligation:
+	'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
 
 
 

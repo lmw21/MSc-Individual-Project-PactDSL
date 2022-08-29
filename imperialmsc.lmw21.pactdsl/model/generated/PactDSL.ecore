@@ -59,7 +59,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompanyNumber" eSuperTypes="#//FeatureType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="companyNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="companyNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomFeature" eSuperTypes="#//FeatureType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customFeature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -84,6 +84,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GivenConsent" eSuperTypes="#//ActionType"/>
   <eClassifiers xsi:type="ecore:EClass" name="GivenWrittenConsent" eSuperTypes="#//ActionType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomAction" eSuperTypes="#//ActionType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StateType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
   </eClassifiers>
@@ -93,8 +96,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="RightToUse" eSuperTypes="#//StateType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customUsage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomState" eSuperTypes="#//StateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimaryObligationType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="CustomObligation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//EntityType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PaymentObligation" eSuperTypes="#//PrimaryObligationType">
@@ -124,6 +129,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConstraintThirdParty" eSuperTypes="#//PrimaryObligationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="forbiddenAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="additionalInfo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomObligation" eSuperTypes="#//PrimaryObligationType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customObligation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecondaryObligationType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>

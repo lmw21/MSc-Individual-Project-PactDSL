@@ -753,6 +753,43 @@ public interface PactDSLPackage extends EPackage
   int GIVEN_WRITTEN_CONSENT_FEATURE_COUNT = ACTION_TYPE_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomActionImpl <em>Custom Action</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomActionImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomAction()
+   * @generated
+   */
+  int CUSTOM_ACTION = 20;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_ACTION__SUPER_TYPE = ACTION_TYPE__SUPER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Custom Action</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_ACTION__CUSTOM_ACTION = ACTION_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Custom Action</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_ACTION_FEATURE_COUNT = ACTION_TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.StateTypeImpl <em>State Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -760,7 +797,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getStateType()
    * @generated
    */
-  int STATE_TYPE = 20;
+  int STATE_TYPE = 21;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -788,7 +825,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOwnership()
    * @generated
    */
-  int OWNERSHIP = 21;
+  int OWNERSHIP = 22;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -825,7 +862,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getRightToUse()
    * @generated
    */
-  int RIGHT_TO_USE = 22;
+  int RIGHT_TO_USE = 23;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -855,23 +892,14 @@ public interface PactDSLPackage extends EPackage
   int RIGHT_TO_USE_FEATURE_COUNT = STATE_TYPE_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl <em>Primary Obligation Type</em>}' class.
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomStateImpl <em>Custom State</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getPrimaryObligationType()
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomStateImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomState()
    * @generated
    */
-  int PRIMARY_OBLIGATION_TYPE = 23;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION = 0;
+  int CUSTOM_STATE = 24;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -880,7 +908,44 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_OBLIGATION_TYPE__SUPER_TYPE = 1;
+  int CUSTOM_STATE__SUPER_TYPE = STATE_TYPE__SUPER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Custom State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_STATE__CUSTOM_STATE = STATE_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Custom State</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_STATE_FEATURE_COUNT = STATE_TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl <em>Primary Obligation Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getPrimaryObligationType()
+   * @generated
+   */
+  int PRIMARY_OBLIGATION_TYPE = 25;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMARY_OBLIGATION_TYPE__SUPER_TYPE = 0;
 
   /**
    * The number of structural features of the '<em>Primary Obligation Type</em>' class.
@@ -889,7 +954,7 @@ public interface PactDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT = 2;
+  int PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PaymentObligationImpl <em>Payment Obligation</em>}' class.
@@ -899,16 +964,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getPaymentObligation()
    * @generated
    */
-  int PAYMENT_OBLIGATION = 24;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PAYMENT_OBLIGATION__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int PAYMENT_OBLIGATION = 26;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -972,16 +1028,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getDeliveryObligation()
    * @generated
    */
-  int DELIVERY_OBLIGATION = 25;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DELIVERY_OBLIGATION__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int DELIVERY_OBLIGATION = 27;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1036,16 +1083,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getTransferObligation()
    * @generated
    */
-  int TRANSFER_OBLIGATION = 26;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSFER_OBLIGATION__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int TRANSFER_OBLIGATION = 28;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1100,16 +1138,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLicenceObligation()
    * @generated
    */
-  int LICENCE_OBLIGATION = 27;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LICENCE_OBLIGATION__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int LICENCE_OBLIGATION = 29;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1164,16 +1193,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getConstraintParty()
    * @generated
    */
-  int CONSTRAINT_PARTY = 28;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINT_PARTY__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int CONSTRAINT_PARTY = 30;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1210,16 +1230,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getConstraintThirdParty()
    * @generated
    */
-  int CONSTRAINT_THIRD_PARTY = 29;
-
-  /**
-   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINT_THIRD_PARTY__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION;
+  int CONSTRAINT_THIRD_PARTY = 31;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1258,6 +1269,43 @@ public interface PactDSLPackage extends EPackage
   int CONSTRAINT_THIRD_PARTY_FEATURE_COUNT = PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomObligationImpl <em>Custom Obligation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomObligationImpl
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomObligation()
+   * @generated
+   */
+  int CUSTOM_OBLIGATION = 32;
+
+  /**
+   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_OBLIGATION__SUPER_TYPE = PRIMARY_OBLIGATION_TYPE__SUPER_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Custom Obligation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_OBLIGATION__CUSTOM_OBLIGATION = PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Custom Obligation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CUSTOM_OBLIGATION_FEATURE_COUNT = PRIMARY_OBLIGATION_TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl <em>Secondary Obligation Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1265,7 +1313,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getSecondaryObligationType()
    * @generated
    */
-  int SECONDARY_OBLIGATION_TYPE = 30;
+  int SECONDARY_OBLIGATION_TYPE = 33;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1311,7 +1359,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityType()
    * @generated
    */
-  int LIABILITY_TYPE = 31;
+  int LIABILITY_TYPE = 34;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1348,7 +1396,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityParty()
    * @generated
    */
-  int LIABILITY_PARTY = 32;
+  int LIABILITY_PARTY = 35;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1385,7 +1433,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getLiabilityThirdParty()
    * @generated
    */
-  int LIABILITY_THIRD_PARTY = 33;
+  int LIABILITY_THIRD_PARTY = 36;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1422,7 +1470,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getTerminationType()
    * @generated
    */
-  int TERMINATION_TYPE = 34;
+  int TERMINATION_TYPE = 37;
 
   /**
    * The number of structural features of the '<em>Termination Type</em>' class.
@@ -1441,7 +1489,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForConvenience()
    * @generated
    */
-  int FOR_CONVENIENCE = 35;
+  int FOR_CONVENIENCE = 38;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1478,7 +1526,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnReasonableNotice()
    * @generated
    */
-  int ON_REASONABLE_NOTICE = 36;
+  int ON_REASONABLE_NOTICE = 39;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1506,7 +1554,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getForBreach()
    * @generated
    */
-  int FOR_BREACH = 37;
+  int FOR_BREACH = 40;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1552,7 +1600,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getOnInsolvencyEvent()
    * @generated
    */
-  int ON_INSOLVENCY_EVENT = 38;
+  int ON_INSOLVENCY_EVENT = 41;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1589,7 +1637,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomTermination()
    * @generated
    */
-  int CUSTOM_TERMINATION = 39;
+  int CUSTOM_TERMINATION = 42;
 
   /**
    * The feature id for the '<em><b>Super Type</b></em>' reference.
@@ -1626,7 +1674,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getBoilerplateType()
    * @generated
    */
-  int BOILERPLATE_TYPE = 40;
+  int BOILERPLATE_TYPE = 43;
 
   /**
    * The number of structural features of the '<em>Boilerplate Type</em>' class.
@@ -1645,7 +1693,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getApplicableLaw()
    * @generated
    */
-  int APPLICABLE_LAW = 41;
+  int APPLICABLE_LAW = 44;
 
   /**
    * The feature id for the '<em><b>Custom Applicable Law</b></em>' attribute.
@@ -1682,7 +1730,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getJurisdiction()
    * @generated
    */
-  int JURISDICTION = 42;
+  int JURISDICTION = 45;
 
   /**
    * The feature id for the '<em><b>Custom Jurisdiction</b></em>' attribute.
@@ -1719,7 +1767,7 @@ public interface PactDSLPackage extends EPackage
    * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getNotices()
    * @generated
    */
-  int NOTICES = 43;
+  int NOTICES = 46;
 
   /**
    * The feature id for the '<em><b>Custom Notice</b></em>' attribute.
@@ -2304,6 +2352,27 @@ public interface PactDSLPackage extends EPackage
   EClass getGivenWrittenConsent();
 
   /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomAction <em>Custom Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Custom Action</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomAction
+   * @generated
+   */
+  EClass getCustomAction();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomAction#getCustomAction <em>Custom Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Custom Action</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomAction#getCustomAction()
+   * @see #getCustomAction()
+   * @generated
+   */
+  EAttribute getCustomAction_CustomAction();
+
+  /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.StateType <em>State Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2367,6 +2436,27 @@ public interface PactDSLPackage extends EPackage
   EAttribute getRightToUse_CustomUsage();
 
   /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomState <em>Custom State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Custom State</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomState
+   * @generated
+   */
+  EClass getCustomState();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomState#getCustomState <em>Custom State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Custom State</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomState#getCustomState()
+   * @see #getCustomState()
+   * @generated
+   */
+  EAttribute getCustomState_CustomState();
+
+  /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType <em>Primary Obligation Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2375,17 +2465,6 @@ public interface PactDSLPackage extends EPackage
    * @generated
    */
   EClass getPrimaryObligationType();
-
-  /**
-   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getCustomObligation <em>Custom Obligation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Custom Obligation</em>'.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getCustomObligation()
-   * @see #getPrimaryObligationType()
-   * @generated
-   */
-  EAttribute getPrimaryObligationType_CustomObligation();
 
   /**
    * Returns the meta object for the reference '{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getSuperType <em>Super Type</em>}'.
@@ -2633,6 +2712,27 @@ public interface PactDSLPackage extends EPackage
    * @generated
    */
   EAttribute getConstraintThirdParty_AdditionalInfo();
+
+  /**
+   * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation <em>Custom Obligation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Custom Obligation</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation
+   * @generated
+   */
+  EClass getCustomObligation();
+
+  /**
+   * Returns the meta object for the attribute '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getCustomObligation <em>Custom Obligation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Custom Obligation</em>'.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getCustomObligation()
+   * @see #getCustomObligation()
+   * @generated
+   */
+  EAttribute getCustomObligation_CustomObligation();
 
   /**
    * Returns the meta object for class '{@link imperialmsc.lmw21.pactdsl.pactDSL.SecondaryObligationType <em>Secondary Obligation Type</em>}'.
@@ -3482,6 +3582,24 @@ public interface PactDSLPackage extends EPackage
     EClass GIVEN_WRITTEN_CONSENT = eINSTANCE.getGivenWrittenConsent();
 
     /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomActionImpl <em>Custom Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomActionImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomAction()
+     * @generated
+     */
+    EClass CUSTOM_ACTION = eINSTANCE.getCustomAction();
+
+    /**
+     * The meta object literal for the '<em><b>Custom Action</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CUSTOM_ACTION__CUSTOM_ACTION = eINSTANCE.getCustomAction_CustomAction();
+
+    /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.StateTypeImpl <em>State Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3536,6 +3654,24 @@ public interface PactDSLPackage extends EPackage
     EAttribute RIGHT_TO_USE__CUSTOM_USAGE = eINSTANCE.getRightToUse_CustomUsage();
 
     /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomStateImpl <em>Custom State</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomStateImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomState()
+     * @generated
+     */
+    EClass CUSTOM_STATE = eINSTANCE.getCustomState();
+
+    /**
+     * The meta object literal for the '<em><b>Custom State</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CUSTOM_STATE__CUSTOM_STATE = eINSTANCE.getCustomState_CustomState();
+
+    /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl <em>Primary Obligation Type</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3544,14 +3680,6 @@ public interface PactDSLPackage extends EPackage
      * @generated
      */
     EClass PRIMARY_OBLIGATION_TYPE = eINSTANCE.getPrimaryObligationType();
-
-    /**
-     * The meta object literal for the '<em><b>Custom Obligation</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION = eINSTANCE.getPrimaryObligationType_CustomObligation();
 
     /**
      * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
@@ -3748,6 +3876,24 @@ public interface PactDSLPackage extends EPackage
      * @generated
      */
     EAttribute CONSTRAINT_THIRD_PARTY__ADDITIONAL_INFO = eINSTANCE.getConstraintThirdParty_AdditionalInfo();
+
+    /**
+     * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomObligationImpl <em>Custom Obligation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.CustomObligationImpl
+     * @see imperialmsc.lmw21.pactdsl.pactDSL.impl.PactDSLPackageImpl#getCustomObligation()
+     * @generated
+     */
+    EClass CUSTOM_OBLIGATION = eINSTANCE.getCustomObligation();
+
+    /**
+     * The meta object literal for the '<em><b>Custom Obligation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CUSTOM_OBLIGATION__CUSTOM_OBLIGATION = eINSTANCE.getCustomObligation_CustomObligation();
 
     /**
      * The meta object literal for the '{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.SecondaryObligationTypeImpl <em>Secondary Obligation Type</em>}' class.

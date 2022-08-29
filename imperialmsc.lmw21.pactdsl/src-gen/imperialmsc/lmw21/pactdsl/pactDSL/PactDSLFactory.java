@@ -204,6 +204,15 @@ public interface PactDSLFactory extends EFactory
   GivenWrittenConsent createGivenWrittenConsent();
 
   /**
+   * Returns a new object of class '<em>Custom Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Custom Action</em>'.
+   * @generated
+   */
+  CustomAction createCustomAction();
+
+  /**
    * Returns a new object of class '<em>State Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +238,15 @@ public interface PactDSLFactory extends EFactory
    * @generated
    */
   RightToUse createRightToUse();
+
+  /**
+   * Returns a new object of class '<em>Custom State</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Custom State</em>'.
+   * @generated
+   */
+  CustomState createCustomState();
 
   /**
    * Returns a new object of class '<em>Primary Obligation Type</em>'.
@@ -292,6 +310,15 @@ public interface PactDSLFactory extends EFactory
    * @generated
    */
   ConstraintThirdParty createConstraintThirdParty();
+
+  /**
+   * Returns a new object of class '<em>Custom Obligation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Custom Obligation</em>'.
+   * @generated
+   */
+  CustomObligation createCustomObligation();
 
   /**
    * Returns a new object of class '<em>Secondary Obligation Type</em>'.

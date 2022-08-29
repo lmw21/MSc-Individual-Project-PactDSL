@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl#getCustomObligation <em>Custom Obligation</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.impl.PrimaryObligationTypeImpl#getSuperType <em>Super Type</em>}</li>
  * </ul>
  *
@@ -31,26 +30,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container implements PrimaryObligationType
 {
-  /**
-   * The default value of the '{@link #getCustomObligation() <em>Custom Obligation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCustomObligation()
-   * @generated
-   * @ordered
-   */
-  protected static final String CUSTOM_OBLIGATION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCustomObligation() <em>Custom Obligation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCustomObligation()
-   * @generated
-   * @ordered
-   */
-  protected String customObligation = CUSTOM_OBLIGATION_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
    * <!-- begin-user-doc -->
@@ -80,31 +59,6 @@ public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container impl
   protected EClass eStaticClass()
   {
     return PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getCustomObligation()
-  {
-    return customObligation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setCustomObligation(String newCustomObligation)
-  {
-    String oldCustomObligation = customObligation;
-    customObligation = newCustomObligation;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION, oldCustomObligation, customObligation));
   }
 
   /**
@@ -162,8 +116,6 @@ public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION:
-        return getCustomObligation();
       case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE:
         if (resolve) return getSuperType();
         return basicGetSuperType();
@@ -181,9 +133,6 @@ public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION:
-        setCustomObligation((String)newValue);
-        return;
       case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE:
         setSuperType((EntityType)newValue);
         return;
@@ -201,9 +150,6 @@ public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION:
-        setCustomObligation(CUSTOM_OBLIGATION_EDEFAULT);
-        return;
       case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE:
         setSuperType((EntityType)null);
         return;
@@ -221,29 +167,10 @@ public class PrimaryObligationTypeImpl extends MinimalEObjectImpl.Container impl
   {
     switch (featureID)
     {
-      case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION:
-        return CUSTOM_OBLIGATION_EDEFAULT == null ? customObligation != null : !CUSTOM_OBLIGATION_EDEFAULT.equals(customObligation);
       case PactDSLPackage.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE:
         return superType != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (CustomObligation: ");
-    result.append(customObligation);
-    result.append(')');
-    return result.toString();
   }
 
 } //PrimaryObligationTypeImpl

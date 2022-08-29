@@ -85,9 +85,11 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.ACTION_TYPE: return createActionType();
       case PactDSLPackage.GIVEN_CONSENT: return createGivenConsent();
       case PactDSLPackage.GIVEN_WRITTEN_CONSENT: return createGivenWrittenConsent();
+      case PactDSLPackage.CUSTOM_ACTION: return createCustomAction();
       case PactDSLPackage.STATE_TYPE: return createStateType();
       case PactDSLPackage.OWNERSHIP: return createOwnership();
       case PactDSLPackage.RIGHT_TO_USE: return createRightToUse();
+      case PactDSLPackage.CUSTOM_STATE: return createCustomState();
       case PactDSLPackage.PRIMARY_OBLIGATION_TYPE: return createPrimaryObligationType();
       case PactDSLPackage.PAYMENT_OBLIGATION: return createPaymentObligation();
       case PactDSLPackage.DELIVERY_OBLIGATION: return createDeliveryObligation();
@@ -95,6 +97,7 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.LICENCE_OBLIGATION: return createLicenceObligation();
       case PactDSLPackage.CONSTRAINT_PARTY: return createConstraintParty();
       case PactDSLPackage.CONSTRAINT_THIRD_PARTY: return createConstraintThirdParty();
+      case PactDSLPackage.CUSTOM_OBLIGATION: return createCustomObligation();
       case PactDSLPackage.SECONDARY_OBLIGATION_TYPE: return createSecondaryObligationType();
       case PactDSLPackage.LIABILITY_TYPE: return createLiabilityType();
       case PactDSLPackage.LIABILITY_PARTY: return createLiabilityParty();
@@ -360,6 +363,18 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
    * @generated
    */
   @Override
+  public CustomAction createCustomAction()
+  {
+    CustomActionImpl customAction = new CustomActionImpl();
+    return customAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public StateType createStateType()
   {
     StateTypeImpl stateType = new StateTypeImpl();
@@ -388,6 +403,18 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
   {
     RightToUseImpl rightToUse = new RightToUseImpl();
     return rightToUse;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CustomState createCustomState()
+  {
+    CustomStateImpl customState = new CustomStateImpl();
+    return customState;
   }
 
   /**
@@ -472,6 +499,18 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
   {
     ConstraintThirdPartyImpl constraintThirdParty = new ConstraintThirdPartyImpl();
     return constraintThirdParty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CustomObligation createCustomObligation()
+  {
+    CustomObligationImpl customObligation = new CustomObligationImpl();
+    return customObligation;
   }
 
   /**

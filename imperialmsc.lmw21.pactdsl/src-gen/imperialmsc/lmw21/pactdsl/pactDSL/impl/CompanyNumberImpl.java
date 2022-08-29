@@ -35,7 +35,7 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    * @ordered
    */
-  protected static final String COMPANY_NUMBER_EDEFAULT = null;
+  protected static final int COMPANY_NUMBER_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getCompanyNumber() <em>Company Number</em>}' attribute.
@@ -45,7 +45,7 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    * @ordered
    */
-  protected String companyNumber = COMPANY_NUMBER_EDEFAULT;
+  protected int companyNumber = COMPANY_NUMBER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    */
   @Override
-  public String getCompanyNumber()
+  public int getCompanyNumber()
   {
     return companyNumber;
   }
@@ -85,9 +85,9 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
    * @generated
    */
   @Override
-  public void setCompanyNumber(String newCompanyNumber)
+  public void setCompanyNumber(int newCompanyNumber)
   {
-    String oldCompanyNumber = companyNumber;
+    int oldCompanyNumber = companyNumber;
     companyNumber = newCompanyNumber;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER, oldCompanyNumber, companyNumber));
@@ -120,7 +120,7 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
     switch (featureID)
     {
       case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
-        setCompanyNumber((String)newValue);
+        setCompanyNumber((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class CompanyNumberImpl extends FeatureTypeImpl implements CompanyNumber
     switch (featureID)
     {
       case PactDSLPackage.COMPANY_NUMBER__COMPANY_NUMBER:
-        return COMPANY_NUMBER_EDEFAULT == null ? companyNumber != null : !COMPANY_NUMBER_EDEFAULT.equals(companyNumber);
+        return companyNumber != COMPANY_NUMBER_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

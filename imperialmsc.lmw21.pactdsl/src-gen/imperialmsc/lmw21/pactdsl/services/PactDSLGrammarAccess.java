@@ -571,23 +571,23 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWithCompanyNumberKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cCompanyNumberAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCompanyNumberSTRINGTerminalRuleCall_1_0 = (RuleCall)cCompanyNumberAssignment_1.eContents().get(0);
+		private final RuleCall cCompanyNumberINTTerminalRuleCall_1_0 = (RuleCall)cCompanyNumberAssignment_1.eContents().get(0);
 		
 		//CompanyNumber:
-		//    'withCompanyNumber' companyNumber=STRING;
+		//    'withCompanyNumber' companyNumber=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'withCompanyNumber' companyNumber=STRING
+		//'withCompanyNumber' companyNumber=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'withCompanyNumber'
 		public Keyword getWithCompanyNumberKeyword_0() { return cWithCompanyNumberKeyword_0; }
 		
-		//companyNumber=STRING
+		//companyNumber=INT
 		public Assignment getCompanyNumberAssignment_1() { return cCompanyNumberAssignment_1; }
 		
-		//STRING
-		public RuleCall getCompanyNumberSTRINGTerminalRuleCall_1_0() { return cCompanyNumberSTRINGTerminalRuleCall_1_0; }
+		//INT
+		public RuleCall getCompanyNumberINTTerminalRuleCall_1_0() { return cCompanyNumberINTTerminalRuleCall_1_0; }
 	}
 	public class CustomFeatureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomFeature");
@@ -765,13 +765,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cGivenConsentParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cGivenWrittenConsentParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCustomActionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		////Actions
 		//ActionType:
-		//    GivenConsent | GivenWrittenConsent;
+		//    GivenConsent | GivenWrittenConsent | CustomAction;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//GivenConsent | GivenWrittenConsent
+		//GivenConsent | GivenWrittenConsent | CustomAction
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//GivenConsent
@@ -779,6 +780,9 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//GivenWrittenConsent
 		public RuleCall getGivenWrittenConsentParserRuleCall_1() { return cGivenWrittenConsentParserRuleCall_1; }
+		
+		//CustomAction
+		public RuleCall getCustomActionParserRuleCall_2() { return cCustomActionParserRuleCall_2; }
 	}
 	public class GivenConsentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.GivenConsent");
@@ -834,18 +838,50 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'gaveWrittenConsent'
 		public Keyword getGaveWrittenConsentKeyword_1() { return cGaveWrittenConsentKeyword_1; }
 	}
+	public class CustomActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomAction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSuperTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cSuperTypePartyCrossReference_0_0 = (CrossReference)cSuperTypeAssignment_0.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_0_0_1 = (RuleCall)cSuperTypePartyCrossReference_0_0.eContents().get(1);
+		private final Assignment cCustomActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCustomActionSTRINGTerminalRuleCall_1_0 = (RuleCall)cCustomActionAssignment_1.eContents().get(0);
+		
+		//CustomAction:
+		//    superType=[Party] customAction=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//superType=[Party] customAction=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_0() { return cSuperTypeAssignment_0; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_0_0() { return cSuperTypePartyCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_0_0_1() { return cSuperTypePartyIDTerminalRuleCall_0_0_1; }
+		
+		//customAction=STRING
+		public Assignment getCustomActionAssignment_1() { return cCustomActionAssignment_1; }
+		
+		//STRING
+		public RuleCall getCustomActionSTRINGTerminalRuleCall_1_0() { return cCustomActionSTRINGTerminalRuleCall_1_0; }
+	}
 	public class StateTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.StateType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cOwnershipParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cRightToUseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cCustomStateParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		////State on Signature
 		//StateType:
-		//    Ownership | RightToUse;
+		//    Ownership | RightToUse | CustomState;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Ownership | RightToUse
+		//Ownership | RightToUse | CustomState
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Ownership
@@ -853,6 +889,9 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//RightToUse
 		public RuleCall getRightToUseParserRuleCall_1() { return cRightToUseParserRuleCall_1; }
+		
+		//CustomState
+		public RuleCall getCustomStateParserRuleCall_2() { return cCustomStateParserRuleCall_2; }
 	}
 	public class OwnershipElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.Ownership");
@@ -948,6 +987,41 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getCustomUsageSTRINGTerminalRuleCall_3_0() { return cCustomUsageSTRINGTerminalRuleCall_3_0; }
 	}
+	public class CustomStateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomState");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Assignment cCustomStateAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCustomStateSTRINGTerminalRuleCall_2_0 = (RuleCall)cCustomStateAssignment_2.eContents().get(0);
+		
+		//CustomState:
+		//    'State:' superType=[Party] customState=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'State:' superType=[Party] customState=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'State:'
+		public Keyword getStateKeyword_0() { return cStateKeyword_0; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
+		
+		//customState=STRING
+		public Assignment getCustomStateAssignment_2() { return cCustomStateAssignment_2; }
+		
+		//STRING
+		public RuleCall getCustomStateSTRINGTerminalRuleCall_2_0() { return cCustomStateSTRINGTerminalRuleCall_2_0; }
+	}
 	public class PrimaryObligationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.PrimaryObligationType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -957,15 +1031,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cLicenceObligationParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cConstraintPartyParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		private final RuleCall cConstraintThirdPartyParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final Assignment cCustomObligationAssignment_6 = (Assignment)cAlternatives.eContents().get(6);
-		private final RuleCall cCustomObligationSTRINGTerminalRuleCall_6_0 = (RuleCall)cCustomObligationAssignment_6.eContents().get(0);
+		private final RuleCall cCustomObligationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		////PrimaryObligations
 		//PrimaryObligationType:
-		//    PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation=STRING;
+		//    PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation=STRING
+		//PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//PaymentObligation
@@ -986,11 +1059,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ConstraintThirdParty
 		public RuleCall getConstraintThirdPartyParserRuleCall_5() { return cConstraintThirdPartyParserRuleCall_5; }
 		
-		//CustomObligation=STRING
-		public Assignment getCustomObligationAssignment_6() { return cCustomObligationAssignment_6; }
-		
-		//STRING
-		public RuleCall getCustomObligationSTRINGTerminalRuleCall_6_0() { return cCustomObligationSTRINGTerminalRuleCall_6_0; }
+		//CustomObligation
+		public RuleCall getCustomObligationParserRuleCall_6() { return cCustomObligationParserRuleCall_6; }
 	}
 	public class PaymentObligationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.PaymentObligation");
@@ -1569,6 +1639,53 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_7_3_0_1() { return cSuperTypePartyIDTerminalRuleCall_7_3_0_1; }
+	}
+	public class CustomObligationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomObligation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCustomObligationKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
+		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Keyword cMustKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
+		private final Keyword cMustNotKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Assignment cCustomObligationAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCustomObligationSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomObligationAssignment_3.eContents().get(0);
+		
+		//CustomObligation:
+		//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'CustomObligation:'
+		public Keyword getCustomObligationKeyword_0() { return cCustomObligationKeyword_0; }
+		
+		//superType=[Party]
+		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
+		
+		//[Party]
+		public CrossReference getSuperTypePartyCrossReference_1_0() { return cSuperTypePartyCrossReference_1_0; }
+		
+		//ID
+		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
+		
+		//('must' | 'mustNot')
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		
+		//'must'
+		public Keyword getMustKeyword_2_0() { return cMustKeyword_2_0; }
+		
+		//'mustNot'
+		public Keyword getMustNotKeyword_2_1() { return cMustNotKeyword_2_1; }
+		
+		//customObligation=STRING
+		public Assignment getCustomObligationAssignment_3() { return cCustomObligationAssignment_3; }
+		
+		//STRING
+		public RuleCall getCustomObligationSTRINGTerminalRuleCall_3_0() { return cCustomObligationSTRINGTerminalRuleCall_3_0; }
 	}
 	public class SecondaryObligationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.SecondaryObligationType");
@@ -2247,9 +2364,11 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ActionTypeElements pActionType;
 	private final GivenConsentElements pGivenConsent;
 	private final GivenWrittenConsentElements pGivenWrittenConsent;
+	private final CustomActionElements pCustomAction;
 	private final StateTypeElements pStateType;
 	private final OwnershipElements pOwnership;
 	private final RightToUseElements pRightToUse;
+	private final CustomStateElements pCustomState;
 	private final PrimaryObligationTypeElements pPrimaryObligationType;
 	private final PaymentObligationElements pPaymentObligation;
 	private final DeliveryObligationElements pDeliveryObligation;
@@ -2257,6 +2376,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final LicenceObligationElements pLicenceObligation;
 	private final ConstraintPartyElements pConstraintParty;
 	private final ConstraintThirdPartyElements pConstraintThirdParty;
+	private final CustomObligationElements pCustomObligation;
 	private final SecondaryObligationTypeElements pSecondaryObligationType;
 	private final LiabilityTypeElements pLiabilityType;
 	private final LiabilityPartyElements pLiabilityParty;
@@ -2301,9 +2421,11 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pActionType = new ActionTypeElements();
 		this.pGivenConsent = new GivenConsentElements();
 		this.pGivenWrittenConsent = new GivenWrittenConsentElements();
+		this.pCustomAction = new CustomActionElements();
 		this.pStateType = new StateTypeElements();
 		this.pOwnership = new OwnershipElements();
 		this.pRightToUse = new RightToUseElements();
+		this.pCustomState = new CustomStateElements();
 		this.pPrimaryObligationType = new PrimaryObligationTypeElements();
 		this.pPaymentObligation = new PaymentObligationElements();
 		this.pDeliveryObligation = new DeliveryObligationElements();
@@ -2311,6 +2433,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pLicenceObligation = new LicenceObligationElements();
 		this.pConstraintParty = new ConstraintPartyElements();
 		this.pConstraintThirdParty = new ConstraintThirdPartyElements();
+		this.pCustomObligation = new CustomObligationElements();
 		this.pSecondaryObligationType = new SecondaryObligationTypeElements();
 		this.pLiabilityType = new LiabilityTypeElements();
 		this.pLiabilityParty = new LiabilityPartyElements();
@@ -2476,7 +2599,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CompanyNumber:
-	//    'withCompanyNumber' companyNumber=STRING;
+	//    'withCompanyNumber' companyNumber=INT;
 	public CompanyNumberElements getCompanyNumberAccess() {
 		return pCompanyNumber;
 	}
@@ -2548,7 +2671,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	////Actions
 	//ActionType:
-	//    GivenConsent | GivenWrittenConsent;
+	//    GivenConsent | GivenWrittenConsent | CustomAction;
 	public ActionTypeElements getActionTypeAccess() {
 		return pActionType;
 	}
@@ -2577,9 +2700,19 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getGivenWrittenConsentAccess().getRule();
 	}
 	
+	//CustomAction:
+	//    superType=[Party] customAction=STRING;
+	public CustomActionElements getCustomActionAccess() {
+		return pCustomAction;
+	}
+	
+	public ParserRule getCustomActionRule() {
+		return getCustomActionAccess().getRule();
+	}
+	
 	////State on Signature
 	//StateType:
-	//    Ownership | RightToUse;
+	//    Ownership | RightToUse | CustomState;
 	public StateTypeElements getStateTypeAccess() {
 		return pStateType;
 	}
@@ -2608,9 +2741,19 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getRightToUseAccess().getRule();
 	}
 	
+	//CustomState:
+	//    'State:' superType=[Party] customState=STRING;
+	public CustomStateElements getCustomStateAccess() {
+		return pCustomState;
+	}
+	
+	public ParserRule getCustomStateRule() {
+		return getCustomStateAccess().getRule();
+	}
+	
 	////PrimaryObligations
 	//PrimaryObligationType:
-	//    PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation=STRING;
+	//    PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation;
 	public PrimaryObligationTypeElements getPrimaryObligationTypeAccess() {
 		return pPrimaryObligationType;
 	}
@@ -2677,6 +2820,16 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getConstraintThirdPartyRule() {
 		return getConstraintThirdPartyAccess().getRule();
+	}
+	
+	//CustomObligation:
+	//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
+	public CustomObligationElements getCustomObligationAccess() {
+		return pCustomObligation;
+	}
+	
+	public ParserRule getCustomObligationRule() {
+		return getCustomObligationAccess().getRule();
 	}
 	
 	////Secondary Obligations

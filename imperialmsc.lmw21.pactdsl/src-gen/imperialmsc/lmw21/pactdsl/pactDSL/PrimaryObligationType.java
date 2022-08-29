@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getCustomObligation <em>Custom Obligation</em>}</li>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getSuperType <em>Super Type</em>}</li>
  * </ul>
  *
@@ -24,28 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface PrimaryObligationType extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Custom Obligation</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Custom Obligation</em>' attribute.
-   * @see #setCustomObligation(String)
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getPrimaryObligationType_CustomObligation()
-   * @model
-   * @generated
-   */
-  String getCustomObligation();
-
-  /**
-   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.PrimaryObligationType#getCustomObligation <em>Custom Obligation</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Custom Obligation</em>' attribute.
-   * @see #getCustomObligation()
-   * @generated
-   */
-  void setCustomObligation(String value);
-
   /**
    * Returns the value of the '<em><b>Super Type</b></em>' reference.
    * <!-- begin-user-doc -->

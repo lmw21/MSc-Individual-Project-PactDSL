@@ -974,9 +974,9 @@ ruleCompanyNumber returns [EObject current=null]
 		}
 		(
 			(
-				lv_companyNumber_1_0=RULE_STRING
+				lv_companyNumber_1_0=RULE_INT
 				{
-					newLeafNode(lv_companyNumber_1_0, grammarAccess.getCompanyNumberAccess().getCompanyNumberSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_companyNumber_1_0, grammarAccess.getCompanyNumberAccess().getCompanyNumberINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -986,7 +986,7 @@ ruleCompanyNumber returns [EObject current=null]
 						$current,
 						"companyNumber",
 						lv_companyNumber_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
@@ -1312,6 +1312,15 @@ ruleActionType returns [EObject current=null]
 			$current = $this_GivenWrittenConsent_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionTypeAccess().getCustomActionParserRuleCall_2());
+		}
+		this_CustomAction_2=ruleCustomAction
+		{
+			$current = $this_CustomAction_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1387,6 +1396,56 @@ ruleGivenWrittenConsent returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCustomAction
+entryRuleCustomAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomActionRule()); }
+	iv_ruleCustomAction=ruleCustomAction
+	{ $current=$iv_ruleCustomAction.current; }
+	EOF;
+
+// Rule CustomAction
+ruleCustomAction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomActionRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getCustomActionAccess().getSuperTypePartyCrossReference_0_0());
+				}
+			)
+		)
+		(
+			(
+				lv_customAction_1_0=RULE_STRING
+				{
+					newLeafNode(lv_customAction_1_0, grammarAccess.getCustomActionAccess().getCustomActionSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomActionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"customAction",
+						lv_customAction_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleStateType
 entryRuleStateType returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getStateTypeRule()); }
@@ -1418,6 +1477,15 @@ ruleStateType returns [EObject current=null]
 		this_RightToUse_1=ruleRightToUse
 		{
 			$current = $this_RightToUse_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getStateTypeAccess().getCustomStateParserRuleCall_2());
+		}
+		this_CustomState_2=ruleCustomState
+		{
+			$current = $this_CustomState_2.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1553,6 +1621,60 @@ ruleRightToUse returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleCustomState
+entryRuleCustomState returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomStateRule()); }
+	iv_ruleCustomState=ruleCustomState
+	{ $current=$iv_ruleCustomState.current; }
+	EOF;
+
+// Rule CustomState
+ruleCustomState returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='State:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCustomStateAccess().getStateKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomStateRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getCustomStateAccess().getSuperTypePartyCrossReference_1_0());
+				}
+			)
+		)
+		(
+			(
+				lv_customState_2_0=RULE_STRING
+				{
+					newLeafNode(lv_customState_2_0, grammarAccess.getCustomStateAccess().getCustomStateSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomStateRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"customState",
+						lv_customState_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRulePrimaryObligationType
 entryRulePrimaryObligationType returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getPrimaryObligationTypeRule()); }
@@ -1623,24 +1745,14 @@ rulePrimaryObligationType returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		(
-			(
-				lv_CustomObligation_6_0=RULE_STRING
-				{
-					newLeafNode(lv_CustomObligation_6_0, grammarAccess.getPrimaryObligationTypeAccess().getCustomObligationSTRINGTerminalRuleCall_6_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getPrimaryObligationTypeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"CustomObligation",
-						lv_CustomObligation_6_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
+		{
+			newCompositeNode(grammarAccess.getPrimaryObligationTypeAccess().getCustomObligationParserRuleCall_6());
+		}
+		this_CustomObligation_6=ruleCustomObligation
+		{
+			$current = $this_CustomObligation_6.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -2431,6 +2543,71 @@ ruleConstraintThirdParty returns [EObject current=null]
 				)
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleCustomObligation
+entryRuleCustomObligation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomObligationRule()); }
+	iv_ruleCustomObligation=ruleCustomObligation
+	{ $current=$iv_ruleCustomObligation.current; }
+	EOF;
+
+// Rule CustomObligation
+ruleCustomObligation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='CustomObligation:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCustomObligationAccess().getCustomObligationKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomObligationRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getCustomObligationAccess().getSuperTypePartyCrossReference_1_0());
+				}
+			)
+		)
+		(
+			otherlv_2='must'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getCustomObligationAccess().getMustKeyword_2_0());
+			}
+			    |
+			otherlv_3='mustNot'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getCustomObligationAccess().getMustNotKeyword_2_1());
+			}
+		)
+		(
+			(
+				lv_customObligation_4_0=RULE_STRING
+				{
+					newLeafNode(lv_customObligation_4_0, grammarAccess.getCustomObligationAccess().getCustomObligationSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomObligationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"customObligation",
+						lv_customObligation_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

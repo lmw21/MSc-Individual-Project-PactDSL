@@ -39,6 +39,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getOwnershipAccess().getAlternatives_2(), "rule__Ownership__Alternatives_2");
 			builder.put(grammarAccess.getRightToUseAccess().getAlternatives_2(), "rule__RightToUse__Alternatives_2");
 			builder.put(grammarAccess.getPrimaryObligationTypeAccess().getAlternatives(), "rule__PrimaryObligationType__Alternatives");
+			builder.put(grammarAccess.getCustomObligationAccess().getAlternatives_2(), "rule__CustomObligation__Alternatives_2");
 			builder.put(grammarAccess.getLiabilityTypeAccess().getAlternatives(), "rule__LiabilityType__Alternatives");
 			builder.put(grammarAccess.getTerminationTypeAccess().getAlternatives(), "rule__TerminationType__Alternatives");
 			builder.put(grammarAccess.getBoilerplateTypeAccess().getAlternatives(), "rule__BoilerplateType__Alternatives");
@@ -69,8 +70,10 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCustomFormalityAccess().getGroup(), "rule__CustomFormality__Group__0");
 			builder.put(grammarAccess.getGivenConsentAccess().getGroup(), "rule__GivenConsent__Group__0");
 			builder.put(grammarAccess.getGivenWrittenConsentAccess().getGroup(), "rule__GivenWrittenConsent__Group__0");
+			builder.put(grammarAccess.getCustomActionAccess().getGroup(), "rule__CustomAction__Group__0");
 			builder.put(grammarAccess.getOwnershipAccess().getGroup(), "rule__Ownership__Group__0");
 			builder.put(grammarAccess.getRightToUseAccess().getGroup(), "rule__RightToUse__Group__0");
+			builder.put(grammarAccess.getCustomStateAccess().getGroup(), "rule__CustomState__Group__0");
 			builder.put(grammarAccess.getPaymentObligationAccess().getGroup(), "rule__PaymentObligation__Group__0");
 			builder.put(grammarAccess.getPaymentObligationAccess().getGroup_7(), "rule__PaymentObligation__Group_7__0");
 			builder.put(grammarAccess.getDeliveryObligationAccess().getGroup(), "rule__DeliveryObligation__Group__0");
@@ -84,6 +87,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getGroup(), "rule__ConstraintThirdParty__Group__0");
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getGroup_6(), "rule__ConstraintThirdParty__Group_6__0");
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getGroup_7(), "rule__ConstraintThirdParty__Group_7__0");
+			builder.put(grammarAccess.getCustomObligationAccess().getGroup(), "rule__CustomObligation__Group__0");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getGroup(), "rule__SecondaryObligationType__Group__0");
 			builder.put(grammarAccess.getLiabilityPartyAccess().getGroup(), "rule__LiabilityParty__Group__0");
 			builder.put(grammarAccess.getLiabilityThirdPartyAccess().getGroup(), "rule__LiabilityThirdParty__Group__0");
@@ -132,11 +136,14 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCustomFormalityAccess().getCustomFormalityAssignment_1(), "rule__CustomFormality__CustomFormalityAssignment_1");
 			builder.put(grammarAccess.getGivenConsentAccess().getSuperTypeAssignment_0(), "rule__GivenConsent__SuperTypeAssignment_0");
 			builder.put(grammarAccess.getGivenWrittenConsentAccess().getSuperTypeAssignment_0(), "rule__GivenWrittenConsent__SuperTypeAssignment_0");
+			builder.put(grammarAccess.getCustomActionAccess().getSuperTypeAssignment_0(), "rule__CustomAction__SuperTypeAssignment_0");
+			builder.put(grammarAccess.getCustomActionAccess().getCustomActionAssignment_1(), "rule__CustomAction__CustomActionAssignment_1");
 			builder.put(grammarAccess.getOwnershipAccess().getSuperTypeAssignment_1(), "rule__Ownership__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getOwnershipAccess().getCustomOwnershipAssignment_3(), "rule__Ownership__CustomOwnershipAssignment_3");
 			builder.put(grammarAccess.getRightToUseAccess().getSuperTypeAssignment_1(), "rule__RightToUse__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getRightToUseAccess().getCustomUsageAssignment_3(), "rule__RightToUse__CustomUsageAssignment_3");
-			builder.put(grammarAccess.getPrimaryObligationTypeAccess().getCustomObligationAssignment_6(), "rule__PrimaryObligationType__CustomObligationAssignment_6");
+			builder.put(grammarAccess.getCustomStateAccess().getSuperTypeAssignment_1(), "rule__CustomState__SuperTypeAssignment_1");
+			builder.put(grammarAccess.getCustomStateAccess().getCustomStateAssignment_2(), "rule__CustomState__CustomStateAssignment_2");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSuperTypeAssignment_1(), "rule__PaymentObligation__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSumAssignment_4(), "rule__PaymentObligation__SumAssignment_4");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSuperTypeAssignment_6(), "rule__PaymentObligation__SuperTypeAssignment_6");
@@ -171,6 +178,8 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getAdditionalInfoAssignment_5(), "rule__ConstraintThirdParty__AdditionalInfoAssignment_5");
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getSuperTypeAssignment_6_1(), "rule__ConstraintThirdParty__SuperTypeAssignment_6_1");
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getSuperTypeAssignment_7_3(), "rule__ConstraintThirdParty__SuperTypeAssignment_7_3");
+			builder.put(grammarAccess.getCustomObligationAccess().getSuperTypeAssignment_1(), "rule__CustomObligation__SuperTypeAssignment_1");
+			builder.put(grammarAccess.getCustomObligationAccess().getCustomObligationAssignment_3(), "rule__CustomObligation__CustomObligationAssignment_3");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSuperTypeAssignment_1(), "rule__SecondaryObligationType__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSumAssignment_4(), "rule__SecondaryObligationType__SumAssignment_4");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSuperTypeAssignment_6(), "rule__SecondaryObligationType__SuperTypeAssignment_6");

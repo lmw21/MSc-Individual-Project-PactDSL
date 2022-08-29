@@ -11,8 +11,11 @@ import imperialmsc.lmw21.pactdsl.pactDSL.ByEmail;
 import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomAction;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomState;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomTermination;
 import imperialmsc.lmw21.pactdsl.pactDSL.DefinedTerm;
 import imperialmsc.lmw21.pactdsl.pactDSL.DeliveryObligation;
@@ -210,6 +213,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass customActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass stateTypeEClass = null;
 
   /**
@@ -225,6 +235,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   private EClass rightToUseEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass customStateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -274,6 +291,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   private EClass constraintThirdPartyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass customObligationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1025,6 +1049,28 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
+  public EClass getCustomAction()
+  {
+    return customActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomAction_CustomAction()
+  {
+    return (EAttribute)customActionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getStateType()
   {
     return stateTypeEClass;
@@ -1091,6 +1137,28 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
+  public EClass getCustomState()
+  {
+    return customStateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomState_CustomState()
+  {
+    return (EAttribute)customStateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getPrimaryObligationType()
   {
     return primaryObligationTypeEClass;
@@ -1102,20 +1170,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getPrimaryObligationType_CustomObligation()
-  {
-    return (EAttribute)primaryObligationTypeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EReference getPrimaryObligationType_SuperType()
   {
-    return (EReference)primaryObligationTypeEClass.getEStructuralFeatures().get(1);
+    return (EReference)primaryObligationTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1358,6 +1415,28 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
   public EAttribute getConstraintThirdParty_AdditionalInfo()
   {
     return (EAttribute)constraintThirdPartyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCustomObligation()
+  {
+    return customObligationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomObligation_CustomObligation()
+  {
+    return (EAttribute)customObligationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1838,6 +1917,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     givenWrittenConsentEClass = createEClass(GIVEN_WRITTEN_CONSENT);
 
+    customActionEClass = createEClass(CUSTOM_ACTION);
+    createEAttribute(customActionEClass, CUSTOM_ACTION__CUSTOM_ACTION);
+
     stateTypeEClass = createEClass(STATE_TYPE);
     createEReference(stateTypeEClass, STATE_TYPE__SUPER_TYPE);
 
@@ -1847,8 +1929,10 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     rightToUseEClass = createEClass(RIGHT_TO_USE);
     createEAttribute(rightToUseEClass, RIGHT_TO_USE__CUSTOM_USAGE);
 
+    customStateEClass = createEClass(CUSTOM_STATE);
+    createEAttribute(customStateEClass, CUSTOM_STATE__CUSTOM_STATE);
+
     primaryObligationTypeEClass = createEClass(PRIMARY_OBLIGATION_TYPE);
-    createEAttribute(primaryObligationTypeEClass, PRIMARY_OBLIGATION_TYPE__CUSTOM_OBLIGATION);
     createEReference(primaryObligationTypeEClass, PRIMARY_OBLIGATION_TYPE__SUPER_TYPE);
 
     paymentObligationEClass = createEClass(PAYMENT_OBLIGATION);
@@ -1878,6 +1962,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     constraintThirdPartyEClass = createEClass(CONSTRAINT_THIRD_PARTY);
     createEAttribute(constraintThirdPartyEClass, CONSTRAINT_THIRD_PARTY__FORBIDDEN_ACTION);
     createEAttribute(constraintThirdPartyEClass, CONSTRAINT_THIRD_PARTY__ADDITIONAL_INFO);
+
+    customObligationEClass = createEClass(CUSTOM_OBLIGATION);
+    createEAttribute(customObligationEClass, CUSTOM_OBLIGATION__CUSTOM_OBLIGATION);
 
     secondaryObligationTypeEClass = createEClass(SECONDARY_OBLIGATION_TYPE);
     createEReference(secondaryObligationTypeEClass, SECONDARY_OBLIGATION_TYPE__SUPER_TYPE);
@@ -1971,14 +2058,17 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     customFormalityEClass.getESuperTypes().add(this.getFormalityType());
     givenConsentEClass.getESuperTypes().add(this.getActionType());
     givenWrittenConsentEClass.getESuperTypes().add(this.getActionType());
+    customActionEClass.getESuperTypes().add(this.getActionType());
     ownershipEClass.getESuperTypes().add(this.getStateType());
     rightToUseEClass.getESuperTypes().add(this.getStateType());
+    customStateEClass.getESuperTypes().add(this.getStateType());
     paymentObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     deliveryObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     transferObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     licenceObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     constraintPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
     constraintThirdPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
+    customObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
     liabilityPartyEClass.getESuperTypes().add(this.getLiabilityType());
     liabilityThirdPartyEClass.getESuperTypes().add(this.getLiabilityType());
     forConvenienceEClass.getESuperTypes().add(this.getTerminationType());
@@ -2037,7 +2127,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEAttribute(getAddress_Address(), ecorePackage.getEString(), "address", null, 0, 1, Address.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(companyNumberEClass, CompanyNumber.class, "CompanyNumber", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCompanyNumber_CompanyNumber(), ecorePackage.getEString(), "companyNumber", null, 0, 1, CompanyNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCompanyNumber_CompanyNumber(), ecorePackage.getEInt(), "companyNumber", null, 0, 1, CompanyNumber.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(customFeatureEClass, CustomFeature.class, "CustomFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCustomFeature_CustomFeature(), ecorePackage.getEString(), "customFeature", null, 0, 1, CustomFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2064,6 +2154,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     initEClass(givenWrittenConsentEClass, GivenWrittenConsent.class, "GivenWrittenConsent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(customActionEClass, CustomAction.class, "CustomAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomAction_CustomAction(), ecorePackage.getEString(), "customAction", null, 0, 1, CustomAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(stateTypeEClass, StateType.class, "StateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStateType_SuperType(), this.getParty(), null, "superType", null, 0, 1, StateType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2073,8 +2166,10 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(rightToUseEClass, RightToUse.class, "RightToUse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRightToUse_CustomUsage(), ecorePackage.getEString(), "customUsage", null, 0, 1, RightToUse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(customStateEClass, CustomState.class, "CustomState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomState_CustomState(), ecorePackage.getEString(), "customState", null, 0, 1, CustomState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(primaryObligationTypeEClass, PrimaryObligationType.class, "PrimaryObligationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPrimaryObligationType_CustomObligation(), ecorePackage.getEString(), "CustomObligation", null, 0, 1, PrimaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrimaryObligationType_SuperType(), this.getEntityType(), null, "superType", null, 0, 1, PrimaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paymentObligationEClass, PaymentObligation.class, "PaymentObligation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2104,6 +2199,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEClass(constraintThirdPartyEClass, ConstraintThirdParty.class, "ConstraintThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstraintThirdParty_ForbiddenAction(), ecorePackage.getEString(), "forbiddenAction", null, 0, 1, ConstraintThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraintThirdParty_AdditionalInfo(), ecorePackage.getEString(), "additionalInfo", null, 0, 1, ConstraintThirdParty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(customObligationEClass, CustomObligation.class, "CustomObligation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomObligation_CustomObligation(), ecorePackage.getEString(), "customObligation", null, 0, 1, CustomObligation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(secondaryObligationTypeEClass, SecondaryObligationType.class, "SecondaryObligationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSecondaryObligationType_SuperType(), this.getParty(), null, "superType", null, 0, 1, SecondaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
