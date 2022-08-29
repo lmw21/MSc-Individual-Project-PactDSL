@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalPactDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ContractTitle:'", "'.'", "'Entities:'", "'Formalities:'", "'Actions:'", "'StateOnSignature:'", "'PrimaryObligations:'", "'SecondaryObligations:'", "'Liability'", "'Termination:'", "'StateAfterContractDischarged:'", "'Boilerplate:'", "'EffectiveDate:'", "'Party:'", "'ThirdParty:'", "'SubjectMatter:'", "'definedAs'", "'withAddress'", "'withCompanyNumber'", "'withFeature'", "'inWriting'", "'byEmail'", "'to'", "'givingNoticeTo'", "'withDuration'", "'days'", "'ContractFormality'", "'gaveConsent'", "'gaveWrittenConsent'", "'Ownership:'", "'owns'", "'mustReturn'", "'RightToUse:'", "'mayUse'", "'mayNotUse'", "'State:'", "'PaymentObligation:'", "'must'", "'pay'", "'by'", "'date'", "'DeliveryObligation:'", "'deliver'", "'TransferObligation:'", "'transfer'", "'LicenceObligation:'", "'grant'", "'Licence'", "'in'", "'ConstraintParty:'", "'mustNot'", "'ConstraintThirdParty:'", "'unless'", "'withWrittenConsent'", "'of'", "'CustomObligation:'", "'SecondaryObligation:'", "'uponBreachOf'", "'LiabilityParty:'", "'shallNotBeLiable'", "'for'", "'LiabilityThirdParty:'", "'TerminationForConvenience:'", "'may'", "'terminate'", "'TerminationOnReasonableNotice:'", "'TerminationForBreach:'", "'forBreachOf'", "'TerminationUponInsolvency:'", "'upon'", "'ApplicableLaw:'", "'Jurisdiction:'", "'Notices:'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'ContractTitle:'", "'.'", "'Entities:'", "'Formalities:'", "'Actions:'", "'StateOnSignature:'", "'PrimaryObligations:'", "'SecondaryObligations:'", "'Liability'", "'Termination:'", "'StateAfterContractDischarged:'", "'Boilerplate:'", "'EffectiveDate:'", "'Party:'", "'ThirdParty:'", "'SubjectMatter:'", "'definedAs'", "'withAddress'", "'withCompanyNumber'", "'withFeature'", "'inWriting'", "'byEmail'", "'to'", "'givingNoticeTo'", "'withDuration'", "'days'", "'ContractFormality'", "'gaveConsent'", "'gaveWrittenConsent'", "'Ownership:'", "'owns'", "'mustReturn'", "'RightToUse:'", "'mayUse'", "'mayNotUse'", "'State:'", "'PaymentObligation:'", "'must'", "'pay'", "'by'", "'date'", "'DeliveryObligation:'", "'deliver'", "'TransferObligation:'", "'transfer'", "'LicenceObligation:'", "'grant'", "'Licence'", "'in'", "'ConstraintParty:'", "'mustNot'", "'ConstraintThirdParty:'", "'unless'", "'withWrittenConsent'", "'of'", "'CustomObligation:'", "'SecondaryObligation:'", "'uponBreachOf'", "'LiabilityToParty:'", "'shallNotBeLiable'", "'for'", "'LiabilityToThirdParty:'", "'TerminationForConvenience:'", "'may'", "'terminate'", "'TerminationOnReasonableNotice:'", "'TerminationForBreach:'", "'forBreachOf'", "'TerminationUponInsolvency:'", "'upon'", "'ApplicableLaw:'", "'Jurisdiction:'", "'Notices:'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -1007,7 +1007,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             int LA18_0 = input.LA(1);
 
             if ( (LA18_0==22) ) {
-                alt18=1;
+                int LA18_1 = input.LA(2);
+
+                if ( (LA18_1==EOF||LA18_1==22||(LA18_1>=81 && LA18_1<=83)) ) {
+                    alt18=1;
+                }
             }
             switch (alt18) {
                 case 1 :
@@ -1029,7 +1033,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( ((LA19_0>=81 && LA19_0<=83)) ) {
+                if ( (LA19_0==22||(LA19_0>=81 && LA19_0<=83)) ) {
                     alt19=1;
                 }
 
@@ -3444,6 +3448,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             if ( (LA27_0==RULE_ID) ) {
                 switch ( input.LA(2) ) {
+                case 38:
+                    {
+                    alt27=1;
+                    }
+                    break;
                 case RULE_STRING:
                     {
                     alt27=3;
@@ -3452,11 +3461,6 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                 case 39:
                     {
                     alt27=2;
-                    }
-                    break;
-                case 38:
-                    {
-                    alt27=1;
                     }
                     break;
                 default:
@@ -6584,7 +6588,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustomObligation"
-    // InternalPactDSL.g:2557:1: ruleCustomObligation returns [EObject current=null] : (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) ) ;
+    // InternalPactDSL.g:2557:1: ruleCustomObligation returns [EObject current=null] : (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )? ) ;
     public final EObject ruleCustomObligation() throws RecognitionException {
         EObject current = null;
 
@@ -6593,16 +6597,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         Token otherlv_2=null;
         Token otherlv_3=null;
         Token lv_customObligation_4_0=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token lv_day_7_0=null;
+        Token lv_month_8_0=null;
+        Token lv_year_9_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2563:2: ( (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:2564:2: (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2563:2: ( (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )? ) )
+            // InternalPactDSL.g:2564:2: (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )? )
             {
-            // InternalPactDSL.g:2564:2: (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:2565:3: otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) )
+            // InternalPactDSL.g:2564:2: (otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )? )
+            // InternalPactDSL.g:2565:3: otherlv_0= 'CustomObligation:' ( (otherlv_1= RULE_ID ) ) (otherlv_2= 'must' | otherlv_3= 'mustNot' ) ( (lv_customObligation_4_0= RULE_STRING ) ) (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )?
             {
             otherlv_0=(Token)match(input,66,FOLLOW_20); 
 
@@ -6675,7 +6684,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             // InternalPactDSL.g:2594:4: (lv_customObligation_4_0= RULE_STRING )
             // InternalPactDSL.g:2595:5: lv_customObligation_4_0= RULE_STRING
             {
-            lv_customObligation_4_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+            lv_customObligation_4_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
 
             					newLeafNode(lv_customObligation_4_0, grammarAccess.getCustomObligationAccess().getCustomObligationSTRINGTerminalRuleCall_3_0());
             				
@@ -6692,6 +6701,109 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             }
 
+
+            }
+
+            // InternalPactDSL.g:2611:3: (otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
+
+            if ( (LA51_0==50) ) {
+                alt51=1;
+            }
+            switch (alt51) {
+                case 1 :
+                    // InternalPactDSL.g:2612:4: otherlv_5= 'by' otherlv_6= 'date' ( (lv_day_7_0= RULE_INT ) ) ( (lv_month_8_0= RULE_INT ) ) ( (lv_year_9_0= RULE_INT ) )
+                    {
+                    otherlv_5=(Token)match(input,50,FOLLOW_33); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getCustomObligationAccess().getByKeyword_4_0());
+                    			
+                    otherlv_6=(Token)match(input,51,FOLLOW_18); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getCustomObligationAccess().getDateKeyword_4_1());
+                    			
+                    // InternalPactDSL.g:2620:4: ( (lv_day_7_0= RULE_INT ) )
+                    // InternalPactDSL.g:2621:5: (lv_day_7_0= RULE_INT )
+                    {
+                    // InternalPactDSL.g:2621:5: (lv_day_7_0= RULE_INT )
+                    // InternalPactDSL.g:2622:6: lv_day_7_0= RULE_INT
+                    {
+                    lv_day_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+
+                    						newLeafNode(lv_day_7_0, grammarAccess.getCustomObligationAccess().getDayINTTerminalRuleCall_4_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCustomObligationRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"day",
+                    							lv_day_7_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalPactDSL.g:2638:4: ( (lv_month_8_0= RULE_INT ) )
+                    // InternalPactDSL.g:2639:5: (lv_month_8_0= RULE_INT )
+                    {
+                    // InternalPactDSL.g:2639:5: (lv_month_8_0= RULE_INT )
+                    // InternalPactDSL.g:2640:6: lv_month_8_0= RULE_INT
+                    {
+                    lv_month_8_0=(Token)match(input,RULE_INT,FOLLOW_18); 
+
+                    						newLeafNode(lv_month_8_0, grammarAccess.getCustomObligationAccess().getMonthINTTerminalRuleCall_4_3_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCustomObligationRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"month",
+                    							lv_month_8_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalPactDSL.g:2656:4: ( (lv_year_9_0= RULE_INT ) )
+                    // InternalPactDSL.g:2657:5: (lv_year_9_0= RULE_INT )
+                    {
+                    // InternalPactDSL.g:2657:5: (lv_year_9_0= RULE_INT )
+                    // InternalPactDSL.g:2658:6: lv_year_9_0= RULE_INT
+                    {
+                    lv_year_9_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+                    						newLeafNode(lv_year_9_0, grammarAccess.getCustomObligationAccess().getYearINTTerminalRuleCall_4_4_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCustomObligationRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"year",
+                    							lv_year_9_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -6718,7 +6830,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSecondaryObligationType"
-    // InternalPactDSL.g:2615:1: entryRuleSecondaryObligationType returns [EObject current=null] : iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF ;
+    // InternalPactDSL.g:2679:1: entryRuleSecondaryObligationType returns [EObject current=null] : iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF ;
     public final EObject entryRuleSecondaryObligationType() throws RecognitionException {
         EObject current = null;
 
@@ -6726,8 +6838,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:2615:64: (iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF )
-            // InternalPactDSL.g:2616:2: iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF
+            // InternalPactDSL.g:2679:64: (iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF )
+            // InternalPactDSL.g:2680:2: iv_ruleSecondaryObligationType= ruleSecondaryObligationType EOF
             {
              newCompositeNode(grammarAccess.getSecondaryObligationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6754,7 +6866,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSecondaryObligationType"
-    // InternalPactDSL.g:2622:1: ruleSecondaryObligationType returns [EObject current=null] : (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) ) ;
+    // InternalPactDSL.g:2686:1: ruleSecondaryObligationType returns [EObject current=null] : (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) ) ;
     public final EObject ruleSecondaryObligationType() throws RecognitionException {
         EObject current = null;
 
@@ -6772,21 +6884,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2628:2: ( (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:2629:2: (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2692:2: ( (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:2693:2: (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) )
             {
-            // InternalPactDSL.g:2629:2: (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:2630:3: otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) )
+            // InternalPactDSL.g:2693:2: (otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2694:3: otherlv_0= 'SecondaryObligation:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'must' otherlv_3= 'pay' ( (lv_sum_4_0= RULE_INT ) )+ otherlv_5= 'to' ( (otherlv_6= RULE_ID ) )+ otherlv_7= 'uponBreachOf' ( (lv_customPrimaryObligation_8_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,67,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSecondaryObligationTypeAccess().getSecondaryObligationKeyword_0());
             		
-            // InternalPactDSL.g:2634:3: ( (otherlv_1= RULE_ID ) )
-            // InternalPactDSL.g:2635:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2698:3: ( (otherlv_1= RULE_ID ) )
+            // InternalPactDSL.g:2699:4: (otherlv_1= RULE_ID )
             {
-            // InternalPactDSL.g:2635:4: (otherlv_1= RULE_ID )
-            // InternalPactDSL.g:2636:5: otherlv_1= RULE_ID
+            // InternalPactDSL.g:2699:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2700:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
@@ -6811,24 +6923,24 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getSecondaryObligationTypeAccess().getPayKeyword_3());
             		
-            // InternalPactDSL.g:2655:3: ( (lv_sum_4_0= RULE_INT ) )+
-            int cnt51=0;
-            loop51:
+            // InternalPactDSL.g:2719:3: ( (lv_sum_4_0= RULE_INT ) )+
+            int cnt52=0;
+            loop52:
             do {
-                int alt51=2;
-                int LA51_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( (LA51_0==RULE_INT) ) {
-                    alt51=1;
+                if ( (LA52_0==RULE_INT) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt51) {
+                switch (alt52) {
             	case 1 :
-            	    // InternalPactDSL.g:2656:4: (lv_sum_4_0= RULE_INT )
+            	    // InternalPactDSL.g:2720:4: (lv_sum_4_0= RULE_INT )
             	    {
-            	    // InternalPactDSL.g:2656:4: (lv_sum_4_0= RULE_INT )
-            	    // InternalPactDSL.g:2657:5: lv_sum_4_0= RULE_INT
+            	    // InternalPactDSL.g:2720:4: (lv_sum_4_0= RULE_INT )
+            	    // InternalPactDSL.g:2721:5: lv_sum_4_0= RULE_INT
             	    {
             	    lv_sum_4_0=(Token)match(input,RULE_INT,FOLLOW_31); 
 
@@ -6852,36 +6964,36 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt51 >= 1 ) break loop51;
+            	    if ( cnt52 >= 1 ) break loop52;
                         EarlyExitException eee =
-                            new EarlyExitException(51, input);
+                            new EarlyExitException(52, input);
                         throw eee;
                 }
-                cnt51++;
+                cnt52++;
             } while (true);
 
             otherlv_5=(Token)match(input,33,FOLLOW_20); 
 
             			newLeafNode(otherlv_5, grammarAccess.getSecondaryObligationTypeAccess().getToKeyword_5());
             		
-            // InternalPactDSL.g:2677:3: ( (otherlv_6= RULE_ID ) )+
-            int cnt52=0;
-            loop52:
+            // InternalPactDSL.g:2741:3: ( (otherlv_6= RULE_ID ) )+
+            int cnt53=0;
+            loop53:
             do {
-                int alt52=2;
-                int LA52_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( (LA52_0==RULE_ID) ) {
-                    alt52=1;
+                if ( (LA53_0==RULE_ID) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt52) {
+                switch (alt53) {
             	case 1 :
-            	    // InternalPactDSL.g:2678:4: (otherlv_6= RULE_ID )
+            	    // InternalPactDSL.g:2742:4: (otherlv_6= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:2678:4: (otherlv_6= RULE_ID )
-            	    // InternalPactDSL.g:2679:5: otherlv_6= RULE_ID
+            	    // InternalPactDSL.g:2742:4: (otherlv_6= RULE_ID )
+            	    // InternalPactDSL.g:2743:5: otherlv_6= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -6900,23 +7012,23 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt52 >= 1 ) break loop52;
+            	    if ( cnt53 >= 1 ) break loop53;
                         EarlyExitException eee =
-                            new EarlyExitException(52, input);
+                            new EarlyExitException(53, input);
                         throw eee;
                 }
-                cnt52++;
+                cnt53++;
             } while (true);
 
             otherlv_7=(Token)match(input,68,FOLLOW_3); 
 
             			newLeafNode(otherlv_7, grammarAccess.getSecondaryObligationTypeAccess().getUponBreachOfKeyword_7());
             		
-            // InternalPactDSL.g:2694:3: ( (lv_customPrimaryObligation_8_0= RULE_STRING ) )
-            // InternalPactDSL.g:2695:4: (lv_customPrimaryObligation_8_0= RULE_STRING )
+            // InternalPactDSL.g:2758:3: ( (lv_customPrimaryObligation_8_0= RULE_STRING ) )
+            // InternalPactDSL.g:2759:4: (lv_customPrimaryObligation_8_0= RULE_STRING )
             {
-            // InternalPactDSL.g:2695:4: (lv_customPrimaryObligation_8_0= RULE_STRING )
-            // InternalPactDSL.g:2696:5: lv_customPrimaryObligation_8_0= RULE_STRING
+            // InternalPactDSL.g:2759:4: (lv_customPrimaryObligation_8_0= RULE_STRING )
+            // InternalPactDSL.g:2760:5: lv_customPrimaryObligation_8_0= RULE_STRING
             {
             lv_customPrimaryObligation_8_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -6961,7 +7073,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiabilityType"
-    // InternalPactDSL.g:2716:1: entryRuleLiabilityType returns [EObject current=null] : iv_ruleLiabilityType= ruleLiabilityType EOF ;
+    // InternalPactDSL.g:2780:1: entryRuleLiabilityType returns [EObject current=null] : iv_ruleLiabilityType= ruleLiabilityType EOF ;
     public final EObject entryRuleLiabilityType() throws RecognitionException {
         EObject current = null;
 
@@ -6969,8 +7081,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:2716:54: (iv_ruleLiabilityType= ruleLiabilityType EOF )
-            // InternalPactDSL.g:2717:2: iv_ruleLiabilityType= ruleLiabilityType EOF
+            // InternalPactDSL.g:2780:54: (iv_ruleLiabilityType= ruleLiabilityType EOF )
+            // InternalPactDSL.g:2781:2: iv_ruleLiabilityType= ruleLiabilityType EOF
             {
              newCompositeNode(grammarAccess.getLiabilityTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -6997,70 +7109,70 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiabilityType"
-    // InternalPactDSL.g:2723:1: ruleLiabilityType returns [EObject current=null] : (this_LiabilityParty_0= ruleLiabilityParty | this_LiabilityThirdParty_1= ruleLiabilityThirdParty ) ;
+    // InternalPactDSL.g:2787:1: ruleLiabilityType returns [EObject current=null] : (this_LiabilityToParty_0= ruleLiabilityToParty | this_LiabilityToThirdParty_1= ruleLiabilityToThirdParty ) ;
     public final EObject ruleLiabilityType() throws RecognitionException {
         EObject current = null;
 
-        EObject this_LiabilityParty_0 = null;
+        EObject this_LiabilityToParty_0 = null;
 
-        EObject this_LiabilityThirdParty_1 = null;
+        EObject this_LiabilityToThirdParty_1 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2729:2: ( (this_LiabilityParty_0= ruleLiabilityParty | this_LiabilityThirdParty_1= ruleLiabilityThirdParty ) )
-            // InternalPactDSL.g:2730:2: (this_LiabilityParty_0= ruleLiabilityParty | this_LiabilityThirdParty_1= ruleLiabilityThirdParty )
+            // InternalPactDSL.g:2793:2: ( (this_LiabilityToParty_0= ruleLiabilityToParty | this_LiabilityToThirdParty_1= ruleLiabilityToThirdParty ) )
+            // InternalPactDSL.g:2794:2: (this_LiabilityToParty_0= ruleLiabilityToParty | this_LiabilityToThirdParty_1= ruleLiabilityToThirdParty )
             {
-            // InternalPactDSL.g:2730:2: (this_LiabilityParty_0= ruleLiabilityParty | this_LiabilityThirdParty_1= ruleLiabilityThirdParty )
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // InternalPactDSL.g:2794:2: (this_LiabilityToParty_0= ruleLiabilityToParty | this_LiabilityToThirdParty_1= ruleLiabilityToThirdParty )
+            int alt54=2;
+            int LA54_0 = input.LA(1);
 
-            if ( (LA53_0==69) ) {
-                alt53=1;
+            if ( (LA54_0==69) ) {
+                alt54=1;
             }
-            else if ( (LA53_0==72) ) {
-                alt53=2;
+            else if ( (LA54_0==72) ) {
+                alt54=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // InternalPactDSL.g:2731:3: this_LiabilityParty_0= ruleLiabilityParty
+                    // InternalPactDSL.g:2795:3: this_LiabilityToParty_0= ruleLiabilityToParty
                     {
 
-                    			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityPartyParserRuleCall_0());
+                    			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityToPartyParserRuleCall_0());
                     		
                     pushFollow(FOLLOW_2);
-                    this_LiabilityParty_0=ruleLiabilityParty();
+                    this_LiabilityToParty_0=ruleLiabilityToParty();
 
                     state._fsp--;
 
 
-                    			current = this_LiabilityParty_0;
+                    			current = this_LiabilityToParty_0;
                     			afterParserOrEnumRuleCall();
                     		
 
                     }
                     break;
                 case 2 :
-                    // InternalPactDSL.g:2740:3: this_LiabilityThirdParty_1= ruleLiabilityThirdParty
+                    // InternalPactDSL.g:2804:3: this_LiabilityToThirdParty_1= ruleLiabilityToThirdParty
                     {
 
-                    			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityThirdPartyParserRuleCall_1());
+                    			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityToThirdPartyParserRuleCall_1());
                     		
                     pushFollow(FOLLOW_2);
-                    this_LiabilityThirdParty_1=ruleLiabilityThirdParty();
+                    this_LiabilityToThirdParty_1=ruleLiabilityToThirdParty();
 
                     state._fsp--;
 
 
-                    			current = this_LiabilityThirdParty_1;
+                    			current = this_LiabilityToThirdParty_1;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -7088,25 +7200,25 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleLiabilityType"
 
 
-    // $ANTLR start "entryRuleLiabilityParty"
-    // InternalPactDSL.g:2752:1: entryRuleLiabilityParty returns [EObject current=null] : iv_ruleLiabilityParty= ruleLiabilityParty EOF ;
-    public final EObject entryRuleLiabilityParty() throws RecognitionException {
+    // $ANTLR start "entryRuleLiabilityToParty"
+    // InternalPactDSL.g:2816:1: entryRuleLiabilityToParty returns [EObject current=null] : iv_ruleLiabilityToParty= ruleLiabilityToParty EOF ;
+    public final EObject entryRuleLiabilityToParty() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleLiabilityParty = null;
+        EObject iv_ruleLiabilityToParty = null;
 
 
         try {
-            // InternalPactDSL.g:2752:55: (iv_ruleLiabilityParty= ruleLiabilityParty EOF )
-            // InternalPactDSL.g:2753:2: iv_ruleLiabilityParty= ruleLiabilityParty EOF
+            // InternalPactDSL.g:2816:57: (iv_ruleLiabilityToParty= ruleLiabilityToParty EOF )
+            // InternalPactDSL.g:2817:2: iv_ruleLiabilityToParty= ruleLiabilityToParty EOF
             {
-             newCompositeNode(grammarAccess.getLiabilityPartyRule()); 
+             newCompositeNode(grammarAccess.getLiabilityToPartyRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleLiabilityParty=ruleLiabilityParty();
+            iv_ruleLiabilityToParty=ruleLiabilityToParty();
 
             state._fsp--;
 
-             current =iv_ruleLiabilityParty; 
+             current =iv_ruleLiabilityToParty; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -7121,12 +7233,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleLiabilityParty"
+    // $ANTLR end "entryRuleLiabilityToParty"
 
 
-    // $ANTLR start "ruleLiabilityParty"
-    // InternalPactDSL.g:2759:1: ruleLiabilityParty returns [EObject current=null] : (otherlv_0= 'LiabilityParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) ;
-    public final EObject ruleLiabilityParty() throws RecognitionException {
+    // $ANTLR start "ruleLiabilityToParty"
+    // InternalPactDSL.g:2823:1: ruleLiabilityToParty returns [EObject current=null] : (otherlv_0= 'LiabilityToParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) ;
+    public final EObject ruleLiabilityToParty() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -7141,30 +7253,30 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2765:2: ( (otherlv_0= 'LiabilityParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:2766:2: (otherlv_0= 'LiabilityParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2829:2: ( (otherlv_0= 'LiabilityToParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:2830:2: (otherlv_0= 'LiabilityToParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
             {
-            // InternalPactDSL.g:2766:2: (otherlv_0= 'LiabilityParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:2767:3: otherlv_0= 'LiabilityParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) )
+            // InternalPactDSL.g:2830:2: (otherlv_0= 'LiabilityToParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2831:3: otherlv_0= 'LiabilityToParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,69,FOLLOW_20); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getLiabilityPartyAccess().getLiabilityPartyKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getLiabilityToPartyAccess().getLiabilityToPartyKeyword_0());
             		
-            // InternalPactDSL.g:2771:3: ( (otherlv_1= RULE_ID ) )
-            // InternalPactDSL.g:2772:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2835:3: ( (otherlv_1= RULE_ID ) )
+            // InternalPactDSL.g:2836:4: (otherlv_1= RULE_ID )
             {
-            // InternalPactDSL.g:2772:4: (otherlv_1= RULE_ID )
-            // InternalPactDSL.g:2773:5: otherlv_1= RULE_ID
+            // InternalPactDSL.g:2836:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2837:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToPartyRule());
             					}
             				
             otherlv_1=(Token)match(input,RULE_ID,FOLLOW_52); 
 
-            					newLeafNode(otherlv_1, grammarAccess.getLiabilityPartyAccess().getSuperTypePartyCrossReference_1_0());
+            					newLeafNode(otherlv_1, grammarAccess.getLiabilityToPartyAccess().getSuperTypePartyCrossReference_1_0());
             				
 
             }
@@ -7174,26 +7286,26 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             otherlv_2=(Token)match(input,70,FOLLOW_22); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getLiabilityPartyAccess().getShallNotBeLiableKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getLiabilityToPartyAccess().getShallNotBeLiableKeyword_2());
             		
             otherlv_3=(Token)match(input,33,FOLLOW_20); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getLiabilityPartyAccess().getToKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getLiabilityToPartyAccess().getToKeyword_3());
             		
-            // InternalPactDSL.g:2792:3: ( (otherlv_4= RULE_ID ) )
-            // InternalPactDSL.g:2793:4: (otherlv_4= RULE_ID )
+            // InternalPactDSL.g:2856:3: ( (otherlv_4= RULE_ID ) )
+            // InternalPactDSL.g:2857:4: (otherlv_4= RULE_ID )
             {
-            // InternalPactDSL.g:2793:4: (otherlv_4= RULE_ID )
-            // InternalPactDSL.g:2794:5: otherlv_4= RULE_ID
+            // InternalPactDSL.g:2857:4: (otherlv_4= RULE_ID )
+            // InternalPactDSL.g:2858:5: otherlv_4= RULE_ID
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToPartyRule());
             					}
             				
             otherlv_4=(Token)match(input,RULE_ID,FOLLOW_53); 
 
-            					newLeafNode(otherlv_4, grammarAccess.getLiabilityPartyAccess().getSuperTypePartyCrossReference_4_0());
+            					newLeafNode(otherlv_4, grammarAccess.getLiabilityToPartyAccess().getSuperTypePartyCrossReference_4_0());
             				
 
             }
@@ -7203,21 +7315,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             otherlv_5=(Token)match(input,71,FOLLOW_3); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getLiabilityPartyAccess().getForKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getLiabilityToPartyAccess().getForKeyword_5());
             		
-            // InternalPactDSL.g:2809:3: ( (lv_customLoss_6_0= RULE_STRING ) )
-            // InternalPactDSL.g:2810:4: (lv_customLoss_6_0= RULE_STRING )
+            // InternalPactDSL.g:2873:3: ( (lv_customLoss_6_0= RULE_STRING ) )
+            // InternalPactDSL.g:2874:4: (lv_customLoss_6_0= RULE_STRING )
             {
-            // InternalPactDSL.g:2810:4: (lv_customLoss_6_0= RULE_STRING )
-            // InternalPactDSL.g:2811:5: lv_customLoss_6_0= RULE_STRING
+            // InternalPactDSL.g:2874:4: (lv_customLoss_6_0= RULE_STRING )
+            // InternalPactDSL.g:2875:5: lv_customLoss_6_0= RULE_STRING
             {
             lv_customLoss_6_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
+            					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityToPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToPartyRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -7250,28 +7362,28 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleLiabilityParty"
+    // $ANTLR end "ruleLiabilityToParty"
 
 
-    // $ANTLR start "entryRuleLiabilityThirdParty"
-    // InternalPactDSL.g:2831:1: entryRuleLiabilityThirdParty returns [EObject current=null] : iv_ruleLiabilityThirdParty= ruleLiabilityThirdParty EOF ;
-    public final EObject entryRuleLiabilityThirdParty() throws RecognitionException {
+    // $ANTLR start "entryRuleLiabilityToThirdParty"
+    // InternalPactDSL.g:2895:1: entryRuleLiabilityToThirdParty returns [EObject current=null] : iv_ruleLiabilityToThirdParty= ruleLiabilityToThirdParty EOF ;
+    public final EObject entryRuleLiabilityToThirdParty() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleLiabilityThirdParty = null;
+        EObject iv_ruleLiabilityToThirdParty = null;
 
 
         try {
-            // InternalPactDSL.g:2831:60: (iv_ruleLiabilityThirdParty= ruleLiabilityThirdParty EOF )
-            // InternalPactDSL.g:2832:2: iv_ruleLiabilityThirdParty= ruleLiabilityThirdParty EOF
+            // InternalPactDSL.g:2895:62: (iv_ruleLiabilityToThirdParty= ruleLiabilityToThirdParty EOF )
+            // InternalPactDSL.g:2896:2: iv_ruleLiabilityToThirdParty= ruleLiabilityToThirdParty EOF
             {
-             newCompositeNode(grammarAccess.getLiabilityThirdPartyRule()); 
+             newCompositeNode(grammarAccess.getLiabilityToThirdPartyRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleLiabilityThirdParty=ruleLiabilityThirdParty();
+            iv_ruleLiabilityToThirdParty=ruleLiabilityToThirdParty();
 
             state._fsp--;
 
-             current =iv_ruleLiabilityThirdParty; 
+             current =iv_ruleLiabilityToThirdParty; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -7286,12 +7398,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleLiabilityThirdParty"
+    // $ANTLR end "entryRuleLiabilityToThirdParty"
 
 
-    // $ANTLR start "ruleLiabilityThirdParty"
-    // InternalPactDSL.g:2838:1: ruleLiabilityThirdParty returns [EObject current=null] : (otherlv_0= 'LiabilityThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) ;
-    public final EObject ruleLiabilityThirdParty() throws RecognitionException {
+    // $ANTLR start "ruleLiabilityToThirdParty"
+    // InternalPactDSL.g:2902:1: ruleLiabilityToThirdParty returns [EObject current=null] : (otherlv_0= 'LiabilityToThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) ;
+    public final EObject ruleLiabilityToThirdParty() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
@@ -7306,30 +7418,30 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2844:2: ( (otherlv_0= 'LiabilityThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:2845:2: (otherlv_0= 'LiabilityThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2908:2: ( (otherlv_0= 'LiabilityToThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:2909:2: (otherlv_0= 'LiabilityToThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
             {
-            // InternalPactDSL.g:2845:2: (otherlv_0= 'LiabilityThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:2846:3: otherlv_0= 'LiabilityThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) )
+            // InternalPactDSL.g:2909:2: (otherlv_0= 'LiabilityToThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:2910:3: otherlv_0= 'LiabilityToThirdParty:' ( (otherlv_1= RULE_ID ) ) otherlv_2= 'shallNotBeLiable' otherlv_3= 'to' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'for' ( (lv_customLoss_6_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,72,FOLLOW_20); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getLiabilityThirdPartyAccess().getLiabilityThirdPartyKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getLiabilityToThirdPartyAccess().getLiabilityToThirdPartyKeyword_0());
             		
-            // InternalPactDSL.g:2850:3: ( (otherlv_1= RULE_ID ) )
-            // InternalPactDSL.g:2851:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2914:3: ( (otherlv_1= RULE_ID ) )
+            // InternalPactDSL.g:2915:4: (otherlv_1= RULE_ID )
             {
-            // InternalPactDSL.g:2851:4: (otherlv_1= RULE_ID )
-            // InternalPactDSL.g:2852:5: otherlv_1= RULE_ID
+            // InternalPactDSL.g:2915:4: (otherlv_1= RULE_ID )
+            // InternalPactDSL.g:2916:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
             					}
             				
             otherlv_1=(Token)match(input,RULE_ID,FOLLOW_52); 
 
-            					newLeafNode(otherlv_1, grammarAccess.getLiabilityThirdPartyAccess().getSuperTypePartyCrossReference_1_0());
+            					newLeafNode(otherlv_1, grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypePartyCrossReference_1_0());
             				
 
             }
@@ -7339,26 +7451,26 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             otherlv_2=(Token)match(input,70,FOLLOW_22); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getLiabilityThirdPartyAccess().getShallNotBeLiableKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getLiabilityToThirdPartyAccess().getShallNotBeLiableKeyword_2());
             		
             otherlv_3=(Token)match(input,33,FOLLOW_20); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getLiabilityThirdPartyAccess().getToKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getLiabilityToThirdPartyAccess().getToKeyword_3());
             		
-            // InternalPactDSL.g:2871:3: ( (otherlv_4= RULE_ID ) )
-            // InternalPactDSL.g:2872:4: (otherlv_4= RULE_ID )
+            // InternalPactDSL.g:2935:3: ( (otherlv_4= RULE_ID ) )
+            // InternalPactDSL.g:2936:4: (otherlv_4= RULE_ID )
             {
-            // InternalPactDSL.g:2872:4: (otherlv_4= RULE_ID )
-            // InternalPactDSL.g:2873:5: otherlv_4= RULE_ID
+            // InternalPactDSL.g:2936:4: (otherlv_4= RULE_ID )
+            // InternalPactDSL.g:2937:5: otherlv_4= RULE_ID
             {
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
             					}
             				
             otherlv_4=(Token)match(input,RULE_ID,FOLLOW_53); 
 
-            					newLeafNode(otherlv_4, grammarAccess.getLiabilityThirdPartyAccess().getSuperTypeThirdPartyCrossReference_4_0());
+            					newLeafNode(otherlv_4, grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypeThirdPartyCrossReference_4_0());
             				
 
             }
@@ -7368,21 +7480,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             otherlv_5=(Token)match(input,71,FOLLOW_3); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getLiabilityThirdPartyAccess().getForKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getLiabilityToThirdPartyAccess().getForKeyword_5());
             		
-            // InternalPactDSL.g:2888:3: ( (lv_customLoss_6_0= RULE_STRING ) )
-            // InternalPactDSL.g:2889:4: (lv_customLoss_6_0= RULE_STRING )
+            // InternalPactDSL.g:2952:3: ( (lv_customLoss_6_0= RULE_STRING ) )
+            // InternalPactDSL.g:2953:4: (lv_customLoss_6_0= RULE_STRING )
             {
-            // InternalPactDSL.g:2889:4: (lv_customLoss_6_0= RULE_STRING )
-            // InternalPactDSL.g:2890:5: lv_customLoss_6_0= RULE_STRING
+            // InternalPactDSL.g:2953:4: (lv_customLoss_6_0= RULE_STRING )
+            // InternalPactDSL.g:2954:5: lv_customLoss_6_0= RULE_STRING
             {
             lv_customLoss_6_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
-            					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityThirdPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
+            					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityToThirdPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+            						current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -7415,11 +7527,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleLiabilityThirdParty"
+    // $ANTLR end "ruleLiabilityToThirdParty"
 
 
     // $ANTLR start "entryRuleTerminationType"
-    // InternalPactDSL.g:2910:1: entryRuleTerminationType returns [EObject current=null] : iv_ruleTerminationType= ruleTerminationType EOF ;
+    // InternalPactDSL.g:2974:1: entryRuleTerminationType returns [EObject current=null] : iv_ruleTerminationType= ruleTerminationType EOF ;
     public final EObject entryRuleTerminationType() throws RecognitionException {
         EObject current = null;
 
@@ -7427,8 +7539,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:2910:56: (iv_ruleTerminationType= ruleTerminationType EOF )
-            // InternalPactDSL.g:2911:2: iv_ruleTerminationType= ruleTerminationType EOF
+            // InternalPactDSL.g:2974:56: (iv_ruleTerminationType= ruleTerminationType EOF )
+            // InternalPactDSL.g:2975:2: iv_ruleTerminationType= ruleTerminationType EOF
             {
              newCompositeNode(grammarAccess.getTerminationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -7455,7 +7567,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerminationType"
-    // InternalPactDSL.g:2917:1: ruleTerminationType returns [EObject current=null] : (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination ) ;
+    // InternalPactDSL.g:2981:1: ruleTerminationType returns [EObject current=null] : (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination ) ;
     public final EObject ruleTerminationType() throws RecognitionException {
         EObject current = null;
 
@@ -7474,47 +7586,47 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2923:2: ( (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination ) )
-            // InternalPactDSL.g:2924:2: (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination )
+            // InternalPactDSL.g:2987:2: ( (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination ) )
+            // InternalPactDSL.g:2988:2: (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination )
             {
-            // InternalPactDSL.g:2924:2: (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination )
-            int alt54=5;
+            // InternalPactDSL.g:2988:2: (this_ForConvenience_0= ruleForConvenience | this_OnReasonableNotice_1= ruleOnReasonableNotice | this_ForBreach_2= ruleForBreach | this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent | this_CustomTermination_4= ruleCustomTermination )
+            int alt55=5;
             switch ( input.LA(1) ) {
             case 73:
                 {
-                alt54=1;
+                alt55=1;
                 }
                 break;
             case 76:
                 {
-                alt54=2;
+                alt55=2;
                 }
                 break;
             case 77:
                 {
-                alt54=3;
+                alt55=3;
                 }
                 break;
             case 79:
                 {
-                alt54=4;
+                alt55=4;
                 }
                 break;
             case 20:
                 {
-                alt54=5;
+                alt55=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 54, 0, input);
+                    new NoViableAltException("", 55, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt54) {
+            switch (alt55) {
                 case 1 :
-                    // InternalPactDSL.g:2925:3: this_ForConvenience_0= ruleForConvenience
+                    // InternalPactDSL.g:2989:3: this_ForConvenience_0= ruleForConvenience
                     {
 
                     			newCompositeNode(grammarAccess.getTerminationTypeAccess().getForConvenienceParserRuleCall_0());
@@ -7532,7 +7644,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPactDSL.g:2934:3: this_OnReasonableNotice_1= ruleOnReasonableNotice
+                    // InternalPactDSL.g:2998:3: this_OnReasonableNotice_1= ruleOnReasonableNotice
                     {
 
                     			newCompositeNode(grammarAccess.getTerminationTypeAccess().getOnReasonableNoticeParserRuleCall_1());
@@ -7550,7 +7662,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPactDSL.g:2943:3: this_ForBreach_2= ruleForBreach
+                    // InternalPactDSL.g:3007:3: this_ForBreach_2= ruleForBreach
                     {
 
                     			newCompositeNode(grammarAccess.getTerminationTypeAccess().getForBreachParserRuleCall_2());
@@ -7568,7 +7680,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalPactDSL.g:2952:3: this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent
+                    // InternalPactDSL.g:3016:3: this_OnInsolvencyEvent_3= ruleOnInsolvencyEvent
                     {
 
                     			newCompositeNode(grammarAccess.getTerminationTypeAccess().getOnInsolvencyEventParserRuleCall_3());
@@ -7586,7 +7698,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalPactDSL.g:2961:3: this_CustomTermination_4= ruleCustomTermination
+                    // InternalPactDSL.g:3025:3: this_CustomTermination_4= ruleCustomTermination
                     {
 
                     			newCompositeNode(grammarAccess.getTerminationTypeAccess().getCustomTerminationParserRuleCall_4());
@@ -7626,7 +7738,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForConvenience"
-    // InternalPactDSL.g:2973:1: entryRuleForConvenience returns [EObject current=null] : iv_ruleForConvenience= ruleForConvenience EOF ;
+    // InternalPactDSL.g:3037:1: entryRuleForConvenience returns [EObject current=null] : iv_ruleForConvenience= ruleForConvenience EOF ;
     public final EObject entryRuleForConvenience() throws RecognitionException {
         EObject current = null;
 
@@ -7634,8 +7746,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:2973:55: (iv_ruleForConvenience= ruleForConvenience EOF )
-            // InternalPactDSL.g:2974:2: iv_ruleForConvenience= ruleForConvenience EOF
+            // InternalPactDSL.g:3037:55: (iv_ruleForConvenience= ruleForConvenience EOF )
+            // InternalPactDSL.g:3038:2: iv_ruleForConvenience= ruleForConvenience EOF
             {
              newCompositeNode(grammarAccess.getForConvenienceRule()); 
             pushFollow(FOLLOW_1);
@@ -7662,7 +7774,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForConvenience"
-    // InternalPactDSL.g:2980:1: ruleForConvenience returns [EObject current=null] : (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) ) ;
+    // InternalPactDSL.g:3044:1: ruleForConvenience returns [EObject current=null] : (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) ) ;
     public final EObject ruleForConvenience() throws RecognitionException {
         EObject current = null;
 
@@ -7677,34 +7789,34 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:2986:2: ( (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:2987:2: (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:3050:2: ( (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:3051:2: (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) )
             {
-            // InternalPactDSL.g:2987:2: (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:2988:3: otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) )
+            // InternalPactDSL.g:3051:2: (otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:3052:3: otherlv_0= 'TerminationForConvenience:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (lv_customTermination_5_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,73,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getForConvenienceAccess().getTerminationForConvenienceKeyword_0());
             		
-            // InternalPactDSL.g:2992:3: ( (otherlv_1= RULE_ID ) )+
-            int cnt55=0;
-            loop55:
+            // InternalPactDSL.g:3056:3: ( (otherlv_1= RULE_ID ) )+
+            int cnt56=0;
+            loop56:
             do {
-                int alt55=2;
-                int LA55_0 = input.LA(1);
+                int alt56=2;
+                int LA56_0 = input.LA(1);
 
-                if ( (LA55_0==RULE_ID) ) {
-                    alt55=1;
+                if ( (LA56_0==RULE_ID) ) {
+                    alt56=1;
                 }
 
 
-                switch (alt55) {
+                switch (alt56) {
             	case 1 :
-            	    // InternalPactDSL.g:2993:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3057:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:2993:4: (otherlv_1= RULE_ID )
-            	    // InternalPactDSL.g:2994:5: otherlv_1= RULE_ID
+            	    // InternalPactDSL.g:3057:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3058:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -7723,12 +7835,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt55 >= 1 ) break loop55;
+            	    if ( cnt56 >= 1 ) break loop56;
                         EarlyExitException eee =
-                            new EarlyExitException(55, input);
+                            new EarlyExitException(56, input);
                         throw eee;
                 }
-                cnt55++;
+                cnt56++;
             } while (true);
 
             otherlv_2=(Token)match(input,74,FOLLOW_55); 
@@ -7743,11 +7855,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getForConvenienceAccess().getByKeyword_4());
             		
-            // InternalPactDSL.g:3017:3: ( (lv_customTermination_5_0= RULE_STRING ) )
-            // InternalPactDSL.g:3018:4: (lv_customTermination_5_0= RULE_STRING )
+            // InternalPactDSL.g:3081:3: ( (lv_customTermination_5_0= RULE_STRING ) )
+            // InternalPactDSL.g:3082:4: (lv_customTermination_5_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3018:4: (lv_customTermination_5_0= RULE_STRING )
-            // InternalPactDSL.g:3019:5: lv_customTermination_5_0= RULE_STRING
+            // InternalPactDSL.g:3082:4: (lv_customTermination_5_0= RULE_STRING )
+            // InternalPactDSL.g:3083:5: lv_customTermination_5_0= RULE_STRING
             {
             lv_customTermination_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7792,7 +7904,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOnReasonableNotice"
-    // InternalPactDSL.g:3039:1: entryRuleOnReasonableNotice returns [EObject current=null] : iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF ;
+    // InternalPactDSL.g:3103:1: entryRuleOnReasonableNotice returns [EObject current=null] : iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF ;
     public final EObject entryRuleOnReasonableNotice() throws RecognitionException {
         EObject current = null;
 
@@ -7800,8 +7912,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3039:59: (iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF )
-            // InternalPactDSL.g:3040:2: iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF
+            // InternalPactDSL.g:3103:59: (iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF )
+            // InternalPactDSL.g:3104:2: iv_ruleOnReasonableNotice= ruleOnReasonableNotice EOF
             {
              newCompositeNode(grammarAccess.getOnReasonableNoticeRule()); 
             pushFollow(FOLLOW_1);
@@ -7828,7 +7940,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOnReasonableNotice"
-    // InternalPactDSL.g:3046:1: ruleOnReasonableNotice returns [EObject current=null] : (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) ) ;
+    // InternalPactDSL.g:3110:1: ruleOnReasonableNotice returns [EObject current=null] : (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) ) ;
     public final EObject ruleOnReasonableNotice() throws RecognitionException {
         EObject current = null;
 
@@ -7843,34 +7955,34 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3052:2: ( (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) ) )
-            // InternalPactDSL.g:3053:2: (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) )
+            // InternalPactDSL.g:3116:2: ( (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) ) )
+            // InternalPactDSL.g:3117:2: (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) )
             {
-            // InternalPactDSL.g:3053:2: (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) )
-            // InternalPactDSL.g:3054:3: otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) )
+            // InternalPactDSL.g:3117:2: (otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) ) )
+            // InternalPactDSL.g:3118:3: otherlv_0= 'TerminationOnReasonableNotice:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'by' ( (otherlv_5= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,76,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOnReasonableNoticeAccess().getTerminationOnReasonableNoticeKeyword_0());
             		
-            // InternalPactDSL.g:3058:3: ( (otherlv_1= RULE_ID ) )+
-            int cnt56=0;
-            loop56:
+            // InternalPactDSL.g:3122:3: ( (otherlv_1= RULE_ID ) )+
+            int cnt57=0;
+            loop57:
             do {
-                int alt56=2;
-                int LA56_0 = input.LA(1);
+                int alt57=2;
+                int LA57_0 = input.LA(1);
 
-                if ( (LA56_0==RULE_ID) ) {
-                    alt56=1;
+                if ( (LA57_0==RULE_ID) ) {
+                    alt57=1;
                 }
 
 
-                switch (alt56) {
+                switch (alt57) {
             	case 1 :
-            	    // InternalPactDSL.g:3059:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3123:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:3059:4: (otherlv_1= RULE_ID )
-            	    // InternalPactDSL.g:3060:5: otherlv_1= RULE_ID
+            	    // InternalPactDSL.g:3123:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3124:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -7889,12 +8001,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt56 >= 1 ) break loop56;
+            	    if ( cnt57 >= 1 ) break loop57;
                         EarlyExitException eee =
-                            new EarlyExitException(56, input);
+                            new EarlyExitException(57, input);
                         throw eee;
                 }
-                cnt56++;
+                cnt57++;
             } while (true);
 
             otherlv_2=(Token)match(input,74,FOLLOW_55); 
@@ -7909,11 +8021,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getOnReasonableNoticeAccess().getByKeyword_4());
             		
-            // InternalPactDSL.g:3083:3: ( (otherlv_5= RULE_ID ) )
-            // InternalPactDSL.g:3084:4: (otherlv_5= RULE_ID )
+            // InternalPactDSL.g:3147:3: ( (otherlv_5= RULE_ID ) )
+            // InternalPactDSL.g:3148:4: (otherlv_5= RULE_ID )
             {
-            // InternalPactDSL.g:3084:4: (otherlv_5= RULE_ID )
-            // InternalPactDSL.g:3085:5: otherlv_5= RULE_ID
+            // InternalPactDSL.g:3148:4: (otherlv_5= RULE_ID )
+            // InternalPactDSL.g:3149:5: otherlv_5= RULE_ID
             {
 
             					if (current==null) {
@@ -7953,7 +8065,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleForBreach"
-    // InternalPactDSL.g:3100:1: entryRuleForBreach returns [EObject current=null] : iv_ruleForBreach= ruleForBreach EOF ;
+    // InternalPactDSL.g:3164:1: entryRuleForBreach returns [EObject current=null] : iv_ruleForBreach= ruleForBreach EOF ;
     public final EObject entryRuleForBreach() throws RecognitionException {
         EObject current = null;
 
@@ -7961,8 +8073,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3100:50: (iv_ruleForBreach= ruleForBreach EOF )
-            // InternalPactDSL.g:3101:2: iv_ruleForBreach= ruleForBreach EOF
+            // InternalPactDSL.g:3164:50: (iv_ruleForBreach= ruleForBreach EOF )
+            // InternalPactDSL.g:3165:2: iv_ruleForBreach= ruleForBreach EOF
             {
              newCompositeNode(grammarAccess.getForBreachRule()); 
             pushFollow(FOLLOW_1);
@@ -7989,7 +8101,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleForBreach"
-    // InternalPactDSL.g:3107:1: ruleForBreach returns [EObject current=null] : (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? ) ;
+    // InternalPactDSL.g:3171:1: ruleForBreach returns [EObject current=null] : (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? ) ;
     public final EObject ruleForBreach() throws RecognitionException {
         EObject current = null;
 
@@ -8008,34 +8120,34 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3113:2: ( (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? ) )
-            // InternalPactDSL.g:3114:2: (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? )
+            // InternalPactDSL.g:3177:2: ( (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? ) )
+            // InternalPactDSL.g:3178:2: (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? )
             {
-            // InternalPactDSL.g:3114:2: (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? )
-            // InternalPactDSL.g:3115:3: otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )?
+            // InternalPactDSL.g:3178:2: (otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )? )
+            // InternalPactDSL.g:3179:3: otherlv_0= 'TerminationForBreach:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'forBreachOf' ( (lv_ObligationBreached_5_0= RULE_STRING ) )+ otherlv_6= 'by' ( (otherlv_7= RULE_ID ) ) (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )?
             {
             otherlv_0=(Token)match(input,77,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getForBreachAccess().getTerminationForBreachKeyword_0());
             		
-            // InternalPactDSL.g:3119:3: ( (otherlv_1= RULE_ID ) )+
-            int cnt57=0;
-            loop57:
+            // InternalPactDSL.g:3183:3: ( (otherlv_1= RULE_ID ) )+
+            int cnt58=0;
+            loop58:
             do {
-                int alt57=2;
-                int LA57_0 = input.LA(1);
+                int alt58=2;
+                int LA58_0 = input.LA(1);
 
-                if ( (LA57_0==RULE_ID) ) {
-                    alt57=1;
+                if ( (LA58_0==RULE_ID) ) {
+                    alt58=1;
                 }
 
 
-                switch (alt57) {
+                switch (alt58) {
             	case 1 :
-            	    // InternalPactDSL.g:3120:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3184:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:3120:4: (otherlv_1= RULE_ID )
-            	    // InternalPactDSL.g:3121:5: otherlv_1= RULE_ID
+            	    // InternalPactDSL.g:3184:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3185:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -8054,12 +8166,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt57 >= 1 ) break loop57;
+            	    if ( cnt58 >= 1 ) break loop58;
                         EarlyExitException eee =
-                            new EarlyExitException(57, input);
+                            new EarlyExitException(58, input);
                         throw eee;
                 }
-                cnt57++;
+                cnt58++;
             } while (true);
 
             otherlv_2=(Token)match(input,74,FOLLOW_55); 
@@ -8074,24 +8186,24 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getForBreachAccess().getForBreachOfKeyword_4());
             		
-            // InternalPactDSL.g:3144:3: ( (lv_ObligationBreached_5_0= RULE_STRING ) )+
-            int cnt58=0;
-            loop58:
+            // InternalPactDSL.g:3208:3: ( (lv_ObligationBreached_5_0= RULE_STRING ) )+
+            int cnt59=0;
+            loop59:
             do {
-                int alt58=2;
-                int LA58_0 = input.LA(1);
+                int alt59=2;
+                int LA59_0 = input.LA(1);
 
-                if ( (LA58_0==RULE_STRING) ) {
-                    alt58=1;
+                if ( (LA59_0==RULE_STRING) ) {
+                    alt59=1;
                 }
 
 
-                switch (alt58) {
+                switch (alt59) {
             	case 1 :
-            	    // InternalPactDSL.g:3145:4: (lv_ObligationBreached_5_0= RULE_STRING )
+            	    // InternalPactDSL.g:3209:4: (lv_ObligationBreached_5_0= RULE_STRING )
             	    {
-            	    // InternalPactDSL.g:3145:4: (lv_ObligationBreached_5_0= RULE_STRING )
-            	    // InternalPactDSL.g:3146:5: lv_ObligationBreached_5_0= RULE_STRING
+            	    // InternalPactDSL.g:3209:4: (lv_ObligationBreached_5_0= RULE_STRING )
+            	    // InternalPactDSL.g:3210:5: lv_ObligationBreached_5_0= RULE_STRING
             	    {
             	    lv_ObligationBreached_5_0=(Token)match(input,RULE_STRING,FOLLOW_58); 
 
@@ -8115,23 +8227,23 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt58 >= 1 ) break loop58;
+            	    if ( cnt59 >= 1 ) break loop59;
                         EarlyExitException eee =
-                            new EarlyExitException(58, input);
+                            new EarlyExitException(59, input);
                         throw eee;
                 }
-                cnt58++;
+                cnt59++;
             } while (true);
 
             otherlv_6=(Token)match(input,50,FOLLOW_20); 
 
             			newLeafNode(otherlv_6, grammarAccess.getForBreachAccess().getByKeyword_6());
             		
-            // InternalPactDSL.g:3166:3: ( (otherlv_7= RULE_ID ) )
-            // InternalPactDSL.g:3167:4: (otherlv_7= RULE_ID )
+            // InternalPactDSL.g:3230:3: ( (otherlv_7= RULE_ID ) )
+            // InternalPactDSL.g:3231:4: (otherlv_7= RULE_ID )
             {
-            // InternalPactDSL.g:3167:4: (otherlv_7= RULE_ID )
-            // InternalPactDSL.g:3168:5: otherlv_7= RULE_ID
+            // InternalPactDSL.g:3231:4: (otherlv_7= RULE_ID )
+            // InternalPactDSL.g:3232:5: otherlv_7= RULE_ID
             {
 
             					if (current==null) {
@@ -8148,26 +8260,26 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPactDSL.g:3179:3: (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // InternalPactDSL.g:3243:3: (otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) ) )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA59_0==63) ) {
-                alt59=1;
+            if ( (LA60_0==63) ) {
+                alt60=1;
             }
-            switch (alt59) {
+            switch (alt60) {
                 case 1 :
-                    // InternalPactDSL.g:3180:4: otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) )
+                    // InternalPactDSL.g:3244:4: otherlv_8= 'unless' ( (lv_remedialScheme_9_0= RULE_STRING ) )
                     {
                     otherlv_8=(Token)match(input,63,FOLLOW_3); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getForBreachAccess().getUnlessKeyword_8_0());
                     			
-                    // InternalPactDSL.g:3184:4: ( (lv_remedialScheme_9_0= RULE_STRING ) )
-                    // InternalPactDSL.g:3185:5: (lv_remedialScheme_9_0= RULE_STRING )
+                    // InternalPactDSL.g:3248:4: ( (lv_remedialScheme_9_0= RULE_STRING ) )
+                    // InternalPactDSL.g:3249:5: (lv_remedialScheme_9_0= RULE_STRING )
                     {
-                    // InternalPactDSL.g:3185:5: (lv_remedialScheme_9_0= RULE_STRING )
-                    // InternalPactDSL.g:3186:6: lv_remedialScheme_9_0= RULE_STRING
+                    // InternalPactDSL.g:3249:5: (lv_remedialScheme_9_0= RULE_STRING )
+                    // InternalPactDSL.g:3250:6: lv_remedialScheme_9_0= RULE_STRING
                     {
                     lv_remedialScheme_9_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -8218,7 +8330,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOnInsolvencyEvent"
-    // InternalPactDSL.g:3207:1: entryRuleOnInsolvencyEvent returns [EObject current=null] : iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF ;
+    // InternalPactDSL.g:3271:1: entryRuleOnInsolvencyEvent returns [EObject current=null] : iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF ;
     public final EObject entryRuleOnInsolvencyEvent() throws RecognitionException {
         EObject current = null;
 
@@ -8226,8 +8338,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3207:58: (iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF )
-            // InternalPactDSL.g:3208:2: iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF
+            // InternalPactDSL.g:3271:58: (iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF )
+            // InternalPactDSL.g:3272:2: iv_ruleOnInsolvencyEvent= ruleOnInsolvencyEvent EOF
             {
              newCompositeNode(grammarAccess.getOnInsolvencyEventRule()); 
             pushFollow(FOLLOW_1);
@@ -8254,7 +8366,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOnInsolvencyEvent"
-    // InternalPactDSL.g:3214:1: ruleOnInsolvencyEvent returns [EObject current=null] : (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) ) ;
+    // InternalPactDSL.g:3278:1: ruleOnInsolvencyEvent returns [EObject current=null] : (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) ) ;
     public final EObject ruleOnInsolvencyEvent() throws RecognitionException {
         EObject current = null;
 
@@ -8271,34 +8383,34 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3220:2: ( (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) ) )
-            // InternalPactDSL.g:3221:2: (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) )
+            // InternalPactDSL.g:3284:2: ( (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) ) )
+            // InternalPactDSL.g:3285:2: (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) )
             {
-            // InternalPactDSL.g:3221:2: (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) )
-            // InternalPactDSL.g:3222:3: otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) )
+            // InternalPactDSL.g:3285:2: (otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) ) )
+            // InternalPactDSL.g:3286:3: otherlv_0= 'TerminationUponInsolvency:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' otherlv_4= 'upon' ( (lv_InsolvencyEvent_5_0= RULE_STRING ) ) otherlv_6= 'of' ( (otherlv_7= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,79,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOnInsolvencyEventAccess().getTerminationUponInsolvencyKeyword_0());
             		
-            // InternalPactDSL.g:3226:3: ( (otherlv_1= RULE_ID ) )+
-            int cnt60=0;
-            loop60:
+            // InternalPactDSL.g:3290:3: ( (otherlv_1= RULE_ID ) )+
+            int cnt61=0;
+            loop61:
             do {
-                int alt60=2;
-                int LA60_0 = input.LA(1);
+                int alt61=2;
+                int LA61_0 = input.LA(1);
 
-                if ( (LA60_0==RULE_ID) ) {
-                    alt60=1;
+                if ( (LA61_0==RULE_ID) ) {
+                    alt61=1;
                 }
 
 
-                switch (alt60) {
+                switch (alt61) {
             	case 1 :
-            	    // InternalPactDSL.g:3227:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3291:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:3227:4: (otherlv_1= RULE_ID )
-            	    // InternalPactDSL.g:3228:5: otherlv_1= RULE_ID
+            	    // InternalPactDSL.g:3291:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3292:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -8317,12 +8429,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt60 >= 1 ) break loop60;
+            	    if ( cnt61 >= 1 ) break loop61;
                         EarlyExitException eee =
-                            new EarlyExitException(60, input);
+                            new EarlyExitException(61, input);
                         throw eee;
                 }
-                cnt60++;
+                cnt61++;
             } while (true);
 
             otherlv_2=(Token)match(input,74,FOLLOW_55); 
@@ -8337,11 +8449,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getOnInsolvencyEventAccess().getUponKeyword_4());
             		
-            // InternalPactDSL.g:3251:3: ( (lv_InsolvencyEvent_5_0= RULE_STRING ) )
-            // InternalPactDSL.g:3252:4: (lv_InsolvencyEvent_5_0= RULE_STRING )
+            // InternalPactDSL.g:3315:3: ( (lv_InsolvencyEvent_5_0= RULE_STRING ) )
+            // InternalPactDSL.g:3316:4: (lv_InsolvencyEvent_5_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3252:4: (lv_InsolvencyEvent_5_0= RULE_STRING )
-            // InternalPactDSL.g:3253:5: lv_InsolvencyEvent_5_0= RULE_STRING
+            // InternalPactDSL.g:3316:4: (lv_InsolvencyEvent_5_0= RULE_STRING )
+            // InternalPactDSL.g:3317:5: lv_InsolvencyEvent_5_0= RULE_STRING
             {
             lv_InsolvencyEvent_5_0=(Token)match(input,RULE_STRING,FOLLOW_49); 
 
@@ -8367,11 +8479,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getOnInsolvencyEventAccess().getOfKeyword_6());
             		
-            // InternalPactDSL.g:3273:3: ( (otherlv_7= RULE_ID ) )
-            // InternalPactDSL.g:3274:4: (otherlv_7= RULE_ID )
+            // InternalPactDSL.g:3337:3: ( (otherlv_7= RULE_ID ) )
+            // InternalPactDSL.g:3338:4: (otherlv_7= RULE_ID )
             {
-            // InternalPactDSL.g:3274:4: (otherlv_7= RULE_ID )
-            // InternalPactDSL.g:3275:5: otherlv_7= RULE_ID
+            // InternalPactDSL.g:3338:4: (otherlv_7= RULE_ID )
+            // InternalPactDSL.g:3339:5: otherlv_7= RULE_ID
             {
 
             					if (current==null) {
@@ -8411,7 +8523,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCustomTermination"
-    // InternalPactDSL.g:3290:1: entryRuleCustomTermination returns [EObject current=null] : iv_ruleCustomTermination= ruleCustomTermination EOF ;
+    // InternalPactDSL.g:3354:1: entryRuleCustomTermination returns [EObject current=null] : iv_ruleCustomTermination= ruleCustomTermination EOF ;
     public final EObject entryRuleCustomTermination() throws RecognitionException {
         EObject current = null;
 
@@ -8419,8 +8531,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3290:58: (iv_ruleCustomTermination= ruleCustomTermination EOF )
-            // InternalPactDSL.g:3291:2: iv_ruleCustomTermination= ruleCustomTermination EOF
+            // InternalPactDSL.g:3354:58: (iv_ruleCustomTermination= ruleCustomTermination EOF )
+            // InternalPactDSL.g:3355:2: iv_ruleCustomTermination= ruleCustomTermination EOF
             {
              newCompositeNode(grammarAccess.getCustomTerminationRule()); 
             pushFollow(FOLLOW_1);
@@ -8447,7 +8559,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustomTermination"
-    // InternalPactDSL.g:3297:1: ruleCustomTermination returns [EObject current=null] : (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? ) ;
+    // InternalPactDSL.g:3361:1: ruleCustomTermination returns [EObject current=null] : (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? ) ;
     public final EObject ruleCustomTermination() throws RecognitionException {
         EObject current = null;
 
@@ -8463,34 +8575,34 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3303:2: ( (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? ) )
-            // InternalPactDSL.g:3304:2: (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? )
+            // InternalPactDSL.g:3367:2: ( (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? ) )
+            // InternalPactDSL.g:3368:2: (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? )
             {
-            // InternalPactDSL.g:3304:2: (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? )
-            // InternalPactDSL.g:3305:3: otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )?
+            // InternalPactDSL.g:3368:2: (otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )? )
+            // InternalPactDSL.g:3369:3: otherlv_0= 'Termination:' ( (otherlv_1= RULE_ID ) )+ otherlv_2= 'may' otherlv_3= 'terminate' ( (lv_customTerminationClause_4_0= RULE_STRING ) ) (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )?
             {
             otherlv_0=(Token)match(input,20,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCustomTerminationAccess().getTerminationKeyword_0());
             		
-            // InternalPactDSL.g:3309:3: ( (otherlv_1= RULE_ID ) )+
-            int cnt61=0;
-            loop61:
+            // InternalPactDSL.g:3373:3: ( (otherlv_1= RULE_ID ) )+
+            int cnt62=0;
+            loop62:
             do {
-                int alt61=2;
-                int LA61_0 = input.LA(1);
+                int alt62=2;
+                int LA62_0 = input.LA(1);
 
-                if ( (LA61_0==RULE_ID) ) {
-                    alt61=1;
+                if ( (LA62_0==RULE_ID) ) {
+                    alt62=1;
                 }
 
 
-                switch (alt61) {
+                switch (alt62) {
             	case 1 :
-            	    // InternalPactDSL.g:3310:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3374:4: (otherlv_1= RULE_ID )
             	    {
-            	    // InternalPactDSL.g:3310:4: (otherlv_1= RULE_ID )
-            	    // InternalPactDSL.g:3311:5: otherlv_1= RULE_ID
+            	    // InternalPactDSL.g:3374:4: (otherlv_1= RULE_ID )
+            	    // InternalPactDSL.g:3375:5: otherlv_1= RULE_ID
             	    {
 
             	    					if (current==null) {
@@ -8509,12 +8621,12 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt61 >= 1 ) break loop61;
+            	    if ( cnt62 >= 1 ) break loop62;
                         EarlyExitException eee =
-                            new EarlyExitException(61, input);
+                            new EarlyExitException(62, input);
                         throw eee;
                 }
-                cnt61++;
+                cnt62++;
             } while (true);
 
             otherlv_2=(Token)match(input,74,FOLLOW_55); 
@@ -8525,11 +8637,11 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCustomTerminationAccess().getTerminateKeyword_3());
             		
-            // InternalPactDSL.g:3330:3: ( (lv_customTerminationClause_4_0= RULE_STRING ) )
-            // InternalPactDSL.g:3331:4: (lv_customTerminationClause_4_0= RULE_STRING )
+            // InternalPactDSL.g:3394:3: ( (lv_customTerminationClause_4_0= RULE_STRING ) )
+            // InternalPactDSL.g:3395:4: (lv_customTerminationClause_4_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3331:4: (lv_customTerminationClause_4_0= RULE_STRING )
-            // InternalPactDSL.g:3332:5: lv_customTerminationClause_4_0= RULE_STRING
+            // InternalPactDSL.g:3395:4: (lv_customTerminationClause_4_0= RULE_STRING )
+            // InternalPactDSL.g:3396:5: lv_customTerminationClause_4_0= RULE_STRING
             {
             lv_customTerminationClause_4_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
 
@@ -8551,26 +8663,26 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPactDSL.g:3348:3: (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // InternalPactDSL.g:3412:3: (otherlv_5= 'by' ( (otherlv_6= RULE_ID ) ) )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA62_0==50) ) {
-                alt62=1;
+            if ( (LA63_0==50) ) {
+                alt63=1;
             }
-            switch (alt62) {
+            switch (alt63) {
                 case 1 :
-                    // InternalPactDSL.g:3349:4: otherlv_5= 'by' ( (otherlv_6= RULE_ID ) )
+                    // InternalPactDSL.g:3413:4: otherlv_5= 'by' ( (otherlv_6= RULE_ID ) )
                     {
                     otherlv_5=(Token)match(input,50,FOLLOW_20); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getCustomTerminationAccess().getByKeyword_5_0());
                     			
-                    // InternalPactDSL.g:3353:4: ( (otherlv_6= RULE_ID ) )
-                    // InternalPactDSL.g:3354:5: (otherlv_6= RULE_ID )
+                    // InternalPactDSL.g:3417:4: ( (otherlv_6= RULE_ID ) )
+                    // InternalPactDSL.g:3418:5: (otherlv_6= RULE_ID )
                     {
-                    // InternalPactDSL.g:3354:5: (otherlv_6= RULE_ID )
-                    // InternalPactDSL.g:3355:6: otherlv_6= RULE_ID
+                    // InternalPactDSL.g:3418:5: (otherlv_6= RULE_ID )
+                    // InternalPactDSL.g:3419:6: otherlv_6= RULE_ID
                     {
 
                     						if (current==null) {
@@ -8616,7 +8728,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBoilerplateType"
-    // InternalPactDSL.g:3371:1: entryRuleBoilerplateType returns [EObject current=null] : iv_ruleBoilerplateType= ruleBoilerplateType EOF ;
+    // InternalPactDSL.g:3435:1: entryRuleBoilerplateType returns [EObject current=null] : iv_ruleBoilerplateType= ruleBoilerplateType EOF ;
     public final EObject entryRuleBoilerplateType() throws RecognitionException {
         EObject current = null;
 
@@ -8624,8 +8736,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3371:56: (iv_ruleBoilerplateType= ruleBoilerplateType EOF )
-            // InternalPactDSL.g:3372:2: iv_ruleBoilerplateType= ruleBoilerplateType EOF
+            // InternalPactDSL.g:3435:56: (iv_ruleBoilerplateType= ruleBoilerplateType EOF )
+            // InternalPactDSL.g:3436:2: iv_ruleBoilerplateType= ruleBoilerplateType EOF
             {
              newCompositeNode(grammarAccess.getBoilerplateTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -8652,7 +8764,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBoilerplateType"
-    // InternalPactDSL.g:3378:1: ruleBoilerplateType returns [EObject current=null] : (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices ) ;
+    // InternalPactDSL.g:3442:1: ruleBoilerplateType returns [EObject current=null] : (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices | this_CustomBoilerplate_3= ruleCustomBoilerplate ) ;
     public final EObject ruleBoilerplateType() throws RecognitionException {
         EObject current = null;
 
@@ -8662,42 +8774,49 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
         EObject this_Notices_2 = null;
 
+        EObject this_CustomBoilerplate_3 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3384:2: ( (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices ) )
-            // InternalPactDSL.g:3385:2: (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices )
+            // InternalPactDSL.g:3448:2: ( (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices | this_CustomBoilerplate_3= ruleCustomBoilerplate ) )
+            // InternalPactDSL.g:3449:2: (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices | this_CustomBoilerplate_3= ruleCustomBoilerplate )
             {
-            // InternalPactDSL.g:3385:2: (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices )
-            int alt63=3;
+            // InternalPactDSL.g:3449:2: (this_ApplicableLaw_0= ruleApplicableLaw | this_Jurisdiction_1= ruleJurisdiction | this_Notices_2= ruleNotices | this_CustomBoilerplate_3= ruleCustomBoilerplate )
+            int alt64=4;
             switch ( input.LA(1) ) {
             case 81:
                 {
-                alt63=1;
+                alt64=1;
                 }
                 break;
             case 82:
                 {
-                alt63=2;
+                alt64=2;
                 }
                 break;
             case 83:
                 {
-                alt63=3;
+                alt64=3;
+                }
+                break;
+            case 22:
+                {
+                alt64=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 63, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt63) {
+            switch (alt64) {
                 case 1 :
-                    // InternalPactDSL.g:3386:3: this_ApplicableLaw_0= ruleApplicableLaw
+                    // InternalPactDSL.g:3450:3: this_ApplicableLaw_0= ruleApplicableLaw
                     {
 
                     			newCompositeNode(grammarAccess.getBoilerplateTypeAccess().getApplicableLawParserRuleCall_0());
@@ -8715,7 +8834,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalPactDSL.g:3395:3: this_Jurisdiction_1= ruleJurisdiction
+                    // InternalPactDSL.g:3459:3: this_Jurisdiction_1= ruleJurisdiction
                     {
 
                     			newCompositeNode(grammarAccess.getBoilerplateTypeAccess().getJurisdictionParserRuleCall_1());
@@ -8733,7 +8852,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalPactDSL.g:3404:3: this_Notices_2= ruleNotices
+                    // InternalPactDSL.g:3468:3: this_Notices_2= ruleNotices
                     {
 
                     			newCompositeNode(grammarAccess.getBoilerplateTypeAccess().getNoticesParserRuleCall_2());
@@ -8745,6 +8864,24 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
                     			current = this_Notices_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalPactDSL.g:3477:3: this_CustomBoilerplate_3= ruleCustomBoilerplate
+                    {
+
+                    			newCompositeNode(grammarAccess.getBoilerplateTypeAccess().getCustomBoilerplateParserRuleCall_3());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_CustomBoilerplate_3=ruleCustomBoilerplate();
+
+                    state._fsp--;
+
+
+                    			current = this_CustomBoilerplate_3;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -8773,7 +8910,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicableLaw"
-    // InternalPactDSL.g:3416:1: entryRuleApplicableLaw returns [EObject current=null] : iv_ruleApplicableLaw= ruleApplicableLaw EOF ;
+    // InternalPactDSL.g:3489:1: entryRuleApplicableLaw returns [EObject current=null] : iv_ruleApplicableLaw= ruleApplicableLaw EOF ;
     public final EObject entryRuleApplicableLaw() throws RecognitionException {
         EObject current = null;
 
@@ -8781,8 +8918,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3416:54: (iv_ruleApplicableLaw= ruleApplicableLaw EOF )
-            // InternalPactDSL.g:3417:2: iv_ruleApplicableLaw= ruleApplicableLaw EOF
+            // InternalPactDSL.g:3489:54: (iv_ruleApplicableLaw= ruleApplicableLaw EOF )
+            // InternalPactDSL.g:3490:2: iv_ruleApplicableLaw= ruleApplicableLaw EOF
             {
              newCompositeNode(grammarAccess.getApplicableLawRule()); 
             pushFollow(FOLLOW_1);
@@ -8809,7 +8946,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicableLaw"
-    // InternalPactDSL.g:3423:1: ruleApplicableLaw returns [EObject current=null] : (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) ;
+    // InternalPactDSL.g:3496:1: ruleApplicableLaw returns [EObject current=null] : (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) ;
     public final EObject ruleApplicableLaw() throws RecognitionException {
         EObject current = null;
 
@@ -8822,21 +8959,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3429:2: ( (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) )
-            // InternalPactDSL.g:3430:2: (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
+            // InternalPactDSL.g:3502:2: ( (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) )
+            // InternalPactDSL.g:3503:2: (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
             {
-            // InternalPactDSL.g:3430:2: (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
-            // InternalPactDSL.g:3431:3: otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )?
+            // InternalPactDSL.g:3503:2: (otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
+            // InternalPactDSL.g:3504:3: otherlv_0= 'ApplicableLaw:' ( (lv_customApplicableLaw_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )?
             {
             otherlv_0=(Token)match(input,81,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getApplicableLawAccess().getApplicableLawKeyword_0());
             		
-            // InternalPactDSL.g:3435:3: ( (lv_customApplicableLaw_1_0= RULE_STRING ) )
-            // InternalPactDSL.g:3436:4: (lv_customApplicableLaw_1_0= RULE_STRING )
+            // InternalPactDSL.g:3508:3: ( (lv_customApplicableLaw_1_0= RULE_STRING ) )
+            // InternalPactDSL.g:3509:4: (lv_customApplicableLaw_1_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3436:4: (lv_customApplicableLaw_1_0= RULE_STRING )
-            // InternalPactDSL.g:3437:5: lv_customApplicableLaw_1_0= RULE_STRING
+            // InternalPactDSL.g:3509:4: (lv_customApplicableLaw_1_0= RULE_STRING )
+            // InternalPactDSL.g:3510:5: lv_customApplicableLaw_1_0= RULE_STRING
             {
             lv_customApplicableLaw_1_0=(Token)match(input,RULE_STRING,FOLLOW_60); 
 
@@ -8858,19 +8995,19 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPactDSL.g:3453:3: ( (lv_definition_2_0= ruleDefinedTerm ) )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
+            // InternalPactDSL.g:3526:3: ( (lv_definition_2_0= ruleDefinedTerm ) )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA64_0==27) ) {
-                alt64=1;
+            if ( (LA65_0==27) ) {
+                alt65=1;
             }
-            switch (alt64) {
+            switch (alt65) {
                 case 1 :
-                    // InternalPactDSL.g:3454:4: (lv_definition_2_0= ruleDefinedTerm )
+                    // InternalPactDSL.g:3527:4: (lv_definition_2_0= ruleDefinedTerm )
                     {
-                    // InternalPactDSL.g:3454:4: (lv_definition_2_0= ruleDefinedTerm )
-                    // InternalPactDSL.g:3455:5: lv_definition_2_0= ruleDefinedTerm
+                    // InternalPactDSL.g:3527:4: (lv_definition_2_0= ruleDefinedTerm )
+                    // InternalPactDSL.g:3528:5: lv_definition_2_0= ruleDefinedTerm
                     {
 
                     					newCompositeNode(grammarAccess.getApplicableLawAccess().getDefinitionDefinedTermParserRuleCall_2_0());
@@ -8923,7 +9060,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJurisdiction"
-    // InternalPactDSL.g:3476:1: entryRuleJurisdiction returns [EObject current=null] : iv_ruleJurisdiction= ruleJurisdiction EOF ;
+    // InternalPactDSL.g:3549:1: entryRuleJurisdiction returns [EObject current=null] : iv_ruleJurisdiction= ruleJurisdiction EOF ;
     public final EObject entryRuleJurisdiction() throws RecognitionException {
         EObject current = null;
 
@@ -8931,8 +9068,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3476:53: (iv_ruleJurisdiction= ruleJurisdiction EOF )
-            // InternalPactDSL.g:3477:2: iv_ruleJurisdiction= ruleJurisdiction EOF
+            // InternalPactDSL.g:3549:53: (iv_ruleJurisdiction= ruleJurisdiction EOF )
+            // InternalPactDSL.g:3550:2: iv_ruleJurisdiction= ruleJurisdiction EOF
             {
              newCompositeNode(grammarAccess.getJurisdictionRule()); 
             pushFollow(FOLLOW_1);
@@ -8959,7 +9096,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJurisdiction"
-    // InternalPactDSL.g:3483:1: ruleJurisdiction returns [EObject current=null] : (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) ;
+    // InternalPactDSL.g:3556:1: ruleJurisdiction returns [EObject current=null] : (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) ;
     public final EObject ruleJurisdiction() throws RecognitionException {
         EObject current = null;
 
@@ -8972,21 +9109,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3489:2: ( (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) )
-            // InternalPactDSL.g:3490:2: (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
+            // InternalPactDSL.g:3562:2: ( (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? ) )
+            // InternalPactDSL.g:3563:2: (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
             {
-            // InternalPactDSL.g:3490:2: (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
-            // InternalPactDSL.g:3491:3: otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )?
+            // InternalPactDSL.g:3563:2: (otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )? )
+            // InternalPactDSL.g:3564:3: otherlv_0= 'Jurisdiction:' ( (lv_customJurisdiction_1_0= RULE_STRING ) ) ( (lv_definition_2_0= ruleDefinedTerm ) )?
             {
             otherlv_0=(Token)match(input,82,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getJurisdictionAccess().getJurisdictionKeyword_0());
             		
-            // InternalPactDSL.g:3495:3: ( (lv_customJurisdiction_1_0= RULE_STRING ) )
-            // InternalPactDSL.g:3496:4: (lv_customJurisdiction_1_0= RULE_STRING )
+            // InternalPactDSL.g:3568:3: ( (lv_customJurisdiction_1_0= RULE_STRING ) )
+            // InternalPactDSL.g:3569:4: (lv_customJurisdiction_1_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3496:4: (lv_customJurisdiction_1_0= RULE_STRING )
-            // InternalPactDSL.g:3497:5: lv_customJurisdiction_1_0= RULE_STRING
+            // InternalPactDSL.g:3569:4: (lv_customJurisdiction_1_0= RULE_STRING )
+            // InternalPactDSL.g:3570:5: lv_customJurisdiction_1_0= RULE_STRING
             {
             lv_customJurisdiction_1_0=(Token)match(input,RULE_STRING,FOLLOW_60); 
 
@@ -9008,19 +9145,19 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalPactDSL.g:3513:3: ( (lv_definition_2_0= ruleDefinedTerm ) )?
-            int alt65=2;
-            int LA65_0 = input.LA(1);
+            // InternalPactDSL.g:3586:3: ( (lv_definition_2_0= ruleDefinedTerm ) )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA65_0==27) ) {
-                alt65=1;
+            if ( (LA66_0==27) ) {
+                alt66=1;
             }
-            switch (alt65) {
+            switch (alt66) {
                 case 1 :
-                    // InternalPactDSL.g:3514:4: (lv_definition_2_0= ruleDefinedTerm )
+                    // InternalPactDSL.g:3587:4: (lv_definition_2_0= ruleDefinedTerm )
                     {
-                    // InternalPactDSL.g:3514:4: (lv_definition_2_0= ruleDefinedTerm )
-                    // InternalPactDSL.g:3515:5: lv_definition_2_0= ruleDefinedTerm
+                    // InternalPactDSL.g:3587:4: (lv_definition_2_0= ruleDefinedTerm )
+                    // InternalPactDSL.g:3588:5: lv_definition_2_0= ruleDefinedTerm
                     {
 
                     					newCompositeNode(grammarAccess.getJurisdictionAccess().getDefinitionDefinedTermParserRuleCall_2_0());
@@ -9073,7 +9210,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNotices"
-    // InternalPactDSL.g:3536:1: entryRuleNotices returns [EObject current=null] : iv_ruleNotices= ruleNotices EOF ;
+    // InternalPactDSL.g:3609:1: entryRuleNotices returns [EObject current=null] : iv_ruleNotices= ruleNotices EOF ;
     public final EObject entryRuleNotices() throws RecognitionException {
         EObject current = null;
 
@@ -9081,8 +9218,8 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalPactDSL.g:3536:48: (iv_ruleNotices= ruleNotices EOF )
-            // InternalPactDSL.g:3537:2: iv_ruleNotices= ruleNotices EOF
+            // InternalPactDSL.g:3609:48: (iv_ruleNotices= ruleNotices EOF )
+            // InternalPactDSL.g:3610:2: iv_ruleNotices= ruleNotices EOF
             {
              newCompositeNode(grammarAccess.getNoticesRule()); 
             pushFollow(FOLLOW_1);
@@ -9109,7 +9246,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNotices"
-    // InternalPactDSL.g:3543:1: ruleNotices returns [EObject current=null] : (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) ) ;
+    // InternalPactDSL.g:3616:1: ruleNotices returns [EObject current=null] : (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleNotices() throws RecognitionException {
         EObject current = null;
 
@@ -9120,21 +9257,21 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalPactDSL.g:3549:2: ( (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) ) )
-            // InternalPactDSL.g:3550:2: (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:3622:2: ( (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:3623:2: (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) )
             {
-            // InternalPactDSL.g:3550:2: (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) )
-            // InternalPactDSL.g:3551:3: otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) )
+            // InternalPactDSL.g:3623:2: (otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:3624:3: otherlv_0= 'Notices:' ( (lv_customNotice_1_0= RULE_STRING ) )
             {
             otherlv_0=(Token)match(input,83,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNoticesAccess().getNoticesKeyword_0());
             		
-            // InternalPactDSL.g:3555:3: ( (lv_customNotice_1_0= RULE_STRING ) )
-            // InternalPactDSL.g:3556:4: (lv_customNotice_1_0= RULE_STRING )
+            // InternalPactDSL.g:3628:3: ( (lv_customNotice_1_0= RULE_STRING ) )
+            // InternalPactDSL.g:3629:4: (lv_customNotice_1_0= RULE_STRING )
             {
-            // InternalPactDSL.g:3556:4: (lv_customNotice_1_0= RULE_STRING )
-            // InternalPactDSL.g:3557:5: lv_customNotice_1_0= RULE_STRING
+            // InternalPactDSL.g:3629:4: (lv_customNotice_1_0= RULE_STRING )
+            // InternalPactDSL.g:3630:5: lv_customNotice_1_0= RULE_STRING
             {
             lv_customNotice_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -9177,6 +9314,112 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleNotices"
 
+
+    // $ANTLR start "entryRuleCustomBoilerplate"
+    // InternalPactDSL.g:3650:1: entryRuleCustomBoilerplate returns [EObject current=null] : iv_ruleCustomBoilerplate= ruleCustomBoilerplate EOF ;
+    public final EObject entryRuleCustomBoilerplate() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleCustomBoilerplate = null;
+
+
+        try {
+            // InternalPactDSL.g:3650:58: (iv_ruleCustomBoilerplate= ruleCustomBoilerplate EOF )
+            // InternalPactDSL.g:3651:2: iv_ruleCustomBoilerplate= ruleCustomBoilerplate EOF
+            {
+             newCompositeNode(grammarAccess.getCustomBoilerplateRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCustomBoilerplate=ruleCustomBoilerplate();
+
+            state._fsp--;
+
+             current =iv_ruleCustomBoilerplate; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCustomBoilerplate"
+
+
+    // $ANTLR start "ruleCustomBoilerplate"
+    // InternalPactDSL.g:3657:1: ruleCustomBoilerplate returns [EObject current=null] : (otherlv_0= 'Boilerplate:' ( (lv_customBoilerplate_1_0= RULE_STRING ) ) ) ;
+    public final EObject ruleCustomBoilerplate() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_customBoilerplate_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalPactDSL.g:3663:2: ( (otherlv_0= 'Boilerplate:' ( (lv_customBoilerplate_1_0= RULE_STRING ) ) ) )
+            // InternalPactDSL.g:3664:2: (otherlv_0= 'Boilerplate:' ( (lv_customBoilerplate_1_0= RULE_STRING ) ) )
+            {
+            // InternalPactDSL.g:3664:2: (otherlv_0= 'Boilerplate:' ( (lv_customBoilerplate_1_0= RULE_STRING ) ) )
+            // InternalPactDSL.g:3665:3: otherlv_0= 'Boilerplate:' ( (lv_customBoilerplate_1_0= RULE_STRING ) )
+            {
+            otherlv_0=(Token)match(input,22,FOLLOW_3); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getCustomBoilerplateAccess().getBoilerplateKeyword_0());
+            		
+            // InternalPactDSL.g:3669:3: ( (lv_customBoilerplate_1_0= RULE_STRING ) )
+            // InternalPactDSL.g:3670:4: (lv_customBoilerplate_1_0= RULE_STRING )
+            {
+            // InternalPactDSL.g:3670:4: (lv_customBoilerplate_1_0= RULE_STRING )
+            // InternalPactDSL.g:3671:5: lv_customBoilerplate_1_0= RULE_STRING
+            {
+            lv_customBoilerplate_1_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_customBoilerplate_1_0, grammarAccess.getCustomBoilerplateAccess().getCustomBoilerplateSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getCustomBoilerplateRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"customBoilerplate",
+            						lv_customBoilerplate_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCustomBoilerplate"
+
     // Delegated rules
 
 
@@ -9198,7 +9441,7 @@ public class InternalPactDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000490000700002L,0x00000000000EB320L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000490000700002L,0x00000000000EB200L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000490000400002L,0x00000000000E0000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000002L,0x00000000000E0000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400002L,0x00000000000E0000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000040L});

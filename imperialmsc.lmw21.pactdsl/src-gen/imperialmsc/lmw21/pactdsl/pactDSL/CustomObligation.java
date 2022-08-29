@@ -14,6 +14,9 @@ package imperialmsc.lmw21.pactdsl.pactDSL;
  * </p>
  * <ul>
  *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getCustomObligation <em>Custom Obligation</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getDay <em>Day</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getMonth <em>Month</em>}</li>
+ *   <li>{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getYear <em>Year</em>}</li>
  * </ul>
  *
  * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomObligation()
@@ -43,5 +46,71 @@ public interface CustomObligation extends PrimaryObligationType
    * @generated
    */
   void setCustomObligation(String value);
+
+  /**
+   * Returns the value of the '<em><b>Day</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Day</em>' attribute.
+   * @see #setDay(int)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomObligation_Day()
+   * @model
+   * @generated
+   */
+  int getDay();
+
+  /**
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getDay <em>Day</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Day</em>' attribute.
+   * @see #getDay()
+   * @generated
+   */
+  void setDay(int value);
+
+  /**
+   * Returns the value of the '<em><b>Month</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Month</em>' attribute.
+   * @see #setMonth(int)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomObligation_Month()
+   * @model
+   * @generated
+   */
+  int getMonth();
+
+  /**
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getMonth <em>Month</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Month</em>' attribute.
+   * @see #getMonth()
+   * @generated
+   */
+  void setMonth(int value);
+
+  /**
+   * Returns the value of the '<em><b>Year</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Year</em>' attribute.
+   * @see #setYear(int)
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage#getCustomObligation_Year()
+   * @model
+   * @generated
+   */
+  int getYear();
+
+  /**
+   * Sets the value of the '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation#getYear <em>Year</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Year</em>' attribute.
+   * @see #getYear()
+   * @generated
+   */
+  void setYear(int value);
 
 } // CustomObligation

@@ -3,26 +3,26 @@
  */
 package imperialmsc.lmw21.pactdsl.pactDSL.impl;
 
-import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.PactDSLPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Liability Party</b></em>'.
+ * An implementation of the model object '<em><b>Liability To Party</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class LiabilityPartyImpl extends LiabilityTypeImpl implements LiabilityParty
+public class LiabilityToPartyImpl extends LiabilityTypeImpl implements LiabilityToParty
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LiabilityPartyImpl()
+  protected LiabilityToPartyImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class LiabilityPartyImpl extends LiabilityTypeImpl implements LiabilityPa
   @Override
   protected EClass eStaticClass()
   {
-    return PactDSLPackage.Literals.LIABILITY_PARTY;
+    return PactDSLPackage.Literals.LIABILITY_TO_PARTY;
   }
 
-} //LiabilityPartyImpl
+} //LiabilityToPartyImpl

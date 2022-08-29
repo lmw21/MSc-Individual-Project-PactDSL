@@ -343,19 +343,19 @@ public class PactDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PactDSLPackage.LIABILITY_PARTY:
+      case PactDSLPackage.LIABILITY_TO_PARTY:
       {
-        LiabilityParty liabilityParty = (LiabilityParty)theEObject;
-        T result = caseLiabilityParty(liabilityParty);
-        if (result == null) result = caseLiabilityType(liabilityParty);
+        LiabilityToParty liabilityToParty = (LiabilityToParty)theEObject;
+        T result = caseLiabilityToParty(liabilityToParty);
+        if (result == null) result = caseLiabilityType(liabilityToParty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case PactDSLPackage.LIABILITY_THIRD_PARTY:
+      case PactDSLPackage.LIABILITY_TO_THIRD_PARTY:
       {
-        LiabilityThirdParty liabilityThirdParty = (LiabilityThirdParty)theEObject;
-        T result = caseLiabilityThirdParty(liabilityThirdParty);
-        if (result == null) result = caseLiabilityType(liabilityThirdParty);
+        LiabilityToThirdParty liabilityToThirdParty = (LiabilityToThirdParty)theEObject;
+        T result = caseLiabilityToThirdParty(liabilityToThirdParty);
+        if (result == null) result = caseLiabilityType(liabilityToThirdParty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -434,6 +434,14 @@ public class PactDSLSwitch<T> extends Switch<T>
         Notices notices = (Notices)theEObject;
         T result = caseNotices(notices);
         if (result == null) result = caseBoilerplateType(notices);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case PactDSLPackage.CUSTOM_BOILERPLATE:
+      {
+        CustomBoilerplate customBoilerplate = (CustomBoilerplate)theEObject;
+        T result = caseCustomBoilerplate(customBoilerplate);
+        if (result == null) result = caseBoilerplateType(customBoilerplate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1002,33 +1010,33 @@ public class PactDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Liability Party</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Liability To Party</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Liability Party</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Liability To Party</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLiabilityParty(LiabilityParty object)
+  public T caseLiabilityToParty(LiabilityToParty object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Liability Third Party</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Liability To Third Party</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Liability Third Party</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Liability To Third Party</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseLiabilityThirdParty(LiabilityThirdParty object)
+  public T caseLiabilityToThirdParty(LiabilityToThirdParty object)
   {
     return null;
   }
@@ -1189,6 +1197,22 @@ public class PactDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNotices(Notices object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Custom Boilerplate</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Custom Boilerplate</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCustomBoilerplate(CustomBoilerplate object)
   {
     return null;
   }

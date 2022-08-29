@@ -11,6 +11,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomAction;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomBoilerplate;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation;
@@ -27,8 +28,8 @@ import imperialmsc.lmw21.pactdsl.pactDSL.GivenWrittenConsent;
 import imperialmsc.lmw21.pactdsl.pactDSL.GivingNotice;
 import imperialmsc.lmw21.pactdsl.pactDSL.InWriting;
 import imperialmsc.lmw21.pactdsl.pactDSL.Jurisdiction;
-import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty;
-import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Model;
 import imperialmsc.lmw21.pactdsl.pactDSL.Notices;
@@ -90,6 +91,9 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case PactDSLPackage.CUSTOM_ACTION:
 				sequence_CustomAction(context, (CustomAction) semanticObject); 
 				return; 
+			case PactDSLPackage.CUSTOM_BOILERPLATE:
+				sequence_CustomBoilerplate(context, (CustomBoilerplate) semanticObject); 
+				return; 
 			case PactDSLPackage.CUSTOM_FEATURE:
 				sequence_CustomFeature(context, (CustomFeature) semanticObject); 
 				return; 
@@ -138,11 +142,11 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case PactDSLPackage.JURISDICTION:
 				sequence_Jurisdiction(context, (Jurisdiction) semanticObject); 
 				return; 
-			case PactDSLPackage.LIABILITY_PARTY:
-				sequence_LiabilityParty(context, (LiabilityParty) semanticObject); 
+			case PactDSLPackage.LIABILITY_TO_PARTY:
+				sequence_LiabilityToParty(context, (LiabilityToParty) semanticObject); 
 				return; 
-			case PactDSLPackage.LIABILITY_THIRD_PARTY:
-				sequence_LiabilityThirdParty(context, (LiabilityThirdParty) semanticObject); 
+			case PactDSLPackage.LIABILITY_TO_THIRD_PARTY:
+				sequence_LiabilityToThirdParty(context, (LiabilityToThirdParty) semanticObject); 
 				return; 
 			case PactDSLPackage.LICENCE_OBLIGATION:
 				sequence_LicenceObligation(context, (LicenceObligation) semanticObject); 
@@ -315,6 +319,25 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     BoilerplateType returns CustomBoilerplate
+	 *     CustomBoilerplate returns CustomBoilerplate
+	 *
+	 * Constraint:
+	 *     customBoilerplate=STRING
+	 */
+	protected void sequence_CustomBoilerplate(ISerializationContext context, CustomBoilerplate semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_BOILERPLATE__CUSTOM_BOILERPLATE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_BOILERPLATE__CUSTOM_BOILERPLATE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomBoilerplateAccess().getCustomBoilerplateSTRINGTerminalRuleCall_1_0(), semanticObject.getCustomBoilerplate());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     FeatureType returns CustomFeature
 	 *     CustomFeature returns CustomFeature
 	 *
@@ -357,19 +380,10 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CustomObligation returns CustomObligation
 	 *
 	 * Constraint:
-	 *     (superType=[Party|ID] customObligation=STRING)
+	 *     (superType=[Party|ID] customObligation=STRING (day=INT month=INT year=INT)?)
 	 */
 	protected void sequence_CustomObligation(ISerializationContext context, CustomObligation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE));
-			if (transientValues.isValueTransient(semanticObject, PactDSLPackage.Literals.CUSTOM_OBLIGATION__CUSTOM_OBLIGATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PactDSLPackage.Literals.CUSTOM_OBLIGATION__CUSTOM_OBLIGATION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCustomObligationAccess().getSuperTypePartyIDTerminalRuleCall_1_0_1(), semanticObject.eGet(PactDSLPackage.Literals.PRIMARY_OBLIGATION_TYPE__SUPER_TYPE, false));
-		feeder.accept(grammarAccess.getCustomObligationAccess().getCustomObligationSTRINGTerminalRuleCall_3_0(), semanticObject.getCustomObligation());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -591,26 +605,26 @@ public class PactDSLSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     LiabilityType returns LiabilityParty
-	 *     LiabilityParty returns LiabilityParty
+	 *     LiabilityType returns LiabilityToParty
+	 *     LiabilityToParty returns LiabilityToParty
 	 *
 	 * Constraint:
 	 *     (superType=[Party|ID] superType=[Party|ID] customLoss=STRING)
 	 */
-	protected void sequence_LiabilityParty(ISerializationContext context, LiabilityParty semanticObject) {
+	protected void sequence_LiabilityToParty(ISerializationContext context, LiabilityToParty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     LiabilityType returns LiabilityThirdParty
-	 *     LiabilityThirdParty returns LiabilityThirdParty
+	 *     LiabilityType returns LiabilityToThirdParty
+	 *     LiabilityToThirdParty returns LiabilityToThirdParty
 	 *
 	 * Constraint:
 	 *     (superType=[Party|ID] superType=[ThirdParty|ID] customLoss=STRING)
 	 */
-	protected void sequence_LiabilityThirdParty(ISerializationContext context, LiabilityThirdParty semanticObject) {
+	protected void sequence_LiabilityToThirdParty(ISerializationContext context, LiabilityToThirdParty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

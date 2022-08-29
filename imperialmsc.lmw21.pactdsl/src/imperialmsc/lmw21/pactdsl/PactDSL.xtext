@@ -149,7 +149,7 @@ ConstraintThirdParty:
 	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
 
 CustomObligation:
-	'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
+	'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING ( 'by' 'date' day=INT month=INT year=INT)?;
 
 
 
@@ -163,13 +163,13 @@ SecondaryObligationType:
 //Liability Types
 
 LiabilityType:
-	LiabilityParty | LiabilityThirdParty;
+	LiabilityToParty | LiabilityToThirdParty;
 
-LiabilityParty:
-	'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ; 
+LiabilityToParty:
+	'LiabilityToParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ; 
 
-LiabilityThirdParty:
-	'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+LiabilityToThirdParty:
+	'LiabilityToThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
 
 
 
@@ -199,7 +199,7 @@ CustomTermination:
 //Boilerplate
 
 BoilerplateType:
-	ApplicableLaw | Jurisdiction | Notices;
+	ApplicableLaw | Jurisdiction | Notices | CustomBoilerplate;
 
 ApplicableLaw:
 	'ApplicableLaw:' customApplicableLaw=STRING (definition+=DefinedTerm)?;
@@ -209,3 +209,7 @@ Jurisdiction:
 	
 Notices:
 	'Notices:' customNotice=STRING;
+
+CustomBoilerplate:
+	'Boilerplate:' customBoilerplate=STRING;
+

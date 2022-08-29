@@ -1652,12 +1652,21 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cMustNotKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
 		private final Assignment cCustomObligationAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cCustomObligationSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomObligationAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cByKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Keyword cDateKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cDayAssignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
+		private final RuleCall cDayINTTerminalRuleCall_4_2_0 = (RuleCall)cDayAssignment_4_2.eContents().get(0);
+		private final Assignment cMonthAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
+		private final RuleCall cMonthINTTerminalRuleCall_4_3_0 = (RuleCall)cMonthAssignment_4_3.eContents().get(0);
+		private final Assignment cYearAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
+		private final RuleCall cYearINTTerminalRuleCall_4_4_0 = (RuleCall)cYearAssignment_4_4.eContents().get(0);
 		
 		//CustomObligation:
-		//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
+		//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING ( 'by' 'date' day=INT month=INT year=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING
+		//'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING ( 'by' 'date' day=INT month=INT year=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//'CustomObligation:'
@@ -1686,6 +1695,33 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//STRING
 		public RuleCall getCustomObligationSTRINGTerminalRuleCall_3_0() { return cCustomObligationSTRINGTerminalRuleCall_3_0; }
+		
+		//( 'by' 'date' day=INT month=INT year=INT)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'by'
+		public Keyword getByKeyword_4_0() { return cByKeyword_4_0; }
+		
+		//'date'
+		public Keyword getDateKeyword_4_1() { return cDateKeyword_4_1; }
+		
+		//day=INT
+		public Assignment getDayAssignment_4_2() { return cDayAssignment_4_2; }
+		
+		//INT
+		public RuleCall getDayINTTerminalRuleCall_4_2_0() { return cDayINTTerminalRuleCall_4_2_0; }
+		
+		//month=INT
+		public Assignment getMonthAssignment_4_3() { return cMonthAssignment_4_3; }
+		
+		//INT
+		public RuleCall getMonthINTTerminalRuleCall_4_3_0() { return cMonthINTTerminalRuleCall_4_3_0; }
+		
+		//year=INT
+		public Assignment getYearAssignment_4_4() { return cYearAssignment_4_4; }
+		
+		//INT
+		public RuleCall getYearINTTerminalRuleCall_4_4_0() { return cYearINTTerminalRuleCall_4_4_0; }
 	}
 	public class SecondaryObligationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.SecondaryObligationType");
@@ -1762,27 +1798,27 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class LiabilityTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cLiabilityPartyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cLiabilityThirdPartyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cLiabilityToPartyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLiabilityToThirdPartyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		////Liability Types
 		//LiabilityType:
-		//    LiabilityParty | LiabilityThirdParty;
+		//    LiabilityToParty | LiabilityToThirdParty;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//LiabilityParty | LiabilityThirdParty
+		//LiabilityToParty | LiabilityToThirdParty
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//LiabilityParty
-		public RuleCall getLiabilityPartyParserRuleCall_0() { return cLiabilityPartyParserRuleCall_0; }
+		//LiabilityToParty
+		public RuleCall getLiabilityToPartyParserRuleCall_0() { return cLiabilityToPartyParserRuleCall_0; }
 		
-		//LiabilityThirdParty
-		public RuleCall getLiabilityThirdPartyParserRuleCall_1() { return cLiabilityThirdPartyParserRuleCall_1; }
+		//LiabilityToThirdParty
+		public RuleCall getLiabilityToThirdPartyParserRuleCall_1() { return cLiabilityToThirdPartyParserRuleCall_1; }
 	}
-	public class LiabilityPartyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityParty");
+	public class LiabilityToPartyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityToParty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLiabilityPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLiabilityToPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
 		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
@@ -1795,15 +1831,15 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cCustomLossAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cCustomLossSTRINGTerminalRuleCall_6_0 = (RuleCall)cCustomLossAssignment_6.eContents().get(0);
 		
-		//LiabilityParty:
-		//    'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
+		//LiabilityToParty:
+		//    'LiabilityToParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING
+		//'LiabilityToParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'LiabilityParty:'
-		public Keyword getLiabilityPartyKeyword_0() { return cLiabilityPartyKeyword_0; }
+		//'LiabilityToParty:'
+		public Keyword getLiabilityToPartyKeyword_0() { return cLiabilityToPartyKeyword_0; }
 		
 		//superType=[Party]
 		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
@@ -1838,10 +1874,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getCustomLossSTRINGTerminalRuleCall_6_0() { return cCustomLossSTRINGTerminalRuleCall_6_0; }
 	}
-	public class LiabilityThirdPartyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityThirdParty");
+	public class LiabilityToThirdPartyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.LiabilityToThirdParty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLiabilityThirdPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLiabilityToThirdPartyKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
 		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
@@ -1854,15 +1890,15 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cCustomLossAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cCustomLossSTRINGTerminalRuleCall_6_0 = (RuleCall)cCustomLossAssignment_6.eContents().get(0);
 		
-		//LiabilityThirdParty:
-		//    'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+		//LiabilityToThirdParty:
+		//    'LiabilityToThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING
+		//'LiabilityToThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING
 		public Group getGroup() { return cGroup; }
 		
-		//'LiabilityThirdParty:'
-		public Keyword getLiabilityThirdPartyKeyword_0() { return cLiabilityThirdPartyKeyword_0; }
+		//'LiabilityToThirdParty:'
+		public Keyword getLiabilityToThirdPartyKeyword_0() { return cLiabilityToThirdPartyKeyword_0; }
 		
 		//superType=[Party]
 		public Assignment getSuperTypeAssignment_1() { return cSuperTypeAssignment_1; }
@@ -2239,13 +2275,14 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cApplicableLawParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cJurisdictionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cNoticesParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cCustomBoilerplateParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		////Boilerplate
 		//BoilerplateType:
-		//    ApplicableLaw | Jurisdiction | Notices;
+		//    ApplicableLaw | Jurisdiction | Notices | CustomBoilerplate;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ApplicableLaw | Jurisdiction | Notices
+		//ApplicableLaw | Jurisdiction | Notices | CustomBoilerplate
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ApplicableLaw
@@ -2256,6 +2293,9 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Notices
 		public RuleCall getNoticesParserRuleCall_2() { return cNoticesParserRuleCall_2; }
+		
+		//CustomBoilerplate
+		public RuleCall getCustomBoilerplateParserRuleCall_3() { return cCustomBoilerplateParserRuleCall_3; }
 	}
 	public class ApplicableLawElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.ApplicableLaw");
@@ -2342,6 +2382,29 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//STRING
 		public RuleCall getCustomNoticeSTRINGTerminalRuleCall_1_0() { return cCustomNoticeSTRINGTerminalRuleCall_1_0; }
 	}
+	public class CustomBoilerplateElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomBoilerplate");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBoilerplateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cCustomBoilerplateAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCustomBoilerplateSTRINGTerminalRuleCall_1_0 = (RuleCall)cCustomBoilerplateAssignment_1.eContents().get(0);
+		
+		//CustomBoilerplate:
+		//    'Boilerplate:' customBoilerplate=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Boilerplate:' customBoilerplate=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'Boilerplate:'
+		public Keyword getBoilerplateKeyword_0() { return cBoilerplateKeyword_0; }
+		
+		//customBoilerplate=STRING
+		public Assignment getCustomBoilerplateAssignment_1() { return cCustomBoilerplateAssignment_1; }
+		
+		//STRING
+		public RuleCall getCustomBoilerplateSTRINGTerminalRuleCall_1_0() { return cCustomBoilerplateSTRINGTerminalRuleCall_1_0; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -2379,8 +2442,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final CustomObligationElements pCustomObligation;
 	private final SecondaryObligationTypeElements pSecondaryObligationType;
 	private final LiabilityTypeElements pLiabilityType;
-	private final LiabilityPartyElements pLiabilityParty;
-	private final LiabilityThirdPartyElements pLiabilityThirdParty;
+	private final LiabilityToPartyElements pLiabilityToParty;
+	private final LiabilityToThirdPartyElements pLiabilityToThirdParty;
 	private final TerminationTypeElements pTerminationType;
 	private final ForConvenienceElements pForConvenience;
 	private final OnReasonableNoticeElements pOnReasonableNotice;
@@ -2391,6 +2454,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ApplicableLawElements pApplicableLaw;
 	private final JurisdictionElements pJurisdiction;
 	private final NoticesElements pNotices;
+	private final CustomBoilerplateElements pCustomBoilerplate;
 	
 	private final Grammar grammar;
 	
@@ -2436,8 +2500,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pCustomObligation = new CustomObligationElements();
 		this.pSecondaryObligationType = new SecondaryObligationTypeElements();
 		this.pLiabilityType = new LiabilityTypeElements();
-		this.pLiabilityParty = new LiabilityPartyElements();
-		this.pLiabilityThirdParty = new LiabilityThirdPartyElements();
+		this.pLiabilityToParty = new LiabilityToPartyElements();
+		this.pLiabilityToThirdParty = new LiabilityToThirdPartyElements();
 		this.pTerminationType = new TerminationTypeElements();
 		this.pForConvenience = new ForConvenienceElements();
 		this.pOnReasonableNotice = new OnReasonableNoticeElements();
@@ -2448,6 +2512,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pApplicableLaw = new ApplicableLawElements();
 		this.pJurisdiction = new JurisdictionElements();
 		this.pNotices = new NoticesElements();
+		this.pCustomBoilerplate = new CustomBoilerplateElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2823,7 +2888,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CustomObligation:
-	//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING;
+	//    'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING ( 'by' 'date' day=INT month=INT year=INT)?;
 	public CustomObligationElements getCustomObligationAccess() {
 		return pCustomObligation;
 	}
@@ -2845,7 +2910,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	////Liability Types
 	//LiabilityType:
-	//    LiabilityParty | LiabilityThirdParty;
+	//    LiabilityToParty | LiabilityToThirdParty;
 	public LiabilityTypeElements getLiabilityTypeAccess() {
 		return pLiabilityType;
 	}
@@ -2854,24 +2919,24 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getLiabilityTypeAccess().getRule();
 	}
 	
-	//LiabilityParty:
-	//    'LiabilityParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
-	public LiabilityPartyElements getLiabilityPartyAccess() {
-		return pLiabilityParty;
+	//LiabilityToParty:
+	//    'LiabilityToParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[Party] 'for' customLoss=STRING ;
+	public LiabilityToPartyElements getLiabilityToPartyAccess() {
+		return pLiabilityToParty;
 	}
 	
-	public ParserRule getLiabilityPartyRule() {
-		return getLiabilityPartyAccess().getRule();
+	public ParserRule getLiabilityToPartyRule() {
+		return getLiabilityToPartyAccess().getRule();
 	}
 	
-	//LiabilityThirdParty:
-	//    'LiabilityThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
-	public LiabilityThirdPartyElements getLiabilityThirdPartyAccess() {
-		return pLiabilityThirdParty;
+	//LiabilityToThirdParty:
+	//    'LiabilityToThirdParty:' superType=[Party] 'shallNotBeLiable' 'to' superType=[ThirdParty] 'for' customLoss=STRING;
+	public LiabilityToThirdPartyElements getLiabilityToThirdPartyAccess() {
+		return pLiabilityToThirdParty;
 	}
 	
-	public ParserRule getLiabilityThirdPartyRule() {
-		return getLiabilityThirdPartyAccess().getRule();
+	public ParserRule getLiabilityToThirdPartyRule() {
+		return getLiabilityToThirdPartyAccess().getRule();
 	}
 	
 	////Termination Types
@@ -2938,7 +3003,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	////Boilerplate
 	//BoilerplateType:
-	//    ApplicableLaw | Jurisdiction | Notices;
+	//    ApplicableLaw | Jurisdiction | Notices | CustomBoilerplate;
 	public BoilerplateTypeElements getBoilerplateTypeAccess() {
 		return pBoilerplateType;
 	}
@@ -2975,6 +3040,16 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getNoticesRule() {
 		return getNoticesAccess().getRule();
+	}
+	
+	//CustomBoilerplate:
+	//    'Boilerplate:' customBoilerplate=STRING;
+	public CustomBoilerplateElements getCustomBoilerplateAccess() {
+		return pCustomBoilerplate;
+	}
+	
+	public ParserRule getCustomBoilerplateRule() {
+		return getCustomBoilerplateAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

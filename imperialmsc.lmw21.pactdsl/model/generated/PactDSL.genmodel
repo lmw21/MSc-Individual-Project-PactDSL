@@ -122,6 +122,9 @@
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//CustomObligation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomObligation/customObligation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomObligation/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomObligation/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomObligation/year"/>
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//SecondaryObligationType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//SecondaryObligationType/superType"/>
@@ -132,8 +135,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//LiabilityType/superType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//LiabilityType/customLoss"/>
     </genClasses>
-    <genClasses ecoreClass="PactDSL.ecore#//LiabilityParty"/>
-    <genClasses ecoreClass="PactDSL.ecore#//LiabilityThirdParty"/>
+    <genClasses ecoreClass="PactDSL.ecore#//LiabilityToParty"/>
+    <genClasses ecoreClass="PactDSL.ecore#//LiabilityToThirdParty"/>
     <genClasses ecoreClass="PactDSL.ecore#//TerminationType"/>
     <genClasses ecoreClass="PactDSL.ecore#//ForConvenience">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PactDSL.ecore#//ForConvenience/superType"/>
@@ -166,6 +169,9 @@
     </genClasses>
     <genClasses ecoreClass="PactDSL.ecore#//Notices">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//Notices/customNotice"/>
+    </genClasses>
+    <genClasses ecoreClass="PactDSL.ecore#//CustomBoilerplate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PactDSL.ecore#//CustomBoilerplate/customBoilerplate"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

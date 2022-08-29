@@ -13,8 +13,8 @@
 'Formalities:'=14
 'Jurisdiction:'=82
 'Liability'=19
-'LiabilityParty:'=69
-'LiabilityThirdParty:'=72
+'LiabilityToParty:'=69
+'LiabilityToThirdParty:'=72
 'Licence'=58
 'LicenceObligation:'=56
 'Notices:'=83

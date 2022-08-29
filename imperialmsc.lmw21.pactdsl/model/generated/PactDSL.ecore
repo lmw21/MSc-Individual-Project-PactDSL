@@ -132,6 +132,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomObligation" eSuperTypes="#//PrimaryObligationType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customObligation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SecondaryObligationType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
@@ -143,8 +146,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//EntityType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customLoss" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LiabilityParty" eSuperTypes="#//LiabilityType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LiabilityThirdParty" eSuperTypes="#//LiabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiabilityToParty" eSuperTypes="#//LiabilityType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiabilityToThirdParty" eSuperTypes="#//LiabilityType"/>
   <eClassifiers xsi:type="ecore:EClass" name="TerminationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ForConvenience" eSuperTypes="#//TerminationType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="#//Party"/>
@@ -180,5 +183,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Notices" eSuperTypes="#//BoilerplateType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="customNotice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomBoilerplate" eSuperTypes="#//BoilerplateType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="customBoilerplate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

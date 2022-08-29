@@ -251,14 +251,14 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
         return createLiabilityTypeAdapter();
       }
       @Override
-      public Adapter caseLiabilityParty(LiabilityParty object)
+      public Adapter caseLiabilityToParty(LiabilityToParty object)
       {
-        return createLiabilityPartyAdapter();
+        return createLiabilityToPartyAdapter();
       }
       @Override
-      public Adapter caseLiabilityThirdParty(LiabilityThirdParty object)
+      public Adapter caseLiabilityToThirdParty(LiabilityToThirdParty object)
       {
-        return createLiabilityThirdPartyAdapter();
+        return createLiabilityToThirdPartyAdapter();
       }
       @Override
       public Adapter caseTerminationType(TerminationType object)
@@ -309,6 +309,11 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNotices(Notices object)
       {
         return createNoticesAdapter();
+      }
+      @Override
+      public Adapter caseCustomBoilerplate(CustomBoilerplate object)
+      {
+        return createCustomBoilerplateAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -858,31 +863,31 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty <em>Liability Party</em>}'.
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToParty <em>Liability To Party</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToParty
    * @generated
    */
-  public Adapter createLiabilityPartyAdapter()
+  public Adapter createLiabilityToPartyAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty <em>Liability Third Party</em>}'.
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToThirdParty <em>Liability To Third Party</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToThirdParty
    * @generated
    */
-  public Adapter createLiabilityThirdPartyAdapter()
+  public Adapter createLiabilityToThirdPartyAdapter()
   {
     return null;
   }
@@ -1033,6 +1038,21 @@ public class PactDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNoticesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link imperialmsc.lmw21.pactdsl.pactDSL.CustomBoilerplate <em>Custom Boilerplate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see imperialmsc.lmw21.pactdsl.pactDSL.CustomBoilerplate
+   * @generated
+   */
+  public Adapter createCustomBoilerplateAdapter()
   {
     return null;
   }

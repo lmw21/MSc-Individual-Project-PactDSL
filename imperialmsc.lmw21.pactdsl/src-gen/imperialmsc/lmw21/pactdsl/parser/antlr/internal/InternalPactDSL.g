@@ -2608,6 +2608,70 @@ ruleCustomObligation returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_5='by'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getCustomObligationAccess().getByKeyword_4_0());
+			}
+			otherlv_6='date'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCustomObligationAccess().getDateKeyword_4_1());
+			}
+			(
+				(
+					lv_day_7_0=RULE_INT
+					{
+						newLeafNode(lv_day_7_0, grammarAccess.getCustomObligationAccess().getDayINTTerminalRuleCall_4_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCustomObligationRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"day",
+							lv_day_7_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				(
+					lv_month_8_0=RULE_INT
+					{
+						newLeafNode(lv_month_8_0, grammarAccess.getCustomObligationAccess().getMonthINTTerminalRuleCall_4_3_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCustomObligationRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"month",
+							lv_month_8_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			(
+				(
+					lv_year_9_0=RULE_INT
+					{
+						newLeafNode(lv_year_9_0, grammarAccess.getCustomObligationAccess().getYearINTTerminalRuleCall_4_4_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getCustomObligationRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"year",
+							lv_year_9_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -2729,34 +2793,34 @@ ruleLiabilityType returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityPartyParserRuleCall_0());
+			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityToPartyParserRuleCall_0());
 		}
-		this_LiabilityParty_0=ruleLiabilityParty
+		this_LiabilityToParty_0=ruleLiabilityToParty
 		{
-			$current = $this_LiabilityParty_0.current;
+			$current = $this_LiabilityToParty_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityThirdPartyParserRuleCall_1());
+			newCompositeNode(grammarAccess.getLiabilityTypeAccess().getLiabilityToThirdPartyParserRuleCall_1());
 		}
-		this_LiabilityThirdParty_1=ruleLiabilityThirdParty
+		this_LiabilityToThirdParty_1=ruleLiabilityToThirdParty
 		{
-			$current = $this_LiabilityThirdParty_1.current;
+			$current = $this_LiabilityToThirdParty_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
 ;
 
-// Entry rule entryRuleLiabilityParty
-entryRuleLiabilityParty returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLiabilityPartyRule()); }
-	iv_ruleLiabilityParty=ruleLiabilityParty
-	{ $current=$iv_ruleLiabilityParty.current; }
+// Entry rule entryRuleLiabilityToParty
+entryRuleLiabilityToParty returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLiabilityToPartyRule()); }
+	iv_ruleLiabilityToParty=ruleLiabilityToParty
+	{ $current=$iv_ruleLiabilityToParty.current; }
 	EOF;
 
-// Rule LiabilityParty
-ruleLiabilityParty returns [EObject current=null]
+// Rule LiabilityToParty
+ruleLiabilityToParty returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2764,57 +2828,57 @@ ruleLiabilityParty returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='LiabilityParty:'
+		otherlv_0='LiabilityToParty:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLiabilityPartyAccess().getLiabilityPartyKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getLiabilityToPartyAccess().getLiabilityToPartyKeyword_0());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToPartyRule());
 					}
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getLiabilityPartyAccess().getSuperTypePartyCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getLiabilityToPartyAccess().getSuperTypePartyCrossReference_1_0());
 				}
 			)
 		)
 		otherlv_2='shallNotBeLiable'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getLiabilityPartyAccess().getShallNotBeLiableKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getLiabilityToPartyAccess().getShallNotBeLiableKeyword_2());
 		}
 		otherlv_3='to'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getLiabilityPartyAccess().getToKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getLiabilityToPartyAccess().getToKeyword_3());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToPartyRule());
 					}
 				}
 				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getLiabilityPartyAccess().getSuperTypePartyCrossReference_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getLiabilityToPartyAccess().getSuperTypePartyCrossReference_4_0());
 				}
 			)
 		)
 		otherlv_5='for'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getLiabilityPartyAccess().getForKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getLiabilityToPartyAccess().getForKeyword_5());
 		}
 		(
 			(
 				lv_customLoss_6_0=RULE_STRING
 				{
-					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityToPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToPartyRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -2827,15 +2891,15 @@ ruleLiabilityParty returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleLiabilityThirdParty
-entryRuleLiabilityThirdParty returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLiabilityThirdPartyRule()); }
-	iv_ruleLiabilityThirdParty=ruleLiabilityThirdParty
-	{ $current=$iv_ruleLiabilityThirdParty.current; }
+// Entry rule entryRuleLiabilityToThirdParty
+entryRuleLiabilityToThirdParty returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLiabilityToThirdPartyRule()); }
+	iv_ruleLiabilityToThirdParty=ruleLiabilityToThirdParty
+	{ $current=$iv_ruleLiabilityToThirdParty.current; }
 	EOF;
 
-// Rule LiabilityThirdParty
-ruleLiabilityThirdParty returns [EObject current=null]
+// Rule LiabilityToThirdParty
+ruleLiabilityToThirdParty returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -2843,57 +2907,57 @@ ruleLiabilityThirdParty returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='LiabilityThirdParty:'
+		otherlv_0='LiabilityToThirdParty:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLiabilityThirdPartyAccess().getLiabilityThirdPartyKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getLiabilityToThirdPartyAccess().getLiabilityToThirdPartyKeyword_0());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
 					}
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getLiabilityThirdPartyAccess().getSuperTypePartyCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypePartyCrossReference_1_0());
 				}
 			)
 		)
 		otherlv_2='shallNotBeLiable'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getLiabilityThirdPartyAccess().getShallNotBeLiableKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getLiabilityToThirdPartyAccess().getShallNotBeLiableKeyword_2());
 		}
 		otherlv_3='to'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getLiabilityThirdPartyAccess().getToKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getLiabilityToThirdPartyAccess().getToKeyword_3());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
 					}
 				}
 				otherlv_4=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getLiabilityThirdPartyAccess().getSuperTypeThirdPartyCrossReference_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypeThirdPartyCrossReference_4_0());
 				}
 			)
 		)
 		otherlv_5='for'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getLiabilityThirdPartyAccess().getForKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getLiabilityToThirdPartyAccess().getForKeyword_5());
 		}
 		(
 			(
 				lv_customLoss_6_0=RULE_STRING
 				{
-					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityThirdPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
+					newLeafNode(lv_customLoss_6_0, grammarAccess.getLiabilityToThirdPartyAccess().getCustomLossSTRINGTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLiabilityThirdPartyRule());
+						$current = createModelElement(grammarAccess.getLiabilityToThirdPartyRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -3409,6 +3473,15 @@ ruleBoilerplateType returns [EObject current=null]
 			$current = $this_Notices_2.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getBoilerplateTypeAccess().getCustomBoilerplateParserRuleCall_3());
+		}
+		this_CustomBoilerplate_3=ruleCustomBoilerplate
+		{
+			$current = $this_CustomBoilerplate_3.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -3566,6 +3639,47 @@ ruleNotices returns [EObject current=null]
 						$current,
 						"customNotice",
 						lv_customNotice_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCustomBoilerplate
+entryRuleCustomBoilerplate returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCustomBoilerplateRule()); }
+	iv_ruleCustomBoilerplate=ruleCustomBoilerplate
+	{ $current=$iv_ruleCustomBoilerplate.current; }
+	EOF;
+
+// Rule CustomBoilerplate
+ruleCustomBoilerplate returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Boilerplate:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCustomBoilerplateAccess().getBoilerplateKeyword_0());
+		}
+		(
+			(
+				lv_customBoilerplate_1_0=RULE_STRING
+				{
+					newLeafNode(lv_customBoilerplate_1_0, grammarAccess.getCustomBoilerplateAccess().getCustomBoilerplateSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomBoilerplateRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"customBoilerplate",
+						lv_customBoilerplate_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)

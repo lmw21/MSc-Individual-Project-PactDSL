@@ -12,6 +12,7 @@ import imperialmsc.lmw21.pactdsl.pactDSL.CompanyNumber;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.ConstraintThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomAction;
+import imperialmsc.lmw21.pactdsl.pactDSL.CustomBoilerplate;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFeature;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomFormality;
 import imperialmsc.lmw21.pactdsl.pactDSL.CustomObligation;
@@ -31,8 +32,8 @@ import imperialmsc.lmw21.pactdsl.pactDSL.GivenWrittenConsent;
 import imperialmsc.lmw21.pactdsl.pactDSL.GivingNotice;
 import imperialmsc.lmw21.pactdsl.pactDSL.InWriting;
 import imperialmsc.lmw21.pactdsl.pactDSL.Jurisdiction;
-import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityParty;
-import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityThirdParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToParty;
+import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityToThirdParty;
 import imperialmsc.lmw21.pactdsl.pactDSL.LiabilityType;
 import imperialmsc.lmw21.pactdsl.pactDSL.LicenceObligation;
 import imperialmsc.lmw21.pactdsl.pactDSL.Model;
@@ -318,14 +319,14 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass liabilityPartyEClass = null;
+  private EClass liabilityToPartyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass liabilityThirdPartyEClass = null;
+  private EClass liabilityToThirdPartyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -396,6 +397,13 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   private EClass noticesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass customBoilerplateEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -1445,6 +1453,39 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
+  public EAttribute getCustomObligation_Day()
+  {
+    return (EAttribute)customObligationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomObligation_Month()
+  {
+    return (EAttribute)customObligationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomObligation_Year()
+  {
+    return (EAttribute)customObligationEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getSecondaryObligationType()
   {
     return secondaryObligationTypeEClass;
@@ -1522,9 +1563,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EClass getLiabilityParty()
+  public EClass getLiabilityToParty()
   {
-    return liabilityPartyEClass;
+    return liabilityToPartyEClass;
   }
 
   /**
@@ -1533,9 +1574,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
-  public EClass getLiabilityThirdParty()
+  public EClass getLiabilityToThirdParty()
   {
-    return liabilityThirdPartyEClass;
+    return liabilityToThirdPartyEClass;
   }
 
   /**
@@ -1819,6 +1860,28 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
    * @generated
    */
   @Override
+  public EClass getCustomBoilerplate()
+  {
+    return customBoilerplateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCustomBoilerplate_CustomBoilerplate()
+  {
+    return (EAttribute)customBoilerplateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public PactDSLFactory getPactDSLFactory()
   {
     return (PactDSLFactory)getEFactoryInstance();
@@ -1965,6 +2028,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     customObligationEClass = createEClass(CUSTOM_OBLIGATION);
     createEAttribute(customObligationEClass, CUSTOM_OBLIGATION__CUSTOM_OBLIGATION);
+    createEAttribute(customObligationEClass, CUSTOM_OBLIGATION__DAY);
+    createEAttribute(customObligationEClass, CUSTOM_OBLIGATION__MONTH);
+    createEAttribute(customObligationEClass, CUSTOM_OBLIGATION__YEAR);
 
     secondaryObligationTypeEClass = createEClass(SECONDARY_OBLIGATION_TYPE);
     createEReference(secondaryObligationTypeEClass, SECONDARY_OBLIGATION_TYPE__SUPER_TYPE);
@@ -1975,9 +2041,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     createEReference(liabilityTypeEClass, LIABILITY_TYPE__SUPER_TYPE);
     createEAttribute(liabilityTypeEClass, LIABILITY_TYPE__CUSTOM_LOSS);
 
-    liabilityPartyEClass = createEClass(LIABILITY_PARTY);
+    liabilityToPartyEClass = createEClass(LIABILITY_TO_PARTY);
 
-    liabilityThirdPartyEClass = createEClass(LIABILITY_THIRD_PARTY);
+    liabilityToThirdPartyEClass = createEClass(LIABILITY_TO_THIRD_PARTY);
 
     terminationTypeEClass = createEClass(TERMINATION_TYPE);
 
@@ -2013,6 +2079,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     noticesEClass = createEClass(NOTICES);
     createEAttribute(noticesEClass, NOTICES__CUSTOM_NOTICE);
+
+    customBoilerplateEClass = createEClass(CUSTOM_BOILERPLATE);
+    createEAttribute(customBoilerplateEClass, CUSTOM_BOILERPLATE__CUSTOM_BOILERPLATE);
   }
 
   /**
@@ -2069,8 +2138,8 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     constraintPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
     constraintThirdPartyEClass.getESuperTypes().add(this.getPrimaryObligationType());
     customObligationEClass.getESuperTypes().add(this.getPrimaryObligationType());
-    liabilityPartyEClass.getESuperTypes().add(this.getLiabilityType());
-    liabilityThirdPartyEClass.getESuperTypes().add(this.getLiabilityType());
+    liabilityToPartyEClass.getESuperTypes().add(this.getLiabilityType());
+    liabilityToThirdPartyEClass.getESuperTypes().add(this.getLiabilityType());
     forConvenienceEClass.getESuperTypes().add(this.getTerminationType());
     onReasonableNoticeEClass.getESuperTypes().add(this.getTerminationType());
     forBreachEClass.getESuperTypes().add(this.getTerminationType());
@@ -2079,6 +2148,7 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     applicableLawEClass.getESuperTypes().add(this.getBoilerplateType());
     jurisdictionEClass.getESuperTypes().add(this.getBoilerplateType());
     noticesEClass.getESuperTypes().add(this.getBoilerplateType());
+    customBoilerplateEClass.getESuperTypes().add(this.getBoilerplateType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2202,6 +2272,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     initEClass(customObligationEClass, CustomObligation.class, "CustomObligation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCustomObligation_CustomObligation(), ecorePackage.getEString(), "customObligation", null, 0, 1, CustomObligation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomObligation_Day(), ecorePackage.getEInt(), "day", null, 0, 1, CustomObligation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomObligation_Month(), ecorePackage.getEInt(), "month", null, 0, 1, CustomObligation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCustomObligation_Year(), ecorePackage.getEInt(), "year", null, 0, 1, CustomObligation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(secondaryObligationTypeEClass, SecondaryObligationType.class, "SecondaryObligationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSecondaryObligationType_SuperType(), this.getParty(), null, "superType", null, 0, 1, SecondaryObligationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2212,9 +2285,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
     initEReference(getLiabilityType_SuperType(), this.getEntityType(), null, "superType", null, 0, 1, LiabilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLiabilityType_CustomLoss(), ecorePackage.getEString(), "customLoss", null, 0, 1, LiabilityType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(liabilityPartyEClass, LiabilityParty.class, "LiabilityParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(liabilityToPartyEClass, LiabilityToParty.class, "LiabilityToParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(liabilityThirdPartyEClass, LiabilityThirdParty.class, "LiabilityThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(liabilityToThirdPartyEClass, LiabilityToThirdParty.class, "LiabilityToThirdParty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(terminationTypeEClass, TerminationType.class, "TerminationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2250,6 +2323,9 @@ public class PactDSLPackageImpl extends EPackageImpl implements PactDSLPackage
 
     initEClass(noticesEClass, Notices.class, "Notices", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNotices_CustomNotice(), ecorePackage.getEString(), "customNotice", null, 0, 1, Notices.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(customBoilerplateEClass, CustomBoilerplate.class, "CustomBoilerplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCustomBoilerplate_CustomBoilerplate(), ecorePackage.getEString(), "customBoilerplate", null, 0, 1, CustomBoilerplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

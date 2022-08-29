@@ -100,8 +100,8 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.CUSTOM_OBLIGATION: return createCustomObligation();
       case PactDSLPackage.SECONDARY_OBLIGATION_TYPE: return createSecondaryObligationType();
       case PactDSLPackage.LIABILITY_TYPE: return createLiabilityType();
-      case PactDSLPackage.LIABILITY_PARTY: return createLiabilityParty();
-      case PactDSLPackage.LIABILITY_THIRD_PARTY: return createLiabilityThirdParty();
+      case PactDSLPackage.LIABILITY_TO_PARTY: return createLiabilityToParty();
+      case PactDSLPackage.LIABILITY_TO_THIRD_PARTY: return createLiabilityToThirdParty();
       case PactDSLPackage.TERMINATION_TYPE: return createTerminationType();
       case PactDSLPackage.FOR_CONVENIENCE: return createForConvenience();
       case PactDSLPackage.ON_REASONABLE_NOTICE: return createOnReasonableNotice();
@@ -112,6 +112,7 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
       case PactDSLPackage.APPLICABLE_LAW: return createApplicableLaw();
       case PactDSLPackage.JURISDICTION: return createJurisdiction();
       case PactDSLPackage.NOTICES: return createNotices();
+      case PactDSLPackage.CUSTOM_BOILERPLATE: return createCustomBoilerplate();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -543,10 +544,10 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
    * @generated
    */
   @Override
-  public LiabilityParty createLiabilityParty()
+  public LiabilityToParty createLiabilityToParty()
   {
-    LiabilityPartyImpl liabilityParty = new LiabilityPartyImpl();
-    return liabilityParty;
+    LiabilityToPartyImpl liabilityToParty = new LiabilityToPartyImpl();
+    return liabilityToParty;
   }
 
   /**
@@ -555,10 +556,10 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
    * @generated
    */
   @Override
-  public LiabilityThirdParty createLiabilityThirdParty()
+  public LiabilityToThirdParty createLiabilityToThirdParty()
   {
-    LiabilityThirdPartyImpl liabilityThirdParty = new LiabilityThirdPartyImpl();
-    return liabilityThirdParty;
+    LiabilityToThirdPartyImpl liabilityToThirdParty = new LiabilityToThirdPartyImpl();
+    return liabilityToThirdParty;
   }
 
   /**
@@ -679,6 +680,18 @@ public class PactDSLFactoryImpl extends EFactoryImpl implements PactDSLFactory
   {
     NoticesImpl notices = new NoticesImpl();
     return notices;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public CustomBoilerplate createCustomBoilerplate()
+  {
+    CustomBoilerplateImpl customBoilerplate = new CustomBoilerplateImpl();
+    return customBoilerplate;
   }
 
   /**

@@ -88,9 +88,10 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getGroup_6(), "rule__ConstraintThirdParty__Group_6__0");
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getGroup_7(), "rule__ConstraintThirdParty__Group_7__0");
 			builder.put(grammarAccess.getCustomObligationAccess().getGroup(), "rule__CustomObligation__Group__0");
+			builder.put(grammarAccess.getCustomObligationAccess().getGroup_4(), "rule__CustomObligation__Group_4__0");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getGroup(), "rule__SecondaryObligationType__Group__0");
-			builder.put(grammarAccess.getLiabilityPartyAccess().getGroup(), "rule__LiabilityParty__Group__0");
-			builder.put(grammarAccess.getLiabilityThirdPartyAccess().getGroup(), "rule__LiabilityThirdParty__Group__0");
+			builder.put(grammarAccess.getLiabilityToPartyAccess().getGroup(), "rule__LiabilityToParty__Group__0");
+			builder.put(grammarAccess.getLiabilityToThirdPartyAccess().getGroup(), "rule__LiabilityToThirdParty__Group__0");
 			builder.put(grammarAccess.getForConvenienceAccess().getGroup(), "rule__ForConvenience__Group__0");
 			builder.put(grammarAccess.getOnReasonableNoticeAccess().getGroup(), "rule__OnReasonableNotice__Group__0");
 			builder.put(grammarAccess.getForBreachAccess().getGroup(), "rule__ForBreach__Group__0");
@@ -101,6 +102,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getApplicableLawAccess().getGroup(), "rule__ApplicableLaw__Group__0");
 			builder.put(grammarAccess.getJurisdictionAccess().getGroup(), "rule__Jurisdiction__Group__0");
 			builder.put(grammarAccess.getNoticesAccess().getGroup(), "rule__Notices__Group__0");
+			builder.put(grammarAccess.getCustomBoilerplateAccess().getGroup(), "rule__CustomBoilerplate__Group__0");
 			builder.put(grammarAccess.getModelAccess().getTitleAssignment_1(), "rule__Model__TitleAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getEntityTypesAssignment_4_0(), "rule__Model__EntityTypesAssignment_4_0");
 			builder.put(grammarAccess.getModelAccess().getFormalityTypesAssignment_6_0(), "rule__Model__FormalityTypesAssignment_6_0");
@@ -180,16 +182,19 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConstraintThirdPartyAccess().getSuperTypeAssignment_7_3(), "rule__ConstraintThirdParty__SuperTypeAssignment_7_3");
 			builder.put(grammarAccess.getCustomObligationAccess().getSuperTypeAssignment_1(), "rule__CustomObligation__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getCustomObligationAccess().getCustomObligationAssignment_3(), "rule__CustomObligation__CustomObligationAssignment_3");
+			builder.put(grammarAccess.getCustomObligationAccess().getDayAssignment_4_2(), "rule__CustomObligation__DayAssignment_4_2");
+			builder.put(grammarAccess.getCustomObligationAccess().getMonthAssignment_4_3(), "rule__CustomObligation__MonthAssignment_4_3");
+			builder.put(grammarAccess.getCustomObligationAccess().getYearAssignment_4_4(), "rule__CustomObligation__YearAssignment_4_4");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSuperTypeAssignment_1(), "rule__SecondaryObligationType__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSumAssignment_4(), "rule__SecondaryObligationType__SumAssignment_4");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getSuperTypeAssignment_6(), "rule__SecondaryObligationType__SuperTypeAssignment_6");
 			builder.put(grammarAccess.getSecondaryObligationTypeAccess().getCustomPrimaryObligationAssignment_8(), "rule__SecondaryObligationType__CustomPrimaryObligationAssignment_8");
-			builder.put(grammarAccess.getLiabilityPartyAccess().getSuperTypeAssignment_1(), "rule__LiabilityParty__SuperTypeAssignment_1");
-			builder.put(grammarAccess.getLiabilityPartyAccess().getSuperTypeAssignment_4(), "rule__LiabilityParty__SuperTypeAssignment_4");
-			builder.put(grammarAccess.getLiabilityPartyAccess().getCustomLossAssignment_6(), "rule__LiabilityParty__CustomLossAssignment_6");
-			builder.put(grammarAccess.getLiabilityThirdPartyAccess().getSuperTypeAssignment_1(), "rule__LiabilityThirdParty__SuperTypeAssignment_1");
-			builder.put(grammarAccess.getLiabilityThirdPartyAccess().getSuperTypeAssignment_4(), "rule__LiabilityThirdParty__SuperTypeAssignment_4");
-			builder.put(grammarAccess.getLiabilityThirdPartyAccess().getCustomLossAssignment_6(), "rule__LiabilityThirdParty__CustomLossAssignment_6");
+			builder.put(grammarAccess.getLiabilityToPartyAccess().getSuperTypeAssignment_1(), "rule__LiabilityToParty__SuperTypeAssignment_1");
+			builder.put(grammarAccess.getLiabilityToPartyAccess().getSuperTypeAssignment_4(), "rule__LiabilityToParty__SuperTypeAssignment_4");
+			builder.put(grammarAccess.getLiabilityToPartyAccess().getCustomLossAssignment_6(), "rule__LiabilityToParty__CustomLossAssignment_6");
+			builder.put(grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypeAssignment_1(), "rule__LiabilityToThirdParty__SuperTypeAssignment_1");
+			builder.put(grammarAccess.getLiabilityToThirdPartyAccess().getSuperTypeAssignment_4(), "rule__LiabilityToThirdParty__SuperTypeAssignment_4");
+			builder.put(grammarAccess.getLiabilityToThirdPartyAccess().getCustomLossAssignment_6(), "rule__LiabilityToThirdParty__CustomLossAssignment_6");
 			builder.put(grammarAccess.getForConvenienceAccess().getSuperTypeAssignment_1(), "rule__ForConvenience__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getForConvenienceAccess().getCustomTerminationAssignment_5(), "rule__ForConvenience__CustomTerminationAssignment_5");
 			builder.put(grammarAccess.getOnReasonableNoticeAccess().getSuperTypeAssignment_1(), "rule__OnReasonableNotice__SuperTypeAssignment_1");
@@ -209,6 +214,7 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getJurisdictionAccess().getCustomJurisdictionAssignment_1(), "rule__Jurisdiction__CustomJurisdictionAssignment_1");
 			builder.put(grammarAccess.getJurisdictionAccess().getDefinitionAssignment_2(), "rule__Jurisdiction__DefinitionAssignment_2");
 			builder.put(grammarAccess.getNoticesAccess().getCustomNoticeAssignment_1(), "rule__Notices__CustomNoticeAssignment_1");
+			builder.put(grammarAccess.getCustomBoilerplateAccess().getCustomBoilerplateAssignment_1(), "rule__CustomBoilerplate__CustomBoilerplateAssignment_1");
 		}
 	}
 	

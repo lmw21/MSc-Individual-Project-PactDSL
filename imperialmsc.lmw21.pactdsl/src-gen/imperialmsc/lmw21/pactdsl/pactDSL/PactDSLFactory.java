@@ -339,22 +339,22 @@ public interface PactDSLFactory extends EFactory
   LiabilityType createLiabilityType();
 
   /**
-   * Returns a new object of class '<em>Liability Party</em>'.
+   * Returns a new object of class '<em>Liability To Party</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Liability Party</em>'.
+   * @return a new object of class '<em>Liability To Party</em>'.
    * @generated
    */
-  LiabilityParty createLiabilityParty();
+  LiabilityToParty createLiabilityToParty();
 
   /**
-   * Returns a new object of class '<em>Liability Third Party</em>'.
+   * Returns a new object of class '<em>Liability To Third Party</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Liability Third Party</em>'.
+   * @return a new object of class '<em>Liability To Third Party</em>'.
    * @generated
    */
-  LiabilityThirdParty createLiabilityThirdParty();
+  LiabilityToThirdParty createLiabilityToThirdParty();
 
   /**
    * Returns a new object of class '<em>Termination Type</em>'.
@@ -445,6 +445,15 @@ public interface PactDSLFactory extends EFactory
    * @generated
    */
   Notices createNotices();
+
+  /**
+   * Returns a new object of class '<em>Custom Boilerplate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Custom Boilerplate</em>'.
+   * @generated
+   */
+  CustomBoilerplate createCustomBoilerplate();
 
   /**
    * Returns the package supported by this factory.
