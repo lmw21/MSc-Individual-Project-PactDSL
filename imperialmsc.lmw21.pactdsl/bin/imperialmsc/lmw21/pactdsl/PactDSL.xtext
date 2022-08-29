@@ -131,22 +131,27 @@ PrimaryObligationType:
 	PaymentObligation | DeliveryObligation | TransferObligation | LicenceObligation | ConstraintParty | ConstraintThirdParty | CustomObligation;
 
 PaymentObligation:	
-	'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+
+	 ( 'by' 'date' day=INT month=INT year=INT)?;
 	
 DeliveryObligation:
-	'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;  
+	'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ 
+	( 'by' 'date' day=INT month=INT year=INT)?;  
 
 TransferObligation:
-	'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ 
+	( 'by' 'date' day=INT month=INT year=INT)?;
 
 LicenceObligation:
-	'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*; 
+	'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ 
+	( 'by' 'date' day=INT month=INT year=INT)*; 
 
 ConstraintParty:
 	'ConstraintParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? ('to' superType=[Party])?; 	
 
 ConstraintThirdParty:
-	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
+	'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? 
+	('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
 
 CustomObligation:
 	'CustomObligation:' superType=[Party] ('must' | 'mustNot') customObligation=STRING ( 'by' 'date' day=INT month=INT year=INT)?;
@@ -186,7 +191,8 @@ OnReasonableNotice:
 ;
 
 ForBreach:
-	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
+	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] 
+	('unless' remedialScheme=STRING)?;
 
 OnInsolvencyEvent:
 	'TerminationUponInsolvency:' superType=[Party]+ 'may' 'terminate' 'upon' (InsolvencyEvent=STRING) 'of' superType=[Party]; 
