@@ -31,7 +31,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Model_StateAfterContractDischargedKeyword_19_q;
 	protected AbstractElementAlias match_Model_StateOnSignatureKeyword_9_q;
 	protected AbstractElementAlias match_Model_TerminationKeyword_17_q;
-	protected AbstractElementAlias match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0;
+	protected AbstractElementAlias match_Ownership_DoesNotOwnKeyword_2_1_or_OwnsKeyword_2_0;
 	protected AbstractElementAlias match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0;
 	
 	@Inject
@@ -47,7 +47,7 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Model_StateAfterContractDischargedKeyword_19_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateAfterContractDischargedKeyword_19());
 		match_Model_StateOnSignatureKeyword_9_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getStateOnSignatureKeyword_9());
 		match_Model_TerminationKeyword_17_q = new TokenAlias(false, true, grammarAccess.getModelAccess().getTerminationKeyword_17());
-		match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getMustReturnKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getOwnsKeyword_2_0()));
+		match_Ownership_DoesNotOwnKeyword_2_1_or_OwnsKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getDoesNotOwnKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getOwnershipAccess().getOwnsKeyword_2_0()));
 		match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayNotUseKeyword_2_1()), new TokenAlias(false, false, grammarAccess.getRightToUseAccess().getMayUseKeyword_2_0()));
 	}
 	
@@ -83,8 +83,8 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Model_StateOnSignatureKeyword_9_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Model_TerminationKeyword_17_q.equals(syntax))
 				emit_Model_TerminationKeyword_17_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0.equals(syntax))
-				emit_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Ownership_DoesNotOwnKeyword_2_1_or_OwnsKeyword_2_0.equals(syntax))
+				emit_Ownership_DoesNotOwnKeyword_2_1_or_OwnsKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0.equals(syntax))
 				emit_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -261,12 +261,14 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'owns' | 'mustReturn'
+	 *     'owns' | 'doesNotOwn'
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     superType=[Party|ID] (ambiguity) (rule end)
 	 *     superType=[Party|ID] (ambiguity) customOwnership=STRING
+	 *     superType=[Party|ID] (ambiguity) superType=[SubjectMatter|ID]
 	 */
-	protected void emit_Ownership_MustReturnKeyword_2_1_or_OwnsKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Ownership_DoesNotOwnKeyword_2_1_or_OwnsKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -275,7 +277,9 @@ public class PactDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'mayUse' | 'mayNotUse'
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     superType=[Party|ID] (ambiguity) (rule end)
 	 *     superType=[Party|ID] (ambiguity) customUsage=STRING
+	 *     superType=[Party|ID] (ambiguity) superType=[SubjectMatter|ID]
 	 */
 	protected void emit_RightToUse_MayNotUseKeyword_2_1_or_MayUseKeyword_2_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -42,6 +42,7 @@
 'days'=42
 'definedAs'=33
 'deliver'=54
+'doesNotOwn'=12
 'for'=71
 'forBreachOf'=78
 'gaveConsent'=44
@@ -55,7 +56,6 @@
 'mayUse'=13
 'must'=15
 'mustNot'=16
-'mustReturn'=12
 'of'=65
 'owns'=11
 'pay'=50

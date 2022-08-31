@@ -87,7 +87,7 @@ ByEmail:
 	'byEmail' 'to' (emailAddress=STRING);
 	 
 GivingNotice:
-	'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days');
+	'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days')?;
 
 CustomFormality:
 	'ContractFormality' customFormality=STRING;
@@ -109,19 +109,20 @@ CustomAction:
 	superType=[Party] customAction=STRING;
 	
 
+
 //State on Signature
 
 StateType:
 	Ownership | RightToUse | CustomState;
 
 Ownership:
-	'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
+	'Ownership:' superType=[Party] ('owns' | 'doesNotOwn') (superType=[SubjectMatter])? (customOwnership=STRING)?;
 
 RightToUse:
-	'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
+	'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (superType=[SubjectMatter])? (customUsage=STRING)?;
 
 CustomState:
-	'State:' superType=[Party] customState=STRING;
+	'State:' superType=[Party] (superType=[SubjectMatter])? (customState=STRING)?;
 
 
 		
@@ -187,8 +188,7 @@ ForConvenience:
 	'TerminationForConvenience:' superType=[Party]+ 'may' 'terminate' 'by' customTermination=STRING;
 	
 OnReasonableNotice:
-	'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice] 
-;
+	'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice];
 
 ForBreach:
 	'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] 

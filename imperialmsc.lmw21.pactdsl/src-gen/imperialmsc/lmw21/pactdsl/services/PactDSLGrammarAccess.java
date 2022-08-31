@@ -704,10 +704,10 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cDaysKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//GivingNotice:
-		//    'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days');
+		//    'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days')
+		//'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days')?
 		public Group getGroup() { return cGroup; }
 		
 		//'givingNoticeTo'
@@ -722,7 +722,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
 		
-		//('withDuration' numDays=INT 'days')
+		//('withDuration' numDays=INT 'days')?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'withDuration'
@@ -902,15 +902,18 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Keyword cOwnsKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
-		private final Keyword cMustReturnKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Assignment cCustomOwnershipAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCustomOwnershipSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomOwnershipAssignment_3.eContents().get(0);
+		private final Keyword cDoesNotOwnKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
+		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSuperTypeSubjectMatterCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
+		private final RuleCall cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeSubjectMatterCrossReference_3_0.eContents().get(1);
+		private final Assignment cCustomOwnershipAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCustomOwnershipSTRINGTerminalRuleCall_4_0 = (RuleCall)cCustomOwnershipAssignment_4.eContents().get(0);
 		
 		//Ownership:
-		//    'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
+		//    'Ownership:' superType=[Party] ('owns' | 'doesNotOwn') (superType=[SubjectMatter])? (customOwnership=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING)
+		//'Ownership:' superType=[Party] ('owns' | 'doesNotOwn') (superType=[SubjectMatter])? (customOwnership=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'Ownership:'
@@ -925,20 +928,29 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
 		
-		//('owns' | 'mustReturn')
+		//('owns' | 'doesNotOwn')
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//'owns'
 		public Keyword getOwnsKeyword_2_0() { return cOwnsKeyword_2_0; }
 		
-		//'mustReturn'
-		public Keyword getMustReturnKeyword_2_1() { return cMustReturnKeyword_2_1; }
+		//'doesNotOwn'
+		public Keyword getDoesNotOwnKeyword_2_1() { return cDoesNotOwnKeyword_2_1; }
 		
-		//(customOwnership=STRING)
-		public Assignment getCustomOwnershipAssignment_3() { return cCustomOwnershipAssignment_3; }
+		//(superType=[SubjectMatter])?
+		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
+		
+		//[SubjectMatter]
+		public CrossReference getSuperTypeSubjectMatterCrossReference_3_0() { return cSuperTypeSubjectMatterCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1() { return cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1; }
+		
+		//(customOwnership=STRING)?
+		public Assignment getCustomOwnershipAssignment_4() { return cCustomOwnershipAssignment_4; }
 		
 		//STRING
-		public RuleCall getCustomOwnershipSTRINGTerminalRuleCall_3_0() { return cCustomOwnershipSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getCustomOwnershipSTRINGTerminalRuleCall_4_0() { return cCustomOwnershipSTRINGTerminalRuleCall_4_0; }
 	}
 	public class RightToUseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.RightToUse");
@@ -950,14 +962,17 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
 		private final Keyword cMayUseKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
 		private final Keyword cMayNotUseKeyword_2_1 = (Keyword)cAlternatives_2.eContents().get(1);
-		private final Assignment cCustomUsageAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCustomUsageSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomUsageAssignment_3.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cSuperTypeSubjectMatterCrossReference_3_0 = (CrossReference)cSuperTypeAssignment_3.eContents().get(0);
+		private final RuleCall cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1 = (RuleCall)cSuperTypeSubjectMatterCrossReference_3_0.eContents().get(1);
+		private final Assignment cCustomUsageAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCustomUsageSTRINGTerminalRuleCall_4_0 = (RuleCall)cCustomUsageAssignment_4.eContents().get(0);
 		
 		//RightToUse:
-		//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
+		//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (superType=[SubjectMatter])? (customUsage=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING)
+		//'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (superType=[SubjectMatter])? (customUsage=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'RightToUse:'
@@ -981,11 +996,20 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'mayNotUse'
 		public Keyword getMayNotUseKeyword_2_1() { return cMayNotUseKeyword_2_1; }
 		
-		//(customUsage=STRING)
-		public Assignment getCustomUsageAssignment_3() { return cCustomUsageAssignment_3; }
+		//(superType=[SubjectMatter])?
+		public Assignment getSuperTypeAssignment_3() { return cSuperTypeAssignment_3; }
+		
+		//[SubjectMatter]
+		public CrossReference getSuperTypeSubjectMatterCrossReference_3_0() { return cSuperTypeSubjectMatterCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1() { return cSuperTypeSubjectMatterIDTerminalRuleCall_3_0_1; }
+		
+		//(customUsage=STRING)?
+		public Assignment getCustomUsageAssignment_4() { return cCustomUsageAssignment_4; }
 		
 		//STRING
-		public RuleCall getCustomUsageSTRINGTerminalRuleCall_3_0() { return cCustomUsageSTRINGTerminalRuleCall_3_0; }
+		public RuleCall getCustomUsageSTRINGTerminalRuleCall_4_0() { return cCustomUsageSTRINGTerminalRuleCall_4_0; }
 	}
 	public class CustomStateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.CustomState");
@@ -994,14 +1018,17 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cSuperTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cSuperTypePartyCrossReference_1_0 = (CrossReference)cSuperTypeAssignment_1.eContents().get(0);
 		private final RuleCall cSuperTypePartyIDTerminalRuleCall_1_0_1 = (RuleCall)cSuperTypePartyCrossReference_1_0.eContents().get(1);
-		private final Assignment cCustomStateAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCustomStateSTRINGTerminalRuleCall_2_0 = (RuleCall)cCustomStateAssignment_2.eContents().get(0);
+		private final Assignment cSuperTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSuperTypeSubjectMatterCrossReference_2_0 = (CrossReference)cSuperTypeAssignment_2.eContents().get(0);
+		private final RuleCall cSuperTypeSubjectMatterIDTerminalRuleCall_2_0_1 = (RuleCall)cSuperTypeSubjectMatterCrossReference_2_0.eContents().get(1);
+		private final Assignment cCustomStateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cCustomStateSTRINGTerminalRuleCall_3_0 = (RuleCall)cCustomStateAssignment_3.eContents().get(0);
 		
 		//CustomState:
-		//    'State:' superType=[Party] customState=STRING;
+		//    'State:' superType=[Party] (superType=[SubjectMatter])? (customState=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'State:' superType=[Party] customState=STRING
+		//'State:' superType=[Party] (superType=[SubjectMatter])? (customState=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'State:'
@@ -1016,11 +1043,20 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//ID
 		public RuleCall getSuperTypePartyIDTerminalRuleCall_1_0_1() { return cSuperTypePartyIDTerminalRuleCall_1_0_1; }
 		
-		//customState=STRING
-		public Assignment getCustomStateAssignment_2() { return cCustomStateAssignment_2; }
+		//(superType=[SubjectMatter])?
+		public Assignment getSuperTypeAssignment_2() { return cSuperTypeAssignment_2; }
+		
+		//[SubjectMatter]
+		public CrossReference getSuperTypeSubjectMatterCrossReference_2_0() { return cSuperTypeSubjectMatterCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getSuperTypeSubjectMatterIDTerminalRuleCall_2_0_1() { return cSuperTypeSubjectMatterIDTerminalRuleCall_2_0_1; }
+		
+		//(customState=STRING)?
+		public Assignment getCustomStateAssignment_3() { return cCustomStateAssignment_3; }
 		
 		//STRING
-		public RuleCall getCustomStateSTRINGTerminalRuleCall_2_0() { return cCustomStateSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getCustomStateSTRINGTerminalRuleCall_3_0() { return cCustomStateSTRINGTerminalRuleCall_3_0; }
 	}
 	public class PrimaryObligationTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "imperialmsc.lmw21.pactdsl.PactDSL.PrimaryObligationType");
@@ -1088,10 +1124,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cYearINTTerminalRuleCall_7_4_0 = (RuleCall)cYearAssignment_7_4.eContents().get(0);
 		
 		//PaymentObligation:
-		//    'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?;
+		//    'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+
+		//     ( 'by' 'date' day=INT month=INT year=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?
+		//'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+
+		// ( 'by' 'date' day=INT month=INT year=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//'PaymentObligation:'
@@ -1184,10 +1222,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cYearINTTerminalRuleCall_7_4_0 = (RuleCall)cYearAssignment_7_4.eContents().get(0);
 		
 		//DeliveryObligation:
-		//    'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+		//    'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//    ( 'by' 'date' day=INT month=INT year=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?
+		//'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//( 'by' 'date' day=INT month=INT year=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//'DeliveryObligation:'
@@ -1283,10 +1323,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cYearINTTerminalRuleCall_7_4_0 = (RuleCall)cYearAssignment_7_4.eContents().get(0);
 		
 		//TransferObligation:
-		//    'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+		//    'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//    ( 'by' 'date' day=INT month=INT year=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?
+		//'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//( 'by' 'date' day=INT month=INT year=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//'TransferObligation:'
@@ -1384,10 +1426,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cYearINTTerminalRuleCall_9_4_0 = (RuleCall)cYearAssignment_9_4.eContents().get(0);
 		
 		//LicenceObligation:
-		//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*;
+		//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//    ( 'by' 'date' day=INT month=INT year=INT)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*
+		//'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+
+		//( 'by' 'date' day=INT month=INT year=INT)*
 		public Group getGroup() { return cGroup; }
 		
 		//'LicenceObligation:'
@@ -1562,10 +1606,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuperTypePartyIDTerminalRuleCall_7_3_0_1 = (RuleCall)cSuperTypePartyCrossReference_7_3_0.eContents().get(1);
 		
 		//ConstraintThirdParty:
-		//    'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
+		//    'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)?
+		//    ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?
+		//'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)?
+		//('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?
 		public Group getGroup() { return cGroup; }
 		
 		//'ConstraintThirdParty:'
@@ -2027,8 +2073,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cSuperTypeGivingNoticeIDTerminalRuleCall_5_0_1 = (RuleCall)cSuperTypeGivingNoticeCrossReference_5_0.eContents().get(1);
 		
 		//OnReasonableNotice:
-		//    'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice]
-		//;
+		//    'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice]
@@ -2086,10 +2131,12 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cRemedialSchemeSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cRemedialSchemeAssignment_8_1.eContents().get(0);
 		
 		//ForBreach:
-		//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
+		//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party]
+		//    ('unless' remedialScheme=STRING)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'TerminationForBreach:'	superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?
+		//'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party]
+		//('unless' remedialScheme=STRING)?
 		public Group getGroup() { return cGroup; }
 		
 		//'TerminationForBreach:'
@@ -2715,7 +2762,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//GivingNotice:
-	//    'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days');
+	//    'givingNoticeTo' superType=[Party] ('withDuration' numDays=INT 'days')?;
 	public GivingNoticeElements getGivingNoticeAccess() {
 		return pGivingNotice;
 	}
@@ -2787,7 +2834,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Ownership:
-	//    'Ownership:' superType=[Party] ('owns' | 'mustReturn') (customOwnership=STRING);
+	//    'Ownership:' superType=[Party] ('owns' | 'doesNotOwn') (superType=[SubjectMatter])? (customOwnership=STRING)?;
 	public OwnershipElements getOwnershipAccess() {
 		return pOwnership;
 	}
@@ -2797,7 +2844,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//RightToUse:
-	//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (customUsage=STRING);
+	//    'RightToUse:' superType=[Party] ('mayUse' | 'mayNotUse') (superType=[SubjectMatter])? (customUsage=STRING)?;
 	public RightToUseElements getRightToUseAccess() {
 		return pRightToUse;
 	}
@@ -2807,7 +2854,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CustomState:
-	//    'State:' superType=[Party] customState=STRING;
+	//    'State:' superType=[Party] (superType=[SubjectMatter])? (customState=STRING)?;
 	public CustomStateElements getCustomStateAccess() {
 		return pCustomState;
 	}
@@ -2828,7 +2875,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//PaymentObligation:
-	//    'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	//    'PaymentObligation:' superType=[Party] 'must' 'pay' (sum=INT)+ 'to' (superType=[Party])+
+	//     ( 'by' 'date' day=INT month=INT year=INT)?;
 	public PaymentObligationElements getPaymentObligationAccess() {
 		return pPaymentObligation;
 	}
@@ -2838,7 +2886,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//DeliveryObligation:
-	//    'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	//    'DeliveryObligation:' superType=[Party] 'must' 'deliver' superType=[SubjectMatter]+ 'to' superType=[Party]+
+	//    ( 'by' 'date' day=INT month=INT year=INT)?;
 	public DeliveryObligationElements getDeliveryObligationAccess() {
 		return pDeliveryObligation;
 	}
@@ -2848,7 +2897,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//TransferObligation:
-	//    'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)?;
+	//    'TransferObligation:' superType=[Party] 'must' 'transfer' superType=[SubjectMatter]+ 'to' superType=[Party]+
+	//    ( 'by' 'date' day=INT month=INT year=INT)?;
 	public TransferObligationElements getTransferObligationAccess() {
 		return pTransferObligation;
 	}
@@ -2858,7 +2908,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//LicenceObligation:
-	//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+ ( 'by' 'date' day=INT month=INT year=INT)*;
+	//    'LicenceObligation:' superType=[Party] 'must' 'grant' 'Licence' 'in' superType=[SubjectMatter]+ 'to' superType=[Party]+
+	//    ( 'by' 'date' day=INT month=INT year=INT)*;
 	public LicenceObligationElements getLicenceObligationAccess() {
 		return pLicenceObligation;
 	}
@@ -2878,7 +2929,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ConstraintThirdParty:
-	//    'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)? ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
+	//    'ConstraintThirdParty:' superType=[Party] 'mustNot' forbiddenAction=STRING superType=[SubjectMatter]? (additionalInfo=STRING)?
+	//    ('to' superType=[ThirdParty])? ('unless' 'withWrittenConsent' 'of' superType=[Party])?;
 	public ConstraintThirdPartyElements getConstraintThirdPartyAccess() {
 		return pConstraintThirdParty;
 	}
@@ -2961,8 +3013,7 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//OnReasonableNotice:
-	//    'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice]
-	//;
+	//    'TerminationOnReasonableNotice:' superType=[Party]+ 'may' 'terminate' 'by' superType=[GivingNotice];
 	public OnReasonableNoticeElements getOnReasonableNoticeAccess() {
 		return pOnReasonableNotice;
 	}
@@ -2972,7 +3023,8 @@ public class PactDSLGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//ForBreach:
-	//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party] ('unless' remedialScheme=STRING)?;
+	//    'TerminationForBreach:'    superType=[Party]+ 'may' 'terminate' 'forBreachOf' (ObligationBreached=STRING)+ 'by' superType=[Party]
+	//    ('unless' remedialScheme=STRING)?;
 	public ForBreachElements getForBreachAccess() {
 		return pForBreach;
 	}

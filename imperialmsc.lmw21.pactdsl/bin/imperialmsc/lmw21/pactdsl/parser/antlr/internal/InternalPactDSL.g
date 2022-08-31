@@ -1234,7 +1234,7 @@ ruleGivingNotice returns [EObject current=null]
 			{
 				newLeafNode(otherlv_4, grammarAccess.getGivingNoticeAccess().getDaysKeyword_2_2());
 			}
-		)
+		)?
 	)
 ;
 
@@ -1530,16 +1530,29 @@ ruleOwnership returns [EObject current=null]
 				newLeafNode(otherlv_2, grammarAccess.getOwnershipAccess().getOwnsKeyword_2_0());
 			}
 			    |
-			otherlv_3='mustReturn'
+			otherlv_3='doesNotOwn'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getOwnershipAccess().getMustReturnKeyword_2_1());
+				newLeafNode(otherlv_3, grammarAccess.getOwnershipAccess().getDoesNotOwnKeyword_2_1());
 			}
 		)
 		(
 			(
-				lv_customOwnership_4_0=RULE_STRING
 				{
-					newLeafNode(lv_customOwnership_4_0, grammarAccess.getOwnershipAccess().getCustomOwnershipSTRINGTerminalRuleCall_3_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOwnershipRule());
+					}
+				}
+				otherlv_4=RULE_ID
+				{
+					newLeafNode(otherlv_4, grammarAccess.getOwnershipAccess().getSuperTypeSubjectMatterCrossReference_3_0());
+				}
+			)
+		)?
+		(
+			(
+				lv_customOwnership_5_0=RULE_STRING
+				{
+					newLeafNode(lv_customOwnership_5_0, grammarAccess.getOwnershipAccess().getCustomOwnershipSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1548,11 +1561,11 @@ ruleOwnership returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"customOwnership",
-						lv_customOwnership_4_0,
+						lv_customOwnership_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -1602,9 +1615,22 @@ ruleRightToUse returns [EObject current=null]
 		)
 		(
 			(
-				lv_customUsage_4_0=RULE_STRING
 				{
-					newLeafNode(lv_customUsage_4_0, grammarAccess.getRightToUseAccess().getCustomUsageSTRINGTerminalRuleCall_3_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRightToUseRule());
+					}
+				}
+				otherlv_4=RULE_ID
+				{
+					newLeafNode(otherlv_4, grammarAccess.getRightToUseAccess().getSuperTypeSubjectMatterCrossReference_3_0());
+				}
+			)
+		)?
+		(
+			(
+				lv_customUsage_5_0=RULE_STRING
+				{
+					newLeafNode(lv_customUsage_5_0, grammarAccess.getRightToUseAccess().getCustomUsageSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -1613,11 +1639,11 @@ ruleRightToUse returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"customUsage",
-						lv_customUsage_4_0,
+						lv_customUsage_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
-		)
+		)?
 	)
 ;
 
@@ -1656,9 +1682,22 @@ ruleCustomState returns [EObject current=null]
 		)
 		(
 			(
-				lv_customState_2_0=RULE_STRING
 				{
-					newLeafNode(lv_customState_2_0, grammarAccess.getCustomStateAccess().getCustomStateSTRINGTerminalRuleCall_2_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCustomStateRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getCustomStateAccess().getSuperTypeSubjectMatterCrossReference_2_0());
+				}
+			)
+		)?
+		(
+			(
+				lv_customState_3_0=RULE_STRING
+				{
+					newLeafNode(lv_customState_3_0, grammarAccess.getCustomStateAccess().getCustomStateSTRINGTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -1667,11 +1706,11 @@ ruleCustomState returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"customState",
-						lv_customState_2_0,
+						lv_customState_3_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
-		)
+		)?
 	)
 ;
 

@@ -28,7 +28,19 @@ public class PactDSLParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
+      _builder.append("ContractTitle: \"Test\". ");
+      _builder.newLine();
+      _builder.append("Entities: ");
+      _builder.newLine();
+      _builder.append("EffectiveDate: 01 09 2022.");
+      _builder.newLine();
+      _builder.append("Party: A \"A\".");
+      _builder.newLine();
+      _builder.append("Party: B \"B\".");
+      _builder.newLine();
+      _builder.append("PrimaryObligations:");
+      _builder.newLine();
+      _builder.append("PaymentObligation: A must pay 120 to B by date 10 09 2022.");
       _builder.newLine();
       final Model result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);

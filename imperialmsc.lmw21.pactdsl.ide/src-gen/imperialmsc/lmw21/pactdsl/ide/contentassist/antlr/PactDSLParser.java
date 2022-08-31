@@ -141,11 +141,14 @@ public class PactDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCustomActionAccess().getSuperTypeAssignment_0(), "rule__CustomAction__SuperTypeAssignment_0");
 			builder.put(grammarAccess.getCustomActionAccess().getCustomActionAssignment_1(), "rule__CustomAction__CustomActionAssignment_1");
 			builder.put(grammarAccess.getOwnershipAccess().getSuperTypeAssignment_1(), "rule__Ownership__SuperTypeAssignment_1");
-			builder.put(grammarAccess.getOwnershipAccess().getCustomOwnershipAssignment_3(), "rule__Ownership__CustomOwnershipAssignment_3");
+			builder.put(grammarAccess.getOwnershipAccess().getSuperTypeAssignment_3(), "rule__Ownership__SuperTypeAssignment_3");
+			builder.put(grammarAccess.getOwnershipAccess().getCustomOwnershipAssignment_4(), "rule__Ownership__CustomOwnershipAssignment_4");
 			builder.put(grammarAccess.getRightToUseAccess().getSuperTypeAssignment_1(), "rule__RightToUse__SuperTypeAssignment_1");
-			builder.put(grammarAccess.getRightToUseAccess().getCustomUsageAssignment_3(), "rule__RightToUse__CustomUsageAssignment_3");
+			builder.put(grammarAccess.getRightToUseAccess().getSuperTypeAssignment_3(), "rule__RightToUse__SuperTypeAssignment_3");
+			builder.put(grammarAccess.getRightToUseAccess().getCustomUsageAssignment_4(), "rule__RightToUse__CustomUsageAssignment_4");
 			builder.put(grammarAccess.getCustomStateAccess().getSuperTypeAssignment_1(), "rule__CustomState__SuperTypeAssignment_1");
-			builder.put(grammarAccess.getCustomStateAccess().getCustomStateAssignment_2(), "rule__CustomState__CustomStateAssignment_2");
+			builder.put(grammarAccess.getCustomStateAccess().getSuperTypeAssignment_2(), "rule__CustomState__SuperTypeAssignment_2");
+			builder.put(grammarAccess.getCustomStateAccess().getCustomStateAssignment_3(), "rule__CustomState__CustomStateAssignment_3");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSuperTypeAssignment_1(), "rule__PaymentObligation__SuperTypeAssignment_1");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSumAssignment_4(), "rule__PaymentObligation__SumAssignment_4");
 			builder.put(grammarAccess.getPaymentObligationAccess().getSuperTypeAssignment_6(), "rule__PaymentObligation__SuperTypeAssignment_6");
